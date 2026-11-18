@@ -24,6 +24,9 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
   `response_format: {type: video, duration: "4s", aspect_ratio, resolution}`), not still pictures with camera moves.
 - **SFX = the ElevenLabs library in `sfx-library/`** (real anime punches, kicks, rocks, booms, whooshes; key = network
   secret on `api.elevenlabs.io`, header `xi-api-key`). Never the code-generated synth SFX.
+- **NO PAID AI SERVICES (owner, Nov 18, 2026): never call Google Gemini / Nano Banana / Omni or ElevenLabs again,
+  and never ask for their keys.** The owner disconnected them. Work only with what is already in the repo (character
+  sheets, keyframes, clips, `sfx-library/`) and free local tools. Ask the owner before anything that costs money.
 - **Original drawings only:** never real anime footage, screenshots, logos or official art.
 - **One big bold white word on screen at a time**, landing on the spoken word.
 - **Very fast cuts like ref4:** ~110 shots per 80 s (median ~0.5 s), plus 1–2-frame white flashes / impact
