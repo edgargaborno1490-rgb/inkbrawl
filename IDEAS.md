@@ -5,7 +5,7 @@ Fairness first: pick pairs where both sides have real wins to show.
 
 | # | Matchup | Versions | Why it works | Status |
 |---|---|---|---|---|
-| 1 | Naruto vs Luffy | end-of-war Naruto vs Gear 5 Luffy | biggest "big 3" debate; DEATH BATTLE's version drops Nov 22, 2026 | MADE Nov 18, 2026 · 16:9 only (owner: no 9:16 this time) · 73 s · Nano Banana keyframes · cover + post in `growkaz-stickman-studio/projects/naruto-vs-luffy/out/` |
+| 1 | Naruto vs Luffy | end-of-war Naruto vs Gear 5 Luffy | biggest "big 3" debate; DEATH BATTLE's version drops Nov 22, 2026 | MADE Nov 18, 2026 · 16:9 only · 71 s · Nano Banana keyframes animated with Gemini Omni Flash, ElevenLabs SFX · final `out/naruto-vs-luffy-FINAL.mp4` · cover + post in `growkaz-stickman-studio/projects/naruto-vs-luffy/out/` |
 | 2 | Gojo vs Sung Jinwoo | Shinjuku Gojo vs Monarch Jinwoo | infinity vs shadow army; huge newer audience | idea |
 | 3 | Zoro vs Sasuke | Wano Zoro vs war-arc Sasuke | swords vs Susanoo, rival-of-the-hero matchup | idea |
 | 4 | Tanjiro vs Deku | final-arc forms | two "kind heroes", close on paper | idea |
