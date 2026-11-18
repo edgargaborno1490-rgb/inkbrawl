@@ -4,13 +4,13 @@ The network proxy injects the key (x-goog-api-key) for generativelanguage.google
   python3 story/gen_keyframes.py sheets [ID ...]          -> keyframes/sheets/<ID>.png
   python3 story/gen_keyframes.py shots k001 k005 ...      -> keyframes/169/<id>.png (refs = approved sheets)
   python3 story/gen_keyframes.py shots916 k002 ...        -> keyframes/916/<id>.png
-Options via env: MODEL (default gemini-3.1-flash-image-preview), SIZE (1K/2K), FORCE=1 to redo.
+Options via env: MODEL (default gemini-3.1-flash-image), SIZE (1K/2K), FORCE=1 to redo.
 """
 import base64, json, os, sys, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE), "keyframes")
-MODEL = os.environ.get("MODEL", "gemini-3.1-flash-image-preview")
+MODEL = os.environ.get("MODEL", "gemini-3.1-flash-image")
 SIZE = os.environ.get("SIZE", "1K")
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 
@@ -56,7 +56,8 @@ def main():
         dst = os.path.join(OUT, sub, i + ".png")
         if os.path.exists(dst) and not os.environ.get("FORCE"):
             continue
-        open(dst, "wb").write(call(p, aspect, refs))
+        img = call(p, aspect, refs)
+        open(dst, "wb").write(img)
         print("ok", dst, flush=True)
 
 
