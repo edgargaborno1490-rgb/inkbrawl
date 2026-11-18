@@ -12,7 +12,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 STYLE = ("2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, "
          "flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, "
-         "extreme dramatic perspective, speed lines where there is motion, painted misty green grass field "
+         "extreme dramatic perspective with a dramatic low or high camera angle, dynamic action poses (never standing "
+         "still), each fighter surrounded by a glowing aura in their color, speed lines where there is motion, painted misty green grass field "
          "with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, "
          "no watermark, no symbols on clothing.")
 N_SKIN = "fair light skin"
@@ -64,7 +65,7 @@ S = [
  (0.00, "W", True,  ["N_BASE", "L_BASE"], "both fighters face off across the misty grass field, the blond ninja on the left with an orange aura, the straw-hat man on the right with a red aura, low-angle wide shot, wind blowing the grass"),
  (0.45, "CU", False, ["N_BASE"], "extreme close-up of the blond ninja's face, confident grin, blue eyes shining, hair whipping in the wind"),
  (0.70, "CU", True,  ["N_BASE", "L_BASE"], "two fists colliding dead center, an orange-sleeved fist from the left and a bare fist from the right, shockwave ring and sparks"),
- (1.10, "CU", False, ["L_BASE"], "extreme close-up of the straw-hat man's face, hat brim shading his eyes, huge toothy grin"),
+ (1.10, "CU", False, ["L_BASE"], "extreme close-up of the straw-hat man's face from a low angle, big bright eyes clearly visible with no dark shading over them, huge toothy grin, wind blowing"),
  (1.70, "M",  False, ["L_BASE"], "the straw-hat man holding his hat down with one hand, low angle, wind tugging his red vest"),
  (2.10, "CU", True,  ["L_G5"], "extreme close-up of the white-haired form's eyes glowing white, white hair flames rising"),
  (2.80, "W",  False, ["L_G5"], "the white-haired man floating above the field with a ring of white clouds behind him, sun glare"),

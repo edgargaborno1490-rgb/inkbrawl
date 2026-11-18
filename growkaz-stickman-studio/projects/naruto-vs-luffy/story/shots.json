@@ -3,865 +3,10 @@
  "duration": 73.0,
  "shots": [
   {
-   "id": "s01",
+   "id": "k001",
    "start": 0.0,
-   "end": 0.95,
-   "line": "Naruto versus",
-   "scene": "Naruto (base) on the grass plain, slam zoom in, orange aura flares, focus lines",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "whoosh",
-     "gain": -10
-    },
-    {
-     "at": 0.25,
-     "name": "powerup",
-     "gain": -14
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "heroNaruto"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s02",
-   "start": 0.95,
-   "end": 1.95,
-   "line": "Luffy.",
-   "scene": "Luffy (straw hat) on the other side, slam zoom, red aura, wind in his vest",
-   "set": "plains",
-   "in": {
-    "type": "whip",
-    "dur": 0.25,
-    "dir": 1
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "swish",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "heroLuffy"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s03",
-   "start": 1.95,
-   "end": 3.1,
-   "line": "Gear Five against",
-   "scene": "Gear 5 flash: white burst, Luffy with white flame hair and cloud halo, arms up laughing",
-   "set": "paper",
-   "in": {
-    "type": "flash",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "flash",
-     "gain": -8
-    },
-    {
-     "at": 0.15,
-     "name": "shimmer",
-     "gain": -14
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "g5Flash"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s04",
-   "start": 3.1,
-   "end": 4.35,
-   "line": "Six Paths.",
-   "scene": "Six Paths Naruto: golden-white cloak flares, black orbs appear behind him",
-   "set": "paper",
-   "in": {
-    "type": "flash",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "powerup",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "sixFlash"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s05",
-   "start": 4.35,
-   "end": 5.6,
-   "line": "Who would win?",
-   "scene": "Diagonal split screen: Naruto gold left vs Luffy white right, focus lines, both in guard",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "impact",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "split"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s06",
-   "start": 5.6,
-   "end": 7.2,
-   "line": "Luffy strikes first:",
-   "scene": "Luffy sprints across the plain, speed lines, dust kicks behind",
-   "set": "plains",
-   "in": {
-    "type": "whip",
-    "dur": 0.25,
-    "dir": 1
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "whoosh",
-     "gain": -8
-    },
-    {
-     "at": 0.3,
-     "name": "footstep",
-     "gain": -12
-    },
-    {
-     "at": 0.6,
-     "name": "footstep",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "dash"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s07",
-   "start": 7.2,
-   "end": 8.1,
-   "line": "Gear Second,",
-   "scene": "Gear Second: Luffy crouches low, pink steam pours off his body, close medium",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "powerup",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "gear2"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s08",
-   "start": 8.1,
-   "end": 9.05,
-   "line": "Jet Pistol,",
-   "scene": "Jet Pistol: huge brown fist rushes at camera out of white speed lines",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "whoosh",
-     "gain": -6
-    },
-    {
-     "at": 0.45,
-     "name": "hit",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "jetFist"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s09",
-   "start": 9.05,
-   "end": 10.05,
-   "line": "faster than the",
-   "scene": "Wide: Naruto blasted back across the field, shock ring, hit spark",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "impact",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "naruHit"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s10",
-   "start": 10.05,
-   "end": 11.15,
-   "line": "eye can follow.",
-   "scene": "Naruto skids on his feet, gouging dirt, recovers into a crouch, debris",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "swish",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "naruSkid"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s11",
-   "start": 11.15,
-   "end": 12.4,
-   "line": "Naruto answers his",
-   "scene": "Close-up: Naruto's hands snap into the clone sign, orange sleeves, chakra pop",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "pop",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "handSign"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s12",
-   "start": 12.4,
-   "end": 13.0,
-   "line": "way:",
-   "scene": "Puffs of smoke burst one after another across the plain",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "pop",
-     "gain": -10
-    },
-    {
-     "at": 0.2,
-     "name": "pop",
-     "gain": -11
-    },
-    {
-     "at": 0.4,
-     "name": "pop",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "clonePop"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s13",
-   "start": 13.0,
-   "end": 15.1,
-   "line": "an army of shadow clones.",
-   "scene": "Army of shadow clones charging over the plain, wide, dust trail",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "footstep",
-     "gain": -14
-    },
-    {
-     "at": 0.8,
-     "name": "whoosh",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "clonesWide"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s14",
-   "start": 15.1,
-   "end": 16.2,
-   "line": "Luffy's future sight",
-   "scene": "Close-up: Luffy head-and-shoulders, a red glint of light across the face, aura ripples",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "shimmer",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "luffySense"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s15",
-   "start": 16.2,
-   "end": 17.6,
-   "line": "reads every clone before",
-   "scene": "Luffy weaves through clones; translucent red ghost images show their next moves",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "swish",
-     "gain": -10
-    },
-    {
-     "at": 0.8,
-     "name": "swish",
-     "gain": -11
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "foresight"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s16",
-   "start": 17.6,
-   "end": 18.5,
-   "line": "it moves.",
-   "scene": "A clone punches; Luffy is already leaning away, clone overshoots",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "whoosh",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "dodge"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s17",
-   "start": 18.5,
-   "end": 19.4,
-   "line": "Gear Fourth,",
-   "scene": "Gear Fourth: Luffy bulks up, Haki-black arms, red steam blast",
-   "set": "plains",
-   "in": {
-    "type": "flash",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "powerup",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "gear4"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s18",
-   "start": 19.4,
-   "end": 20.55,
-   "line": "Snakeman.",
-   "scene": "Snakeman: Luffy draws his black arm back, coiled, focus lines",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.4,
-     "name": "whoosh",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "snakeCU"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s19",
-   "start": 20.55,
-   "end": 21.6,
-   "line": "His punches bend",
-   "scene": "Wide: his punch snakes through the air in a curving trail",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "whoosh",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "snakeArc"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s20",
-   "start": 21.6,
-   "end": 22.45,
-   "line": "around corners,",
-   "scene": "The fist bends around a boulder and hits a clone hiding behind it",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.45,
-     "name": "hit",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "cornerHit"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s21",
-   "start": 22.45,
-   "end": 24.5,
-   "line": "and clones burst into smoke.",
-   "scene": "A row of clones gets hit and bursts into smoke, one after another",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "hit",
-     "gain": -9
-    },
-    {
-     "at": 0.5,
-     "name": "pop",
-     "gain": -9
-    },
-    {
-     "at": 0.9,
-     "name": "hit",
-     "gain": -10
-    },
-    {
-     "at": 1.3,
-     "name": "pop",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "clonesBurst"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s22",
-   "start": 24.5,
-   "end": 26.0,
-   "line": "But every clone that pops",
-   "scene": "The real Naruto on a rock; streaks of light fly from each smoke puff into him",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "shimmer",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "memory"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s23",
-   "start": 26.0,
-   "end": 27.9,
-   "line": "sends Naruto what it saw.",
-   "scene": "Naruto close-up, ghost images of Luffy's moves float around him, he nods",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.3,
-     "name": "ding",
-     "gain": -14
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "naruKnow"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s24",
-   "start": 27.9,
-   "end": 29.5,
-   "line": "Naruto goes Sage Mode,",
-   "scene": "Sage Mode: Naruto stands still, orange glow band across his face, orange aura",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "riser",
-     "gain": -14
-    },
-    {
-     "at": 0.8,
-     "name": "powerup",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "sage"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s25",
-   "start": 29.5,
-   "end": 31.1,
-   "line": "then Kurama's golden cloak,",
-   "scene": "Kurama golden cloak: blinding gold flare, Naruto bursts in gold",
-   "set": "plains",
-   "in": {
-    "type": "flash",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "flash",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "kurama"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s26",
-   "start": 31.1,
-   "end": 32.0,
-   "line": "and throws a",
-   "scene": "Naruto raises his palm; a Rasenshuriken spins up above it, wind howl",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "powerup",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "rasenCharge"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s27",
-   "start": 32.0,
-   "end": 33.05,
-   "line": "Rasenshuriken.",
-   "scene": "Wide: the Rasenshuriken screams across the field toward Luffy",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "whoosh",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "rasenThrow"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s28",
-   "start": 33.05,
-   "end": 34.3,
-   "line": "Luffy coats his fists",
-   "scene": "Close-up: Luffy's fists turn black, red lightning crackles",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "buzz",
-     "gain": -14
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "hakiFists"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s29",
-   "start": 34.3,
-   "end": 35.4,
-   "line": "in Conqueror's Haki",
-   "scene": "Luffy medium shot, black-red lightning all around him, ground cracking",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "thunder",
-     "gain": -14
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "conqueror"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s30",
-   "start": 35.4,
-   "end": 36.3,
-   "line": "and takes it head",
-   "scene": "Fist meets Rasenshuriken: impact frame, white burst",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "impact",
-     "gain": -4
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "clash"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s31",
-   "start": 36.3,
-   "end": 37.0,
-   "line": "on.",
-   "scene": "Overhead: huge crater, dust ring, Luffy standing in the middle",
-   "set": "plains",
+   "end": 0.45,
+   "line": "both fighters face off across the misty grass field, the blond ninja on the left with an o",
    "in": {
     "type": "cut"
    },
@@ -869,150 +14,29 @@
     {
      "at": 0.0,
      "name": "kick",
-     "gain": -10
+     "gain": -8,
+     "seed": 0
     }
    ],
    "amb": {
     "name": "wind",
     "gain": -26
    },
+   "vignette": true,
    "params": {
-    "tpl": "crater"
-   },
-   "vignette": true
+    "kf": true,
+    "i": 0,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
   },
   {
-   "id": "s32",
-   "start": 37.0,
-   "end": 38.6,
-   "line": "Then the drums start.",
-   "scene": "Luffy in the dust, drum-beat rings pulsing out of his chest",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "heartbeat",
-     "gain": -6
-    },
-    {
-     "at": 0.5,
-     "name": "heartbeat",
-     "gain": -7
-    },
-    {
-     "at": 0.9,
-     "name": "heartbeat",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "drums"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s33",
-   "start": 38.6,
-   "end": 39.9,
-   "line": "Gear Five.",
-   "scene": "Gear 5: white flash, hair turns to white flames, cloud halo, laughing pose",
-   "set": "plains",
-   "in": {
-    "type": "flash",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "flash",
-     "gain": -6
-    },
-    {
-     "at": 0.2,
-     "name": "shimmer",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "g5Transform"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s34",
-   "start": 39.9,
-   "end": 41.5,
-   "line": "Luffy turns the ground to rubber",
-   "scene": "Luffy grabs the ground and lifts it like a rubber sheet, waves roll out",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "whoosh",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "rubber"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s35",
-   "start": 41.5,
-   "end": 43.5,
-   "line": "and bounces the whole arena.",
-   "scene": "The whole arena bounces; Naruto is flung high, rocks flying",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "kick",
-     "gain": -8
-    },
-    {
-     "at": 0.6,
-     "name": "whoosh",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "bounce"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s36",
-   "start": 43.5,
-   "end": 44.4,
-   "line": "For a moment,",
-   "scene": "Naruto tumbling through the sky",
-   "set": "sky",
+   "id": "k002",
+   "start": 0.45,
+   "end": 0.7,
+   "line": "extreme close-up of the blond ninja's face, confident grin, blue eyes shining, hair whippi",
    "in": {
     "type": "cut"
    },
@@ -1020,437 +44,60 @@
     {
      "at": 0.0,
      "name": "swish",
-     "gain": -10
+     "gain": -14,
+     "seed": 1,
+     "dur": 0.3
     }
    ],
    "amb": {
     "name": "wind",
     "gain": -26
    },
+   "vignette": true,
    "params": {
-    "tpl": "naruAir"
-   },
-   "vignette": true
+    "kf": true,
+    "i": 1,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
   },
   {
-   "id": "s37",
-   "start": 44.4,
-   "end": 46.1,
-   "line": "Naruto has no answer.",
-   "scene": "Naruto slams down onto one knee, dust, head down",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.3,
-     "name": "impact",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "naruLand"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s38",
-   "start": 46.1,
-   "end": 47.4,
-   "line": "But Gear Five burns",
-   "scene": "Luffy (Gear 5) bounces around laughing, his cloud halo already thinning",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "pop",
-     "gain": -10
-    },
-    {
-     "at": 0.7,
-     "name": "pop",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "g5Bounce"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s39",
-   "start": 47.4,
-   "end": 49.1,
-   "line": "Luffy's stamina fast.",
-   "scene": "Luffy slows, white steam leaks off him, he hunches",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "slowmo",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "drain"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s40",
-   "start": 49.1,
-   "end": 50.1,
-   "line": "Against Kizaru,",
-   "scene": "Sepia memory: Luffy hit by beams of yellow light",
-   "set": "memory",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "glitch",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "memoryK"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s41",
-   "start": 50.1,
-   "end": 52.3,
-   "line": "it left him shriveled and drained.",
-   "scene": "Luffy shrinks, thin and drained, drops to his knees",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "slowmo",
-     "gain": -14
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "shrivel"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s42",
-   "start": 52.3,
-   "end": 53.8,
-   "line": "Naruto carries the chakra",
-   "scene": "Naruto stands, a calm gold aura rising",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "powerup",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "naruRise"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s43",
-   "start": 53.8,
-   "end": 55.75,
-   "line": "of all nine tailed beasts.",
-   "scene": "Nine coloured chakra streams orbit Naruto",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.2,
-     "name": "shimmer",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "nine"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s44",
-   "start": 55.75,
-   "end": 56.85,
-   "line": "Six Paths.",
-   "scene": "Six Paths mode: gold-white cloak, dark trousers, focus lines",
-   "set": "plains",
-   "in": {
-    "type": "flash",
-    "dur": 0.3
-   },
-   "sfx": [
-    {
-     "at": 0.05,
-     "name": "powerup",
-     "gain": -8
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "sixPaths"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s45",
-   "start": 56.85,
-   "end": 58.3,
-   "line": "Truth-Seeking Balls.",
-   "scene": "Close: nine black Truth-Seeking Balls slide into an arc behind him",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "blip",
-     "gain": -12
-    },
-    {
-     "at": 0.5,
-     "name": "blip",
-     "gain": -12
-    },
-    {
-     "at": 0.9,
-     "name": "blip",
-     "gain": -12
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "balls"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s46",
-   "start": 58.3,
-   "end": 60.5,
-   "line": "He only has to outlast him.",
-   "scene": "Wide standoff: Naruto upright and glowing, Luffy panting, steam fading",
-   "set": "plains",
+   "id": "k003",
+   "start": 0.7,
+   "end": 1.1,
+   "line": "two fists colliding dead center, an orange-sleeved fist from the left and a bare fist from",
    "in": {
     "type": "cut"
    },
    "sfx": [
     {
      "at": 0.0,
-     "name": "wind",
-     "gain": -18
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "outlast"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s47",
-   "start": 60.5,
-   "end": 61.65,
-   "line": "Naruto wins,",
-   "scene": "Naruto hero shot, slam zoom, gold aura",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "stinger",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "verdict"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s48",
-   "start": 61.65,
-   "end": 62.85,
-   "line": "but it's close.",
-   "scene": "Tight two-shot: fists pressed together, both auras grinding",
-   "set": "paper",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
      "name": "hit",
-     "gain": -10
+     "gain": -8,
+     "seed": 2
     }
    ],
    "amb": {
     "name": "wind",
     "gain": -26
    },
+   "vignette": true,
    "params": {
-    "tpl": "close"
-   },
-   "vignette": true
+    "kf": true,
+    "i": 2,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
   },
   {
-   "id": "s49",
-   "start": 62.85,
-   "end": 64.75,
-   "line": "Luffy hits harder in the moment.",
-   "scene": "Replay: Luffy's Haki punch lands, hit spark, Naruto skids",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.4,
-     "name": "hit",
-     "gain": -6
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "replay"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s50",
-   "start": 64.75,
-   "end": 66.2,
-   "line": "Naruto has the bigger tank,",
-   "scene": "Naruto with a giant gold aura towering behind him",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "powerup",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "tank"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s51",
-   "start": 66.2,
-   "end": 68.1,
-   "line": "and clones to wear him down.",
-   "scene": "Clones surround a tired Luffy and pile in",
-   "set": "plains",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 0.3,
-     "name": "pop",
-     "gain": -10
-    },
-    {
-     "at": 0.9,
-     "name": "pop",
-     "gain": -10
-    }
-   ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "wear"
-   },
-   "vignette": true
-  },
-  {
-   "id": "s52",
-   "start": 68.1,
-   "end": 69.95,
-   "line": "Comment who YOU think wins.",
-   "scene": "Both fighters: Naruto standing, Luffy kneeling, cool wind, hold",
-   "set": "plains",
+   "id": "k004",
+   "start": 1.1,
+   "end": 1.7,
+   "line": "extreme close-up of the straw-hat man's face from a low angle, big bright eyes clearly vis",
    "in": {
     "type": "cut"
    },
@@ -1459,37 +106,3599 @@
     "name": "wind",
     "gain": -26
    },
+   "vignette": true,
    "params": {
-    "tpl": "endBoth"
-   },
-   "vignette": true
+    "kf": true,
+    "i": 3,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
   },
   {
-   "id": "s53",
-   "start": 69.95,
-   "end": 73.0,
-   "line": "And who should fight next?",
-   "scene": "Two empty glowing outlines face off: who should fight next?",
-   "set": "paper",
+   "id": "k005",
+   "start": 1.7,
+   "end": 2.1,
+   "line": "the straw-hat man holding his hat down with one hand, low angle, wind tugging his red vest",
    "in": {
-    "type": "fade",
-    "dur": 0.4
+    "type": "cut"
    },
    "sfx": [
     {
-     "at": 0.1,
-     "name": "whoosh",
-     "gain": -12
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 4,
+     "dur": 0.4
     }
    ],
    "amb": {
     "name": "wind",
     "gain": -26
    },
+   "vignette": true,
    "params": {
-    "tpl": "endNext"
+    "kf": true,
+    "i": 4,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k006",
+   "start": 2.1,
+   "end": 2.8,
+   "line": "extreme close-up of the white-haired form's eyes glowing white, white hair flames rising",
+   "in": {
+    "type": "cut"
    },
-   "vignette": true
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 5
+    },
+    {
+     "at": 0.39,
+     "name": "kick",
+     "gain": -13,
+     "seed": 8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 5,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k007",
+   "start": 2.8,
+   "end": 3.3,
+   "line": "the white-haired man floating above the field with a ring of white clouds behind him, sun ",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 6,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k008",
+   "start": 3.3,
+   "end": 3.85,
+   "line": "extreme close-up of the golden form's eyes glowing gold, golden light pouring off his face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 7
+    },
+    {
+     "at": 0.3,
+     "name": "kick",
+     "gain": -13,
+     "seed": 10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 7,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k009",
+   "start": 3.85,
+   "end": 4.5,
+   "line": "the golden ninja floating above the field, nine black orbs in a ring behind him, golden gl",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 8,
+     "dur": 0.65
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 8,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k010",
+   "start": 4.5,
+   "end": 5.05,
+   "line": "the golden ninja and the white-haired man charge at each other from opposite sides, a huge",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 9
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 9,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k011",
+   "start": 5.05,
+   "end": 5.75,
+   "line": "the clash point up close, gold and white energy shattering outward, cracks in the air, deb",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 10
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 17
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 10,
+    "kind": "FX",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k012",
+   "start": 5.75,
+   "end": 6.1,
+   "line": "the straw-hat man leaning forward into a fighting stance, grinning, fists up",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 11
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 11,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k013",
+   "start": 6.1,
+   "end": 6.5,
+   "line": "close-up of a sandaled foot digging into the grass, dirt clods flying",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 12,
+     "dur": 0.4
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 12,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k014",
+   "start": 6.5,
+   "end": 7.25,
+   "line": "close-up of the straw-hat man's eyes narrowing with focus",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 13,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k015",
+   "start": 7.25,
+   "end": 7.75,
+   "line": "the straw-hat man crouched low, legs pumping, thick steam bursting off his body",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 14
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 14,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k016",
+   "start": 7.75,
+   "end": 8.3,
+   "line": "close-up of steam venting from his forearm, skin glowing reddish",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 15,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k017",
+   "start": 8.3,
+   "end": 8.7,
+   "line": "a fist stretching straight at the camera with extreme foreshortening, the arm a long blur ",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 16,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k018",
+   "start": 8.7,
+   "end": 9.2,
+   "line": "a red blur of a stretched arm shooting across the field, a shockwave ring tearing the gras",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 17
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 17,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k019",
+   "start": 9.2,
+   "end": 9.7,
+   "line": "the blond ninja turning, eyes wide, a blurred punch whipping past his face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 18,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k020",
+   "start": 9.7,
+   "end": 10.3,
+   "line": "dozens of motion-blurred fists filling the frame, afterimages everywhere",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 19
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 19,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k021",
+   "start": 10.3,
+   "end": 10.75,
+   "line": "a fist slamming into the blond ninja's cheek, impact frame, shockwave burst, spit flying",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 20
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 27
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 20,
+    "kind": "FX",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k022",
+   "start": 10.75,
+   "end": 11.3,
+   "line": "the blond ninja skidding backwards across the grass, a long dirt trail behind him",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 21,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k023",
+   "start": 11.3,
+   "end": 11.8,
+   "line": "the blond ninja wiping his mouth with his thumb, grinning back",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 22,
+     "dur": 0.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 22,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k024",
+   "start": 11.8,
+   "end": 12.45,
+   "line": "close-up of the blond ninja's hands making a cross-shaped hand sign, fingers glowing orang",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 23,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k025",
+   "start": 12.45,
+   "end": 13.1,
+   "line": "a big white smoke puff bursting open with a silhouette inside",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "kick",
+     "gain": -8,
+     "seed": 24
+    },
+    {
+     "at": 0.36,
+     "name": "hit",
+     "gain": -13,
+     "seed": 27
+    },
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10,
+     "seed": 24
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 24,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k026",
+   "start": 13.1,
+   "end": 13.8,
+   "line": "a huge army of hundreds of identical blond ninjas spread across the misty field, wide aeri",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 25
+    },
+    {
+     "at": 0.39,
+     "name": "kick",
+     "gain": -13,
+     "seed": 28
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 25,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k027",
+   "start": 13.8,
+   "end": 14.3,
+   "line": "a row of identical blond ninjas charging straight at the camera, low angle",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 26,
+     "dur": 0.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 26,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k028",
+   "start": 14.3,
+   "end": 14.75,
+   "line": "several identical blond ninja faces shouting at once, packed together",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "kick",
+     "gain": -8,
+     "seed": 27
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 27,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k029",
+   "start": 14.75,
+   "end": 15.2,
+   "line": "overhead view: a ring of identical blond ninjas closing in on the lone straw-hat man in th",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 28,
+     "dur": 0.45
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 28,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k030",
+   "start": 15.2,
+   "end": 15.95,
+   "line": "extreme close-up of the straw-hat man's eye, iris glowing red, calm",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 29
+    },
+    {
+     "at": 0.41,
+     "name": "kick",
+     "gain": -13,
+     "seed": 32
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 29,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k031",
+   "start": 15.95,
+   "end": 16.3,
+   "line": "his vision: ghostly see-through red afterimages of the ninjas showing where each one will ",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 30,
+     "dur": 0.35
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 30,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k032",
+   "start": 16.3,
+   "end": 16.8,
+   "line": "the straw-hat man leaning aside as a ninja's punch misses his face by an inch",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 31
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 31,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k033",
+   "start": 16.8,
+   "end": 17.25,
+   "line": "the straw-hat man ducking under a flying kick from another ninja",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 32
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 32,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k034",
+   "start": 17.25,
+   "end": 17.75,
+   "line": "close-up of the straw-hat man smirking, eyes closed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 33,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k035",
+   "start": 17.75,
+   "end": 18.65,
+   "line": "the blond ninjas frozen mid-leap all around him, time almost stopped",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 34,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 34,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k036",
+   "start": 18.65,
+   "end": 19.2,
+   "line": "the young man's body inflating, muscles bulging, black haki spreading over his arms, steam",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 35
+    },
+    {
+     "at": 0.3,
+     "name": "kick",
+     "gain": -13,
+     "seed": 38
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 35
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 35,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k037",
+   "start": 19.2,
+   "end": 19.5,
+   "line": "close-up of a huge black haki arm with red flame patterns, red steam curling",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 36,
+     "dur": 0.3
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 36,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k038",
+   "start": 19.5,
+   "end": 20.3,
+   "line": "the pumped-up dark form standing tall, red steam scarf, menacing grin, full body",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 37
+    },
+    {
+     "at": 0.44,
+     "name": "kick",
+     "gain": -13,
+     "seed": 40
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 37,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k039",
+   "start": 20.3,
+   "end": 20.7,
+   "line": "close-up of the pumped-up form's face, narrow glowing eyes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 38,
+     "dur": 0.4
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 38,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k040",
+   "start": 20.7,
+   "end": 21.3,
+   "line": "a black haki fist launched, the arm curving through the air like a snake",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 39
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 39,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k041",
+   "start": 21.3,
+   "end": 21.75,
+   "line": "the black fist bending sharply around a stone pillar, speed lines",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 40
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 40,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k042",
+   "start": 21.75,
+   "end": 22.2,
+   "line": "the curving punch swinging around a blond ninja and hitting him from behind",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 41
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 41,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k043",
+   "start": 22.2,
+   "end": 22.7,
+   "line": "impact frame, a blond ninja doubled over by a black fist, white shockwave",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "kick",
+     "gain": -8,
+     "seed": 42
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 42,
+    "kind": "FX",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k044",
+   "start": 22.7,
+   "end": 23.25,
+   "line": "a line of blond ninjas getting hit one after another, each bursting into a white smoke puf",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 43
+    },
+    {
+     "at": 0.3,
+     "name": "kick",
+     "gain": -13,
+     "seed": 46
+    },
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10,
+     "seed": 43
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 43,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k045",
+   "start": 23.25,
+   "end": 23.8,
+   "line": "a smoke puff exploding outward where a ninja just was",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 44
+    },
+    {
+     "at": 0.3,
+     "name": "hit",
+     "gain": -13,
+     "seed": 47
+    },
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10,
+     "seed": 44
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 44,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k046",
+   "start": 23.8,
+   "end": 24.55,
+   "line": "the grass field covered with drifting white smoke clouds",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 45
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 45,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k047",
+   "start": 24.55,
+   "end": 25.1,
+   "line": "the real blond ninja's eye opening sharply, half hidden behind a rock",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 46,
+     "dur": 0.55
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 46,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k048",
+   "start": 25.1,
+   "end": 25.5,
+   "line": "one last ninja popping into smoke, a glowing orange thread of light flowing out of the puf",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10,
+     "seed": 47
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 47,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k049",
+   "start": 25.5,
+   "end": 26.05,
+   "line": "a smoke puff popping with an orange spark",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "kick",
+     "gain": -8,
+     "seed": 48
+    },
+    {
+     "at": 0.3,
+     "name": "hit",
+     "gain": -13,
+     "seed": 51
+    },
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10,
+     "seed": 48
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 48,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k050",
+   "start": 26.05,
+   "end": 26.5,
+   "line": "glowing orange streams flowing across the field from many smoke puffs into the real blond ",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10,
+     "seed": 49
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 49,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k051",
+   "start": 26.5,
+   "end": 27.2,
+   "line": "the blond ninja touching his temple, eyes closed, orange glow of memories",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 50,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 50,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k052",
+   "start": 27.2,
+   "end": 28.1,
+   "line": "the blond ninja's eyes snapping open, determined",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 51,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k053",
+   "start": 28.1,
+   "end": 28.7,
+   "line": "the blond ninja sitting cross-legged on a rock, meditating, green-gold nature energy swirl",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 52,
+     "dur": 0.6
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 52
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 52,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k054",
+   "start": 28.7,
+   "end": 29.4,
+   "line": "extreme close-up of his face with orange pigment around the eyes and golden eyes with bar ",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 53
+    },
+    {
+     "at": 0.39,
+     "name": "kick",
+     "gain": -13,
+     "seed": 56
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 53
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 53,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k055",
+   "start": 29.4,
+   "end": 29.9,
+   "line": "the sage ninja standing on a rock, red cloak flapping, mist swirling",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 54,
+     "dur": 0.5
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 54,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k056",
+   "start": 29.9,
+   "end": 30.4,
+   "line": "golden fire-like chakra erupting around the ninja, lighting the field",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 55
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 55,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k057",
+   "start": 30.4,
+   "end": 31.15,
+   "line": "close-up of the ninja in the glowing golden cloak, black swirl markings, orange eyes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 56
+    },
+    {
+     "at": 0.41,
+     "name": "hit",
+     "gain": -13,
+     "seed": 59
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 56,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k058",
+   "start": 31.15,
+   "end": 31.5,
+   "line": "the glowing golden ninja shining across the misty field like a sun, light beams",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 57,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k059",
+   "start": 31.5,
+   "end": 31.9,
+   "line": "close-up of his palm forming a spinning blue-white chakra sphere",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 58
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 58,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k060",
+   "start": 31.9,
+   "end": 32.6,
+   "line": "the golden ninja holding a huge spinning white-blue wind shuriken of chakra above his head",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 59
+    },
+    {
+     "at": 0.39,
+     "name": "kick",
+     "gain": -13,
+     "seed": 62
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 59,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k061",
+   "start": 32.6,
+   "end": 33.2,
+   "line": "the wind shuriken thrown across the field toward the straw-hat man, grass torn up in its p",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 60,
+     "dur": 0.6
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 60,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k062",
+   "start": 33.2,
+   "end": 33.7,
+   "line": "close-up of the straw-hat man clenching his fist, glaring",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 61
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 61,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k063",
+   "start": 33.7,
+   "end": 34.5,
+   "line": "close-up of his fist turning glossy black, red lightning crackling",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 62
+    },
+    {
+     "at": 0.44,
+     "name": "hit",
+     "gain": -13,
+     "seed": 65
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 62,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k064",
+   "start": 34.5,
+   "end": 35.1,
+   "line": "red-black lightning crackling over the black arm, sparks, the air distorting",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "kick",
+     "gain": -8,
+     "seed": 63
+    },
+    {
+     "at": 0.33,
+     "name": "kick",
+     "gain": -13,
+     "seed": 66
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 63,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k065",
+   "start": 35.1,
+   "end": 35.55,
+   "line": "the straw-hat man leaping forward fist-first toward the spinning shuriken",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 64
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 64,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k066",
+   "start": 35.55,
+   "end": 36.0,
+   "line": "a black haki fist punching straight into the spinning wind shuriken, explosion of white li",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 65
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 72
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 65,
+    "kind": "FX",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k067",
+   "start": 36.0,
+   "end": 36.4,
+   "line": "impact frame: inverted black-and-white silhouettes of both fighters inside a blast",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 66
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 73
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 66,
+    "kind": "FX",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k068",
+   "start": 36.4,
+   "end": 36.8,
+   "line": "a huge dome explosion over the grass field, shockwave flattening the grass",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 67
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 74
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 67,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k069",
+   "start": 36.8,
+   "end": 37.1,
+   "line": "a smoking crater, both fighters standing at opposite edges",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 68,
+     "dur": 0.3
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 68,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k070",
+   "start": 37.1,
+   "end": 37.5,
+   "line": "close-up of the straw-hat man's chest, a glowing heartbeat pulse",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.6
+    },
+    {
+     "at": 0.05,
+     "name": "heartbeat",
+     "gain": -6,
+     "bpm": 100
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 69,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k071",
+   "start": 37.5,
+   "end": 37.9,
+   "line": "a heartbeat shockwave ring radiating out from his chest",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 70
+    },
+    {
+     "at": 0.05,
+     "name": "heartbeat",
+     "gain": -6,
+     "bpm": 100
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 70,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k072",
+   "start": 37.9,
+   "end": 38.4,
+   "line": "his hair turning white from the roots, a peaceful smile, eyes closed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 71
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 71
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 71,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k073",
+   "start": 38.4,
+   "end": 38.8,
+   "line": "a tower of white steam and clouds spiraling up around him",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 72
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 72
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 72,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k074",
+   "start": 38.8,
+   "end": 39.4,
+   "line": "extreme close-up of the white form's face, huge laughing grin, wide cartoonish eyes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 73
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 80
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 73,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k075",
+   "start": 39.4,
+   "end": 40.0,
+   "line": "the white-haired man floating, full body, white hair flames, cloud halo ring, glowing whit",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 74
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 74,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k076",
+   "start": 40.0,
+   "end": 40.75,
+   "line": "the white-haired man slamming both palms into the ground",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 75
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 75,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k077",
+   "start": 40.75,
+   "end": 41.2,
+   "line": "the grass ground rippling like rubber waves",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 76,
+     "dur": 0.45
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 76,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k078",
+   "start": 41.2,
+   "end": 41.85,
+   "line": "the whole field stretching like a rubber sheet, hills bending",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 77,
+     "dur": 0.65
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 77,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k079",
+   "start": 41.85,
+   "end": 42.4,
+   "line": "the arena bouncing upward like a trampoline, rocks flying, cartoon wobble lines",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 78
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 85
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 78,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k080",
+   "start": 42.4,
+   "end": 42.85,
+   "line": "the golden ninja launched into the air, shocked face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 79
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 79,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k081",
+   "start": 42.85,
+   "end": 43.7,
+   "line": "the whole arena warping like rubber, the golden ninja tiny in the sky",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 80,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 80,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k082",
+   "start": 43.7,
+   "end": 44.55,
+   "line": "the golden ninja upside down in mid-air, eyes wide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 81,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k083",
+   "start": 44.55,
+   "end": 45.0,
+   "line": "the white-haired man grabbing the stretchy ground and flinging it like a bedsheet, laughin",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 82
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 82,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k084",
+   "start": 45.0,
+   "end": 45.4,
+   "line": "a giant rubbery white fist smashing the golden ninja into the ground",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 83
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 90
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 83,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k085",
+   "start": 45.4,
+   "end": 46.25,
+   "line": "the golden ninja on his knees in a crater, gasping, sweat",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 84,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 84,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k086",
+   "start": 46.25,
+   "end": 46.65,
+   "line": "the white form's laughing face, a drop of sweat on his temple",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 85
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 85,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k087",
+   "start": 46.65,
+   "end": 47.45,
+   "line": "his white hair flames flickering and fading at the tips",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 86
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 86,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k088",
+   "start": 47.45,
+   "end": 48.25,
+   "line": "the white-haired man panting, sweat dripping, still grinning",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 87
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 87,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k089",
+   "start": 48.25,
+   "end": 49.25,
+   "line": "the white cloud halo breaking apart into wisps",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 88
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 88,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k090",
+   "start": 49.25,
+   "end": 50.2,
+   "line": "flashback in faded sepia tones: the white-haired man fighting the man in the yellow stripe",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 89
+    },
+    {
+     "at": 0.52,
+     "name": "kick",
+     "gain": -13,
+     "seed": 92
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 89,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": true
+   }
+  },
+  {
+   "id": "k091",
+   "start": 50.2,
+   "end": 50.7,
+   "line": "sepia flashback: a beam of light kick colliding with a rubbery white arm",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 90
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 90,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": true
+   }
+  },
+  {
+   "id": "k092",
+   "start": 50.7,
+   "end": 51.5,
+   "line": "sepia flashback: close-up of the shriveled, wrinkled, exhausted face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 91,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": true
+   }
+  },
+  {
+   "id": "k093",
+   "start": 51.5,
+   "end": 52.45,
+   "line": "sepia flashback: the tiny shriveled figure collapsed on rubble",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 92,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 92,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": true
+   }
+  },
+  {
+   "id": "k094",
+   "start": 52.45,
+   "end": 53.3,
+   "line": "the golden ninja rising to his feet, eyes sharp",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 93,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k095",
+   "start": 53.3,
+   "end": 54.1,
+   "line": "nine differently colored chakra flames orbiting the ninja",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 94,
+     "dur": 0.7
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 94
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 94,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k096",
+   "start": 54.1,
+   "end": 54.7,
+   "line": "close-up of his palm with a glowing sun mark, nine colored wisps circling it",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.6
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 95,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k097",
+   "start": 54.7,
+   "end": 55.85,
+   "line": "nine giant glowing animal spirits towering behind him in the mist (a fox, a turtle, an ox,",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 96
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 103
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 96,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k098",
+   "start": 55.85,
+   "end": 56.3,
+   "line": "extreme close-up of the final form's eyes glowing gold",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 97
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 104
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 97,
+    "kind": "CU",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k099",
+   "start": 56.3,
+   "end": 57.0,
+   "line": "the golden ninja rising into the sky, coat flowing, nine black orbs in a ring",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 98,
+     "dur": 0.7
+    },
+    {
+     "at": 0.0,
+     "name": "powerup",
+     "gain": -12,
+     "seed": 98
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 98,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k100",
+   "start": 57.0,
+   "end": 57.6,
+   "line": "close-up of floating black orbs with a glowing outline",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 99,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k101",
+   "start": 57.6,
+   "end": 58.35,
+   "line": "the black orbs morphing into a long black staff in his hand",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 100
+    },
+    {
+     "at": 0.41,
+     "name": "hit",
+     "gain": -13,
+     "seed": 103
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 100,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k102",
+   "start": 58.35,
+   "end": 59.3,
+   "line": "the golden ninja standing calm, coat flowing",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 101,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k103",
+   "start": 59.3,
+   "end": 59.9,
+   "line": "the golden ninja standing tall over the panting white-haired man",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 102
+    }
+   ],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 102,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k104",
+   "start": 59.9,
+   "end": 60.55,
+   "line": "the golden ninja's calm half-smile",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "thunder",
+    "gain": -24
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 103,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k105",
+   "start": 60.55,
+   "end": 61.8,
+   "line": "the golden ninja standing victorious on the field, warm sunset light",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 104
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 111
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 104,
+    "kind": "W",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k106",
+   "start": 61.8,
+   "end": 62.95,
+   "line": "the straw-hat man back to normal, kneeling, grinning, holding his hat",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 105,
+    "kind": "M",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k107",
+   "start": 62.95,
+   "end": 63.5,
+   "line": "close-up of the straw-hat man's grin, a cut on his cheek",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 106,
+     "dur": 0.55
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 106,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k108",
+   "start": 63.5,
+   "end": 64.05,
+   "line": "a black haki punch landing, huge impact burst",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6,
+     "seed": 107
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -9,
+     "seed": 114
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 107,
+    "kind": "FX",
+    "flash": true,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k109",
+   "start": 64.05,
+   "end": 64.85,
+   "line": "the white form laughing, quick flash of memory",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -10,
+     "seed": 108
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 108,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k110",
+   "start": 64.85,
+   "end": 65.55,
+   "line": "the golden ninja taking a deep breath, glow pulsing",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 109,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k111",
+   "start": 65.55,
+   "end": 66.3,
+   "line": "the golden ninja with a towering golden aura reaching the clouds",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 110,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 110,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k112",
+   "start": 66.3,
+   "end": 67.05,
+   "line": "an army of blond ninjas lined up behind him across the field",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 111,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k113",
+   "start": 67.05,
+   "end": 68.25,
+   "line": "a pile of blond ninjas dogpiling the straw-hat man",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -8,
+     "seed": 112
+    },
+    {
+     "at": 0.66,
+     "name": "hit",
+     "gain": -13,
+     "seed": 115
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 112,
+    "kind": "M",
+    "flash": true,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k114",
+   "start": 68.25,
+   "end": 68.8,
+   "line": "both fighters standing side by side on the misty field, grinning, battered",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 113,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k115",
+   "start": 68.8,
+   "end": 69.35,
+   "line": "the blond ninja pointing straight at the camera, grinning",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -14,
+     "seed": 114,
+     "dur": 0.55
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 114,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k116",
+   "start": 69.35,
+   "end": 70.0,
+   "line": "the straw-hat man pointing straight at the camera, grinning",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 115,
+    "kind": "CU",
+    "flash": false,
+    "v": true,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k117",
+   "start": 70.0,
+   "end": 71.0,
+   "line": "both fighters walking away across the field toward the hazy horizon",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14,
+     "seed": 116,
+     "dur": 0.7
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 116,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
+  },
+  {
+   "id": "k118",
+   "start": 71.0,
+   "end": 73.0,
+   "line": "an empty misty field with two new shadowy glowing silhouettes in the far distance",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": true,
+   "params": {
+    "kf": true,
+    "i": 117,
+    "kind": "W",
+    "flash": false,
+    "v": false,
+    "sepia": false
+   }
   }
  ],
  "music": [

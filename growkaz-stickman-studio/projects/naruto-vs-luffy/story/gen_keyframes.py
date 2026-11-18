@@ -26,10 +26,19 @@ def call(prompt, aspect, refs=()):
             "generationConfig": {"responseModalities": ["IMAGE"],
                                  "imageConfig": {"aspectRatio": aspect, "imageSize": SIZE}}}
     req = urllib.request.Request(URL, json.dumps(body).encode(), {"Content-Type": "application/json"})
-    try:
-        res = json.load(urllib.request.urlopen(req, timeout=300))
-    except urllib.error.HTTPError as e:
-        raise SystemExit(f"HTTP {e.code}: {e.read().decode()[:800]}")
+    import time
+    for attempt in range(6):
+        try:
+            res = json.load(urllib.request.urlopen(req, timeout=300))
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503, 504) and attempt < 5:
+                time.sleep(15 * (attempt + 1)); continue
+            raise SystemExit(f"HTTP {e.code}: {e.read().decode()[:800]}")
+        except (urllib.error.URLError, TimeoutError):
+            if attempt < 5:
+                time.sleep(15); continue
+            raise
     for c in res.get("candidates", []):
         for p in c.get("content", {}).get("parts", []):
             d = p.get("inlineData") or p.get("inline_data")
