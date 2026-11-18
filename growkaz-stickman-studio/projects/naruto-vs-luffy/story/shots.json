@@ -1,0 +1,1528 @@
+{
+ "title": "Gear 5 Luffy vs Six Paths Naruto: Who Wins?",
+ "duration": 73.0,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 0.95,
+   "line": "Naruto versus",
+   "scene": "Naruto (base) on the grass plain, slam zoom in, orange aura flares, focus lines",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.25,
+     "name": "powerup",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "heroNaruto"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s02",
+   "start": 0.95,
+   "end": 1.95,
+   "line": "Luffy.",
+   "scene": "Luffy (straw hat) on the other side, slam zoom, red aura, wind in his vest",
+   "set": "plains",
+   "in": {
+    "type": "whip",
+    "dur": 0.25,
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "heroLuffy"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s03",
+   "start": 1.95,
+   "end": 3.1,
+   "line": "Gear Five against",
+   "scene": "Gear 5 flash: white burst, Luffy with white flame hair and cloud halo, arms up laughing",
+   "set": "paper",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "flash",
+     "gain": -8
+    },
+    {
+     "at": 0.15,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "g5Flash"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s04",
+   "start": 3.1,
+   "end": 4.35,
+   "line": "Six Paths.",
+   "scene": "Six Paths Naruto: golden-white cloak flares, black orbs appear behind him",
+   "set": "paper",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sixFlash"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s05",
+   "start": 4.35,
+   "end": 5.6,
+   "line": "Who would win?",
+   "scene": "Diagonal split screen: Naruto gold left vs Luffy white right, focus lines, both in guard",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "split"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s06",
+   "start": 5.6,
+   "end": 7.2,
+   "line": "Luffy strikes first:",
+   "scene": "Luffy sprints across the plain, speed lines, dust kicks behind",
+   "set": "plains",
+   "in": {
+    "type": "whip",
+    "dur": 0.25,
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "footstep",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dash"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s07",
+   "start": 7.2,
+   "end": 8.1,
+   "line": "Gear Second,",
+   "scene": "Gear Second: Luffy crouches low, pink steam pours off his body, close medium",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "powerup",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "gear2"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s08",
+   "start": 8.1,
+   "end": 9.05,
+   "line": "Jet Pistol,",
+   "scene": "Jet Pistol: huge brown fist rushes at camera out of white speed lines",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -6
+    },
+    {
+     "at": 0.45,
+     "name": "hit",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "jetFist"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s09",
+   "start": 9.05,
+   "end": 10.05,
+   "line": "faster than the",
+   "scene": "Wide: Naruto blasted back across the field, shock ring, hit spark",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "naruHit"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s10",
+   "start": 10.05,
+   "end": 11.15,
+   "line": "eye can follow.",
+   "scene": "Naruto skids on his feet, gouging dirt, recovers into a crouch, debris",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "swish",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "naruSkid"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s11",
+   "start": 11.15,
+   "end": 12.4,
+   "line": "Naruto answers his",
+   "scene": "Close-up: Naruto's hands snap into the clone sign, orange sleeves, chakra pop",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "handSign"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s12",
+   "start": 12.4,
+   "end": 13.0,
+   "line": "way:",
+   "scene": "Puffs of smoke burst one after another across the plain",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "pop",
+     "gain": -11
+    },
+    {
+     "at": 0.4,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clonePop"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s13",
+   "start": 13.0,
+   "end": 15.1,
+   "line": "an army of shadow clones.",
+   "scene": "Army of shadow clones charging over the plain, wide, dust trail",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clonesWide"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s14",
+   "start": 15.1,
+   "end": 16.2,
+   "line": "Luffy's future sight",
+   "scene": "Close-up: Luffy head-and-shoulders, a red glint of light across the face, aura ripples",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "luffySense"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s15",
+   "start": 16.2,
+   "end": 17.6,
+   "line": "reads every clone before",
+   "scene": "Luffy weaves through clones; translucent red ghost images show their next moves",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -10
+    },
+    {
+     "at": 0.8,
+     "name": "swish",
+     "gain": -11
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "foresight"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s16",
+   "start": 17.6,
+   "end": 18.5,
+   "line": "it moves.",
+   "scene": "A clone punches; Luffy is already leaning away, clone overshoots",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dodge"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s17",
+   "start": 18.5,
+   "end": 19.4,
+   "line": "Gear Fourth,",
+   "scene": "Gear Fourth: Luffy bulks up, Haki-black arms, red steam blast",
+   "set": "plains",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "powerup",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "gear4"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s18",
+   "start": 19.4,
+   "end": 20.55,
+   "line": "Snakeman.",
+   "scene": "Snakeman: Luffy draws his black arm back, coiled, focus lines",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "snakeCU"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s19",
+   "start": 20.55,
+   "end": 21.6,
+   "line": "His punches bend",
+   "scene": "Wide: his punch snakes through the air in a curving trail",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "snakeArc"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s20",
+   "start": 21.6,
+   "end": 22.45,
+   "line": "around corners,",
+   "scene": "The fist bends around a boulder and hits a clone hiding behind it",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "hit",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "cornerHit"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s21",
+   "start": 22.45,
+   "end": 24.5,
+   "line": "and clones burst into smoke.",
+   "scene": "A row of clones gets hit and bursts into smoke, one after another",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -9
+    },
+    {
+     "at": 0.5,
+     "name": "pop",
+     "gain": -9
+    },
+    {
+     "at": 0.9,
+     "name": "hit",
+     "gain": -10
+    },
+    {
+     "at": 1.3,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clonesBurst"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s22",
+   "start": 24.5,
+   "end": 26.0,
+   "line": "But every clone that pops",
+   "scene": "The real Naruto on a rock; streaks of light fly from each smoke puff into him",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "memory"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s23",
+   "start": 26.0,
+   "end": 27.9,
+   "line": "sends Naruto what it saw.",
+   "scene": "Naruto close-up, ghost images of Luffy's moves float around him, he nods",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "naruKnow"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s24",
+   "start": 27.9,
+   "end": 29.5,
+   "line": "Naruto goes Sage Mode,",
+   "scene": "Sage Mode: Naruto stands still, orange glow band across his face, orange aura",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sage"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s25",
+   "start": 29.5,
+   "end": 31.1,
+   "line": "then Kurama's golden cloak,",
+   "scene": "Kurama golden cloak: blinding gold flare, Naruto bursts in gold",
+   "set": "plains",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "flash",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kurama"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s26",
+   "start": 31.1,
+   "end": 32.0,
+   "line": "and throws a",
+   "scene": "Naruto raises his palm; a Rasenshuriken spins up above it, wind howl",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "rasenCharge"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s27",
+   "start": 32.0,
+   "end": 33.05,
+   "line": "Rasenshuriken.",
+   "scene": "Wide: the Rasenshuriken screams across the field toward Luffy",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "rasenThrow"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s28",
+   "start": 33.05,
+   "end": 34.3,
+   "line": "Luffy coats his fists",
+   "scene": "Close-up: Luffy's fists turn black, red lightning crackles",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "buzz",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hakiFists"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s29",
+   "start": 34.3,
+   "end": 35.4,
+   "line": "in Conqueror's Haki",
+   "scene": "Luffy medium shot, black-red lightning all around him, ground cracking",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "thunder",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "conqueror"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s30",
+   "start": 35.4,
+   "end": 36.3,
+   "line": "and takes it head",
+   "scene": "Fist meets Rasenshuriken: impact frame, white burst",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -4
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clash"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s31",
+   "start": 36.3,
+   "end": 37.0,
+   "line": "on.",
+   "scene": "Overhead: huge crater, dust ring, Luffy standing in the middle",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "kick",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "crater"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s32",
+   "start": 37.0,
+   "end": 38.6,
+   "line": "Then the drums start.",
+   "scene": "Luffy in the dust, drum-beat rings pulsing out of his chest",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "heartbeat",
+     "gain": -6
+    },
+    {
+     "at": 0.5,
+     "name": "heartbeat",
+     "gain": -7
+    },
+    {
+     "at": 0.9,
+     "name": "heartbeat",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "drums"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s33",
+   "start": 38.6,
+   "end": 39.9,
+   "line": "Gear Five.",
+   "scene": "Gear 5: white flash, hair turns to white flames, cloud halo, laughing pose",
+   "set": "plains",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "flash",
+     "gain": -6
+    },
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "g5Transform"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s34",
+   "start": 39.9,
+   "end": 41.5,
+   "line": "Luffy turns the ground to rubber",
+   "scene": "Luffy grabs the ground and lifts it like a rubber sheet, waves roll out",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "rubber"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s35",
+   "start": 41.5,
+   "end": 43.5,
+   "line": "and bounces the whole arena.",
+   "scene": "The whole arena bounces; Naruto is flung high, rocks flying",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "kick",
+     "gain": -8
+    },
+    {
+     "at": 0.6,
+     "name": "whoosh",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bounce"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s36",
+   "start": 43.5,
+   "end": 44.4,
+   "line": "For a moment,",
+   "scene": "Naruto tumbling through the sky",
+   "set": "sky",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swish",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "naruAir"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s37",
+   "start": 44.4,
+   "end": 46.1,
+   "line": "Naruto has no answer.",
+   "scene": "Naruto slams down onto one knee, dust, head down",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "naruLand"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s38",
+   "start": 46.1,
+   "end": 47.4,
+   "line": "But Gear Five burns",
+   "scene": "Luffy (Gear 5) bounces around laughing, his cloud halo already thinning",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 0.7,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "g5Bounce"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s39",
+   "start": 47.4,
+   "end": 49.1,
+   "line": "Luffy's stamina fast.",
+   "scene": "Luffy slows, white steam leaks off him, he hunches",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "slowmo",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "drain"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s40",
+   "start": 49.1,
+   "end": 50.1,
+   "line": "Against Kizaru,",
+   "scene": "Sepia memory: Luffy hit by beams of yellow light",
+   "set": "memory",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "glitch",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "memoryK"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s41",
+   "start": 50.1,
+   "end": 52.3,
+   "line": "it left him shriveled and drained.",
+   "scene": "Luffy shrinks, thin and drained, drops to his knees",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "slowmo",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "shrivel"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s42",
+   "start": 52.3,
+   "end": 53.8,
+   "line": "Naruto carries the chakra",
+   "scene": "Naruto stands, a calm gold aura rising",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "powerup",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "naruRise"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s43",
+   "start": 53.8,
+   "end": 55.75,
+   "line": "of all nine tailed beasts.",
+   "scene": "Nine coloured chakra streams orbit Naruto",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "nine"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s44",
+   "start": 55.75,
+   "end": 56.85,
+   "line": "Six Paths.",
+   "scene": "Six Paths mode: gold-white cloak, dark trousers, focus lines",
+   "set": "plains",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "powerup",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sixPaths"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s45",
+   "start": 56.85,
+   "end": 58.3,
+   "line": "Truth-Seeking Balls.",
+   "scene": "Close: nine black Truth-Seeking Balls slide into an arc behind him",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "blip",
+     "gain": -12
+    },
+    {
+     "at": 0.5,
+     "name": "blip",
+     "gain": -12
+    },
+    {
+     "at": 0.9,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "balls"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s46",
+   "start": 58.3,
+   "end": 60.5,
+   "line": "He only has to outlast him.",
+   "scene": "Wide standoff: Naruto upright and glowing, Luffy panting, steam fading",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "outlast"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s47",
+   "start": 60.5,
+   "end": 61.65,
+   "line": "Naruto wins,",
+   "scene": "Naruto hero shot, slam zoom, gold aura",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "verdict"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s48",
+   "start": 61.65,
+   "end": 62.85,
+   "line": "but it's close.",
+   "scene": "Tight two-shot: fists pressed together, both auras grinding",
+   "set": "paper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "close"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s49",
+   "start": 62.85,
+   "end": 64.75,
+   "line": "Luffy hits harder in the moment.",
+   "scene": "Replay: Luffy's Haki punch lands, hit spark, Naruto skids",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "hit",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "replay"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s50",
+   "start": 64.75,
+   "end": 66.2,
+   "line": "Naruto has the bigger tank,",
+   "scene": "Naruto with a giant gold aura towering behind him",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "tank"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s51",
+   "start": 66.2,
+   "end": 68.1,
+   "line": "and clones to wear him down.",
+   "scene": "Clones surround a tired Luffy and pile in",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 0.9,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "wear"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s52",
+   "start": 68.1,
+   "end": 69.95,
+   "line": "Comment who YOU think wins.",
+   "scene": "Both fighters: Naruto standing, Luffy kneeling, cool wind, hold",
+   "set": "plains",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "endBoth"
+   },
+   "vignette": true
+  },
+  {
+   "id": "s53",
+   "start": 69.95,
+   "end": 73.0,
+   "line": "And who should fight next?",
+   "scene": "Two empty glowing outlines face off: who should fight next?",
+   "set": "paper",
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "endNext"
+   },
+   "vignette": true
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 5.6,
+   "mood": "action",
+   "intensity": 0.7
+  },
+  {
+   "start": 5.6,
+   "end": 27.9,
+   "mood": "action",
+   "intensity": 0.75
+  },
+  {
+   "start": 27.9,
+   "end": 46.1,
+   "mood": "epic",
+   "intensity": 0.8
+  },
+  {
+   "start": 46.1,
+   "end": 60.5,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 60.5,
+   "end": 73.0,
+   "mood": "triumph",
+   "intensity": 0.55
+  }
+ ],
+ "sfx": []
+}

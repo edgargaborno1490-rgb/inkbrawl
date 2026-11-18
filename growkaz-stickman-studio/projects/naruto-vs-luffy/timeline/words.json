@@ -1,0 +1,900 @@
+{
+ "source": "pocketsphinx-align",
+ "words": [
+  {
+   "word": "Naruto",
+   "start": 0.0,
+   "end": 0.67
+  },
+  {
+   "word": "versus",
+   "start": 0.67,
+   "end": 1.11
+  },
+  {
+   "word": "Luffy.",
+   "start": 1.11,
+   "end": 1.69
+  },
+  {
+   "word": "Gear",
+   "start": 2.13,
+   "end": 2.37
+  },
+  {
+   "word": "Five",
+   "start": 2.37,
+   "end": 2.84
+  },
+  {
+   "word": "against",
+   "start": 2.84,
+   "end": 3.26
+  },
+  {
+   "word": "Six",
+   "start": 3.26,
+   "end": 3.57
+  },
+  {
+   "word": "Paths.",
+   "start": 3.57,
+   "end": 4.17
+  },
+  {
+   "word": "Who",
+   "start": 4.5,
+   "end": 4.61
+  },
+  {
+   "word": "would",
+   "start": 4.61,
+   "end": 4.75
+  },
+  {
+   "word": "win?",
+   "start": 4.75,
+   "end": 5.1
+  },
+  {
+   "word": "Luffy",
+   "start": 5.75,
+   "end": 6.09
+  },
+  {
+   "word": "strikes",
+   "start": 6.09,
+   "end": 6.5
+  },
+  {
+   "word": "first:",
+   "start": 6.5,
+   "end": 7.01
+  },
+  {
+   "word": "Gear",
+   "start": 7.33,
+   "end": 7.53
+  },
+  {
+   "word": "Second,",
+   "start": 7.53,
+   "end": 8.08
+  },
+  {
+   "word": "Jet",
+   "start": 8.26,
+   "end": 8.55
+  },
+  {
+   "word": "Pistol,",
+   "start": 8.55,
+   "end": 9.02
+  },
+  {
+   "word": "faster",
+   "start": 9.2,
+   "end": 9.69
+  },
+  {
+   "word": "than",
+   "start": 9.69,
+   "end": 9.83
+  },
+  {
+   "word": "the",
+   "start": 9.83,
+   "end": 9.97
+  },
+  {
+   "word": "eye",
+   "start": 9.97,
+   "end": 10.14
+  },
+  {
+   "word": "can",
+   "start": 10.14,
+   "end": 10.31
+  },
+  {
+   "word": "follow.",
+   "start": 10.31,
+   "end": 10.79
+  },
+  {
+   "word": "Naruto",
+   "start": 11.3,
+   "end": 11.81
+  },
+  {
+   "word": "answers",
+   "start": 11.81,
+   "end": 12.26
+  },
+  {
+   "word": "his",
+   "start": 12.26,
+   "end": 12.52
+  },
+  {
+   "word": "way:",
+   "start": 12.52,
+   "end": 12.83
+  },
+  {
+   "word": "an",
+   "start": 13.13,
+   "end": 13.34
+  },
+  {
+   "word": "army",
+   "start": 13.34,
+   "end": 13.79
+  },
+  {
+   "word": "of",
+   "start": 13.79,
+   "end": 13.86
+  },
+  {
+   "word": "shadow",
+   "start": 13.86,
+   "end": 14.28
+  },
+  {
+   "word": "clones.",
+   "start": 14.28,
+   "end": 14.89
+  },
+  {
+   "word": "Luffy's",
+   "start": 15.23,
+   "end": 15.64
+  },
+  {
+   "word": "future",
+   "start": 15.64,
+   "end": 15.96
+  },
+  {
+   "word": "sight",
+   "start": 15.96,
+   "end": 16.3
+  },
+  {
+   "word": "reads",
+   "start": 16.3,
+   "end": 16.64
+  },
+  {
+   "word": "every",
+   "start": 16.64,
+   "end": 16.97
+  },
+  {
+   "word": "clone",
+   "start": 16.97,
+   "end": 17.33
+  },
+  {
+   "word": "before",
+   "start": 17.33,
+   "end": 17.66
+  },
+  {
+   "word": "it",
+   "start": 17.66,
+   "end": 17.73
+  },
+  {
+   "word": "moves.",
+   "start": 17.73,
+   "end": 18.26
+  },
+  {
+   "word": "Gear",
+   "start": 18.66,
+   "end": 18.89
+  },
+  {
+   "word": "Fourth,",
+   "start": 18.89,
+   "end": 19.42
+  },
+  {
+   "word": "Snakeman.",
+   "start": 19.54,
+   "end": 20.35
+  },
+  {
+   "word": "His",
+   "start": 20.67,
+   "end": 20.85
+  },
+  {
+   "word": "punches",
+   "start": 20.85,
+   "end": 21.34
+  },
+  {
+   "word": "bend",
+   "start": 21.34,
+   "end": 21.69
+  },
+  {
+   "word": "around",
+   "start": 21.69,
+   "end": 21.98
+  },
+  {
+   "word": "corners,",
+   "start": 21.98,
+   "end": 22.53
+  },
+  {
+   "word": "and",
+   "start": 22.53,
+   "end": 22.69
+  },
+  {
+   "word": "clones",
+   "start": 22.69,
+   "end": 23.17
+  },
+  {
+   "word": "burst",
+   "start": 23.17,
+   "end": 23.59
+  },
+  {
+   "word": "into",
+   "start": 23.59,
+   "end": 23.79
+  },
+  {
+   "word": "smoke.",
+   "start": 23.79,
+   "end": 24.3
+  },
+  {
+   "word": "But",
+   "start": 24.62,
+   "end": 24.82
+  },
+  {
+   "word": "every",
+   "start": 24.82,
+   "end": 25.09
+  },
+  {
+   "word": "clone",
+   "start": 25.09,
+   "end": 25.38
+  },
+  {
+   "word": "that",
+   "start": 25.38,
+   "end": 25.54
+  },
+  {
+   "word": "pops",
+   "start": 25.54,
+   "end": 26.12
+  },
+  {
+   "word": "sends",
+   "start": 26.12,
+   "end": 26.46
+  },
+  {
+   "word": "Naruto",
+   "start": 26.46,
+   "end": 26.94
+  },
+  {
+   "word": "what",
+   "start": 26.94,
+   "end": 27.08
+  },
+  {
+   "word": "it",
+   "start": 27.08,
+   "end": 27.19
+  },
+  {
+   "word": "saw.",
+   "start": 27.19,
+   "end": 27.64
+  },
+  {
+   "word": "Naruto",
+   "start": 28.06,
+   "end": 28.51
+  },
+  {
+   "word": "goes",
+   "start": 28.51,
+   "end": 28.73
+  },
+  {
+   "word": "Sage",
+   "start": 28.73,
+   "end": 29.13
+  },
+  {
+   "word": "Mode,",
+   "start": 29.13,
+   "end": 29.49
+  },
+  {
+   "word": "then",
+   "start": 29.66,
+   "end": 29.91
+  },
+  {
+   "word": "Kurama's",
+   "start": 29.91,
+   "end": 30.44
+  },
+  {
+   "word": "golden",
+   "start": 30.44,
+   "end": 30.84
+  },
+  {
+   "word": "cloak,",
+   "start": 30.84,
+   "end": 31.25
+  },
+  {
+   "word": "and",
+   "start": 31.25,
+   "end": 31.51
+  },
+  {
+   "word": "throws",
+   "start": 31.51,
+   "end": 31.83
+  },
+  {
+   "word": "a",
+   "start": 31.83,
+   "end": 31.91
+  },
+  {
+   "word": "Rasenshuriken.",
+   "start": 31.91,
+   "end": 32.76
+  },
+  {
+   "word": "Luffy",
+   "start": 33.19,
+   "end": 33.54
+  },
+  {
+   "word": "coats",
+   "start": 33.54,
+   "end": 33.86
+  },
+  {
+   "word": "his",
+   "start": 33.86,
+   "end": 34.06
+  },
+  {
+   "word": "fists",
+   "start": 34.06,
+   "end": 34.43
+  },
+  {
+   "word": "in",
+   "start": 34.43,
+   "end": 34.56
+  },
+  {
+   "word": "Conqueror's",
+   "start": 34.56,
+   "end": 35.09
+  },
+  {
+   "word": "Haki",
+   "start": 35.09,
+   "end": 35.48
+  },
+  {
+   "word": "and",
+   "start": 35.48,
+   "end": 35.64
+  },
+  {
+   "word": "takes",
+   "start": 35.64,
+   "end": 35.95
+  },
+  {
+   "word": "it",
+   "start": 35.95,
+   "end": 36.05
+  },
+  {
+   "word": "head",
+   "start": 36.05,
+   "end": 36.35
+  },
+  {
+   "word": "on.",
+   "start": 36.35,
+   "end": 36.67
+  },
+  {
+   "word": "Then",
+   "start": 37.12,
+   "end": 37.45
+  },
+  {
+   "word": "the",
+   "start": 37.45,
+   "end": 37.53
+  },
+  {
+   "word": "drums",
+   "start": 37.53,
+   "end": 37.91
+  },
+  {
+   "word": "start.",
+   "start": 37.91,
+   "end": 38.38
+  },
+  {
+   "word": "Gear",
+   "start": 38.77,
+   "end": 39.05
+  },
+  {
+   "word": "Five.",
+   "start": 39.05,
+   "end": 39.55
+  },
+  {
+   "word": "Luffy",
+   "start": 40.04,
+   "end": 40.38
+  },
+  {
+   "word": "turns",
+   "start": 40.38,
+   "end": 40.74
+  },
+  {
+   "word": "the",
+   "start": 40.74,
+   "end": 40.82
+  },
+  {
+   "word": "ground",
+   "start": 40.82,
+   "end": 41.12
+  },
+  {
+   "word": "to",
+   "start": 41.12,
+   "end": 41.25
+  },
+  {
+   "word": "rubber",
+   "start": 41.25,
+   "end": 41.64
+  },
+  {
+   "word": "and",
+   "start": 41.64,
+   "end": 41.86
+  },
+  {
+   "word": "bounces",
+   "start": 41.86,
+   "end": 42.32
+  },
+  {
+   "word": "the",
+   "start": 42.32,
+   "end": 42.42
+  },
+  {
+   "word": "whole",
+   "start": 42.42,
+   "end": 42.82
+  },
+  {
+   "word": "arena.",
+   "start": 42.82,
+   "end": 43.29
+  },
+  {
+   "word": "For",
+   "start": 43.66,
+   "end": 43.85
+  },
+  {
+   "word": "a",
+   "start": 43.85,
+   "end": 43.88
+  },
+  {
+   "word": "moment,",
+   "start": 43.88,
+   "end": 44.38
+  },
+  {
+   "word": "Naruto",
+   "start": 44.56,
+   "end": 44.97
+  },
+  {
+   "word": "has",
+   "start": 44.97,
+   "end": 45.2
+  },
+  {
+   "word": "no",
+   "start": 45.2,
+   "end": 45.44
+  },
+  {
+   "word": "answer.",
+   "start": 45.44,
+   "end": 45.93
+  },
+  {
+   "word": "But",
+   "start": 46.26,
+   "end": 46.42
+  },
+  {
+   "word": "Gear",
+   "start": 46.42,
+   "end": 46.69
+  },
+  {
+   "word": "Five",
+   "start": 46.69,
+   "end": 47.12
+  },
+  {
+   "word": "burns",
+   "start": 47.12,
+   "end": 47.53
+  },
+  {
+   "word": "Luffy's",
+   "start": 47.53,
+   "end": 47.89
+  },
+  {
+   "word": "stamina",
+   "start": 47.89,
+   "end": 48.32
+  },
+  {
+   "word": "fast.",
+   "start": 48.32,
+   "end": 49.0
+  },
+  {
+   "word": "Against",
+   "start": 49.27,
+   "end": 49.6
+  },
+  {
+   "word": "Kizaru,",
+   "start": 49.6,
+   "end": 50.19
+  },
+  {
+   "word": "it",
+   "start": 50.23,
+   "end": 50.36
+  },
+  {
+   "word": "left",
+   "start": 50.36,
+   "end": 50.61
+  },
+  {
+   "word": "him",
+   "start": 50.61,
+   "end": 50.71
+  },
+  {
+   "word": "shriveled",
+   "start": 50.71,
+   "end": 51.29
+  },
+  {
+   "word": "and",
+   "start": 51.29,
+   "end": 51.46
+  },
+  {
+   "word": "drained.",
+   "start": 51.46,
+   "end": 52.0
+  },
+  {
+   "word": "Naruto",
+   "start": 52.46,
+   "end": 52.89
+  },
+  {
+   "word": "carries",
+   "start": 52.89,
+   "end": 53.29
+  },
+  {
+   "word": "the",
+   "start": 53.29,
+   "end": 53.38
+  },
+  {
+   "word": "chakra",
+   "start": 53.38,
+   "end": 53.89
+  },
+  {
+   "word": "of",
+   "start": 53.89,
+   "end": 54.06
+  },
+  {
+   "word": "all",
+   "start": 54.06,
+   "end": 54.37
+  },
+  {
+   "word": "nine",
+   "start": 54.37,
+   "end": 54.69
+  },
+  {
+   "word": "tailed",
+   "start": 54.69,
+   "end": 54.97
+  },
+  {
+   "word": "beasts.",
+   "start": 54.97,
+   "end": 55.59
+  },
+  {
+   "word": "Six",
+   "start": 55.88,
+   "end": 56.24
+  },
+  {
+   "word": "Paths.",
+   "start": 56.24,
+   "end": 56.8
+  },
+  {
+   "word": "Truth-Seeking",
+   "start": 56.95,
+   "end": 57.67
+  },
+  {
+   "word": "Balls.",
+   "start": 57.67,
+   "end": 58.13
+  },
+  {
+   "word": "He",
+   "start": 58.44,
+   "end": 58.65
+  },
+  {
+   "word": "only",
+   "start": 58.65,
+   "end": 58.98
+  },
+  {
+   "word": "has",
+   "start": 58.98,
+   "end": 59.27
+  },
+  {
+   "word": "to",
+   "start": 59.27,
+   "end": 59.33
+  },
+  {
+   "word": "outlast",
+   "start": 59.33,
+   "end": 59.91
+  },
+  {
+   "word": "him.",
+   "start": 59.91,
+   "end": 60.13
+  },
+  {
+   "word": "Naruto",
+   "start": 60.63,
+   "end": 61.05
+  },
+  {
+   "word": "wins,",
+   "start": 61.05,
+   "end": 61.6
+  },
+  {
+   "word": "but",
+   "start": 61.75,
+   "end": 61.88
+  },
+  {
+   "word": "it's",
+   "start": 61.88,
+   "end": 62.05
+  },
+  {
+   "word": "close.",
+   "start": 62.05,
+   "end": 62.65
+  },
+  {
+   "word": "Luffy",
+   "start": 62.97,
+   "end": 63.29
+  },
+  {
+   "word": "hits",
+   "start": 63.29,
+   "end": 63.5
+  },
+  {
+   "word": "harder",
+   "start": 63.5,
+   "end": 63.88
+  },
+  {
+   "word": "in",
+   "start": 63.88,
+   "end": 63.97
+  },
+  {
+   "word": "the",
+   "start": 63.97,
+   "end": 64.03
+  },
+  {
+   "word": "moment.",
+   "start": 64.03,
+   "end": 64.53
+  },
+  {
+   "word": "Naruto",
+   "start": 64.87,
+   "end": 65.32
+  },
+  {
+   "word": "has",
+   "start": 65.32,
+   "end": 65.54
+  },
+  {
+   "word": "the",
+   "start": 65.54,
+   "end": 65.62
+  },
+  {
+   "word": "bigger",
+   "start": 65.62,
+   "end": 65.93
+  },
+  {
+   "word": "tank,",
+   "start": 65.93,
+   "end": 66.35
+  },
+  {
+   "word": "and",
+   "start": 66.35,
+   "end": 66.59
+  },
+  {
+   "word": "clones",
+   "start": 66.59,
+   "end": 67.04
+  },
+  {
+   "word": "to",
+   "start": 67.04,
+   "end": 67.14
+  },
+  {
+   "word": "wear",
+   "start": 67.14,
+   "end": 67.33
+  },
+  {
+   "word": "him",
+   "start": 67.33,
+   "end": 67.49
+  },
+  {
+   "word": "down.",
+   "start": 67.49,
+   "end": 67.87
+  },
+  {
+   "word": "Comment",
+   "start": 68.26,
+   "end": 68.67
+  },
+  {
+   "word": "who",
+   "start": 68.67,
+   "end": 68.82
+  },
+  {
+   "word": "YOU",
+   "start": 68.82,
+   "end": 69.08
+  },
+  {
+   "word": "think",
+   "start": 69.08,
+   "end": 69.36
+  },
+  {
+   "word": "wins.",
+   "start": 69.36,
+   "end": 69.85
+  },
+  {
+   "word": "And",
+   "start": 70.05,
+   "end": 70.38
+  },
+  {
+   "word": "who",
+   "start": 70.38,
+   "end": 70.59
+  },
+  {
+   "word": "should",
+   "start": 70.59,
+   "end": 70.76
+  },
+  {
+   "word": "fight",
+   "start": 70.76,
+   "end": 71.0
+  },
+  {
+   "word": "next?",
+   "start": 71.0,
+   "end": 71.49
+  }
+ ]
+}

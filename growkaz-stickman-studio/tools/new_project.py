@@ -1,7 +1,7 @@
 """tools/new_project.py — create a project folder for one video.
 
   python tools/new_project.py --name my-video --voice "C:/path/voiceover.mp3" [--script path] \
-      --aspect 16:9|9:16 --resolution 720p|1080p|1440p|2160p [--style emerald] [--fps 24] [--captions]
+      --aspect 16:9|9:16 --resolution 720p|1080p|1440p|2160p [--style brown-anime] [--fps 30] [--captions]
 """
 import argparse, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
@@ -13,8 +13,8 @@ ap.add_argument("--voice", required=True)
 ap.add_argument("--script")
 ap.add_argument("--aspect", default="16:9", choices=["16:9", "9:16"])
 ap.add_argument("--resolution", default="1080p", choices=["720p", "1080p", "1440p", "2160p", "4k"])
-ap.add_argument("--style", default="emerald")
-ap.add_argument("--fps", type=int, default=24)
+ap.add_argument("--style", default="brown-anime")
+ap.add_argument("--fps", type=int, default=30)
 ap.add_argument("--title", default="")
 ap.add_argument("--captions", action="store_true", help="burn word-by-word captions (recommended for 9:16)")
 a = ap.parse_args()

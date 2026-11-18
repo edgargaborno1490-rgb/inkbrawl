@@ -78,5 +78,15 @@ export const STYLES = {
       golden: { sky: ['#4a7a70', '#e0a050', '#f6dca8'], rim: '#f6c87a' },
     },
   },
+  'brown-anime': {
+    name: 'Ink Brawl Brown Anime', desc: 'Flat 2D anime cel look: pale low-contrast painted arenas, warm brown-skinned faceless fighters with thin dark-brown outlines, clean colours, no heavy grade.',
+    ink: '#2A1A12', inkFar: '#6b5a4c', feature: '#fff8ee', rimWidth: 0,
+    ui: { ...UI, card: 'rgba(30,22,18,.92)', cardLine: 'rgba(255,240,220,.3)', text: '#fff', sub: '#d8ccc0', accent: '#ff7a1a', gold: '#ffc83a', blueprint: '#cfe0f0', bpBg: '#1a1410', good: '#7ad35f' },
+    grade: { contrast: 1.0, sat: 1.0, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0.12, grain: 0.018, bloom: 0 },
+    moods: {
+      day: { sky: ['#cfd8dc', '#e6e8e2', '#f1eee6'], ambient: '#b8b4aa', key: '#ffffff', rim: '#ffffff', wall: '#c9c1b4', floor: '#bdb5a6', dark: '#7d7468', grass: '#a9b78e', road: '#b3aa9b', fog: '#eceae4' },
+      dusk: { sky: ['#d9c9bd', '#ecdccb', '#f4e9dc'], key: '#fff1dc', rim: '#fff1dc', wall: '#c4b2a2', floor: '#b5a392', dark: '#76665a', grass: '#b1b08a', fog: '#efe3d6' },
+    },
+  },
 };
 export const STYLE_IDS = Object.keys(STYLES);

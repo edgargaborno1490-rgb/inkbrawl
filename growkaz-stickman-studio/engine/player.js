@@ -14,7 +14,7 @@ const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; 
 async function loadFonts() {
   const F = [['Fredoka', '600', 'fredoka/files/fredoka-latin-600-normal.woff2'], ['Fredoka', '700', 'fredoka/files/fredoka-latin-700-normal.woff2'],
     ['Nunito', '800', 'nunito/files/nunito-latin-800-normal.woff2'], ['Nunito', '900', 'nunito/files/nunito-latin-900-normal.woff2'],
-    ['Playfair Display', '900', 'playfair-display/files/playfair-display-latin-900-italic.woff2', 'italic']];
+    ['Playfair Display', '900', 'playfair-display/files/playfair-display-latin-900-italic.woff2', 'italic'], ['Anton', '400', 'anton/files/anton-latin-400-normal.woff2']];
   for (const [fam, w, file, style] of F) { try { const ff = new FontFace(fam, `url(/node_modules/@fontsource/${file})`, { weight: w, style: style || 'normal' }); await ff.load(); document.fonts.add(ff); } catch (e) { console.log('font missing', fam, w); } }
 }
 async function boot() {
@@ -107,6 +107,7 @@ window.renderFrame = function (f) {
   if (grade.grain > 0) { mg.save(); mg.globalAlpha = grade.grain; mg.globalCompositeOperation = 'overlay'; mg.drawImage(grainTiles[f % 4], 0, 0, W, H); mg.restore(); }
   mg.setTransform(E.PX, 0, 0, E.PX, 0, 0);
   if (E.cfg.captions && shot.captions !== false) captions(mg, t, E.cfg.captionStyle || {});
+  if (window.OVERLAY) { try { window.OVERLAY(mg, t, shot, lt); } catch (e) { if (!errors.includes('overlay: ' + e.message)) errors.push('overlay: ' + e.message); } }  // project-level overlay drawn after the grade (e.g. custom captions)
   const cur = barVal(shot), prevB = i > 0 ? barVal(E.shots[i - 1]) : cur, bar = prevB + (cur - prevB) * ease.inOut(prog(lt, 0, 0.6));
   if (bar > 0) { mg.fillStyle = '#000'; mg.fillRect(0, 0, E.W, bar); mg.fillRect(0, E.H - bar, E.W, bar); }
   const fi = E.cfg.fadeIn ?? 0.5, fo = E.cfg.fadeOut ?? 0.8, dur = window.DURATION, fade = Math.max(fi > 0 ? 1 - t / fi : 0, fo > 0 ? 1 - (dur - t) / fo : 0);
