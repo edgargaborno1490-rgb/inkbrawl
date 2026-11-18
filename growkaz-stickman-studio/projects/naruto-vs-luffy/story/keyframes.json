@@ -1,0 +1,1616 @@
+{
+ "style": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing.",
+ "chars": {
+  "N_BASE": "a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline",
+  "N_SAGE": "the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks, orange-and-black outfit) in sage form: orange pigment around the eyes, golden eyes with horizontal bar pupils, short red cloak with black flame hem; orange glowing outline",
+  "N_KURAMA": "the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline",
+  "N_SIX": "the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline",
+  "L_BASE": "a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline",
+  "L_GEAR2": "the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline",
+  "L_HAKI": "the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline",
+  "L_SNAKE": "the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline",
+  "L_G5": "the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline",
+  "L_DRAINED": "the same young man (warm medium-brown skin (#8D5B3E)) completely drained: shriveled thin body, wrinkled old-looking face, sunken eyes, sweating, white hair going limp, kneeling",
+  "KIZARU": "a tall man in a yellow striped suit and dark sunglasses firing beams of golden light from his feet"
+ },
+ "sheets": [
+  {
+   "id": "N_BASE",
+   "label": "Naruto base",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline"
+  },
+  {
+   "id": "N_SAGE",
+   "label": "Naruto Sage Mode",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks, orange-and-black outfit) in sage form: orange pigment around the eyes, golden eyes with horizontal bar pupils, short red cloak with black flame hem; orange glowing outline"
+  },
+  {
+   "id": "N_KURAMA",
+   "label": "Naruto Kurama cloak",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline"
+  },
+  {
+   "id": "N_SIX",
+   "label": "Naruto Six Paths",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline"
+  },
+  {
+   "id": "L_BASE",
+   "label": "Luffy base",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline"
+  },
+  {
+   "id": "L_GEAR2",
+   "label": "Luffy Gear 2",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline"
+  },
+  {
+   "id": "L_SNAKE",
+   "label": "Luffy Gear 4 Snakeman",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline"
+  },
+  {
+   "id": "L_HAKI",
+   "label": "Luffy Haki fists",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline"
+  },
+  {
+   "id": "L_G5",
+   "label": "Luffy Gear 5",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline"
+  },
+  {
+   "id": "L_DRAINED",
+   "label": "Luffy drained",
+   "prompt": "Character reference sheet, plain light grey background: full-body front view, 3/4 view, back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). 2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. Character: the same young man (warm medium-brown skin (#8D5B3E)) completely drained: shriveled thin body, wrinkled old-looking face, sunken eyes, sweating, white hair going limp, kneeling"
+  }
+ ],
+ "shots": [
+  {
+   "id": "k001",
+   "start": 0.0,
+   "dur": 0.45,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "N_BASE",
+    "L_BASE"
+   ],
+   "desc": "both fighters face off across the misty grass field, the blond ninja on the left with an orange aura, the straw-hat man on the right with a red aura, low-angle wide shot, wind blowing the grass",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: both fighters face off across the misty grass field, the blond ninja on the left with an orange aura, the straw-hat man on the right with a red aura, low-angle wide shot, wind blowing the grass. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k002",
+   "start": 0.45,
+   "dur": 0.25,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "extreme close-up of the blond ninja's face, confident grin, blue eyes shining, hair whipping in the wind",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the blond ninja's face, confident grin, blue eyes shining, hair whipping in the wind. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the blond ninja's face, confident grin, blue eyes shining, hair whipping in the wind. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k003",
+   "start": 0.7,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_BASE",
+    "L_BASE"
+   ],
+   "desc": "two fists colliding dead center, an orange-sleeved fist from the left and a bare brown fist from the right, shockwave ring and sparks",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: two fists colliding dead center, an orange-sleeved fist from the left and a bare brown fist from the right, shockwave ring and sparks. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: two fists colliding dead center, an orange-sleeved fist from the left and a bare brown fist from the right, shockwave ring and sparks. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k004",
+   "start": 1.1,
+   "dur": 0.6,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "extreme close-up of the straw-hat man's face, hat brim shading his eyes, huge toothy grin",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the straw-hat man's face, hat brim shading his eyes, huge toothy grin. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the straw-hat man's face, hat brim shading his eyes, huge toothy grin. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k005",
+   "start": 1.7,
+   "dur": 0.4,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "the straw-hat man holding his hat down with one hand, low angle, wind tugging his red vest",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man holding his hat down with one hand, low angle, wind tugging his red vest. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k006",
+   "start": 2.1,
+   "dur": 0.7,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "extreme close-up of the white-haired form's eyes glowing white, white hair flames rising",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the white-haired form's eyes glowing white, white hair flames rising. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the white-haired form's eyes glowing white, white hair flames rising. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k007",
+   "start": 2.8,
+   "dur": 0.5,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white-haired man floating above the field with a ring of white clouds behind him, sun glare",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white-haired man floating above the field with a ring of white clouds behind him, sun glare. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k008",
+   "start": 3.3,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "extreme close-up of the golden form's eyes glowing gold, golden light pouring off his face",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the golden form's eyes glowing gold, golden light pouring off his face. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the golden form's eyes glowing gold, golden light pouring off his face. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]"
+  },
+  {
+   "id": "k009",
+   "start": 3.85,
+   "dur": 0.65,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja floating above the field, nine black orbs in a ring behind him, golden glow lighting the mist",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja floating above the field, nine black orbs in a ring behind him, golden glow lighting the mist. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k010",
+   "start": 4.5,
+   "dur": 0.55,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "N_SIX",
+    "L_G5"
+   ],
+   "desc": "the golden ninja and the white-haired man charge at each other from opposite sides, a huge white-and-gold clash in the middle of the field",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja and the white-haired man charge at each other from opposite sides, a huge white-and-gold clash in the middle of the field. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline] [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k011",
+   "start": 5.05,
+   "dur": 0.7,
+   "kind": "FX",
+   "flash": true,
+   "refs": [
+    "N_SIX",
+    "L_G5"
+   ],
+   "desc": "the clash point up close, gold and white energy shattering outward, cracks in the air, debris",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the clash point up close, gold and white energy shattering outward, cracks in the air, debris. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline] [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the clash point up close, gold and white energy shattering outward, cracks in the air, debris. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline] [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k012",
+   "start": 5.75,
+   "dur": 0.35,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "the straw-hat man leaning forward into a fighting stance, grinning, fists up",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man leaning forward into a fighting stance, grinning, fists up. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k013",
+   "start": 6.1,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "close-up of a sandaled foot digging into the grass, dirt clods flying",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of a sandaled foot digging into the grass, dirt clods flying. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of a sandaled foot digging into the grass, dirt clods flying. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k014",
+   "start": 6.5,
+   "dur": 0.75,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "close-up of the straw-hat man's eyes narrowing with focus",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the straw-hat man's eyes narrowing with focus. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the straw-hat man's eyes narrowing with focus. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k015",
+   "start": 7.25,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "L_GEAR2"
+   ],
+   "desc": "the straw-hat man crouched low, legs pumping, thick steam bursting off his body",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man crouched low, legs pumping, thick steam bursting off his body. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k016",
+   "start": 7.75,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_GEAR2"
+   ],
+   "desc": "close-up of steam venting from his forearm, skin glowing reddish",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of steam venting from his forearm, skin glowing reddish. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of steam venting from his forearm, skin glowing reddish. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]"
+  },
+  {
+   "id": "k017",
+   "start": 8.3,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_GEAR2"
+   ],
+   "desc": "a fist stretching straight at the camera with extreme foreshortening, the arm a long blur behind it, speed lines",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a fist stretching straight at the camera with extreme foreshortening, the arm a long blur behind it, speed lines. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a fist stretching straight at the camera with extreme foreshortening, the arm a long blur behind it, speed lines. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]"
+  },
+  {
+   "id": "k018",
+   "start": 8.7,
+   "dur": 0.5,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "L_GEAR2"
+   ],
+   "desc": "a red blur of a stretched arm shooting across the field, a shockwave ring tearing the grass",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a red blur of a stretched arm shooting across the field, a shockwave ring tearing the grass. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k019",
+   "start": 9.2,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja turning, eyes wide, a blurred punch whipping past his face",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja turning, eyes wide, a blurred punch whipping past his face. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k020",
+   "start": 9.7,
+   "dur": 0.6,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_GEAR2"
+   ],
+   "desc": "dozens of motion-blurred fists filling the frame, afterimages everywhere",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: dozens of motion-blurred fists filling the frame, afterimages everywhere. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: dozens of motion-blurred fists filling the frame, afterimages everywhere. Characters: [the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising from his whole body, crouched low; red glowing outline]"
+  },
+  {
+   "id": "k021",
+   "start": 10.3,
+   "dur": 0.45,
+   "kind": "FX",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a fist slamming into the blond ninja's cheek, impact frame, shockwave burst, spit flying",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a fist slamming into the blond ninja's cheek, impact frame, shockwave burst, spit flying. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a fist slamming into the blond ninja's cheek, impact frame, shockwave burst, spit flying. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k022",
+   "start": 10.75,
+   "dur": 0.55,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja skidding backwards across the grass, a long dirt trail behind him",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja skidding backwards across the grass, a long dirt trail behind him. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k023",
+   "start": 11.3,
+   "dur": 0.5,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja wiping his mouth with his thumb, grinning back",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja wiping his mouth with his thumb, grinning back. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the blond ninja wiping his mouth with his thumb, grinning back. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k024",
+   "start": 11.8,
+   "dur": 0.65,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "close-up of the blond ninja's hands making a cross-shaped hand sign, fingers glowing orange",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the blond ninja's hands making a cross-shaped hand sign, fingers glowing orange. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the blond ninja's hands making a cross-shaped hand sign, fingers glowing orange. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k025",
+   "start": 12.45,
+   "dur": 0.65,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a big white smoke puff bursting open with a silhouette inside",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a big white smoke puff bursting open with a silhouette inside. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a big white smoke puff bursting open with a silhouette inside. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k026",
+   "start": 13.1,
+   "dur": 0.7,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a huge army of hundreds of identical blond ninjas spread across the misty field, wide aerial view",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a huge army of hundreds of identical blond ninjas spread across the misty field, wide aerial view. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k027",
+   "start": 13.8,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a row of identical blond ninjas charging straight at the camera, low angle",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a row of identical blond ninjas charging straight at the camera, low angle. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k028",
+   "start": 14.3,
+   "dur": 0.45,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "several identical blond ninja faces shouting at once, packed together",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: several identical blond ninja faces shouting at once, packed together. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: several identical blond ninja faces shouting at once, packed together. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k029",
+   "start": 14.75,
+   "dur": 0.45,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_BASE",
+    "L_BASE"
+   ],
+   "desc": "overhead view: a ring of identical blond ninjas closing in on the lone straw-hat man in the center",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: overhead view: a ring of identical blond ninjas closing in on the lone straw-hat man in the center. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k030",
+   "start": 15.2,
+   "dur": 0.75,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "extreme close-up of the straw-hat man's eye, iris glowing red, calm",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the straw-hat man's eye, iris glowing red, calm. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the straw-hat man's eye, iris glowing red, calm. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k031",
+   "start": 15.95,
+   "dur": 0.35,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_BASE",
+    "N_BASE"
+   ],
+   "desc": "his vision: ghostly see-through red afterimages of the ninjas showing where each one will strike",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: his vision: ghostly see-through red afterimages of the ninjas showing where each one will strike. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline] [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k032",
+   "start": 16.3,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_BASE",
+    "N_BASE"
+   ],
+   "desc": "the straw-hat man leaning aside as a ninja's punch misses his face by an inch",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man leaning aside as a ninja's punch misses his face by an inch. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline] [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k033",
+   "start": 16.8,
+   "dur": 0.45,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_BASE",
+    "N_BASE"
+   ],
+   "desc": "the straw-hat man ducking under a flying kick from another ninja",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man ducking under a flying kick from another ninja. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline] [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k034",
+   "start": 17.25,
+   "dur": 0.5,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "close-up of the straw-hat man smirking, eyes closed",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the straw-hat man smirking, eyes closed. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the straw-hat man smirking, eyes closed. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k035",
+   "start": 17.75,
+   "dur": 0.9,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_BASE",
+    "N_BASE"
+   ],
+   "desc": "the blond ninjas frozen mid-leap all around him, time almost stopped",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninjas frozen mid-leap all around him, time almost stopped. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline] [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k036",
+   "start": 18.65,
+   "dur": 0.55,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "L_SNAKE"
+   ],
+   "desc": "the young man's body inflating, muscles bulging, black haki spreading over his arms, steam blasting",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the young man's body inflating, muscles bulging, black haki spreading over his arms, steam blasting. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k037",
+   "start": 19.2,
+   "dur": 0.3,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_SNAKE"
+   ],
+   "desc": "close-up of a huge black haki arm with red flame patterns, red steam curling",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of a huge black haki arm with red flame patterns, red steam curling. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of a huge black haki arm with red flame patterns, red steam curling. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]"
+  },
+  {
+   "id": "k038",
+   "start": 19.5,
+   "dur": 0.8,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "L_SNAKE"
+   ],
+   "desc": "the pumped-up dark form standing tall, red steam scarf, menacing grin, full body",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the pumped-up dark form standing tall, red steam scarf, menacing grin, full body. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k039",
+   "start": 20.3,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_SNAKE"
+   ],
+   "desc": "close-up of the pumped-up form's face, narrow glowing eyes",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the pumped-up form's face, narrow glowing eyes. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the pumped-up form's face, narrow glowing eyes. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]"
+  },
+  {
+   "id": "k040",
+   "start": 20.7,
+   "dur": 0.6,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_SNAKE"
+   ],
+   "desc": "a black haki fist launched, the arm curving through the air like a snake",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a black haki fist launched, the arm curving through the air like a snake. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k041",
+   "start": 21.3,
+   "dur": 0.45,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_SNAKE"
+   ],
+   "desc": "the black fist bending sharply around a stone pillar, speed lines",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the black fist bending sharply around a stone pillar, speed lines. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the black fist bending sharply around a stone pillar, speed lines. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline]"
+  },
+  {
+   "id": "k042",
+   "start": 21.75,
+   "dur": 0.45,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_SNAKE",
+    "N_BASE"
+   ],
+   "desc": "the curving punch swinging around a blond ninja and hitting him from behind",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the curving punch swinging around a blond ninja and hitting him from behind. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in a pumped-up form: huge muscular upper body, arms coated in glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, sharp narrow eyes, menacing grin; dark red glowing outline] [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k043",
+   "start": 22.2,
+   "dur": 0.5,
+   "kind": "FX",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "impact frame, a blond ninja doubled over by a black fist, white shockwave",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: impact frame, a blond ninja doubled over by a black fist, white shockwave. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: impact frame, a blond ninja doubled over by a black fist, white shockwave. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k044",
+   "start": 22.7,
+   "dur": 0.55,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a line of blond ninjas getting hit one after another, each bursting into a white smoke puff",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a line of blond ninjas getting hit one after another, each bursting into a white smoke puff. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k045",
+   "start": 23.25,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a smoke puff exploding outward where a ninja just was",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a smoke puff exploding outward where a ninja just was. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a smoke puff exploding outward where a ninja just was. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k046",
+   "start": 23.8,
+   "dur": 0.75,
+   "kind": "W",
+   "flash": false,
+   "refs": [],
+   "desc": "the grass field covered with drifting white smoke clouds",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the grass field covered with drifting white smoke clouds. Characters:",
+   "prompt916": null
+  },
+  {
+   "id": "k047",
+   "start": 24.55,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the real blond ninja's eye opening sharply, half hidden behind a rock",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the real blond ninja's eye opening sharply, half hidden behind a rock. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the real blond ninja's eye opening sharply, half hidden behind a rock. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k048",
+   "start": 25.1,
+   "dur": 0.4,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "one last ninja popping into smoke, a glowing orange thread of light flowing out of the puff",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: one last ninja popping into smoke, a glowing orange thread of light flowing out of the puff. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k049",
+   "start": 25.5,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "a smoke puff popping with an orange spark",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a smoke puff popping with an orange spark. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a smoke puff popping with an orange spark. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k050",
+   "start": 26.05,
+   "dur": 0.45,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "glowing orange streams flowing across the field from many smoke puffs into the real blond ninja crouched on a cliff",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: glowing orange streams flowing across the field from many smoke puffs into the real blond ninja crouched on a cliff. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k051",
+   "start": 26.5,
+   "dur": 0.7,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja touching his temple, eyes closed, orange glow of memories",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja touching his temple, eyes closed, orange glow of memories. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the blond ninja touching his temple, eyes closed, orange glow of memories. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k052",
+   "start": 27.2,
+   "dur": 0.9,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja's eyes snapping open, determined",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja's eyes snapping open, determined. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the blond ninja's eyes snapping open, determined. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k053",
+   "start": 28.1,
+   "dur": 0.6,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja sitting cross-legged on a rock, meditating, green-gold nature energy swirling",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja sitting cross-legged on a rock, meditating, green-gold nature energy swirling. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k054",
+   "start": 28.7,
+   "dur": 0.7,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_SAGE"
+   ],
+   "desc": "extreme close-up of his face with orange pigment around the eyes and golden eyes with bar pupils",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of his face with orange pigment around the eyes and golden eyes with bar pupils. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks, orange-and-black outfit) in sage form: orange pigment around the eyes, golden eyes with horizontal bar pupils, short red cloak with black flame hem; orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of his face with orange pigment around the eyes and golden eyes with bar pupils. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks, orange-and-black outfit) in sage form: orange pigment around the eyes, golden eyes with horizontal bar pupils, short red cloak with black flame hem; orange glowing outline]"
+  },
+  {
+   "id": "k055",
+   "start": 29.4,
+   "dur": 0.5,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_SAGE"
+   ],
+   "desc": "the sage ninja standing on a rock, red cloak flapping, mist swirling",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the sage ninja standing on a rock, red cloak flapping, mist swirling. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks, orange-and-black outfit) in sage form: orange pigment around the eyes, golden eyes with horizontal bar pupils, short red cloak with black flame hem; orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k056",
+   "start": 29.9,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "golden fire-like chakra erupting around the ninja, lighting the field",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: golden fire-like chakra erupting around the ninja, lighting the field. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k057",
+   "start": 30.4,
+   "dur": 0.75,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "close-up of the ninja in the glowing golden cloak, black swirl markings, orange eyes",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the ninja in the glowing golden cloak, black swirl markings, orange eyes. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the ninja in the glowing golden cloak, black swirl markings, orange eyes. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]"
+  },
+  {
+   "id": "k058",
+   "start": 31.15,
+   "dur": 0.35,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "the glowing golden ninja shining across the misty field like a sun, light beams",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the glowing golden ninja shining across the misty field like a sun, light beams. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k059",
+   "start": 31.5,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "close-up of his palm forming a spinning blue-white chakra sphere",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of his palm forming a spinning blue-white chakra sphere. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of his palm forming a spinning blue-white chakra sphere. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]"
+  },
+  {
+   "id": "k060",
+   "start": 31.9,
+   "dur": 0.7,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "the golden ninja holding a huge spinning white-blue wind shuriken of chakra above his head, wind ripping",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja holding a huge spinning white-blue wind shuriken of chakra above his head, wind ripping. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k061",
+   "start": 32.6,
+   "dur": 0.6,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_KURAMA",
+    "L_BASE"
+   ],
+   "desc": "the wind shuriken thrown across the field toward the straw-hat man, grass torn up in its path",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the wind shuriken thrown across the field toward the straw-hat man, grass torn up in its path. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k062",
+   "start": 33.2,
+   "dur": 0.5,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_HAKI"
+   ],
+   "desc": "close-up of the straw-hat man clenching his fist, glaring",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the straw-hat man clenching his fist, glaring. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the straw-hat man clenching his fist, glaring. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]"
+  },
+  {
+   "id": "k063",
+   "start": 33.7,
+   "dur": 0.8,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_HAKI"
+   ],
+   "desc": "close-up of his fist turning glossy black, red lightning crackling",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of his fist turning glossy black, red lightning crackling. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of his fist turning glossy black, red lightning crackling. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]"
+  },
+  {
+   "id": "k064",
+   "start": 34.5,
+   "dur": 0.6,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_HAKI"
+   ],
+   "desc": "red-black lightning crackling over the black arm, sparks, the air distorting",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: red-black lightning crackling over the black arm, sparks, the air distorting. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: red-black lightning crackling over the black arm, sparks, the air distorting. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]"
+  },
+  {
+   "id": "k065",
+   "start": 35.1,
+   "dur": 0.45,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_HAKI"
+   ],
+   "desc": "the straw-hat man leaping forward fist-first toward the spinning shuriken",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man leaping forward fist-first toward the spinning shuriken. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k066",
+   "start": 35.55,
+   "dur": 0.45,
+   "kind": "FX",
+   "flash": true,
+   "refs": [
+    "L_HAKI"
+   ],
+   "desc": "a black haki fist punching straight into the spinning wind shuriken, explosion of white light",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a black haki fist punching straight into the spinning wind shuriken, explosion of white light. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a black haki fist punching straight into the spinning wind shuriken, explosion of white light. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]"
+  },
+  {
+   "id": "k067",
+   "start": 36.0,
+   "dur": 0.4,
+   "kind": "FX",
+   "flash": true,
+   "refs": [
+    "L_HAKI",
+    "N_KURAMA"
+   ],
+   "desc": "impact frame: inverted black-and-white silhouettes of both fighters inside a blast",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: impact frame: inverted black-and-white silhouettes of both fighters inside a blast. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline] [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: impact frame: inverted black-and-white silhouettes of both fighters inside a blast. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline] [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]"
+  },
+  {
+   "id": "k068",
+   "start": 36.4,
+   "dur": 0.4,
+   "kind": "W",
+   "flash": true,
+   "refs": [],
+   "desc": "a huge dome explosion over the grass field, shockwave flattening the grass",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a huge dome explosion over the grass field, shockwave flattening the grass. Characters:",
+   "prompt916": null
+  },
+  {
+   "id": "k069",
+   "start": 36.8,
+   "dur": 0.3,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_HAKI",
+    "N_KURAMA"
+   ],
+   "desc": "a smoking crater, both fighters standing at opposite edges",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a smoking crater, both fighters standing at opposite edges. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline] [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k070",
+   "start": 37.1,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "close-up of the straw-hat man's chest, a glowing heartbeat pulse",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the straw-hat man's chest, a glowing heartbeat pulse. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the straw-hat man's chest, a glowing heartbeat pulse. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k071",
+   "start": 37.5,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "a heartbeat shockwave ring radiating out from his chest",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a heartbeat shockwave ring radiating out from his chest. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a heartbeat shockwave ring radiating out from his chest. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k072",
+   "start": 37.9,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "his hair turning white from the roots, a peaceful smile, eyes closed",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: his hair turning white from the roots, a peaceful smile, eyes closed. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k073",
+   "start": 38.4,
+   "dur": 0.4,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "a tower of white steam and clouds spiraling up around him",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a tower of white steam and clouds spiraling up around him. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k074",
+   "start": 38.8,
+   "dur": 0.6,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "extreme close-up of the white form's face, huge laughing grin, wide cartoonish eyes",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the white form's face, huge laughing grin, wide cartoonish eyes. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the white form's face, huge laughing grin, wide cartoonish eyes. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k075",
+   "start": 39.4,
+   "dur": 0.6,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white-haired man floating, full body, white hair flames, cloud halo ring, glowing white outline",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white-haired man floating, full body, white hair flames, cloud halo ring, glowing white outline. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k076",
+   "start": 40.0,
+   "dur": 0.75,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white-haired man slamming both palms into the ground",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white-haired man slamming both palms into the ground. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k077",
+   "start": 40.75,
+   "dur": 0.45,
+   "kind": "CU",
+   "flash": false,
+   "refs": [],
+   "desc": "the grass ground rippling like rubber waves",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the grass ground rippling like rubber waves. Characters:",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the grass ground rippling like rubber waves. Characters:"
+  },
+  {
+   "id": "k078",
+   "start": 41.2,
+   "dur": 0.65,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the whole field stretching like a rubber sheet, hills bending",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the whole field stretching like a rubber sheet, hills bending. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k079",
+   "start": 41.85,
+   "dur": 0.55,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "L_G5",
+    "N_KURAMA"
+   ],
+   "desc": "the arena bouncing upward like a trampoline, rocks flying, cartoon wobble lines",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the arena bouncing upward like a trampoline, rocks flying, cartoon wobble lines. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline] [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k080",
+   "start": 42.4,
+   "dur": 0.45,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "the golden ninja launched into the air, shocked face",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja launched into the air, shocked face. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k081",
+   "start": 42.85,
+   "dur": 0.85,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_KURAMA",
+    "L_G5"
+   ],
+   "desc": "the whole arena warping like rubber, the golden ninja tiny in the sky",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the whole arena warping like rubber, the golden ninja tiny in the sky. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline] [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k082",
+   "start": 43.7,
+   "dur": 0.85,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "the golden ninja upside down in mid-air, eyes wide",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja upside down in mid-air, eyes wide. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the golden ninja upside down in mid-air, eyes wide. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]"
+  },
+  {
+   "id": "k083",
+   "start": 44.55,
+   "dur": 0.45,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white-haired man grabbing the stretchy ground and flinging it like a bedsheet, laughing",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white-haired man grabbing the stretchy ground and flinging it like a bedsheet, laughing. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the white-haired man grabbing the stretchy ground and flinging it like a bedsheet, laughing. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k084",
+   "start": 45.0,
+   "dur": 0.4,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "N_KURAMA",
+    "L_G5"
+   ],
+   "desc": "a giant rubbery white fist smashing the golden ninja into the ground",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a giant rubbery white fist smashing the golden ninja into the ground. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline] [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k085",
+   "start": 45.4,
+   "dur": 0.85,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "the golden ninja on his knees in a crater, gasping, sweat",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja on his knees in a crater, gasping, sweat. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the golden ninja on his knees in a crater, gasping, sweat. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]"
+  },
+  {
+   "id": "k086",
+   "start": 46.25,
+   "dur": 0.4,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white form's laughing face, a drop of sweat on his temple",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white form's laughing face, a drop of sweat on his temple. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the white form's laughing face, a drop of sweat on his temple. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k087",
+   "start": 46.65,
+   "dur": 0.8,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "his white hair flames flickering and fading at the tips",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: his white hair flames flickering and fading at the tips. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: his white hair flames flickering and fading at the tips. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k088",
+   "start": 47.45,
+   "dur": 0.8,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white-haired man panting, sweat dripping, still grinning",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white-haired man panting, sweat dripping, still grinning. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k089",
+   "start": 48.25,
+   "dur": 1.0,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white cloud halo breaking apart into wisps",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white cloud halo breaking apart into wisps. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the white cloud halo breaking apart into wisps. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k090",
+   "start": 49.25,
+   "dur": 0.95,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "flashback in faded sepia tones: the white-haired man fighting the man in the yellow striped suit, golden light beams",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: flashback in faded sepia tones: the white-haired man fighting the man in the yellow striped suit, golden light beams. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline] [a tall man in a yellow striped suit and dark sunglasses firing beams of golden light from his feet]",
+   "prompt916": null
+  },
+  {
+   "id": "k091",
+   "start": 50.2,
+   "dur": 0.5,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "sepia flashback: a beam of light kick colliding with a rubbery white arm",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: sepia flashback: a beam of light kick colliding with a rubbery white arm. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline] [a tall man in a yellow striped suit and dark sunglasses firing beams of golden light from his feet]",
+   "prompt916": null
+  },
+  {
+   "id": "k092",
+   "start": 50.7,
+   "dur": 0.8,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_DRAINED"
+   ],
+   "desc": "sepia flashback: close-up of the shriveled, wrinkled, exhausted face",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: sepia flashback: close-up of the shriveled, wrinkled, exhausted face. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) completely drained: shriveled thin body, wrinkled old-looking face, sunken eyes, sweating, white hair going limp, kneeling]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: sepia flashback: close-up of the shriveled, wrinkled, exhausted face. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) completely drained: shriveled thin body, wrinkled old-looking face, sunken eyes, sweating, white hair going limp, kneeling]"
+  },
+  {
+   "id": "k093",
+   "start": 51.5,
+   "dur": 0.95,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "L_DRAINED"
+   ],
+   "desc": "sepia flashback: the tiny shriveled figure collapsed on rubble",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: sepia flashback: the tiny shriveled figure collapsed on rubble. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) completely drained: shriveled thin body, wrinkled old-looking face, sunken eyes, sweating, white hair going limp, kneeling]",
+   "prompt916": null
+  },
+  {
+   "id": "k094",
+   "start": 52.45,
+   "dur": 0.85,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "the golden ninja rising to his feet, eyes sharp",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja rising to his feet, eyes sharp. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the golden ninja rising to his feet, eyes sharp. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]"
+  },
+  {
+   "id": "k095",
+   "start": 53.3,
+   "dur": 0.8,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_KURAMA"
+   ],
+   "desc": "nine differently colored chakra flames orbiting the ninja",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: nine differently colored chakra flames orbiting the ninja. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) wrapped in a bright glowing golden-yellow chakra cloak covering the whole body with black swirl and line patterns, flame-like golden edges, glowing orange eyes; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k096",
+   "start": 54.1,
+   "dur": 0.6,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "close-up of his palm with a glowing sun mark, nine colored wisps circling it",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of his palm with a glowing sun mark, nine colored wisps circling it. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of his palm with a glowing sun mark, nine colored wisps circling it. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]"
+  },
+  {
+   "id": "k097",
+   "start": 54.7,
+   "dur": 1.15,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "nine giant glowing animal spirits towering behind him in the mist (a fox, a turtle, an ox, a slug, a monkey, a horse, a beetle, a cat, a raccoon dog), all in glowing outlines",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: nine giant glowing animal spirits towering behind him in the mist (a fox, a turtle, an ox, a slug, a monkey, a horse, a beetle, a cat, a raccoon dog), all in glowing outlines. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k098",
+   "start": 55.85,
+   "dur": 0.45,
+   "kind": "CU",
+   "flash": true,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "extreme close-up of the final form's eyes glowing gold",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: extreme close-up of the final form's eyes glowing gold. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: extreme close-up of the final form's eyes glowing gold. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]"
+  },
+  {
+   "id": "k099",
+   "start": 56.3,
+   "dur": 0.7,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja rising into the sky, coat flowing, nine black orbs in a ring",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja rising into the sky, coat flowing, nine black orbs in a ring. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k100",
+   "start": 57.0,
+   "dur": 0.6,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "close-up of floating black orbs with a glowing outline",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of floating black orbs with a glowing outline. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of floating black orbs with a glowing outline. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]"
+  },
+  {
+   "id": "k101",
+   "start": 57.6,
+   "dur": 0.75,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the black orbs morphing into a long black staff in his hand",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the black orbs morphing into a long black staff in his hand. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k102",
+   "start": 58.35,
+   "dur": 0.95,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja standing calm, coat flowing",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja standing calm, coat flowing. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k103",
+   "start": 59.3,
+   "dur": 0.6,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_SIX",
+    "L_G5"
+   ],
+   "desc": "the golden ninja standing tall over the panting white-haired man",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja standing tall over the panting white-haired man. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline] [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k104",
+   "start": 59.9,
+   "dur": 0.65,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja's calm half-smile",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja's calm half-smile. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the golden ninja's calm half-smile. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]"
+  },
+  {
+   "id": "k105",
+   "start": 60.55,
+   "dur": 1.25,
+   "kind": "W",
+   "flash": true,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja standing victorious on the field, warm sunset light",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja standing victorious on the field, warm sunset light. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k106",
+   "start": 61.8,
+   "dur": 1.15,
+   "kind": "M",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "the straw-hat man back to normal, kneeling, grinning, holding his hat",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man back to normal, kneeling, grinning, holding his hat. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k107",
+   "start": 62.95,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "close-up of the straw-hat man's grin, a cut on his cheek",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: close-up of the straw-hat man's grin, a cut on his cheek. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: close-up of the straw-hat man's grin, a cut on his cheek. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k108",
+   "start": 63.5,
+   "dur": 0.55,
+   "kind": "FX",
+   "flash": true,
+   "refs": [
+    "L_HAKI"
+   ],
+   "desc": "a black haki punch landing, huge impact burst",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a black haki punch landing, huge impact burst. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: a black haki punch landing, huge impact burst. Characters: [the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline]"
+  },
+  {
+   "id": "k109",
+   "start": 64.05,
+   "dur": 0.8,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_G5"
+   ],
+   "desc": "the white form laughing, quick flash of memory",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the white form laughing, quick flash of memory. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the white form laughing, quick flash of memory. Characters: [the same young man (warm medium-brown skin (#8D5B3E)) in his white form: pure white hair rising like flames, white eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline]"
+  },
+  {
+   "id": "k110",
+   "start": 64.85,
+   "dur": 0.7,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja taking a deep breath, glow pulsing",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja taking a deep breath, glow pulsing. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the golden ninja taking a deep breath, glow pulsing. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]"
+  },
+  {
+   "id": "k111",
+   "start": 65.55,
+   "dur": 0.75,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_SIX"
+   ],
+   "desc": "the golden ninja with a towering golden aura reaching the clouds",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the golden ninja with a towering golden aura reaching the clouds. Characters: [the same blond ninja (warm medium-brown skin (#8D5B3E), whisker marks) in his final form: glowing golden-orange body cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; golden glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k112",
+   "start": 66.3,
+   "dur": 0.75,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "an army of blond ninjas lined up behind him across the field",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: an army of blond ninjas lined up behind him across the field. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k113",
+   "start": 67.05,
+   "dur": 1.2,
+   "kind": "M",
+   "flash": true,
+   "refs": [
+    "N_BASE",
+    "L_BASE"
+   ],
+   "desc": "a pile of blond ninjas dogpiling the straw-hat man",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: a pile of blond ninjas dogpiling the straw-hat man. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k114",
+   "start": 68.25,
+   "dur": 0.55,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_BASE",
+    "L_BASE"
+   ],
+   "desc": "both fighters standing side by side on the misty field, grinning, battered",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: both fighters standing side by side on the misty field, grinning, battered. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k115",
+   "start": 68.8,
+   "dur": 0.55,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "N_BASE"
+   ],
+   "desc": "the blond ninja pointing straight at the camera, grinning",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the blond ninja pointing straight at the camera, grinning. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the blond ninja pointing straight at the camera, grinning. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline]"
+  },
+  {
+   "id": "k116",
+   "start": 69.35,
+   "dur": 0.65,
+   "kind": "CU",
+   "flash": false,
+   "refs": [
+    "L_BASE"
+   ],
+   "desc": "the straw-hat man pointing straight at the camera, grinning",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: the straw-hat man pointing straight at the camera, grinning. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 9:16 vertical frame. Scene: the straw-hat man pointing straight at the camera, grinning. Characters: [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]"
+  },
+  {
+   "id": "k117",
+   "start": 70.0,
+   "dur": 1.0,
+   "kind": "W",
+   "flash": false,
+   "refs": [
+    "N_BASE",
+    "L_BASE"
+   ],
+   "desc": "both fighters walking away across the field toward the hazy horizon",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: both fighters walking away across the field toward the hazy horizon. Characters: [a young ninja man with warm medium-brown skin (#8D5B3E), spiky bright yellow-blond hair, bright blue eyes, three thin whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead protector on a dark blue headband (blank plate, no symbol); orange glowing outline] [a lean young man with warm medium-brown skin (#8D5B3E), messy short black hair, a small scar under his left eye, an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline]",
+   "prompt916": null
+  },
+  {
+   "id": "k118",
+   "start": 71.0,
+   "dur": 2.0,
+   "kind": "W",
+   "flash": false,
+   "refs": [],
+   "desc": "an empty misty field with two new shadowy glowing silhouettes in the far distance",
+   "prompt169": "2D Japanese TV-anime key frame, hand-drawn cel animation look, thick black ink outlines, flat cel colors with one hard shadow tone, strong glowing colored outline around each fighter, extreme dramatic perspective, speed lines where there is motion, painted misty green grass field with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, no watermark, no symbols on clothing. 16:9 widescreen frame. Scene: an empty misty field with two new shadowy glowing silhouettes in the far distance. Characters:",
+   "prompt916": null
+  }
+ ]
+}
