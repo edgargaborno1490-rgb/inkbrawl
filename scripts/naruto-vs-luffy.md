@@ -12,17 +12,17 @@ in 7 days). Post before or right after it to ride the search.
 **[HOOK 0–3 s]**
 Naruto versus Luffy. Gear Five against Six Paths. Who would win?
 
-**[ROUND 1]**
-Round one. Luffy strikes first: Gear Second, Jet Pistol, faster than the eye can follow.
+**[OPENING CLASH]**
+Luffy strikes first: Gear Second, Jet Pistol, faster than the eye can follow.
 Naruto answers his way: an army of shadow clones.
 
-**[ROUND 2]**
-Round two. Luffy's future sight reads every clone before it moves. Gear Fourth, Snakeman.
+**[COUNTER]**
+Luffy's future sight reads every clone before it moves. Gear Fourth, Snakeman.
 His punches bend around corners, and clones burst into smoke.
 But every clone that pops sends Naruto what it saw.
 
-**[ROUND 3]**
-Round three. Sage Mode, then Kurama's golden cloak. Naruto throws a Rasenshuriken.
+**[POWER-UP]**
+Naruto goes Sage Mode, then Kurama's golden cloak, and throws a Rasenshuriken.
 Luffy coats his fists in Conqueror's Haki and takes it head on.
 
 **[TURNING POINT]**
@@ -37,7 +37,7 @@ Naruto wins, but it's close. Luffy hits harder in the moment.
 Naruto has the bigger tank, and clones to wear him down.
 Comment who YOU think wins. And who should fight next?
 
-_~180 words ≈ 65–75 s at a hype pace._
+_~179 words ≈ 65–75 s at a hype pace._
 
 ## Canon notes (every move used, where it comes from)
 Chapter numbers marked ✔ were confirmed in a web search on Nov 18, 2026; the rest are from memory, so check
@@ -63,9 +63,9 @@ one real weakness Gear 5 has shown on page. The verdict says "close", not a stom
 
 ## Shot ideas (final shot list is made from the MP3 by `/new-video`)
 - Hook: wide arena, both fighters face off; slam-zoom to each; aura split screen orange vs. white.
-- R1: blur of red-vest arms → fist insert → shockwave rings; clones pop in across a grass plain (wide).
-- R2: close-up on Luffy's blank face with a red Haki glint; snake-curving arm trail; smoke puffs in a line.
-- R3: sage orange eye markings shown as an orange glow band; golden cloak flare; spinning white-blue
+- Opening clash: blur of red-vest arms → fist insert → shockwave rings; clones pop in across a grass plain (wide).
+- Counter: close-up on Luffy's blank face with a red Haki glint; snake-curving arm trail; smoke puffs in a line.
+- Power-up: sage orange eye markings shown as an orange glow band; golden cloak flare; spinning white-blue
   shuriken; black-red Haki fist meets it → impact frame (invert flash) → crater.
 - Turning point: drum beats with white steam halo; ground goes wobbly like rubber; Naruto bounced sky-high.
   Luffy shrinks, panting; nine colored chakra wisps orbit Naruto; black orbs float behind him.

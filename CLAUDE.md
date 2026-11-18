@@ -21,7 +21,8 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
 
 ## Story (every script)
 1. Hook (first 3 s): the matchup + "who would win?"
-2. Round-by-round fight, each side using real canon abilities (arc/chapter cited in the script's notes).
+2. The fight, beat by beat (**no "Round one / two / three"**: owner, Nov 18, 2026; the fight flows straight
+   on), each side using real canon abilities (arc/chapter cited in the script's notes).
 3. A turning point / counter-move.
 4. Verdict with a short reason, then "Comment who YOU think wins" + "Who should fight next?"
 Fair to both sides. Plain spoken English, ~150–190 words.

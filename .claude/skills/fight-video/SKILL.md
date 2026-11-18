@@ -20,7 +20,8 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
    ("<a> vs <b> who would win", sort by popularity). TubeAlfred credits are shared with the owner's other
    channel: max 3 calls per video, stop if fewer than 15 credits remain. Borrow topics, never titles or footage.
 5. Write `scripts/<a>-vs-<b>.md` from `scripts/naruto-vs-luffy.md` as the template:
-   hook → round 1 → round 2 → round 3 → turning point / counter → verdict with a short reason →
+   hook → opening clash → counter → power-up → turning point / counter-move →
+   (never say "Round one/two/three" or show ROUND on screen; the fight flows straight on) → verdict with a short reason →
    "Comment who YOU think wins. And who should fight next?" Plain spoken English, **150–190 words**
    (check with `wc -w`). Fair to both: each side gets real wins on screen before the verdict.
    Add `## Packaging` (5 titles + cover words scored /10, `Pick: #N`, runner-up).
@@ -31,7 +32,7 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
    first time, per `references/install.md`): 16:9, 1080p, 30 fps, captions OFF in the engine (we draw our own
    one-word captions), generated music + SFX. Plain-script route with the approved narration (match ≥ 90%).
    Shot list: **cuts every 1–3 s** (median ~1.5 s; the references cut every 0.6–1.1 s, so faster is fine in
-   rounds). Mix per minute: ~25% wide arena, ~30% medium action, ~20% close inserts (fists, feet, hand signs,
+   the fight). Mix per minute: ~25% wide arena, ~30% medium action, ~20% close inserts (fists, feet, hand signs,
    blank face), ~10% impact frames, ~10% crater/debris, aura power-ups as needed.
 2. **`/video-styles`**: only the first time (or when the owner asks): the style **`brown-anime`** must exist in
    `engine/styles.js` and be the default in every new project's `config.json`. Once it exists, skip this step.
@@ -67,6 +68,6 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
   camera shake on hits, slam zooms.
 - **On-screen text: ONE big bold white word at a time**, landing on the spoken word (`wordTime()`): heavy
   condensed font, white fill, ~6 px black outline, lower-center (16:9: ~86% of height; 9:16: ~72%). Pick the
-  word that carries the line (names, moves, ROUND, WINS). Nothing else on screen except the end cards.
+  word that carries the line (names, moves, WINS). Nothing else on screen except the end cards.
 - Original drawings only. Never real anime footage, screenshots, official art or logos; reference videos guide
   pacing and camera only.
