@@ -26,6 +26,10 @@ HIT_WORDS = re.compile(r"fist|punch|kick|slam|hit|smash|collid|clash|impact|boun
 FAST_WORDS = re.compile(r"blur|charg|leap|launch|stretch|curv|thrown|flinging|whipping|duck|lean", re.I)
 
 shots, END = [], plan["shots"][-1]["start"] + plan["shots"][-1]["dur"]
+CLIPS = {}
+if os.path.exists(os.path.join(HERE, "clips.json")):
+    for g in json.load(open(os.path.join(HERE, "clips.json"))):
+        for sid_ in g["shots"]: CLIPS[sid_] = g
 for i, k in enumerate(plan["shots"]):
     sid, d = k["id"], k["dur"]
     fx = []
@@ -68,10 +72,12 @@ for i, k in enumerate(plan["shots"]):
     shots.append({"id": sid, "start": round(k["start"], 3), "end": round(k["start"] + d, 3), "line": k["desc"][:90],
                   "in": {"type": "cut"}, "sfx": fx[:4], "vignette": True,
                   "params": {"kf": True, "i": i, "kind": k["kind"], "flash": k["flash"], "v": bool(k["prompt916"]),
-                             "sepia": sid in SEPIA}})
+                             "sepia": sid in SEPIA,
+                             **({"g": CLIPS[sid]["id"], "gStart": CLIPS[sid]["start"], "gLen": CLIPS[sid]["len"],
+                                 "gFrames": CLIPS[sid].get("frames", 0)} if sid in CLIPS else {})}})
 
-beds = [{"name": "../../../sfx-library/wind_field_1.mp3", "start": 0, "end": END, "gain": -22},
-        {"name": "../../../sfx-library/rumble_1.mp3", "start": 28.0, "end": 60.5, "gain": -16}]
+beds = [{"name": "../../../sfx-library/wind_field_1.mp3", "start": 0, "end": END, "gain": -28},
+        {"name": "../../../sfx-library/rumble_1.mp3", "start": 28.0, "end": 60.5, "gain": -22}]
 out = {"title": old.get("title", "Naruto vs Luffy"), "duration": END, "shots": shots, "music": old["music"], "sfx": [], "beds": beds}
 json.dump(out, open(os.path.join(HERE, "shots.json"), "w"), indent=1)
 n = sum(len(s["sfx"]) for s in shots)

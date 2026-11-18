@@ -46,7 +46,7 @@ async function openPlayer(browser, style) {
   const [w, h] = await page.evaluate('window.OUT'); await page.setViewportSize({ width: w, height: h });
   return page;
 }
-const shot = (page, f) => page.evaluate(i => window.renderFrame(i), f).then(() => page.screenshot({ type: FORMAT, ...(FORMAT === 'jpeg' ? { quality: 94 } : {}) }));
+const shot = (page, f) => page.evaluate(async i => { if (window.PREP) await window.PREP(i); window.renderFrame(i); }, f).then(() => page.screenshot({ type: FORMAT, ...(FORMAT === 'jpeg' ? { quality: 94 } : {}) }));
 const fmtT = s => `${Math.floor(s / 60)}m${String(Math.round(s % 60)).padStart(2, '0')}s`;
 
 async function renderVideo() {
