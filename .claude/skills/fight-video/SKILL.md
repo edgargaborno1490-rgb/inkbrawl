@@ -1,6 +1,6 @@
 ---
 name: fight-video
-description: Make one Ink Brawl anime "Who Would Win" fight video, start to finish - research + DRAFT script, then (after the owner marks it APPROVED and sends the voiceover MP3) timestamps, shot list, the locked brown-skin anime style, contact sheet, render in 16:9 and 9:16, punches/whooshes/light music, cover, title and hashtags. Use for "make <A> vs <B>", "new matchup", "write the <A> vs <B> script", "here's the MP3", or "APPROVED".
+description: Make one Ink Brawl anime "Who Would Win" fight video, start to finish - research + DRAFT script, then (after the owner marks it APPROVED and sends the voiceover MP3) timestamps, shot list, the locked anime style, contact sheet, render in 16:9 and 9:16, punches/whooshes/light music, cover, title and hashtags. Use for "make <A> vs <B>", "new matchup", "write the <A> vs <B> script", "here's the MP3", or "APPROVED".
 ---
 
 # Ink Brawl fight video
@@ -43,7 +43,7 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
 4. **`/video-sound`**: SFX `hit`/`kick`/`impact` on every contact, `whoosh`/`swish` on fast moves, `riser` into
    the turning point, `stinger` on the verdict; never more than 2 cues at once. Light generated music under the
    voice (mood `action`, intensity 0.6–0.8; `epic` for the turning point), ducked; −14 LUFS.
-5. Cover + post text: `social-media-skills:thumbnail-design` (both fighters, brown skin, faces like ref4, the cover
+5. Cover + post text: `social-media-skills:thumbnail-design` (both fighters, anime skin tones, faces like ref4, the cover
    word from Packaging in huge white letters, auras in their colors) and `social-media-skills:caption-writer`
    (title = the Pick, 3–5 hashtags, ends with the comment question). Save to `out/<slug>-post.md`.
 6. QC: duration 60–80 s, audio present, one word on screen at a time, no logos.
@@ -52,7 +52,9 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
 ## Style: `brown-anime` (locked look for every video)
 - **Flat 2D anime illustration, cel shaded.** Fills plus a thin dark-brown outline (`#2A1A12`, ~3 px at 1080p),
   ONE hard shadow band per shape (no gradients on characters). No stickmen, no rim-light requirement.
-- **Skin: warm medium brown, the same on every fighter:** base `#8D5B3E`, shade `#6B412B`, tiny highlight
+- **UPDATE Nov 18, 2026 (owner): skin = each fighter's usual anime skin tone; the brown-skin rule below is
+  retired. Look = AI keyframes with Nano Banana (see CLAUDE.md).**
+- ~~Skin: warm medium brown, the same on every fighter:~~ base `#8D5B3E`, shade `#6B412B`, tiny highlight
   `#A8714F` (optional, on shoulders/knuckles). Never black silhouettes, never lighter or darker per character.
 - **UPDATE Nov 18, 2026 (owner): the look is now REAL 3D (toon-shaded Three.js fighters, outlines, glow) and
   fighters HAVE FACES like `reference/ref4-luffy-vs-naruto.mp4` (grins, eyes, glowing eyes). Where this

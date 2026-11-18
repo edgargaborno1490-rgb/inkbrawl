@@ -14,8 +14,8 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
   black ink lines, flat cel colors, glowing outlines in each fighter's color, extreme perspective, painted misty
   grass field). Made as **AI keyframes with Nano Banana** (Gemini image API; key = network secret on the "Anime
   Fights" environment, header `x-goog-api-key`), then cut together in the studio (camera push/shake, white flash
-  frames, our captions, our SFX). Describe characters by look in prompts. The 3D toon test was rejected. Every fighter has the same **warm medium-brown
-  skin**. **Faces like the owner's reference** (`reference/ref4-luffy-vs-naruto.mp4`): grins, eyes and glowing
+  frames, our captions, our SFX). Describe characters by look in prompts. The 3D toon test was rejected. **Skin: each fighter's usual anime skin tone**
+  (owner, Nov 18, 2026; replaces the earlier brown-skin rule). **Faces like the owner's reference** (`reference/ref4-luffy-vs-naruto.mp4`): grins, eyes and glowing
   eyes on power-ups. Fighters are recognized by outfit colors, hair shape and signature moves.
 - **Original drawings only:** never real anime footage, screenshots, logos or official art.
 - **One big bold white word on screen at a time**, landing on the spoken word.
@@ -38,6 +38,6 @@ Fair to both sides. Plain spoken English, ~150–190 words.
   before that and before the owner's voiceover MP3.
 - Matchups list and status: `IDEAS.md`.
 - `reference/`: the owner's reference videos (+ contact sheets). They show **pacing, camera and look**; never copy
-  their shots one-for-one or reuse their audio; our fighters have brown skin, not black silhouettes.
+  their shots one-for-one or reuse their audio; our fighters have faces and their anime skin tones, never black silhouettes.
 - TubeAlfred credits are shared with the owner's other channel: max 3 calls per video, none below 15 left.
 - Push straight to `main`.

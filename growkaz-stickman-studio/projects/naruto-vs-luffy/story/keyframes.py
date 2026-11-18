@@ -4,7 +4,7 @@ Run: python3 story/keyframes.py  ->  story/keyframes.json + story/keyframes.md
 Each shot = one AI keyframe (16:9). Kinds: CU close-up (also generated natively in 9:16),
 M medium, W wide (9:16 = pan/recrop of the 16:9 frame), FX impact/crater.
 flash=True -> 1-2 white/inverted frames at the cut + hit SFX.
-Characters are described by look only (no names, no logos) and always with the same brown skin.
+Characters are described by look only (no names, no logos) and with their usual anime skin tones (owner, Nov 18, 2026).
 """
 import json, os
 
@@ -15,33 +15,35 @@ STYLE = ("2D Japanese TV-anime key frame, hand-drawn cel animation look, thick b
          "extreme dramatic perspective, speed lines where there is motion, painted misty green grass field "
          "with soft hazy pale sky and distant blue hills in the background. No text, no letters, no logos, "
          "no watermark, no symbols on clothing.")
-SKIN = "warm medium-brown skin (#8D5B3E)"
+N_SKIN = "fair light skin"
+BLANK = "His forehead protector plate is completely blank and smooth, with no engraved symbol."
+L_SKIN = "light, slightly tanned skin"
 
 CHAR = {
- "N_BASE": f"a young ninja man with {SKIN}, spiky bright yellow-blond hair, bright blue eyes, three thin "
-           "whisker marks on each cheek, orange-and-black zip-up jacket, black pants, plain steel forehead "
-           "protector on a dark blue headband (blank plate, no symbol); orange glowing outline",
- "N_SAGE": f"the same blond ninja ({SKIN}, whisker marks, orange-and-black outfit) in sage form: orange "
+ "N_BASE": f"a young ninja man with {N_SKIN}, spiky bright yellow-blond hair, bright blue eyes, three thin "
+           "whisker marks on each cheek, plain orange-and-black zip-up jacket with no spiral, patch or emblem anywhere (shoulders and back are plain orange), black pants, plain steel forehead "
+           "protector on a dark blue headband: a completely smooth, blank, polished metal plate with NO engraving, NO leaf, NO spiral, NO mark of any kind; orange glowing outline",
+ "N_SAGE": f"the same blond ninja ({N_SKIN}, whisker marks, orange-and-black outfit) in sage form: orange "
            "pigment around the eyes, golden eyes with horizontal bar pupils, short red cloak with black "
            "flame hem; orange glowing outline",
- "N_KURAMA": f"the same blond ninja ({SKIN}, whisker marks) wrapped in a bright glowing golden-yellow "
+ "N_KURAMA": f"the same blond ninja ({N_SKIN}, whisker marks) wrapped in a bright glowing golden-yellow "
              "chakra cloak covering the whole body with black swirl and line patterns, flame-like golden "
              "edges, glowing orange eyes; golden glowing outline",
- "N_SIX": f"the same blond ninja ({SKIN}, whisker marks) in his final form: glowing golden-orange body "
+ "N_SIX": f"the same blond ninja ({N_SKIN}, whisker marks) in his final form: glowing golden-orange body "
           "cloak with a long flowing coat whose collar has a ring of black comma-shaped marks, a glowing "
           "sun mark on one palm, golden eyes, nine floating black orbs in a ring behind his back; "
           "golden glowing outline",
- "L_BASE": f"a lean young man with {SKIN}, messy short black hair, a small scar under his left eye, "
+ "L_BASE": f"a lean young man with {L_SKIN}, messy short black hair, a small scar under his left eye, "
            "an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue "
            "knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline",
- "L_GEAR2": "the same straw-hat young man in the same straw hat, red vest, blue shorts and yellow sash, his skin still warm medium brown with only a slight red flush, thick white-pink steam rising from his whole body, crouched low; red glowing outline",
+ "L_GEAR2": "the same straw-hat young man in the same straw hat, red vest, blue shorts and yellow sash, his skin flushed pinkish-red, thick white-pink steam rising from his whole body, crouched low; red glowing outline",
  "L_HAKI": "the same straw-hat young man in exactly the same outfit (round straw hat with red band, open red vest, blue shorts with white cuffs, yellow sash, sandals), both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline",
- "L_SNAKE": f"the same young man ({SKIN}) in a pumped-up form: huge muscular upper body, arms coated in "
+ "L_SNAKE": f"the same young man ({L_SKIN}) in a pumped-up form: huge muscular upper body, arms coated in "
             "glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, straw hat hanging on his back, blue shorts with white cuffs, yellow sash, sharp narrow eyes, menacing grin; dark red glowing outline",
- "L_G5": f"the same young man ({SKIN}) in his white form: pure white hair rising like flames, white "
+ "L_G5": f"the same young man ({L_SKIN}) in his white form: pure white hair rising like flames, white "
          "eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his "
          "shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline",
- "L_DRAINED": f"the same young man ({SKIN}) completely drained: shriveled thin body, wrinkled old-looking "
+ "L_DRAINED": f"the same young man ({L_SKIN}) completely drained: shriveled thin body, wrinkled old-looking "
               "face, sunken eyes, sweating, limp white hair, still wearing his white vest and white shorts, clearly the same young man shrunken and aged by exhaustion, kneeling",
  "KIZARU": "a tall man in a yellow striped suit and dark sunglasses firing beams of golden light from his feet",
 }
@@ -61,7 +63,7 @@ S = [
  # HOOK
  (0.00, "W", True,  ["N_BASE", "L_BASE"], "both fighters face off across the misty grass field, the blond ninja on the left with an orange aura, the straw-hat man on the right with a red aura, low-angle wide shot, wind blowing the grass"),
  (0.45, "CU", False, ["N_BASE"], "extreme close-up of the blond ninja's face, confident grin, blue eyes shining, hair whipping in the wind"),
- (0.70, "CU", True,  ["N_BASE", "L_BASE"], "two fists colliding dead center, an orange-sleeved fist from the left and a bare brown fist from the right, shockwave ring and sparks"),
+ (0.70, "CU", True,  ["N_BASE", "L_BASE"], "two fists colliding dead center, an orange-sleeved fist from the left and a bare fist from the right, shockwave ring and sparks"),
  (1.10, "CU", False, ["L_BASE"], "extreme close-up of the straw-hat man's face, hat brim shading his eyes, huge toothy grin"),
  (1.70, "M",  False, ["L_BASE"], "the straw-hat man holding his hat down with one hand, low angle, wind tugging his red vest"),
  (2.10, "CU", True,  ["L_G5"], "extreme close-up of the white-haired form's eyes glowing white, white hair flames rising"),
@@ -188,7 +190,7 @@ END = 73.0
 
 
 def prompt(desc, chars, aspect):
-    who = " ".join(f"[{CHAR[c]}]" for c in chars)
+    who = " ".join(f"[{CHAR[c]}{(' ' + BLANK) if c.startswith('N_') else ''}]" for c in chars)
     frame = "16:9 widescreen frame." if aspect == "16:9" else "9:16 vertical frame."
     return f"{STYLE} {frame} Scene: {desc}. Characters: {who}".strip()
 
@@ -203,7 +205,7 @@ def main():
             "prompt169": prompt(desc, chars, "16:9"),
             "prompt916": prompt(desc, chars, "9:16") if kind in ("CU", "FX") else None,
         })
-    sheets = [{"id": k, "label": v, "prompt": SHEET_PROMPT + STYLE + " Character: " + CHAR[k]} for k, v in SHEETS.items()]
+    sheets = [{"id": k, "label": v, "prompt": SHEET_PROMPT + STYLE + " Character: " + CHAR[k] + ((" " + BLANK) if k.startswith("N_") else "")} for k, v in SHEETS.items()]
     json.dump({"style": STYLE, "chars": CHAR, "sheets": sheets, "shots": shots},
               open(os.path.join(HERE, "keyframes.json"), "w"), indent=1)
     durs = sorted(s["dur"] for s in shots)

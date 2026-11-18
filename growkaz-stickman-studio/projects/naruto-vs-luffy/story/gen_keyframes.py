@@ -20,7 +20,7 @@ def call(prompt, aspect, refs=()):
              for r in refs]
     if refs:
         prompt = ("Use the attached character reference sheets for the characters' exact look "
-                  "(hair, outfit, colors, brown skin). Do not copy the sheet layout. " + prompt)
+                  "(hair, outfit, colors, skin tone). Do not copy the sheet layout. " + prompt)
     parts.append({"text": prompt})
     body = {"contents": [{"parts": parts}],
             "generationConfig": {"responseModalities": ["IMAGE"],
