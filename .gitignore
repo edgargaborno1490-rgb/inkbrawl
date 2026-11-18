@@ -1,0 +1,5 @@
+node_modules/
+growkaz-stickman-studio/node_modules/
+growkaz-stickman-studio/projects/*/build/
+*.wav
+.DS_Store
