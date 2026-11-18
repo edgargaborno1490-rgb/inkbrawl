@@ -75,10 +75,23 @@ def main():
                 loop = np.concatenate([base] * int(np.ceil(ln / (len(base) / SR) + 1)))[: secs(ln)]
                 f = min(secs(0.4), len(loop) // 2); loop[:f] *= np.linspace(0, 1, f)[:, None]; loop[-f:] *= np.linspace(1, 0, f)[:, None]
                 place(bed, loop, secs(s["start"]), db(am.get("gain", -20)))
+        # continuous beds (story "beds": [{"name": file or synth, "start", "end", "gain"}]) — one long loop, no per-shot restarts
+        for b in story.get("beds", []) or []:
+            nm = b["name"]; ln = b["end"] - b["start"]
+            base = load_any(os.path.join(P, nm)) if re.search(r"\.(wav|mp3|ogg|flac|m4a)$", nm, re.I) else SFX.make(nm, dur=6.0, seed=b.get("seed", 1))
+            xf = min(secs(0.5), len(base) // 4); parts = [base]
+            while sum(len(x) for x in parts) - xf * (len(parts) - 1) < secs(ln) + xf:
+                prev = parts[-1].copy(); nxt = base.copy(); fade = np.linspace(0, 1, xf)[:, None]
+                prev[-xf:] = prev[-xf:] * (1 - fade) + nxt[:xf] * fade; parts[-1] = prev; parts.append(nxt[xf:])
+            loop = np.concatenate(parts)[: secs(ln)]
+            f = min(secs(1.0), len(loop) // 2); loop[:f] *= np.linspace(0, 1, f)[:, None]; loop[-f:] *= np.linspace(1, 0, f)[:, None]
+            place(bed, loop, secs(b["start"]), db(b.get("gain", -20)))
         for c in story.get("sfx", []) or []: cues.append({**c, "t": float(c["t"])})
         for c in cues:
             nm = c["name"]
-            if re.search(r"\.(wav|mp3|ogg|flac|m4a)$", nm, re.I): snd = load_any(os.path.join(P, nm))
+            if re.search(r"\.(wav|mp3|ogg|flac|m4a)$", nm, re.I):
+                snd = cache.get(nm)
+                if snd is None: snd = cache[nm] = load_any(os.path.join(P, nm))
             else: snd = SFX.make(nm, dur=c.get("dur"), seed=c.get("seed"), pitch=c.get("pitch"))
             place(hits, snd, secs(c["t"]), db(c.get("gain", -8)))
         bed *= db(-5 * env)[:, None]

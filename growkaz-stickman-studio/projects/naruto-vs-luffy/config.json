@@ -13,11 +13,11 @@
  "fadeOut": 0.8,
  "music": {
   "enabled": true,
-  "gainDb": -17
+  "gainDb": -20
  },
  "sfx": {
   "enabled": true,
-  "gainDb": -6
+  "gainDb": -17
  },
  "loudness": -14
 }

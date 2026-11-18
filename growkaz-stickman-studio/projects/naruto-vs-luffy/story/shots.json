@@ -13,15 +13,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "kick",
-     "gain": -8,
-     "seed": 0
+     "name": "../../../sfx-library/kick_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -43,16 +43,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 1,
-     "dur": 0.3
+     "name": "../../../sfx-library/whoosh_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -74,15 +68,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 2
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -102,10 +96,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -127,16 +117,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 4,
-     "dur": 0.4
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -158,21 +142,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 5
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.39,
-     "name": "kick",
-     "gain": -13,
-     "seed": 8
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -194,15 +177,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 6
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -224,21 +202,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 7
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.3,
-     "name": "kick",
-     "gain": -13,
-     "seed": 10
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -260,16 +237,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 8,
-     "dur": 0.65
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -291,21 +262,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 9
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 16
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -327,21 +292,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 10
+     "name": "../../../sfx-library/punch_heavy_1.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 17
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_1.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -363,15 +322,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 11
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -393,16 +347,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 12,
-     "dur": 0.4
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -422,10 +370,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -447,21 +391,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 14
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 14
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/aura_charge_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -481,10 +424,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -506,15 +445,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 16
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -536,15 +475,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 17
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -566,15 +505,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 18
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -596,15 +530,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 19
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -626,21 +555,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 20
+     "name": "../../../sfx-library/punch_heavy_1.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 27
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_1.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -660,10 +583,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -685,16 +604,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 22,
-     "dur": 0.5
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -714,10 +627,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -739,27 +648,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "kick",
-     "gain": -8,
-     "seed": 24
-    },
-    {
-     "at": 0.36,
-     "name": "hit",
-     "gain": -13,
-     "seed": 27
+     "name": "../../../sfx-library/kick_1.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "pop",
-     "gain": -10,
-     "seed": 24
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.36,
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/smoke_pop_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -781,21 +688,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 25
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.39,
-     "name": "kick",
-     "gain": -13,
-     "seed": 28
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -817,16 +723,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 26,
-     "dur": 0.5
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -848,15 +748,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "kick",
-     "gain": -8,
-     "seed": 27
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -878,16 +778,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 28,
-     "dur": 0.45
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -909,21 +803,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 29
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.41,
-     "name": "kick",
-     "gain": -13,
-     "seed": 32
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -945,16 +838,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 30,
-     "dur": 0.35
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -976,15 +863,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 31
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1006,15 +888,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 32
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1034,10 +911,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1059,16 +932,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 34,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1090,27 +957,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 35
-    },
-    {
-     "at": 0.3,
-     "name": "kick",
-     "gain": -13,
-     "seed": 38
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 35
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/electric_2.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1132,16 +997,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 36,
-     "dur": 0.3
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/electric_1.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1163,21 +1027,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 37
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.44,
-     "name": "kick",
-     "gain": -13,
-     "seed": 40
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1199,16 +1062,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 38,
-     "dur": 0.4
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1230,15 +1087,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 39
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/electric_2.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1260,15 +1117,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 40
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1290,15 +1142,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 41
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1320,15 +1167,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "kick",
-     "gain": -8,
-     "seed": 42
+     "name": "../../../sfx-library/kick_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1350,27 +1197,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 43
-    },
-    {
-     "at": 0.3,
-     "name": "kick",
-     "gain": -13,
-     "seed": 46
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "pop",
-     "gain": -10,
-     "seed": 43
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/smoke_pop_multi_2.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1392,27 +1237,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 44
-    },
-    {
-     "at": 0.3,
-     "name": "hit",
-     "gain": -13,
-     "seed": 47
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "pop",
-     "gain": -10,
-     "seed": 44
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/smoke_pop_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1427,22 +1270,22 @@
    "id": "k046",
    "start": 23.8,
    "end": 24.55,
-   "line": "the grass field covered with drifting white smoke clouds",
+   "line": "quiet aftermath: an empty grass field covered with dozens of soft drifting white smoke puf",
    "in": {
     "type": "cut"
    },
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 45
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/smoke_pop_multi_2.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1464,16 +1307,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 46,
-     "dur": 0.55
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1495,15 +1337,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "pop",
-     "gain": -10,
-     "seed": 47
+     "name": "../../../sfx-library/smoke_pop_2.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1525,27 +1362,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "kick",
-     "gain": -8,
-     "seed": 48
-    },
-    {
-     "at": 0.3,
-     "name": "hit",
-     "gain": -13,
-     "seed": 51
+     "name": "../../../sfx-library/kick_1.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "pop",
-     "gain": -10,
-     "seed": 48
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/smoke_pop_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1567,15 +1402,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "pop",
-     "gain": -10,
-     "seed": 49
+     "name": "../../../sfx-library/smoke_pop_2.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1597,16 +1427,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 50,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1626,10 +1450,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1651,22 +1471,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 52,
-     "dur": 0.6
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_1.mp3",
+     "gain": -9
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 52
+     "name": "../../../sfx-library/gold_aura_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1688,27 +1506,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 53
-    },
-    {
-     "at": 0.39,
-     "name": "kick",
-     "gain": -13,
-     "seed": 56
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 53
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.39,
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/gold_aura_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1730,16 +1546,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 54,
-     "dur": 0.5
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1761,15 +1576,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 55
+     "name": "../../../sfx-library/gold_aura_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1791,21 +1601,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 56
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     },
     {
      "at": 0.41,
-     "name": "hit",
-     "gain": -13,
-     "seed": 59
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1825,10 +1634,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1850,15 +1655,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 58
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rasengan_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1880,21 +1685,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 59
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.39,
-     "name": "kick",
-     "gain": -13,
-     "seed": 62
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rasengan_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1916,16 +1725,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 60,
-     "dur": 0.6
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rasengan_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1947,15 +1755,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 61
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -1977,21 +1780,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 62
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     },
     {
      "at": 0.44,
-     "name": "hit",
-     "gain": -13,
-     "seed": 65
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/electric_1.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2013,21 +1820,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "kick",
-     "gain": -8,
-     "seed": 63
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.33,
-     "name": "kick",
-     "gain": -13,
-     "seed": 66
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/electric_2.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2049,15 +1860,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 64
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rasengan_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2079,21 +1890,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 65
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
+    },
+    {
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
     },
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 72
+     "name": "../../../sfx-library/rasengan_2.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/electric_2.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2115,21 +1930,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 66
+     "name": "../../../sfx-library/punch_heavy_1.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 73
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_1.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2151,21 +1960,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 67
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 74
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2187,16 +1990,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 68,
-     "dur": 0.3
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/rock_crumble_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2218,21 +2020,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "riser",
-     "gain": -12,
-     "dur": 1.6
+     "name": "../../../sfx-library/riser_2.mp3",
+     "gain": -9
     },
     {
-     "at": 0.05,
-     "name": "heartbeat",
-     "gain": -6,
-     "bpm": 100
+     "at": 0.0,
+     "name": "../../../sfx-library/drums_2.mp3",
+     "gain": -5
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2254,21 +2050,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 70
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
     },
     {
-     "at": 0.05,
-     "name": "heartbeat",
-     "gain": -6,
-     "bpm": 100
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/drums_1.mp3",
+     "gain": -5
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2290,21 +2085,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 71
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 71
+     "name": "../../../sfx-library/aura_charge_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2326,21 +2115,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 72
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 72
+     "name": "../../../sfx-library/aura_charge_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2362,21 +2145,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 73
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 80
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2398,15 +2175,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 74
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2428,15 +2200,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 75
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2458,16 +2230,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 76,
-     "dur": 0.45
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_1.mp3",
+     "gain": -9
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rubber_stretch_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2489,16 +2265,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 77,
-     "dur": 0.65
+     "name": "../../../sfx-library/whoosh_big_2.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rubber_stretch_2.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2520,21 +2295,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 78
+     "name": "../../../sfx-library/punch_heavy_1.mp3",
+     "gain": -4
+    },
+    {
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_1.mp3",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_1.mp3",
+     "gain": -9
     },
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 85
+     "name": "../../../sfx-library/bounce_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2556,15 +2335,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 79
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2586,16 +2360,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 80,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rubber_stretch_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2615,10 +2388,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2640,15 +2409,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 82
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2670,21 +2439,25 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 83
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
+    },
+    {
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/ground_slam_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 90
+     "name": "../../../sfx-library/rubber_stretch_2.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2706,16 +2479,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 84,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/rock_crumble_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2737,15 +2509,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 85
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2767,15 +2534,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 86
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2797,15 +2559,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 87
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2827,15 +2584,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 88
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2857,21 +2609,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 89
+     "name": "../../../sfx-library/punch_2.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_2.mp3",
+     "gain": -9
     },
     {
      "at": 0.52,
-     "name": "kick",
-     "gain": -13,
-     "seed": 92
+     "name": "../../../sfx-library/kick_2.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2893,15 +2644,15 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 90
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/rubber_stretch_1.mp3",
+     "gain": -8
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2921,10 +2672,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2946,16 +2693,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 92,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "../../../sfx-library/rock_crumble_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -2975,10 +2721,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3000,22 +2742,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 94,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 94
+     "name": "../../../sfx-library/gold_aura_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3037,15 +2772,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "riser",
-     "gain": -12,
-     "dur": 1.6
+     "name": "../../../sfx-library/riser_2.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3067,21 +2797,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 96
+     "name": "../../../sfx-library/punch_heavy_1.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 103
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_1.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3103,21 +2827,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 97
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
     },
     {
-     "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 104
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3139,22 +2857,15 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 98,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     },
     {
      "at": 0.0,
-     "name": "powerup",
-     "gain": -12,
-     "seed": 98
+     "name": "../../../sfx-library/gold_aura_1.mp3",
+     "gain": -9
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3174,10 +2885,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3199,21 +2906,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 100
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     },
     {
      "at": 0.41,
-     "name": "hit",
-     "gain": -13,
-     "seed": 103
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3233,10 +2939,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3258,15 +2960,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 102
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3286,10 +2983,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "thunder",
-    "gain": -24
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3311,21 +3004,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 104
+     "name": "../../../sfx-library/punch_heavy_1.mp3",
+     "gain": -4
+    },
+    {
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_1.mp3",
+     "gain": -7
     },
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 111
+     "name": "../../../sfx-library/stinger_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3345,10 +3037,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3370,16 +3058,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 106,
-     "dur": 0.55
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3401,21 +3083,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "impact",
-     "gain": -6,
-     "seed": 107
+     "name": "../../../sfx-library/punch_heavy_2.mp3",
+     "gain": -4
+    },
+    {
+     "at": 0.02,
+     "name": "../../../sfx-library/boom_2.mp3",
+     "gain": -7
     },
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -9,
-     "seed": 114
+     "name": "../../../sfx-library/electric_2.mp3",
+     "gain": -11
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3437,15 +3118,10 @@
    "sfx": [
     {
      "at": 0.04,
-     "name": "hit",
-     "gain": -10,
-     "seed": 108
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -6
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3465,10 +3141,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3490,16 +3162,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 110,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3519,10 +3185,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3544,21 +3206,20 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "hit",
-     "gain": -8,
-     "seed": 112
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -5
+    },
+    {
+     "at": 0.0,
+     "name": "../../../sfx-library/impact_frame_1.mp3",
+     "gain": -9
     },
     {
      "at": 0.66,
-     "name": "hit",
-     "gain": -13,
-     "seed": 115
+     "name": "../../../sfx-library/punch_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3578,10 +3239,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3603,16 +3260,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "swish",
-     "gain": -14,
-     "seed": 114,
-     "dur": 0.55
+     "name": "../../../sfx-library/whoosh_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3632,10 +3283,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3657,16 +3304,10 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "whoosh",
-     "gain": -14,
-     "seed": 116,
-     "dur": 0.7
+     "name": "../../../sfx-library/whoosh_big_1.mp3",
+     "gain": -10
     }
    ],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3686,10 +3327,6 @@
     "type": "cut"
    },
    "sfx": [],
-   "amb": {
-    "name": "wind",
-    "gain": -26
-   },
    "vignette": true,
    "params": {
     "kf": true,
@@ -3733,5 +3370,19 @@
    "intensity": 0.55
   }
  ],
- "sfx": []
+ "sfx": [],
+ "beds": [
+  {
+   "name": "../../../sfx-library/wind_field_1.mp3",
+   "start": 0,
+   "end": 73.0,
+   "gain": -28
+  },
+  {
+   "name": "../../../sfx-library/rumble_1.mp3",
+   "start": 28.0,
+   "end": 60.5,
+   "gain": -22
+  }
+ ]
 }
