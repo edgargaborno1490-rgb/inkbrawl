@@ -13,41 +13,27 @@ HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
 plan = json.load(open(os.path.join(HERE, "keyframes.json")))
 SH = {s["id"]: s for s in plan["shots"]}
 # (first shot, last shot, start keyframe, beat summary)
-GROUPS = [
- ("k001", "k005", "k001", "hook: the two fighters charge at each other across the field, fists collide, then close-ups of both grinning"),
- ("k006", "k011", "k010", "the final forms: white-haired form and golden ninja power up and clash in a giant white-and-gold explosion"),
- ("k012", "k016", "k015", "the straw-hat man crouches, steam bursts from his body as he powers up"),
- ("k017", "k022", "k017", "a stretching rubber fist rockets across the field and slams into the blond ninja's face; he skids back"),
- ("k023", "k025", "k024", "the blond ninja wipes his mouth, makes a cross hand sign, a big smoke puff bursts"),
- ("k026", "k029", "k026", "an army of hundreds of identical blond ninjas charges and surrounds the straw-hat man"),
- ("k030", "k035", "k032", "the straw-hat man calmly dodges every ninja's punch and kick as if he sees the future"),
- ("k036", "k039", "k036", "his body inflates into a huge pumped-up dark form, arms coated in black haki, red steam"),
- ("k040", "k043", "k040", "black haki punches curve like snakes around rocks and slam into ninjas from behind"),
- ("k044", "k046", "k044", "a line of ninjas is punched one after another, each bursting into a smoke puff"),
- ("k047", "k052", "k050", "orange streams of light flow from the smoke puffs into the real ninja hiding on a cliff; his eyes snap open"),
- ("k053", "k055", "k054", "the ninja meditates, then opens eyes ringed with orange pigment, sage mode, red cloak flapping"),
- ("k056", "k058", "k057", "golden fire-like chakra erupts and wraps him in a glowing golden cloak"),
- ("k059", "k061", "k060", "a spinning chakra sphere grows into a huge wind shuriken that he throws across the field"),
- ("k062", "k065", "k063", "the straw-hat man clenches his fist, it turns glossy black with red lightning, he leaps forward"),
- ("k066", "k069", "k066", "TEST"),
- ("k070", "k073", "k072", "a heartbeat like drums pulses from his chest, his hair turns white, clouds spiral up around him"),
- ("k074", "k076", "k074", "the white-haired form laughs wildly, floats, then slams both palms into the ground"),
- ("k077", "k079", "k079", "the ground turns to rubber, waves ripple and the whole arena bounces like a trampoline"),
- ("k080", "k082", "k080", "the golden ninja is launched high into the air, tumbling upside down"),
- ("k083", "k085", "k084", "the white-haired man flings the stretchy ground, a giant rubbery fist smashes the golden ninja into a crater"),
+GROUPS = [   # 16 beats = the narration's sentences; one continuous fight
+ ("k001", "k011", "k001", "the two fighters charge at each other across the field and clash fist to fist; they power up into their final forms, white-haired and golden, and collide in a huge white-and-gold burst"),
+ ("k012", "k022", "k015", "the straw-hat man crouches, steam bursts from his body, his rubber fist stretches across the field and slams the blond ninja, who skids back through the grass"),
+ ("k023", "k029", "k024", "the blond ninja wipes his mouth, makes a cross hand sign, smoke bursts and an army of identical ninjas charges and surrounds the straw-hat man"),
+ ("k030", "k035", "k032", "the straw-hat man's eye glows red; he calmly sways and ducks past every ninja's punch and kick as they fly at him"),
+ ("k036", "k043", "k036", "his body inflates into a huge dark form with black haki arms; his punches curve like snakes and hit ninjas from behind"),
+ ("k044", "k052", "k044", "ninjas burst into smoke one after another; glowing orange threads flow from the smoke into the real ninja on a cliff, whose eyes snap open"),
+ ("k053", "k058", "k054", "the ninja meditates, opens eyes ringed with orange, then golden chakra erupts and wraps him in a glowing golden cloak"),
+ ("k059", "k069", "k060", "the golden ninja forms a huge spinning wind shuriken and throws it; the straw-hat man's fist turns black with red lightning, he punches straight into it and a giant explosion leaves a smoking crater"),
+ ("k070", "k076", "k072", "a drum-like heartbeat pulses from the straw-hat man's chest, his hair turns white, clouds swirl, he laughs wildly and slams his palms into the ground"),
+ ("k077", "k085", "k079", "the ground turns to rubber and the whole field bounces like a trampoline, launching the golden ninja into the sky; a giant rubbery fist smashes him back down into a crater"),
  ("k086", "k089", "k088", "the white-haired man still grins but pants and sweats; his white hair and cloud halo flicker and fade"),
- ("k090", "k093", "k090", "flashback: he fights a tall man in a yellow striped suit firing light beams, then collapses, shriveled and drained"),
- ("k094", "k097", "k097", "the golden ninja rises; nine colored chakra flames orbit him and nine giant animal spirits appear behind him"),
- ("k098", "k101", "k099", "his eyes glow gold, he rises in his final form, nine black orbs circle him and form a black staff"),
- ("k102", "k104", "k103", "the calm golden ninja stands tall over the exhausted, panting white-haired man"),
- ("k105", "k107", "k105", "the golden ninja stands victorious in warm light; the straw-hat man back to normal kneels and grins"),
- ("k108", "k111", "k108", "a black haki punch lands with a huge burst; then the golden ninja breathes, his aura towers to the clouds"),
- ("k112", "k114", "k112", "an army of blond ninjas piles onto the straw-hat man; then both stand side by side, grinning and battered"),
- ("k115", "k118", "k117", "both fighters grin and point at the camera, then walk away together across the misty field"),
+ ("k090", "k093", "k090", "a faded memory: he fights a tall man in a yellow striped suit firing light beams, then collapses, shriveled and drained"),
+ ("k094", "k101", "k097", "the golden ninja rises; nine colored chakra flames orbit him, nine giant animal spirits glow behind him, his eyes turn gold and nine black orbs form a staff"),
+ ("k102", "k107", "k103", "the calm golden ninja stands tall over the exhausted white-haired man, who turns back to normal, kneels and grins"),
+ ("k108", "k113", "k108", "a black haki punch lands with a huge burst; the golden ninja's aura towers to the clouds and an army of ninjas piles onto the straw-hat man"),
+ ("k114", "k118", "k117", "both battered fighters stand side by side, grin and point at the camera, then walk away together across the misty field"),
 ]
 STYLE = ("Animate this exact 2D Japanese TV-anime frame into a moving anime sequence. Keep the art style, thick black line art, "
          "flat cel colors, glowing outlines and the character designs exactly as in the image (same faces, hair, outfits, skin tones). "
-         "Hand-drawn TV-anime motion: fast dynamic action, smears and speed lines, impact frames, camera shake on hits. "
+         "Hand-drawn TV-anime motion: dynamic but readable action, smears and speed lines on fast moves. "
          "No text, no letters, no logos, no symbols on headbands or clothes. No dialogue, no music.")
 END = plan["shots"][-1]["start"] + plan["shots"][-1]["dur"]
 
@@ -57,7 +43,7 @@ def groups():
     for n, (a, b, kf, beat) in enumerate(GROUPS, 1):
         sl = ids[ids.index(a): ids.index(b) + 1]
         start = SH[a]["start"]; end = SH[b]["start"] + SH[b]["dur"]; ln = end - start
-        dur = max(3, math.ceil(ln * 1.15))
+        dur = max(3, math.ceil(ln))
         chars = []
         for i in sl:
             for c in [r for r in SH[i]["refs"]] + (["KIZARU"] if "yellow striped" in SH[i]["desc"] else []):
@@ -67,8 +53,10 @@ def groups():
         RULES = ("IMPORTANT: the forehead protector is a completely smooth, blank, polished steel plate with nothing engraved "
                  "on it in every frame (no leaf, no swirl, no mark). Absolutely no onomatopoeia lettering, no katakana or kanji "
                  "sound effects, no written words or letters drawn anywhere in any frame; show impacts with light, speed lines and debris only.")
-        prompt = (f"{RULES} {STYLE} About {dur} seconds, {len(sl)} quick cuts of roughly {ln/len(sl):.1f} s each. Beat: {beat}. "
-                  f"Shots in order: {shots} Characters: {who} Sound effects only: punches, impacts, whooshes, rumble. {RULES}")
+        prompt = (f"{RULES} {STYLE} About {dur} seconds at normal speed. ONE CONTINUOUS FIGHT: smooth, flowing camera that "
+                  f"follows the action (tracking, orbiting, pushing in), at most 2 cuts, no jumping between unrelated scenes. "
+                  f"Keep the same sunny misty green grass field and the same daylight as the image throughout (no dark sky, no night, no new locations). "
+                  f"Action: {beat}. Key moments in order: {shots} Characters: {who} Sound effects only: punches, impacts, whooshes, rumble. {RULES}")
         out.append({"id": f"g{n:02d}", "shots": sl, "start": round(start, 3), "end": round(end, 3), "len": round(ln, 3),
                     "dur": dur, "keyframe": kf, "prompt": prompt})
     return out
@@ -153,7 +141,7 @@ def qc(path):
          "(such as a leaf or spiral). Answer only JSON: {\"lettering\": [..], \"symbol\": [..]}")
     body = {"contents": [{"parts": [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(tp, "rb").read()).decode()}},
                                     {"text": q}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
-    req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+    req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
                                  json.dumps(body).encode(), {"Content-Type": "application/json"})
     r = json.load(urllib.request.urlopen(req, timeout=120))
     res = json.loads(r["candidates"][0]["content"]["parts"][0]["text"])

@@ -30,10 +30,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
+    "big": false,
     "g": "g01",
     "gStart": 0.0,
-    "gLen": 2.1,
-    "gFrames": 72
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -59,10 +60,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
+    "big": false,
     "g": "g01",
     "gStart": 0.0,
-    "gLen": 2.1,
-    "gFrames": 72
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -93,10 +95,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
+    "big": false,
     "g": "g01",
     "gStart": 0.0,
-    "gLen": 2.1,
-    "gFrames": 72
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -116,10 +119,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
+    "big": false,
     "g": "g01",
     "gStart": 0.0,
-    "gLen": 2.1,
-    "gFrames": 72
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -130,13 +134,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -145,10 +143,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
+    "big": false,
     "g": "g01",
     "gStart": 0.0,
-    "gLen": 2.1,
-    "gFrames": 72
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -184,10 +183,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g02",
-    "gStart": 2.1,
-    "gLen": 3.65,
-    "gFrames": 120
+    "big": false,
+    "g": "g01",
+    "gStart": 0.0,
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -213,10 +213,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g02",
-    "gStart": 2.1,
-    "gLen": 3.65,
-    "gFrames": 120
+    "big": false,
+    "g": "g01",
+    "gStart": 0.0,
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -252,10 +253,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g02",
-    "gStart": 2.1,
-    "gLen": 3.65,
-    "gFrames": 120
+    "big": false,
+    "g": "g01",
+    "gStart": 0.0,
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -266,13 +268,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -281,10 +277,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g02",
-    "gStart": 2.1,
-    "gLen": 3.65,
-    "gFrames": 120
+    "big": false,
+    "g": "g01",
+    "gStart": 0.0,
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -315,10 +312,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g02",
-    "gStart": 2.1,
-    "gLen": 3.65,
-    "gFrames": 120
+    "big": true,
+    "g": "g01",
+    "gStart": 0.0,
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -349,10 +347,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g02",
-    "gStart": 2.1,
-    "gLen": 3.65,
-    "gFrames": 120
+    "big": true,
+    "g": "g01",
+    "gStart": 0.0,
+    "gLen": 5.75,
+    "gFrames": 0
    }
   },
   {
@@ -378,10 +377,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g03",
+    "big": false,
+    "g": "g02",
     "gStart": 5.75,
-    "gLen": 2.55,
-    "gFrames": 72
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -392,13 +392,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -407,10 +401,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g03",
+    "big": false,
+    "g": "g02",
     "gStart": 5.75,
-    "gLen": 2.55,
-    "gFrames": 72
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -430,10 +425,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g03",
+    "big": false,
+    "g": "g02",
     "gStart": 5.75,
-    "gLen": 2.55,
-    "gFrames": 72
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -469,10 +465,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g03",
+    "big": false,
+    "g": "g02",
     "gStart": 5.75,
-    "gLen": 2.55,
-    "gFrames": 72
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -492,10 +489,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g03",
+    "big": false,
+    "g": "g02",
     "gStart": 5.75,
-    "gLen": 2.55,
-    "gFrames": 72
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -526,10 +524,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g04",
-    "gStart": 8.3,
-    "gLen": 3.0,
-    "gFrames": 96
+    "big": false,
+    "g": "g02",
+    "gStart": 5.75,
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -560,10 +559,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g04",
-    "gStart": 8.3,
-    "gLen": 3.0,
-    "gFrames": 96
+    "big": false,
+    "g": "g02",
+    "gStart": 5.75,
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -589,10 +589,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g04",
-    "gStart": 8.3,
-    "gLen": 3.0,
-    "gFrames": 96
+    "big": false,
+    "g": "g02",
+    "gStart": 5.75,
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -618,10 +619,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g04",
-    "gStart": 8.3,
-    "gLen": 3.0,
-    "gFrames": 96
+    "big": false,
+    "g": "g02",
+    "gStart": 5.75,
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -652,10 +654,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g04",
-    "gStart": 8.3,
-    "gLen": 3.0,
-    "gFrames": 96
+    "big": true,
+    "g": "g02",
+    "gStart": 5.75,
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -675,10 +678,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g04",
-    "gStart": 8.3,
-    "gLen": 3.0,
-    "gFrames": 96
+    "big": false,
+    "g": "g02",
+    "gStart": 5.75,
+    "gLen": 5.55,
+    "gFrames": 0
    }
   },
   {
@@ -689,13 +693,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -704,10 +702,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g05",
+    "big": false,
+    "g": "g03",
     "gStart": 11.3,
-    "gLen": 1.8,
-    "gFrames": 72
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -727,10 +726,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g05",
+    "big": false,
+    "g": "g03",
     "gStart": 11.3,
-    "gLen": 1.8,
-    "gFrames": 72
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -771,10 +771,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g05",
+    "big": false,
+    "g": "g03",
     "gStart": 11.3,
-    "gLen": 1.8,
-    "gFrames": 72
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -810,10 +811,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g06",
-    "gStart": 13.1,
-    "gLen": 2.1,
-    "gFrames": 72
+    "big": false,
+    "g": "g03",
+    "gStart": 11.3,
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -839,10 +841,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g06",
-    "gStart": 13.1,
-    "gLen": 2.1,
-    "gFrames": 72
+    "big": false,
+    "g": "g03",
+    "gStart": 11.3,
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -873,10 +876,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g06",
-    "gStart": 13.1,
-    "gLen": 2.1,
-    "gFrames": 72
+    "big": false,
+    "g": "g03",
+    "gStart": 11.3,
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -887,13 +891,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -902,10 +900,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g06",
-    "gStart": 13.1,
-    "gLen": 2.1,
-    "gFrames": 72
+    "big": false,
+    "g": "g03",
+    "gStart": 11.3,
+    "gLen": 3.9,
+    "gFrames": 0
    }
   },
   {
@@ -941,10 +940,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g07",
+    "big": false,
+    "g": "g04",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -955,13 +955,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -970,10 +964,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g07",
+    "big": false,
+    "g": "g04",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -999,10 +994,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g07",
+    "big": false,
+    "g": "g04",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -1028,10 +1024,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g07",
+    "big": false,
+    "g": "g04",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -1051,10 +1048,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g07",
+    "big": false,
+    "g": "g04",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -1080,10 +1078,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g07",
+    "big": false,
+    "g": "g04",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -1124,10 +1123,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g08",
+    "big": false,
+    "g": "g05",
     "gStart": 18.65,
-    "gLen": 2.05,
-    "gFrames": 72
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1139,11 +1139,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.0,
      "name": "../../../sfx-library/electric_1.mp3",
@@ -1158,10 +1153,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g08",
+    "big": false,
+    "g": "g05",
     "gStart": 18.65,
-    "gLen": 2.05,
-    "gFrames": 72
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1197,10 +1193,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g08",
+    "big": false,
+    "g": "g05",
     "gStart": 18.65,
-    "gLen": 2.05,
-    "gFrames": 72
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1211,13 +1208,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -1226,10 +1217,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g08",
+    "big": false,
+    "g": "g05",
     "gStart": 18.65,
-    "gLen": 2.05,
-    "gFrames": 72
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1260,10 +1252,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g09",
-    "gStart": 20.7,
-    "gLen": 2.0,
-    "gFrames": 72
+    "big": false,
+    "g": "g05",
+    "gStart": 18.65,
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1289,10 +1282,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g09",
-    "gStart": 20.7,
-    "gLen": 2.0,
-    "gFrames": 72
+    "big": false,
+    "g": "g05",
+    "gStart": 18.65,
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1318,10 +1312,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g09",
-    "gStart": 20.7,
-    "gLen": 2.0,
-    "gFrames": 72
+    "big": false,
+    "g": "g05",
+    "gStart": 18.65,
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1352,10 +1347,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g09",
-    "gStart": 20.7,
-    "gLen": 2.0,
-    "gFrames": 72
+    "big": false,
+    "g": "g05",
+    "gStart": 18.65,
+    "gLen": 4.05,
+    "gFrames": 0
    }
   },
   {
@@ -1396,10 +1392,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g10",
+    "big": false,
+    "g": "g06",
     "gStart": 22.7,
-    "gLen": 1.85,
-    "gFrames": 72
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1440,10 +1437,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g10",
+    "big": false,
+    "g": "g06",
     "gStart": 22.7,
-    "gLen": 1.85,
-    "gFrames": 72
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1474,10 +1472,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g10",
+    "big": false,
+    "g": "g06",
     "gStart": 22.7,
-    "gLen": 1.85,
-    "gFrames": 72
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1489,11 +1488,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/ground_slam_1.mp3",
@@ -1508,10 +1502,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g11",
-    "gStart": 24.55,
-    "gLen": 3.55,
-    "gFrames": 120
+    "big": false,
+    "g": "g06",
+    "gStart": 22.7,
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1537,10 +1532,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g11",
-    "gStart": 24.55,
-    "gLen": 3.55,
-    "gFrames": 120
+    "big": false,
+    "g": "g06",
+    "gStart": 22.7,
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1581,10 +1577,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g11",
-    "gStart": 24.55,
-    "gLen": 3.55,
-    "gFrames": 120
+    "big": false,
+    "g": "g06",
+    "gStart": 22.7,
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1610,10 +1607,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g11",
-    "gStart": 24.55,
-    "gLen": 3.55,
-    "gFrames": 120
+    "big": false,
+    "g": "g06",
+    "gStart": 22.7,
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1624,13 +1622,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -1639,10 +1631,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g11",
-    "gStart": 24.55,
-    "gLen": 3.55,
-    "gFrames": 120
+    "big": false,
+    "g": "g06",
+    "gStart": 22.7,
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1662,10 +1655,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g11",
-    "gStart": 24.55,
-    "gLen": 3.55,
-    "gFrames": 120
+    "big": false,
+    "g": "g06",
+    "gStart": 22.7,
+    "gLen": 5.4,
+    "gFrames": 0
    }
   },
   {
@@ -1677,11 +1671,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/ground_slam_1.mp3",
@@ -1701,10 +1690,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g12",
+    "big": false,
+    "g": "g07",
     "gStart": 28.1,
-    "gLen": 1.8,
-    "gFrames": 72
+    "gLen": 3.4,
+    "gFrames": 0
    }
   },
   {
@@ -1745,10 +1735,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g12",
+    "big": false,
+    "g": "g07",
     "gStart": 28.1,
-    "gLen": 1.8,
-    "gFrames": 72
+    "gLen": 3.4,
+    "gFrames": 0
    }
   },
   {
@@ -1760,11 +1751,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/ground_slam_1.mp3",
@@ -1779,10 +1765,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g12",
+    "big": false,
+    "g": "g07",
     "gStart": 28.1,
-    "gLen": 1.8,
-    "gFrames": 72
+    "gLen": 3.4,
+    "gFrames": 0
    }
   },
   {
@@ -1808,10 +1795,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g13",
-    "gStart": 29.9,
-    "gLen": 1.6,
-    "gFrames": 72
+    "big": false,
+    "g": "g07",
+    "gStart": 28.1,
+    "gLen": 3.4,
+    "gFrames": 0
    }
   },
   {
@@ -1847,10 +1835,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g13",
-    "gStart": 29.9,
-    "gLen": 1.6,
-    "gFrames": 72
+    "big": false,
+    "g": "g07",
+    "gStart": 28.1,
+    "gLen": 3.4,
+    "gFrames": 0
    }
   },
   {
@@ -1870,10 +1859,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g13",
-    "gStart": 29.9,
-    "gLen": 1.6,
-    "gFrames": 72
+    "big": false,
+    "g": "g07",
+    "gStart": 28.1,
+    "gLen": 3.4,
+    "gFrames": 0
    }
   },
   {
@@ -1904,10 +1894,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g14",
+    "big": false,
+    "g": "g08",
     "gStart": 31.5,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -1948,10 +1939,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g14",
+    "big": false,
+    "g": "g08",
     "gStart": 31.5,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -1982,10 +1974,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g14",
+    "big": false,
+    "g": "g08",
     "gStart": 31.5,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2011,10 +2004,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g15",
-    "gStart": 33.2,
-    "gLen": 2.35,
-    "gFrames": 72
+    "big": false,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2055,10 +2049,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g15",
-    "gStart": 33.2,
-    "gLen": 2.35,
-    "gFrames": 72
+    "big": false,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2099,10 +2094,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g15",
-    "gStart": 33.2,
-    "gLen": 2.35,
-    "gFrames": 72
+    "big": false,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2133,10 +2129,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g15",
-    "gStart": 33.2,
-    "gLen": 2.35,
-    "gFrames": 72
+    "big": false,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2177,10 +2174,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g16",
-    "gStart": 35.55,
-    "gLen": 1.55,
-    "gFrames": 96
+    "big": true,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2211,10 +2209,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g16",
-    "gStart": 35.55,
-    "gLen": 1.55,
-    "gFrames": 96
+    "big": true,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2245,10 +2244,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g16",
-    "gStart": 35.55,
-    "gLen": 1.55,
-    "gFrames": 96
+    "big": true,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2260,11 +2260,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/rock_crumble_1.mp3",
@@ -2279,10 +2274,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g16",
-    "gStart": 35.55,
-    "gLen": 1.55,
-    "gFrames": 96
+    "big": false,
+    "g": "g08",
+    "gStart": 31.5,
+    "gLen": 5.6,
+    "gFrames": 0
    }
   },
   {
@@ -2313,10 +2309,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g17",
+    "big": false,
+    "g": "g09",
     "gStart": 37.1,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2352,10 +2349,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g17",
+    "big": false,
+    "g": "g09",
     "gStart": 37.1,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2386,10 +2384,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g17",
+    "big": false,
+    "g": "g09",
     "gStart": 37.1,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2420,10 +2419,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g17",
+    "big": false,
+    "g": "g09",
     "gStart": 37.1,
-    "gLen": 1.7,
-    "gFrames": 72
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2454,10 +2454,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g18",
-    "gStart": 38.8,
-    "gLen": 1.95,
-    "gFrames": 72
+    "big": true,
+    "g": "g09",
+    "gStart": 37.1,
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2483,10 +2484,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g18",
-    "gStart": 38.8,
-    "gLen": 1.95,
-    "gFrames": 72
+    "big": false,
+    "g": "g09",
+    "gStart": 37.1,
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2517,10 +2519,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g18",
-    "gStart": 38.8,
-    "gLen": 1.95,
-    "gFrames": 72
+    "big": false,
+    "g": "g09",
+    "gStart": 37.1,
+    "gLen": 3.65,
+    "gFrames": 0
    }
   },
   {
@@ -2532,11 +2535,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/ground_slam_1.mp3",
@@ -2556,10 +2554,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g19",
+    "big": false,
+    "g": "g10",
     "gStart": 40.75,
-    "gLen": 1.65,
-    "gFrames": 72
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2590,10 +2589,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g19",
+    "big": false,
+    "g": "g10",
     "gStart": 40.75,
-    "gLen": 1.65,
-    "gFrames": 72
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2634,10 +2634,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g19",
+    "big": true,
+    "g": "g10",
     "gStart": 40.75,
-    "gLen": 1.65,
-    "gFrames": 72
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2663,10 +2664,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g20",
-    "gStart": 42.4,
-    "gLen": 2.15,
-    "gFrames": 72
+    "big": false,
+    "g": "g10",
+    "gStart": 40.75,
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2678,11 +2680,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.0,
      "name": "../../../sfx-library/rubber_stretch_1.mp3",
@@ -2697,10 +2694,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g20",
-    "gStart": 42.4,
-    "gLen": 2.15,
-    "gFrames": 72
+    "big": false,
+    "g": "g10",
+    "gStart": 40.75,
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2720,10 +2718,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g20",
-    "gStart": 42.4,
-    "gLen": 2.15,
-    "gFrames": 72
+    "big": false,
+    "g": "g10",
+    "gStart": 40.75,
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2754,10 +2753,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g21",
-    "gStart": 44.55,
-    "gLen": 1.7,
-    "gFrames": 72
+    "big": false,
+    "g": "g10",
+    "gStart": 40.75,
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2798,10 +2798,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g21",
-    "gStart": 44.55,
-    "gLen": 1.7,
-    "gFrames": 72
+    "big": true,
+    "g": "g10",
+    "gStart": 40.75,
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2813,11 +2814,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/rock_crumble_1.mp3",
@@ -2832,10 +2828,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g21",
-    "gStart": 44.55,
-    "gLen": 1.7,
-    "gFrames": 72
+    "big": false,
+    "g": "g10",
+    "gStart": 40.75,
+    "gLen": 5.5,
+    "gFrames": 0
    }
   },
   {
@@ -2861,10 +2858,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g22",
+    "big": false,
+    "g": "g11",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -2890,10 +2888,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g22",
+    "big": false,
+    "g": "g11",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -2919,10 +2918,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g22",
+    "big": false,
+    "g": "g11",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -2948,10 +2948,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g22",
+    "big": false,
+    "g": "g11",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -2987,10 +2988,11 @@
     "flash": true,
     "v": false,
     "sepia": true,
-    "g": "g23",
+    "big": false,
+    "g": "g12",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -3021,10 +3023,11 @@
     "flash": false,
     "v": false,
     "sepia": true,
-    "g": "g23",
+    "big": false,
+    "g": "g12",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -3044,10 +3047,11 @@
     "flash": false,
     "v": true,
     "sepia": true,
-    "g": "g23",
+    "big": false,
+    "g": "g12",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -3059,11 +3063,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.05,
      "name": "../../../sfx-library/rock_crumble_1.mp3",
@@ -3078,10 +3077,11 @@
     "flash": false,
     "v": false,
     "sepia": true,
-    "g": "g23",
+    "big": false,
+    "g": "g12",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 96
+    "gFrames": 0
    }
   },
   {
@@ -3101,10 +3101,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g24",
+    "big": false,
+    "g": "g13",
     "gStart": 52.45,
-    "gLen": 3.4,
-    "gFrames": 96
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3116,11 +3117,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.0,
      "name": "../../../sfx-library/gold_aura_1.mp3",
@@ -3135,10 +3131,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g24",
+    "big": false,
+    "g": "g13",
     "gStart": 52.45,
-    "gLen": 3.4,
-    "gFrames": 96
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3164,10 +3161,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g24",
+    "big": false,
+    "g": "g13",
     "gStart": 52.45,
-    "gLen": 3.4,
-    "gFrames": 96
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3198,10 +3196,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g24",
+    "big": true,
+    "g": "g13",
     "gStart": 52.45,
-    "gLen": 3.4,
-    "gFrames": 96
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3232,10 +3231,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g25",
-    "gStart": 55.85,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": true,
+    "g": "g13",
+    "gStart": 52.45,
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3247,11 +3247,6 @@
     "type": "cut"
    },
    "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    },
     {
      "at": 0.0,
      "name": "../../../sfx-library/gold_aura_1.mp3",
@@ -3266,10 +3261,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g25",
-    "gStart": 55.85,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": false,
+    "g": "g13",
+    "gStart": 52.45,
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3289,10 +3285,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g25",
-    "gStart": 55.85,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": false,
+    "g": "g13",
+    "gStart": 52.45,
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3328,10 +3325,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g25",
-    "gStart": 55.85,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": false,
+    "g": "g13",
+    "gStart": 52.45,
+    "gLen": 5.9,
+    "gFrames": 0
    }
   },
   {
@@ -3351,10 +3349,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g26",
+    "big": false,
+    "g": "g14",
     "gStart": 58.35,
-    "gLen": 2.2,
-    "gFrames": 72
+    "gLen": 5.15,
+    "gFrames": 0
    }
   },
   {
@@ -3380,10 +3379,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g26",
+    "big": false,
+    "g": "g14",
     "gStart": 58.35,
-    "gLen": 2.2,
-    "gFrames": 72
+    "gLen": 5.15,
+    "gFrames": 0
    }
   },
   {
@@ -3403,10 +3403,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g26",
+    "big": false,
+    "g": "g14",
     "gStart": 58.35,
-    "gLen": 2.2,
-    "gFrames": 72
+    "gLen": 5.15,
+    "gFrames": 0
    }
   },
   {
@@ -3442,10 +3443,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g27",
-    "gStart": 60.55,
-    "gLen": 2.95,
-    "gFrames": 96
+    "big": true,
+    "g": "g14",
+    "gStart": 58.35,
+    "gLen": 5.15,
+    "gFrames": 0
    }
   },
   {
@@ -3465,10 +3467,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g27",
-    "gStart": 60.55,
-    "gLen": 2.95,
-    "gFrames": 96
+    "big": false,
+    "g": "g14",
+    "gStart": 58.35,
+    "gLen": 5.15,
+    "gFrames": 0
    }
   },
   {
@@ -3479,13 +3482,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -3494,10 +3491,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g27",
-    "gStart": 60.55,
-    "gLen": 2.95,
-    "gFrames": 96
+    "big": false,
+    "g": "g14",
+    "gStart": 58.35,
+    "gLen": 5.15,
+    "gFrames": 0
    }
   },
   {
@@ -3533,10 +3531,11 @@
     "flash": true,
     "v": true,
     "sepia": false,
-    "g": "g28",
+    "big": true,
+    "g": "g15",
     "gStart": 63.5,
-    "gLen": 2.8,
-    "gFrames": 96
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3562,10 +3561,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g28",
+    "big": false,
+    "g": "g15",
     "gStart": 63.5,
-    "gLen": 2.8,
-    "gFrames": 96
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3585,10 +3585,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g28",
+    "big": false,
+    "g": "g15",
     "gStart": 63.5,
-    "gLen": 2.8,
-    "gFrames": 96
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3599,13 +3600,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -3614,10 +3609,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g28",
+    "big": false,
+    "g": "g15",
     "gStart": 63.5,
-    "gLen": 2.8,
-    "gFrames": 96
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3637,10 +3633,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g29",
-    "gStart": 66.3,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": false,
+    "g": "g15",
+    "gStart": 63.5,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3676,10 +3673,11 @@
     "flash": true,
     "v": false,
     "sepia": false,
-    "g": "g29",
-    "gStart": 66.3,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": false,
+    "g": "g15",
+    "gStart": 63.5,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3699,10 +3697,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g29",
-    "gStart": 66.3,
-    "gLen": 2.5,
-    "gFrames": 72
+    "big": false,
+    "g": "g16",
+    "gStart": 68.25,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3713,13 +3712,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -3728,10 +3721,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g30",
-    "gStart": 68.8,
-    "gLen": 4.2,
-    "gFrames": 120
+    "big": false,
+    "g": "g16",
+    "gStart": 68.25,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3751,10 +3745,11 @@
     "flash": false,
     "v": true,
     "sepia": false,
-    "g": "g30",
-    "gStart": 68.8,
-    "gLen": 4.2,
-    "gFrames": 120
+    "big": false,
+    "g": "g16",
+    "gStart": 68.25,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3765,13 +3760,7 @@
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "../../../sfx-library/whoosh_big_1.mp3",
-     "gain": -10
-    }
-   ],
+   "sfx": [],
    "vignette": true,
    "params": {
     "kf": true,
@@ -3780,10 +3769,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g30",
-    "gStart": 68.8,
-    "gLen": 4.2,
-    "gFrames": 120
+    "big": false,
+    "g": "g16",
+    "gStart": 68.25,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   },
   {
@@ -3803,10 +3793,11 @@
     "flash": false,
     "v": false,
     "sepia": false,
-    "g": "g30",
-    "gStart": 68.8,
-    "gLen": 4.2,
-    "gFrames": 120
+    "big": false,
+    "g": "g16",
+    "gStart": 68.25,
+    "gLen": 4.75,
+    "gFrames": 0
    }
   }
  ],

@@ -45,7 +45,7 @@ for i, k in enumerate(plan["shots"]):
             if d > 0.5: fx.append({"at": round(d * 0.55, 2), "name": L("kick" if i % 2 else "punch"), "gain": -10})
     elif HIT_WORDS.search(desc):
         fx += [{"at": 0.04, "name": L("punch"), "gain": -6}]
-    elif FAST_WORDS.search(desc) or i % 2 == 0:
+    elif FAST_WORDS.search(desc):
         fx += [{"at": 0.0, "name": L("whoosh_big" if d > 0.6 else "whoosh"), "gain": -10}]
     if sid in BOOM and not k["flash"]:
         fx += [{"at": 0.0, "name": L("boom"), "gain": -6}]
@@ -72,7 +72,7 @@ for i, k in enumerate(plan["shots"]):
     shots.append({"id": sid, "start": round(k["start"], 3), "end": round(k["start"] + d, 3), "line": k["desc"][:90],
                   "in": {"type": "cut"}, "sfx": fx[:4], "vignette": True,
                   "params": {"kf": True, "i": i, "kind": k["kind"], "flash": k["flash"], "v": bool(k["prompt916"]),
-                             "sepia": sid in SEPIA,
+                             "sepia": sid in SEPIA, "big": sid in BOOM,
                              **({"g": CLIPS[sid]["id"], "gStart": CLIPS[sid]["start"], "gLen": CLIPS[sid]["len"],
                                  "gFrames": CLIPS[sid].get("frames", 0)} if sid in CLIPS else {})}})
 
