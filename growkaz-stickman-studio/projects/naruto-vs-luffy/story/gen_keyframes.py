@@ -42,7 +42,8 @@ def main():
     plan = json.load(open(os.path.join(HERE, "keyframes.json")))
     mode, ids = sys.argv[1], sys.argv[2:]
     if mode == "sheets":
-        items = [(s["id"], s["prompt"], "16:9", []) for s in plan["sheets"] if not ids or s["id"] in ids]
+        base = lambda i: [os.path.join(OUT, "sheets", i[0] + "_BASE.png")] if not i.endswith("_BASE") and os.path.exists(os.path.join(OUT, "sheets", i[0] + "_BASE.png")) else []
+        items = [(s["id"], s["prompt"], "16:9", base(s["id"])) for s in plan["sheets"] if not ids or s["id"] in ids]
         sub = "sheets"
     else:
         key = "prompt169" if mode == "shots" else "prompt916"

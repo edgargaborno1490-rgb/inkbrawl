@@ -34,18 +34,15 @@ CHAR = {
  "L_BASE": f"a lean young man with {SKIN}, messy short black hair, a small scar under his left eye, "
            "an X-shaped scar on his chest, a straw hat with a red band, open red sleeveless vest, blue "
            "knee-length shorts with white cuffs, yellow sash, sandals, a huge toothy grin; red glowing outline",
- "L_GEAR2": "the same straw-hat young man, his brown skin flushed reddish, thick white-pink steam rising "
-            "from his whole body, crouched low; red glowing outline",
- "L_HAKI": "the same straw-hat young man, both forearms and fists coated in glossy black armor-like haki "
-           "with crackling red-black lightning; red glowing outline",
+ "L_GEAR2": "the same straw-hat young man in the same straw hat, red vest, blue shorts and yellow sash, his skin still warm medium brown with only a slight red flush, thick white-pink steam rising from his whole body, crouched low; red glowing outline",
+ "L_HAKI": "the same straw-hat young man in exactly the same outfit (round straw hat with red band, open red vest, blue shorts with white cuffs, yellow sash, sandals), both forearms and fists coated in glossy black armor-like haki with crackling red-black lightning; red glowing outline",
  "L_SNAKE": f"the same young man ({SKIN}) in a pumped-up form: huge muscular upper body, arms coated in "
-            "glossy black haki with red flame patterns, dark red steam floating like a scarf around his "
-            "shoulders, sharp narrow eyes, menacing grin; dark red glowing outline",
+            "glossy black haki with red flame patterns, dark red steam floating like a scarf around his shoulders, straw hat hanging on his back, blue shorts with white cuffs, yellow sash, sharp narrow eyes, menacing grin; dark red glowing outline",
  "L_G5": f"the same young man ({SKIN}) in his white form: pure white hair rising like flames, white "
          "eyebrows, white vest and white shorts, wisps of white cloud forming a halo ring around his "
          "shoulders, huge laughing grin, wide cartoonish glowing eyes; bright white glowing outline",
  "L_DRAINED": f"the same young man ({SKIN}) completely drained: shriveled thin body, wrinkled old-looking "
-              "face, sunken eyes, sweating, white hair going limp, kneeling",
+              "face, sunken eyes, sweating, limp white hair, still wearing his white vest and white shorts, clearly the same young man shrunken and aged by exhaustion, kneeling",
  "KIZARU": "a tall man in a yellow striped suit and dark sunglasses firing beams of golden light from his feet",
 }
 
@@ -56,7 +53,7 @@ SHEETS = {
  "L_SNAKE": "Luffy Gear 4 Snakeman", "L_HAKI": "Luffy Haki fists", "L_G5": "Luffy Gear 5",
  "L_DRAINED": "Luffy drained",
 }
-SHEET_PROMPT = ("Character reference sheet, plain light grey background: full-body front view, 3/4 view, "
+SHEET_PROMPT = ("Character reference sheet, no text labels anywhere, plain light grey background: full-body front view, 3/4 view, "
                 "back view, plus three face close-ups (grin, angry shout, glowing-eyed power-up). ")
 
 # (start s, kind, flash, chars, description). Times come from timeline/words.json.
