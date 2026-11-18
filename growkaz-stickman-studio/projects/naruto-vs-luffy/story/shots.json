@@ -1,6 +1,6 @@
 {
  "title": "Gear 5 Luffy vs Six Paths Naruto: Who Wins?",
- "duration": 73.0,
+ "duration": 71.0,
  "shots": [
   {
    "id": "k001",
@@ -3775,30 +3775,6 @@
     "gLen": 4.75,
     "gFrames": 120
    }
-  },
-  {
-   "id": "k118",
-   "start": 71.0,
-   "end": 73.0,
-   "line": "an empty misty field with two new shadowy glowing silhouettes in the far distance",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "vignette": true,
-   "params": {
-    "kf": true,
-    "i": 117,
-    "kind": "W",
-    "flash": false,
-    "v": false,
-    "sepia": false,
-    "big": false,
-    "g": "g16",
-    "gStart": 68.25,
-    "gLen": 4.75,
-    "gFrames": 120
-   }
   }
  ],
  "music": [
@@ -3838,7 +3814,7 @@
   {
    "name": "../../../sfx-library/wind_field_1.mp3",
    "start": 0,
-   "end": 73.0,
+   "end": 71.0,
    "gain": -28
   },
   {
@@ -3846,6 +3822,54 @@
    "start": 28.0,
    "end": 60.5,
    "gain": -22
+  }
+ ],
+ "overrides": [
+  {
+   "start": 3.69,
+   "end": 4.55,
+   "still": "k008"
+  },
+  {
+   "start": 26.66,
+   "end": 27.2,
+   "still": "k051"
+  },
+  {
+   "start": 27.2,
+   "end": 28.1,
+   "still": "k052"
+  },
+  {
+   "start": 54.42,
+   "end": 55.4,
+   "still": "k098"
+  },
+  {
+   "start": 61.7,
+   "end": 63.5,
+   "still": "k106"
+  },
+  {
+   "start": 63.5,
+   "end": 64.95,
+   "tint": "sepia"
+  },
+  {
+   "start": 65.02,
+   "end": 66.25,
+   "still": "k110"
+  },
+  {
+   "start": 68.25,
+   "end": 69.35,
+   "still": "k115"
+  },
+  {
+   "start": 69.35,
+   "end": 71.0,
+   "clip": "g14",
+   "from": 2.4
   }
  ]
 }

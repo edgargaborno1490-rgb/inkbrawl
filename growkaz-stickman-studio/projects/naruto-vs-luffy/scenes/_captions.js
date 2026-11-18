@@ -17,7 +17,7 @@ const PICKS = [
   ['naruto', 'NARUTO'], ['chakra', 'CHAKRA'], ['nine', 'NINE'], ['beasts', 'BEASTS'], ['six', 'SIX'], ['paths', 'PATHS'], ['truth', 'TRUTH-SEEKING'], ['balls', 'BALLS'],
   ['outlast', 'OUTLAST'],
   ['naruto', 'NARUTO'], ['wins', 'WINS'], ['close', 'CLOSE'], ['luffy', 'LUFFY'], ['harder', 'HARDER'], ['bigger', 'BIGGER'], ['tank', 'TANK'],
-  ['clones', 'CLONES'], ['down', 'DOWN'], ['comment', 'COMMENT'], ['you', 'YOU'], ['wins', 'WINS'], ['fight', 'FIGHT'], ['next', 'NEXT?'],
+  ['clones', 'CLONES'], ['down', 'DOWN'], ['comment', 'COMMENT'], ['you', 'YOU'], ['wins', 'WINS'],   // owner: no "who should fight next" (voice cut at 69.95 s)
 ];
 
 let CAPS = null;

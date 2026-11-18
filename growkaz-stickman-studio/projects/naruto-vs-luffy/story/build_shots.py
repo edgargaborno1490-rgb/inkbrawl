@@ -76,9 +76,26 @@ for i, k in enumerate(plan["shots"]):
                              **({"g": CLIPS[sid]["id"], "gStart": CLIPS[sid]["start"], "gLen": CLIPS[sid]["len"],
                                  "gFrames": CLIPS[sid].get("frames", 0)} if sid in CLIPS else {})}})
 
+# ---- owner edits (Nov 18, 2026): end after "Comment who YOU think wins" (voice cut at 69.95 s), Luffy stays on the
+# ground at the end, and clean still pictures cover the few close-ups where the AI drew the village symbol on the
+# golden headband (the silver plates are repaired by story/fix_headbands.py).
+END = 71.0
+shots = [s_ for s_ in shots if s_["start"] < END]
+shots[-1]["end"] = END
+OVERRIDES = [
+ {"start": 3.69, "end": 4.55, "still": "k008"},            # g01 golden close-up
+ {"start": 26.66, "end": 27.2, "still": "k051"},           # g06 close-ups (temple touch / eyes open)
+ {"start": 27.2, "end": 28.1, "still": "k052"},
+ {"start": 54.42, "end": 55.4, "still": "k098"},           # g13 golden close-up
+ {"start": 61.7, "end": 63.5, "still": "k106"},            # g14: cut before Luffy stands; kneeling grin
+ {"start": 63.5, "end": 64.95, "tint": "sepia"},           # g15 recap of Luffy's hits reads as a memory
+ {"start": 65.02, "end": 66.25, "still": "k110"},          # g15 golden close-up
+ {"start": 68.25, "end": 69.35, "still": "k115"},          # "Comment who YOU..." Naruto points at camera
+ {"start": 69.35, "end": END, "clip": "g14", "from": 2.4},  # "...think wins": Luffy kneeling on the ground, to the end
+]
 beds = [{"name": "../../../sfx-library/wind_field_1.mp3", "start": 0, "end": END, "gain": -28},
         {"name": "../../../sfx-library/rumble_1.mp3", "start": 28.0, "end": 60.5, "gain": -22}]
-out = {"title": old.get("title", "Naruto vs Luffy"), "duration": END, "shots": shots, "music": old["music"], "sfx": [], "beds": beds}
+out = {"title": old.get("title", "Naruto vs Luffy"), "duration": END, "shots": shots, "music": old["music"], "sfx": [], "beds": beds, "overrides": OVERRIDES}
 json.dump(out, open(os.path.join(HERE, "shots.json"), "w"), indent=1)
 n = sum(len(s["sfx"]) for s in shots)
 hits = sum(1 for s in shots for f in s["sfx"] if any(w in f["name"] for w in ("punch", "kick", "boom")))

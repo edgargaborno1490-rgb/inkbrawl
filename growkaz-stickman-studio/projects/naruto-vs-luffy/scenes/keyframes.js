@@ -22,10 +22,21 @@ const urlFor = (b, t) => {
   const idx = clamp(1 + Math.floor((t - b.start) * 24 * sp), 1, b.frames);  // hold last frame if the clip is short
   return `/project/build/clipframes/${b.g}/${String(idx).padStart(4, '0')}.jpg`;
 };
+// owner edits: still-picture covers, a clip segment for the ending, sepia memory tint (story/shots.json "overrides")
+const OV = ((await (await fetch('/project/story/shots.json')).json()).overrides) || [];
+const ovAt = t => OV.find(o => t >= o.start && t < o.end && !o.tint);
+const tintAt = t => OV.find(o => t >= o.start && t < o.end && o.tint);
+const ovUrl = (o, t) => {
+  const b = G.find(x => x.g === o.clip); if (!b) return null;
+  const idx = clamp(1 + Math.floor(((o.from || 0) + t - o.start) * 24), 1, b.frames);
+  return `/project/build/clipframes/${b.g}/${String(idx).padStart(4, '0')}.jpg`;
+};
 const FR = new Map();
 async function want(u) { if (!u || FR.has(u)) return; FR.set(u, await load(u)); while (FR.size > 16) FR.delete(FR.keys().next().value); }
 window.PREP = async f => {
-  const t = f / E.fps, b = beatAt(t); await want(urlFor(b, t));
+  const t = f / E.fps, o = ovAt(t);
+  if (o) { if (o.clip) await want(ovUrl(o, t)); return; }
+  const b = beatAt(t); await want(urlFor(b, t));
   const i = G.indexOf(b); if (i > 0 && t - b.start < XF) await want(urlFor(G[i - 1], t));
 };
 
@@ -41,6 +52,13 @@ function draw(g, t, info) {
   const s = info.shot, p = s.params, i = p.i, T = s.start + t;
   g.fillStyle = '#fff'; g.fillRect(0, 0, E.W, E.H);
   if (p.big && t < F()) return;                                // biggest hits: one pure white frame
+  const o = ovAt(T);
+  if (o) {
+    if (o.still && IMG[o.still]?.h) cover(g, IMG[o.still].h, 1.03 + 0.05 * clamp((T - o.start) / (o.end - o.start)), 0, 0);
+    else if (o.clip && FR.get(ovUrl(o, T))) cover(g, FR.get(ovUrl(o, T)), 1.0, 0, 0);
+    if (tintAt(T) || p.sepia) sepia(g);
+    return;
+  }
   const b = beatAt(T), bi = G.indexOf(b), cur = FR.get(urlFor(b, T));
   let ox = 0, oy = 0, z = 1.0;
   if (p.big) { const a = 18 * (1 - prog(t, 0, 0.3)) ** 2; [ox, oy] = shake(t, i, a); z = 1.0 + 0.04 * (1 - ease.out(prog(t, 0, 0.25))); }
@@ -52,7 +70,8 @@ function draw(g, t, info) {
     const k = clamp(t / info.dur); cover(g, IMG[s.id].h, 1.03 + 0.06 * k, ox, oy);
   }
   if (p.big && t >= F()) { const a = 0.35 * (1 - prog(t, F(), 0.12)); if (a > 0) { g.fillStyle = `rgba(255,255,255,${a})`; g.fillRect(0, 0, E.W, E.H); } }
-  if (p.sepia) { g.save(); g.globalCompositeOperation = 'color'; g.fillStyle = 'rgba(150,110,60,0.75)'; g.fillRect(0, 0, E.W, E.H); g.restore(); }
+  if (p.sepia || tintAt(T)) sepia(g);
 }
+function sepia(g) { g.save(); g.globalCompositeOperation = 'color'; g.fillStyle = 'rgba(150,110,60,0.75)'; g.fillRect(0, 0, E.W, E.H); g.restore(); }
 
 for (const s of E.shots) if (s.params?.kf) registerShot(s.id, { kind: '2d', draw });
