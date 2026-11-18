@@ -109,7 +109,7 @@ S = [
  (22.20, "FX", True, ["N_BASE"], "impact frame, a blond ninja doubled over by a black fist, white shockwave"),
  (22.70, "W", True,  ["N_BASE"], "a line of blond ninjas getting hit one after another, each bursting into a white smoke puff"),
  (23.25, "CU", True, ["N_BASE"], "a smoke puff exploding outward where a ninja just was"),
- (23.80, "W", False, [], "the grass field covered with drifting white smoke clouds"),
+ (23.80, "W", False, [], "quiet aftermath: an empty grass field covered with dozens of soft drifting white smoke puffs where clones vanished, no energy blasts"),
  (24.55, "CU", False, ["N_BASE"], "the real blond ninja's eye opening sharply, half hidden behind a rock"),
  (25.10, "M", False, ["N_BASE"], "one last ninja popping into smoke, a glowing orange thread of light flowing out of the puff"),
  (25.50, "CU", True, ["N_BASE"], "a smoke puff popping with an orange spark"),
@@ -193,7 +193,10 @@ END = 73.0
 def prompt(desc, chars, aspect):
     who = " ".join(f"[{CHAR[c]}{(' ' + BLANK) if c.startswith('N_') else ''}]" for c in chars)
     frame = "16:9 widescreen frame." if aspect == "16:9" else "9:16 vertical frame."
-    return f"{STYLE} {frame} Scene: {desc}. Characters: {who}".strip()
+    if not chars:
+        return f"{STYLE} {frame} Scene: {desc}. No people, no characters, no figures anywhere in the frame: only the landscape and effects."
+    one = " Only one person in the frame, drawn once." if len(chars) == 1 and "ninjas" not in desc and "army" not in desc and "identical" not in desc else ""
+    return f"{STYLE} {frame} Scene: {desc}.{one} Characters: {who}".strip()
 
 
 def main():

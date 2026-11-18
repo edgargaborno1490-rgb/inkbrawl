@@ -68,7 +68,7 @@
 | k043 | 22.20 | 0.50 | FX | ⚡ | N_BASE | impact frame, a blond ninja doubled over by a black fist, white shockwave |
 | k044 | 22.70 | 0.55 | W | ⚡ | N_BASE | a line of blond ninjas getting hit one after another, each bursting into a white smoke puff |
 | k045 | 23.25 | 0.55 | CU | ⚡ | N_BASE | a smoke puff exploding outward where a ninja just was |
-| k046 | 23.80 | 0.75 | W |  |  | the grass field covered with drifting white smoke clouds |
+| k046 | 23.80 | 0.75 | W |  |  | quiet aftermath: an empty grass field covered with dozens of soft drifting white smoke puffs where clones vanished, no energy blasts |
 | k047 | 24.55 | 0.55 | CU |  | N_BASE | the real blond ninja's eye opening sharply, half hidden behind a rock |
 | k048 | 25.10 | 0.40 | M |  | N_BASE | one last ninja popping into smoke, a glowing orange thread of light flowing out of the puff |
 | k049 | 25.50 | 0.55 | CU | ⚡ | N_BASE | a smoke puff popping with an orange spark |
