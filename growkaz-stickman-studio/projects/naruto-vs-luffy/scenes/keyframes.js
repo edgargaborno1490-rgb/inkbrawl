@@ -18,7 +18,8 @@ const XF = 0.25;                                              // crossfade secon
 const beatAt = t => { let b = null; for (const x of G) if (t >= x.start - 1e-6) b = x; return b; };
 const urlFor = (b, t) => {
   if (!b || !b.frames) return null;
-  const idx = clamp(1 + Math.floor((t - b.start) * 24), 1, b.frames);   // normal speed; hold last frame if short
+  const sp = clamp(b.frames / 24 / b.len, 1, 1.25);                       // near-normal speed: at most 1.25x so each beat finishes
+  const idx = clamp(1 + Math.floor((t - b.start) * 24 * sp), 1, b.frames);  // hold last frame if the clip is short
   return `/project/build/clipframes/${b.g}/${String(idx).padStart(4, '0')}.jpg`;
 };
 const FR = new Map();
