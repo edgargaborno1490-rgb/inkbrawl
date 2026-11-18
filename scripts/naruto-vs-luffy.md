@@ -1,6 +1,6 @@
 # Naruto vs Luffy
 
-**Status: DRAFT** (the owner changes this to `APPROVED`; nothing is built before that)
+**Status: APPROVED** (owner, Nov 18, 2026 · voiceover: `voiceovers/naruto-vs-luffy.mp3`, 71.6 s)
 **Channel:** Ink Brawl · **Shape:** 16:9 main, 9:16 cut · **Target:** 60–80 s
 **Versions fighting:** end-of-war Naruto (Six Paths Sage Mode, Kurama, all nine tailed beasts' chakra)
 vs. current Luffy (Gear 5, Advanced Conqueror's Haki, future sight). Both at their peak in their main manga.
