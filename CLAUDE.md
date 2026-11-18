@@ -17,6 +17,13 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
   frames, our captions, our SFX). Describe characters by look in prompts. The 3D toon test was rejected. **Skin: each fighter's usual anime skin tone**
   (owner, Nov 18, 2026; replaces the earlier brown-skin rule). **Faces like the owner's reference** (`reference/ref4-luffy-vs-naruto.mp4`): grins, eyes and glowing
   eyes on power-ups. Fighters are recognized by outfit colors, hair shape and signature moves.
+- **Style confirmed by the owner (Nov 18, 2026, after comparing): ref4 look, NOT refs 1–3.** Refs 1–3 (faceless
+  dark silhouettes, pale washed backgrounds) are a different style: use them only for pacing. Our fighters have faces
+  and anime skin tones. Every video is **real animation**: Nano Banana keyframes are turned into moving clips with
+  **Gemini Omni Flash** (Interactions API, `POST /v1beta/interactions`, model `gemini-omni-1.2-flash`,
+  `response_format: {type: video, duration: "4s", aspect_ratio, resolution}`), not still pictures with camera moves.
+- **SFX = the ElevenLabs library in `sfx-library/`** (real anime punches, kicks, rocks, booms, whooshes; key = network
+  secret on `api.elevenlabs.io`, header `xi-api-key`). Never the code-generated synth SFX.
 - **Original drawings only:** never real anime footage, screenshots, logos or official art.
 - **One big bold white word on screen at a time**, landing on the spoken word.
 - **Very fast cuts like ref4:** ~110 shots per 80 s (median ~0.5 s), plus 1–2-frame white flashes / impact
