@@ -10,8 +10,11 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
 
 ## Format
 - **16:9 main shape, 60–80 s**; every video is also rendered in **9:16**.
-- **Look (style `brown-anime`, owner Nov 18, 2026):** **real 3D**, toon-shaded anime fighters (cel shading +
-  dark outlines, glowing rim/auras) in misty grass-field arenas. Every fighter has the same **warm medium-brown
+- **Look (owner Nov 18, 2026, final):** match `reference/ref4-luffy-vs-naruto.mp4`: 2D TV-anime cel art (thick
+  black ink lines, flat cel colors, glowing outlines in each fighter's color, extreme perspective, painted misty
+  grass field). Made as **AI keyframes with Nano Banana** (Gemini image API; key = network secret on the "Anime
+  Fights" environment, header `x-goog-api-key`), then cut together in the studio (camera push/shake, white flash
+  frames, our captions, our SFX). Describe characters by look in prompts. The 3D toon test was rejected. Every fighter has the same **warm medium-brown
   skin**. **Faces like the owner's reference** (`reference/ref4-luffy-vs-naruto.mp4`): grins, eyes and glowing
   eyes on power-ups. Fighters are recognized by outfit colors, hair shape and signature moves.
 - **Original drawings only:** never real anime footage, screenshots, logos or official art.
