@@ -43,10 +43,10 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
 4. **`/video-sound`**: SFX `hit`/`kick`/`impact` on every contact, `whoosh`/`swish` on fast moves, `riser` into
    the turning point, `stinger` on the verdict; never more than 2 cues at once. Light generated music under the
    voice (mood `action`, intensity 0.6–0.8; `epic` for the turning point), ducked; −14 LUFS.
-5. Cover + post text: `social-media-skills:thumbnail-design` (both fighters, brown skin, faceless, the cover
+5. Cover + post text: `social-media-skills:thumbnail-design` (both fighters, brown skin, faces like ref4, the cover
    word from Packaging in huge white letters, auras in their colors) and `social-media-skills:caption-writer`
    (title = the Pick, 3–5 hashtags, ends with the comment question). Save to `out/<slug>-post.md`.
-6. QC: duration 60–80 s, audio present, one word on screen at a time, no eyes/mouths anywhere, no logos.
+6. QC: duration 60–80 s, audio present, one word on screen at a time, no logos.
    Send the owner both MP4s + the cover. Update `IDEAS.md` (status: made) and commit/push.
 
 ## Style: `brown-anime` (locked look for every video)
@@ -54,9 +54,9 @@ are the engine, and **this file overrides their stickman look** (see "Style" bel
   ONE hard shadow band per shape (no gradients on characters). No stickmen, no rim-light requirement.
 - **Skin: warm medium brown, the same on every fighter:** base `#8D5B3E`, shade `#6B412B`, tiny highlight
   `#A8714F` (optional, on shoulders/knuckles). Never black silhouettes, never lighter or darker per character.
-- **Faceless:** heads are skin-colored shapes with **no eyes, no mouth, no nose**. Emotion comes from pose,
-  head tilt, hair motion, aura and camera. (Glows like Sage markings or a Haki glint may sit on the face area as
-  colored light, never as eyes.)
+- **UPDATE Nov 18, 2026 (owner): the look is now REAL 3D (toon-shaded Three.js fighters, outlines, glow) and
+  fighters HAVE FACES like `reference/ref4-luffy-vs-naruto.mp4` (grins, eyes, glowing eyes). Where this
+  section says flat 2D or faceless, the owner's update wins.**
 - **Recognition = outfit colors + hair shape + signature moves.** Each fighter has a kit in
   `projects/<slug>/scenes/cast.js` (outfit colors, hair silhouette, aura color, move effects) kept identical
   across all videos; reuse a fighter's kit when they come back. No emblems or logos on clothes (plain

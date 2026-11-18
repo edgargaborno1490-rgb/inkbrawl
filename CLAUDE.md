@@ -10,14 +10,17 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
 
 ## Format
 - **16:9 main shape, 60–80 s**; every video is also rendered in **9:16**.
-- **Look (style `brown-anime`):** flat 2D anime illustration with soft cel shading. Every fighter has the same
-  **warm medium-brown skin**. Faces are simple and **faceless (no eyes, no mouth)**: fighters are recognized
-  by iconic outfit colors, hair shape and signature moves.
+- **Look (style `brown-anime`, owner Nov 18, 2026):** **real 3D**, toon-shaded anime fighters (cel shading +
+  dark outlines, glowing rim/auras) in misty grass-field arenas. Every fighter has the same **warm medium-brown
+  skin**. **Faces like the owner's reference** (`reference/ref4-luffy-vs-naruto.mp4`): grins, eyes and glowing
+  eyes on power-ups. Fighters are recognized by outfit colors, hair shape and signature moves.
 - **Original drawings only:** never real anime footage, screenshots, logos or official art.
 - **One big bold white word on screen at a time**, landing on the spoken word.
-- **Fast cuts every 1–3 s:** wide arena shots, close-ups (fists, feet, hand signs), impact frames, speed lines,
-  craters/debris, power auras in each fighter's color.
-- Sound: punch impacts, whooshes, light music under the voice.
+- **Very fast cuts like ref4:** ~110 shots per 80 s (median ~0.5 s), plus 1–2-frame white flashes / impact
+  frames on hits; about half the shots are huge close-ups (faces, fists, feet, hand signs), the rest wide arena
+  shots, craters/debris, power auras in each fighter's color.
+- Sound: dense like ref4 (~1.3 hits/s, deep booms on big moments, rumble bed, whoosh on cuts), always our own
+  generated or licensed SFX, never audio taken from a reference video. Light music under the voice.
 
 ## Story (every script)
 1. Hook (first 3 s): the matchup + "who would win?"
@@ -31,7 +34,7 @@ Fair to both sides. Plain spoken English, ~150–190 words.
 - Scripts: `scripts/<a>-vs-<b>.md`, written **Status: DRAFT**. Only the owner marks **APPROVED**; build nothing
   before that and before the owner's voiceover MP3.
 - Matchups list and status: `IDEAS.md`.
-- `reference/`: the owner's reference videos (+ contact sheets). They show **pacing and camera only**; our
-  fighters have brown skin, not black silhouettes.
+- `reference/`: the owner's reference videos (+ contact sheets). They show **pacing, camera and look**; never copy
+  their shots one-for-one or reuse their audio; our fighters have brown skin, not black silhouettes.
 - TubeAlfred credits are shared with the owner's other channel: max 3 calls per video, none below 15 left.
 - Push straight to `main`.
