@@ -33,7 +33,7 @@
     "g": "g01",
     "gStart": 0.0,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -62,7 +62,7 @@
     "g": "g01",
     "gStart": 0.0,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -96,7 +96,7 @@
     "g": "g01",
     "gStart": 0.0,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -119,7 +119,7 @@
     "g": "g01",
     "gStart": 0.0,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -148,7 +148,7 @@
     "g": "g01",
     "gStart": 0.0,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -187,7 +187,7 @@
     "g": "g02",
     "gStart": 2.1,
     "gLen": 3.65,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -216,7 +216,7 @@
     "g": "g02",
     "gStart": 2.1,
     "gLen": 3.65,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -255,7 +255,7 @@
     "g": "g02",
     "gStart": 2.1,
     "gLen": 3.65,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -284,7 +284,7 @@
     "g": "g02",
     "gStart": 2.1,
     "gLen": 3.65,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -318,7 +318,7 @@
     "g": "g02",
     "gStart": 2.1,
     "gLen": 3.65,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -352,7 +352,7 @@
     "g": "g02",
     "gStart": 2.1,
     "gLen": 3.65,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -381,7 +381,7 @@
     "g": "g03",
     "gStart": 5.75,
     "gLen": 2.55,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -410,7 +410,7 @@
     "g": "g03",
     "gStart": 5.75,
     "gLen": 2.55,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -433,7 +433,7 @@
     "g": "g03",
     "gStart": 5.75,
     "gLen": 2.55,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -472,7 +472,7 @@
     "g": "g03",
     "gStart": 5.75,
     "gLen": 2.55,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -495,7 +495,7 @@
     "g": "g03",
     "gStart": 5.75,
     "gLen": 2.55,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -529,7 +529,7 @@
     "g": "g04",
     "gStart": 8.3,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -563,7 +563,7 @@
     "g": "g04",
     "gStart": 8.3,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -592,7 +592,7 @@
     "g": "g04",
     "gStart": 8.3,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -621,7 +621,7 @@
     "g": "g04",
     "gStart": 8.3,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -655,7 +655,7 @@
     "g": "g04",
     "gStart": 8.3,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -678,7 +678,7 @@
     "g": "g04",
     "gStart": 8.3,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -707,7 +707,7 @@
     "g": "g05",
     "gStart": 11.3,
     "gLen": 1.8,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -730,7 +730,7 @@
     "g": "g05",
     "gStart": 11.3,
     "gLen": 1.8,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -774,7 +774,7 @@
     "g": "g05",
     "gStart": 11.3,
     "gLen": 1.8,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -813,7 +813,7 @@
     "g": "g06",
     "gStart": 13.1,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -842,7 +842,7 @@
     "g": "g06",
     "gStart": 13.1,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -876,7 +876,7 @@
     "g": "g06",
     "gStart": 13.1,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -905,7 +905,7 @@
     "g": "g06",
     "gStart": 13.1,
     "gLen": 2.1,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -944,7 +944,7 @@
     "g": "g07",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -973,7 +973,7 @@
     "g": "g07",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -1002,7 +1002,7 @@
     "g": "g07",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -1031,7 +1031,7 @@
     "g": "g07",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -1054,7 +1054,7 @@
     "g": "g07",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -1083,7 +1083,7 @@
     "g": "g07",
     "gStart": 15.2,
     "gLen": 3.45,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -1127,7 +1127,7 @@
     "g": "g08",
     "gStart": 18.65,
     "gLen": 2.05,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1161,7 +1161,7 @@
     "g": "g08",
     "gStart": 18.65,
     "gLen": 2.05,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1200,7 +1200,7 @@
     "g": "g08",
     "gStart": 18.65,
     "gLen": 2.05,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1229,7 +1229,7 @@
     "g": "g08",
     "gStart": 18.65,
     "gLen": 2.05,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1263,7 +1263,7 @@
     "g": "g09",
     "gStart": 20.7,
     "gLen": 2.0,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1292,7 +1292,7 @@
     "g": "g09",
     "gStart": 20.7,
     "gLen": 2.0,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1321,7 +1321,7 @@
     "g": "g09",
     "gStart": 20.7,
     "gLen": 2.0,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1355,7 +1355,7 @@
     "g": "g09",
     "gStart": 20.7,
     "gLen": 2.0,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1399,7 +1399,7 @@
     "g": "g10",
     "gStart": 22.7,
     "gLen": 1.85,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1443,7 +1443,7 @@
     "g": "g10",
     "gStart": 22.7,
     "gLen": 1.85,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1477,7 +1477,7 @@
     "g": "g10",
     "gStart": 22.7,
     "gLen": 1.85,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1511,7 +1511,7 @@
     "g": "g11",
     "gStart": 24.55,
     "gLen": 3.55,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -1540,7 +1540,7 @@
     "g": "g11",
     "gStart": 24.55,
     "gLen": 3.55,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -1584,7 +1584,7 @@
     "g": "g11",
     "gStart": 24.55,
     "gLen": 3.55,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -1613,7 +1613,7 @@
     "g": "g11",
     "gStart": 24.55,
     "gLen": 3.55,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -1642,7 +1642,7 @@
     "g": "g11",
     "gStart": 24.55,
     "gLen": 3.55,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -1665,7 +1665,7 @@
     "g": "g11",
     "gStart": 24.55,
     "gLen": 3.55,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -1704,7 +1704,7 @@
     "g": "g12",
     "gStart": 28.1,
     "gLen": 1.8,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1748,7 +1748,7 @@
     "g": "g12",
     "gStart": 28.1,
     "gLen": 1.8,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1782,7 +1782,7 @@
     "g": "g12",
     "gStart": 28.1,
     "gLen": 1.8,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1811,7 +1811,7 @@
     "g": "g13",
     "gStart": 29.9,
     "gLen": 1.6,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1850,7 +1850,7 @@
     "g": "g13",
     "gStart": 29.9,
     "gLen": 1.6,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1873,7 +1873,7 @@
     "g": "g13",
     "gStart": 29.9,
     "gLen": 1.6,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1907,7 +1907,7 @@
     "g": "g14",
     "gStart": 31.5,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1951,7 +1951,7 @@
     "g": "g14",
     "gStart": 31.5,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -1985,7 +1985,7 @@
     "g": "g14",
     "gStart": 31.5,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2014,7 +2014,7 @@
     "g": "g15",
     "gStart": 33.2,
     "gLen": 2.35,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2058,7 +2058,7 @@
     "g": "g15",
     "gStart": 33.2,
     "gLen": 2.35,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2102,7 +2102,7 @@
     "g": "g15",
     "gStart": 33.2,
     "gLen": 2.35,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2136,7 +2136,7 @@
     "g": "g15",
     "gStart": 33.2,
     "gLen": 2.35,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2180,7 +2180,7 @@
     "g": "g16",
     "gStart": 35.55,
     "gLen": 1.55,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2214,7 +2214,7 @@
     "g": "g16",
     "gStart": 35.55,
     "gLen": 1.55,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2248,7 +2248,7 @@
     "g": "g16",
     "gStart": 35.55,
     "gLen": 1.55,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2282,7 +2282,7 @@
     "g": "g16",
     "gStart": 35.55,
     "gLen": 1.55,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2316,7 +2316,7 @@
     "g": "g17",
     "gStart": 37.1,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2355,7 +2355,7 @@
     "g": "g17",
     "gStart": 37.1,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2389,7 +2389,7 @@
     "g": "g17",
     "gStart": 37.1,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2423,7 +2423,7 @@
     "g": "g17",
     "gStart": 37.1,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2457,7 +2457,7 @@
     "g": "g18",
     "gStart": 38.8,
     "gLen": 1.95,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2486,7 +2486,7 @@
     "g": "g18",
     "gStart": 38.8,
     "gLen": 1.95,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2520,7 +2520,7 @@
     "g": "g18",
     "gStart": 38.8,
     "gLen": 1.95,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2559,7 +2559,7 @@
     "g": "g19",
     "gStart": 40.75,
     "gLen": 1.65,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2593,7 +2593,7 @@
     "g": "g19",
     "gStart": 40.75,
     "gLen": 1.65,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2637,7 +2637,7 @@
     "g": "g19",
     "gStart": 40.75,
     "gLen": 1.65,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2666,7 +2666,7 @@
     "g": "g20",
     "gStart": 42.4,
     "gLen": 2.15,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2700,7 +2700,7 @@
     "g": "g20",
     "gStart": 42.4,
     "gLen": 2.15,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2723,7 +2723,7 @@
     "g": "g20",
     "gStart": 42.4,
     "gLen": 2.15,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2757,7 +2757,7 @@
     "g": "g21",
     "gStart": 44.55,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2801,7 +2801,7 @@
     "g": "g21",
     "gStart": 44.55,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2835,7 +2835,7 @@
     "g": "g21",
     "gStart": 44.55,
     "gLen": 1.7,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -2864,7 +2864,7 @@
     "g": "g22",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2893,7 +2893,7 @@
     "g": "g22",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2922,7 +2922,7 @@
     "g": "g22",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2951,7 +2951,7 @@
     "g": "g22",
     "gStart": 46.25,
     "gLen": 3.0,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -2990,7 +2990,7 @@
     "g": "g23",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3024,7 +3024,7 @@
     "g": "g23",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3047,7 +3047,7 @@
     "g": "g23",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3081,7 +3081,7 @@
     "g": "g23",
     "gStart": 49.25,
     "gLen": 3.2,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3104,7 +3104,7 @@
     "g": "g24",
     "gStart": 52.45,
     "gLen": 3.4,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3138,7 +3138,7 @@
     "g": "g24",
     "gStart": 52.45,
     "gLen": 3.4,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3167,7 +3167,7 @@
     "g": "g24",
     "gStart": 52.45,
     "gLen": 3.4,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3201,7 +3201,7 @@
     "g": "g24",
     "gStart": 52.45,
     "gLen": 3.4,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3235,7 +3235,7 @@
     "g": "g25",
     "gStart": 55.85,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3269,7 +3269,7 @@
     "g": "g25",
     "gStart": 55.85,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3292,7 +3292,7 @@
     "g": "g25",
     "gStart": 55.85,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3331,7 +3331,7 @@
     "g": "g25",
     "gStart": 55.85,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3354,7 +3354,7 @@
     "g": "g26",
     "gStart": 58.35,
     "gLen": 2.2,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3383,7 +3383,7 @@
     "g": "g26",
     "gStart": 58.35,
     "gLen": 2.2,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3406,7 +3406,7 @@
     "g": "g26",
     "gStart": 58.35,
     "gLen": 2.2,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3445,7 +3445,7 @@
     "g": "g27",
     "gStart": 60.55,
     "gLen": 2.95,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3468,7 +3468,7 @@
     "g": "g27",
     "gStart": 60.55,
     "gLen": 2.95,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3497,7 +3497,7 @@
     "g": "g27",
     "gStart": 60.55,
     "gLen": 2.95,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3536,7 +3536,7 @@
     "g": "g28",
     "gStart": 63.5,
     "gLen": 2.8,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3565,7 +3565,7 @@
     "g": "g28",
     "gStart": 63.5,
     "gLen": 2.8,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3588,7 +3588,7 @@
     "g": "g28",
     "gStart": 63.5,
     "gLen": 2.8,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3617,7 +3617,7 @@
     "g": "g28",
     "gStart": 63.5,
     "gLen": 2.8,
-    "gFrames": 0
+    "gFrames": 96
    }
   },
   {
@@ -3640,7 +3640,7 @@
     "g": "g29",
     "gStart": 66.3,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3679,7 +3679,7 @@
     "g": "g29",
     "gStart": 66.3,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3702,7 +3702,7 @@
     "g": "g29",
     "gStart": 66.3,
     "gLen": 2.5,
-    "gFrames": 0
+    "gFrames": 72
    }
   },
   {
@@ -3731,7 +3731,7 @@
     "g": "g30",
     "gStart": 68.8,
     "gLen": 4.2,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -3754,7 +3754,7 @@
     "g": "g30",
     "gStart": 68.8,
     "gLen": 4.2,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -3783,7 +3783,7 @@
     "g": "g30",
     "gStart": 68.8,
     "gLen": 4.2,
-    "gFrames": 0
+    "gFrames": 120
    }
   },
   {
@@ -3806,7 +3806,7 @@
     "g": "g30",
     "gStart": 68.8,
     "gLen": 4.2,
-    "gFrames": 0
+    "gFrames": 120
    }
   }
  ],

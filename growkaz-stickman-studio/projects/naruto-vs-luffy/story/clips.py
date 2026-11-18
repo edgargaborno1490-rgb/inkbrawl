@@ -64,8 +64,11 @@ def groups():
                 if c not in chars: chars.append(c)
         shots = " ".join(f"({k+1}) {SH[i]['desc']}." for k, i in enumerate(sl))
         who = " ".join(f"[{plan['chars'][c]}]" for c in chars)
-        prompt = (f"{STYLE} About {dur} seconds, {len(sl)} quick cuts of roughly {ln/len(sl):.1f} s each. Beat: {beat}. "
-                  f"Shots in order: {shots} Characters: {who} Sound effects only: punches, impacts, whooshes, rumble.")
+        RULES = ("IMPORTANT: the forehead protector is a completely smooth, blank, polished steel plate with nothing engraved "
+                 "on it in every frame (no leaf, no swirl, no mark). Absolutely no onomatopoeia lettering, no katakana or kanji "
+                 "sound effects, no written words or letters drawn anywhere in any frame; show impacts with light, speed lines and debris only.")
+        prompt = (f"{RULES} {STYLE} About {dur} seconds, {len(sl)} quick cuts of roughly {ln/len(sl):.1f} s each. Beat: {beat}. "
+                  f"Shots in order: {shots} Characters: {who} Sound effects only: punches, impacts, whooshes, rumble. {RULES}")
         out.append({"id": f"g{n:02d}", "shots": sl, "start": round(start, 3), "end": round(end, 3), "len": round(ln, 3),
                     "dur": dur, "keyframe": kf, "prompt": prompt})
     return out
@@ -130,6 +133,54 @@ def groups_with_frames():
     return gs
 
 
+def qc(path):
+    """Vision check with Gemini Flash on 16 numbered frames: which frames show drawn lettering / a headband symbol."""
+    import tempfile
+    from PIL import Image, ImageDraw, ImageFont
+    d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path],
+                             capture_output=True, text=True).stdout)
+    tmp = tempfile.mkdtemp()
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", path, "-vf", f"fps=16/{d},scale=480:-1", os.path.join(tmp, "%02d.jpg")], check=True)
+    fs = sorted(os.listdir(tmp))[:16]; ims = [Image.open(os.path.join(tmp, f)).convert("RGB") for f in fs]
+    w, h = ims[0].size; T = Image.new("RGB", (w * 4, h * 4)); dr = ImageDraw.Draw(T)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 34)
+    for k, im in enumerate(ims):
+        x, y = (k % 4) * w, (k // 4) * h; T.paste(im, (x, y)); dr.text((x + 8, y + 4), str(k + 1), fill="yellow", font=font, stroke_width=3, stroke_fill="black")
+    tp = os.path.join(tmp, "tile.jpg"); T.save(tp, quality=88)
+    q = ("These are 16 numbered frames from an anime clip. Report (1) every frame number that shows any drawn lettering: "
+         "Japanese katakana/kanji sound effects (like ドドド), Latin letters or words (ignore the small yellow frame numbers); "
+         "(2) every frame number where a character's metal forehead-protector plate has an engraved symbol or emblem on it "
+         "(such as a leaf or spiral). Answer only JSON: {\"lettering\": [..], \"symbol\": [..]}")
+    body = {"contents": [{"parts": [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(tp, "rb").read()).decode()}},
+                                    {"text": q}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
+    req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                                 json.dumps(body).encode(), {"Content-Type": "application/json"})
+    r = json.load(urllib.request.urlopen(req, timeout=120))
+    res = json.loads(r["candidates"][0]["content"]["parts"][0]["text"])
+    return {"lettering": sorted(set(res.get("lettering", []))), "symbol": sorted(set(res.get("symbol", [])))}
+
+
+def fix(ids, tries=3):
+    """QC each clip; regenerate bad ones up to `tries` times; keep the version with the fewest flagged frames."""
+    os.makedirs(os.path.join(P, "clips", "v1"), exist_ok=True)
+    report = {}
+    def one(g):
+        dst = os.path.join(P, "clips", g["id"] + ".mp4")
+        if "Beat: TEST" in g["prompt"]: return
+        best = (qc(dst), open(dst, "rb").read()); score = lambda q: len(q["lettering"]) + 2 * len(q["symbol"])
+        for t in range(tries):
+            if score(best[0]) == 0: break
+            print(g["id"], "try", t + 1, "flags", best[0], flush=True)
+            try:
+                data = call(g); tmpf = dst + f".try{t}.mp4"; open(tmpf, "wb").write(data); q = qc(tmpf); os.remove(tmpf)
+                if score(q) < score(best[0]): best = (q, data)
+            except Exception as e:
+                print("FAIL", g["id"], e, flush=True)
+        open(dst, "wb").write(best[1]); report[g["id"]] = best[0]; print(g["id"], "final", best[0], flush=True)
+    with ThreadPoolExecutor(4) as ex: list(ex.map(one, [g for g in groups() if not ids or g["id"] in ids]))
+    json.dump(report, open(os.path.join(HERE, "clips-qc.json"), "w"), indent=1)
+
+
 if __name__ == "__main__":
     mode = sys.argv[1]
     if mode == "plan":
@@ -137,3 +188,5 @@ if __name__ == "__main__":
         print(len(gs), "clips,", sum(g["dur"] for g in gs), "s requested")
     elif mode == "gen": gen(sys.argv[2:])
     elif mode == "frames": frames()
+    elif mode == "qc": print({i: qc(os.path.join(P, "clips", i + ".mp4")) for i in sys.argv[2:]})
+    elif mode == "fix": fix(sys.argv[2:])
