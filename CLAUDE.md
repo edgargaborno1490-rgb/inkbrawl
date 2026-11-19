@@ -9,6 +9,11 @@ skills `/new-video`, `/video-styles`, `/render-video`, `/video-sound` (the 2D st
 `.claude/skills/make-2d-video/`), which this project uses with its own locked look.
 
 ## Format
+- **NEW LOOK (owner, Nov 19, 2026; replaces the ref4 look below):** the faceless style of refs 1–3 (`reference/ref1`,
+  `ref2`, `ref3`): solid dark faceless heads/skin, pale washed backgrounds, thin clean lines, flat colors, bright
+  color only on powers. Original drawings only. Made free on the owner's Windows PC (RX 7900 GRE) with ComfyUI +
+  Wan 2.2; plan and setup in `LOCAL-PC-HANDOFF.md`. Where older rules below say "ref4 look", "faces" or "never black
+  silhouettes", this new look wins.
 - **16:9 main shape, 60–80 s**; every video is also rendered in **9:16**.
 - **Look (owner Nov 18, 2026, final):** match `reference/ref4-luffy-vs-naruto.mp4`: 2D TV-anime cel art (thick
   black ink lines, flat cel colors, glowing outlines in each fighter's color, extreme perspective, painted misty
