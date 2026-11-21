@@ -43,7 +43,7 @@ anime format: don't use it for brawls.
 - Scripts: `scripts/<name>.md`, written **Status: DRAFT**. Only the owner marks **APPROVED**; build the full video
   only after that (and after the owner's voiceover MP3, if the video has narration).
 - Video list and status: `IDEAS.md`. First video: **100 Men vs 1 Gorilla** (no followers yet, so it opens with the
-  internet's most argued fight debate and asks people to comment "ME" to be in the next brawl).
+  internet's most argued fight debate; the gorilla wins; ends with the next-fighter vote).
 - **CHARACTER ART = THE OWNER'S OWN DRAWINGS, TRACED (owner, Nov 21, 2026).** Don't redraw characters in code: code
   only approximates. The owner makes sprite sheets in ChatGPT (one character, 8 poses in a 2x4 grid on white: idle,
   punch, kick, hit, fly, ko, run, win) saved in `reference/sprites/<name>-sheet.png`.
@@ -72,9 +72,12 @@ anime format: don't use it for brawls.
   votes in `IDEAS.md` ("Character unlocks"). Don't invent new designs or redraw them in code.
 
 ## Followers (fighters)
-- Names come from people who **commented to join** (opt-in) on the owner's posts. Use only public usernames from
-  people who opted in; never real faces, photos or private info.
+- **Every follower joins the fight (owner, Nov 21, 2026).** No "comment to join" needed. Use only followers' public
+  usernames (the owner provides the list); never real faces, photos or private info.
+- Videos end with the **"which fighter joins next?" vote** (see Character unlocks), not "comment ME".
 - Ask the owner how the winner is picked (random with a shown seed, or the owner picks) before each video.
+- Voiceovers: the owner may make the MP3 themselves (e.g. in ElevenLabs) and send it. Claude still never calls
+  ElevenLabs or any paid AI service itself.
 
 ## Rules
 - **NO PAID AI SERVICES (owner, Nov 18, 2026):** never call Google Gemini / Nano Banana / Omni or ElevenLabs, and

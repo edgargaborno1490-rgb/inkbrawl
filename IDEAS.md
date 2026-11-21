@@ -4,8 +4,8 @@ Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
 
 | # | Video | Why it works | Status |
 |---|---|---|---|
-| 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate | DRAFT · `scripts/100-men-vs-gorilla.md` |
-| 2 | First follower free-for-all | names from "comment ME" on video #1 | idea |
+| 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate; gorilla wins (to spark arguments); ends with the next-fighter vote | APPROVED · waiting for owner's MP3 · `scripts/100-men-vs-gorilla.md` |
+| 2 | First follower free-for-all | every follower joins automatically | idea |
 
 ## Character unlocks (viewers vote, the winner gets drawn)
 
