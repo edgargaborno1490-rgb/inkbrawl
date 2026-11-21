@@ -184,12 +184,13 @@ function floorDetails(cam, seed) {          // faint scratch lines on the floor 
   return g;
 }
 // place: {x, z, lift, rot, face(1/-1), name, f:{...}}
-function scene(cam, placed, fx = '') {
+function scene(cam, placed, fx = '') {   // p.draw() can replace the stick man (e.g. the gorilla); p.shadow = shadow radius
   let shadows = '', bodies = '';
-  const order = placed.map(p => ({ p, q: cam(p.x, 0, p.z) })).sort((a, b) => b.q.z - a.q.z);
+  const order = placed.map(p => ({ p, q: cam(p.x, 0, p.z) })).filter(o => o.q.z > 80)
+                      .sort((a, b) => (b.q.z - (b.p.zBias || 0)) - (a.q.z - (a.p.zBias || 0)));
   for (const { p, q } of order) {
     const s = q.s * 1.0, lift = (p.lift || 0) * s;
-    const fr = fighter(p.f), sh = 95 * s * (1 - Math.min(.5, (p.lift || 0) / 600));
+    const fr = p.draw ? p.draw() : fighter(p.f), sh = (p.shadow || 95) * s * (1 - Math.min(.5, (p.lift || 0) / 600));
     shadows += `<ellipse opacity="${p.o ?? 1}" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" rx="${sh.toFixed(1)}" ry="${(sh * .32).toFixed(1)}" fill="${SHADOW}"/>`;
     bodies += `<g opacity="${p.o ?? 1}" transform="translate(${q.x.toFixed(1)},${(q.y - lift).toFixed(1)}) rotate(${(p.rot || 0) * (p.face || 1)}) scale(${(s * (p.face || 1)).toFixed(3)},${s.toFixed(3)})">${fr.svg}</g>`;
     if (p.name && (p.o ?? 1) > .05) bodies += `<text opacity="${p.o ?? 1}" x="${q.x.toFixed(1)}" y="${(q.y - lift + (fr.top - 30) * s).toFixed(1)}" text-anchor="middle" font-family="Permanent Marker"

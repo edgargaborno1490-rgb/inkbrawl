@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#ece9e3}</style></head><body><div id="out"></div>
+<script src="ink.js"></script><script src="gorilla.js"></script><script>
+// Pose sheet of the gorilla, for checking against reference/gorilla-master.png
+const poses = [['STAND','angry'],['ROAR','roar'],['SWINGR','angry'],['RAISE','angry'],['SLAM','angry'],['TIRED','tired']];
+let g = '';
+poses.forEach(([p, m], i) => { const x = 170 + i * 320, y = 900, s = .5;
+  const d = drawGorilla({ arms: gorillaPose(p), mood: m, sweat: p === 'TIRED' });
+  g += `<ellipse cx="${x}" cy="${y}" rx="${150*s}" ry="${30*s}" fill="${SHADOW}"/><g transform="translate(${x},${y}) scale(${s})">${d.svg}</g>`
+     + `<text x="${x}" y="1000" text-anchor="middle" font-size="30" font-family="sans-serif">${p}</text>`; });
+// a stick man for size
+g += `<g transform="translate(1850,900) scale(.5)">${fighter({pose:'GUARD', kit:'cap', mood:'angry'}).svg}</g>`;
+document.getElementById('out').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><rect width="1920" height="1080" fill="${BG}"/>${g}</svg>`;
+</script></body></html>

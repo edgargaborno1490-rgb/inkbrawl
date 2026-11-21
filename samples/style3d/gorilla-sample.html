@@ -1,0 +1,152 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ink Brawl sample: 100 stick men vs 1 gorilla (style test, ~15 s). Gorilla = reference/gorilla-master.png look.
+     window.setT(seconds) draws one frame; render_gorilla.cjs steps it and adds sound. -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#ece9e3}
+  #word{position:absolute;left:0;right:0;top:60px;text-align:center;font:150px 'Permanent Marker',cursive;color:#fff;
+        -webkit-text-stroke:16px #1a1a1a;paint-order:stroke fill;letter-spacing:2px}
+  #counter{position:absolute;left:60px;top:950px;font:54px 'Permanent Marker',cursive;color:#1a1a1a;background:#fff;
+           padding:4px 26px;border-radius:14px;box-shadow:0 6px 0 #1a1a1a;border:6px solid #1a1a1a}
+  #flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div id="out"></div><div id="word"></div><div id="counter"></div><div id="flash"></div>
+<script src="ink.js"></script><script src="gorilla.js"></script>
+<script>
+const smooth = k => k * k * (3 - 2 * k), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const GX = 0, GZ = 700;                              // gorilla position on the floor
+const R = rng(42);
+
+// ---------------------------------------------------------------- gorilla timeline
+const GK = [ // t, pose, mood, sweat
+  [0, 'STAND', 'angry'], [2.5, 'STAND', 'angry'], [2.75, 'ROAR', 'roar'], [3.9, 'ROAR', 'roar'], [4.2, 'STAND', 'angry'],
+  [4.75, 'STAND', 'angry'], [4.95, 'SWINGR', 'roar'], [5.25, 'STAND', 'angry'], [5.45, 'SWINGL', 'roar'], [5.8, 'STAND', 'angry'],
+  [6.6, 'STAND', 'angry'], [7.0, 'RAISE', 'roar'], [7.3, 'SLAM', 'roar'], [7.8, 'STAND', 'angry'], [8.05, 'SWINGR', 'roar'],
+  [8.35, 'STAND', 'angry'], [8.6, 'TIRED', 'tired', 1], [10.8, 'TIRED', 'tired', 1], [11.3, 'SWINGL', 'roar', 1], [11.7, 'TIRED', 'tired', 1],
+];
+const FALL_T = 12.2;                                // the pile tips him over
+function gorillaAt(t) {
+  let i = 0; while (i < GK.length - 1 && GK[i + 1][0] <= t) i++;
+  const a = GK[i], b = GK[Math.min(i + 1, GK.length - 1)], k = b[0] > a[0] ? smooth(clamp((t - a[0]) / (b[0] - a[0]), 0, 1)) : 0;
+  let arms = gorillaLerp(gorillaPose(a[1]), gorillaPose(b[1]), k);
+  if (a[1] === 'ROAR' && b[1] === 'ROAR') { const beat = Math.abs(Math.sin(t * 14)); arms.lh[0] -= beat * 40; arms.rh[0] += beat * 40; } // chest pounding
+  if (a[1] === 'TIRED') { const br = Math.sin(t * 7) * 8; arms.dip += br; }                                                           // heavy breathing
+  const fall = clamp((t - FALL_T) / .45, 0, 1);
+  return { arms, mood: fall > .3 ? 'ko' : (k < .5 ? a[2] : b[2]), sweat: !!(k < .5 ? a[3] : b[3]) || t > FALL_T, rot: -88 * fall * fall, lift: 0 };
+}
+
+// ---------------------------------------------------------------- 100 men
+// wave 1: 12 men (hit by swings), wave 2: 24 men (slam + swing), wave 3: 64 men pile on (6 flung by the last swing)
+const MEN = [];
+const KITS_LIST = [null, null, null, 'ninja', 'cap', 'shades', 'bucket', 'hiker'];
+for (let i = 0; i < 100; i++) {
+  const wave = i < 12 ? 1 : i < 36 ? 2 : 3;
+  const ang = (-170 + R() * 160) * Math.PI / 180;    // start on an arc behind and to the sides of the gorilla
+  const rad = 1000 + R() * 650;
+  const sx = GX + Math.cos(ang) * rad * 1.15, sz = GZ - Math.sin(ang) * rad * .75;
+  const side = Math.sign(sx - GX) || 1;
+  const runT = wave === 1 ? 4.0 + R() * .35 : wave === 2 ? 6.0 + R() * .4 : 9.6 + R() * 1.2;
+  const near = wave === 3 ? 170 + R() * 200 : 250 + R() * 90;
+  const tx = GX + side * near * (0.6 + R() * .5), tz = GZ + (R() - .5) * 360;
+  let hitT = null, kind = null;
+  if (wave === 1) { hitT = side > 0 ? 4.95 : 5.45; kind = 'swing'; }
+  if (wave === 2) { const r = R(); if (r < .65) { hitT = 7.3; kind = 'slam'; } else { hitT = side > 0 ? 8.05 : 7.3; kind = side > 0 ? 'swing' : 'slam'; } }
+  if (wave === 3 && side < 0 && i % 5 === 0) { hitT = 11.3; kind = 'swing'; }
+  const stack = wave === 3 && !hitT ? Math.floor(R() * 3) : 0;   // some climb on top of the pile
+  MEN.push({ i, wave, sx, sz, tx, tz, side, runT, hitT, kind, kit: KITS_LIST[Math.floor(R() * KITS_LIST.length)],
+             fly: 650 + R() * 550, flyH: 260 + R() * 320, flyZ: (R() - .5) * 600, spin: R() < .5 ? -1 : 1, stack, ph: R() * 6 });
+}
+function manAt(m, t) {
+  const face = m.side > 0 ? -1 : 1;
+  const arrive = m.runT + 0.75;
+  let x = m.sx, z = m.sz, lift = 0, rot = 0, pose = 'GUARD', o = 1, f = face;
+  if (t < 2.75 + .15 && t > 2.75 - .1) pose = 'GUARD';
+  if (t >= 2.85 && t < 3.9) { pose = 'HIT'; }                         // the roar blows them back a little
+  if (t >= m.runT) { const k = smooth(clamp((t - m.runT) / .75, 0, 1)); x = lerp(m.sx, m.tx, k); z = lerp(m.sz, m.tz, k); pose = k < 1 ? 'RUN' : (Math.floor(t * 6 + m.ph) % 2 ? 'PUNCH' : 'WIND'); }
+  if (m.hitT !== null && t >= m.hitT) {                              // knocked flying, then a smoke puff
+    const k = clamp((t - m.hitT) / .8, 0, 1);
+    const dirx = m.kind === 'slam' ? m.side : m.side;
+    x = m.tx + dirx * m.fly * k; z = m.tz + m.flyZ * k;
+    lift = m.kind === 'slam' ? 4 * (m.flyH + 150) * k * (1 - k) : 4 * m.flyH * k * (1 - k);
+    rot = -540 * k * m.spin; pose = k < 1 ? 'FLY' : 'DOWN'; if (k >= 1) rot = 0;
+    o = 1 - clamp((t - m.hitT - 1.1) / .25, 0, 1);
+  } else if (m.wave === 3 && t >= arrive) {                          // pile on
+    lift = m.stack * 150 * smooth(clamp((t - arrive) / .4, 0, 1));
+    if (t >= FALL_T) {                                               // gorilla goes down, men end up on top of him
+      const k = smooth(clamp((t - FALL_T) / .5, 0, 1));
+      x = lerp(m.tx, GX + (m.tx - GX) * .9 - 120, k); lift = lerp(lift, 230 + m.stack * 70 + (m.i % 3) * 30, k);
+      pose = t > 13.4 ? (Math.floor(t * 3 + m.ph) % 2 ? 'WIN' : 'GUARD') : pose;
+    }
+  }
+  if (m.hitT !== null && t >= m.hitT) f = face;
+  return { x, z, lift, rot, pose, o, f };
+}
+const KO_TIMES = MEN.filter(m => m.hitT !== null).map(m => m.hitT).sort((a, b) => a - b);
+
+// ---------------------------------------------------------------- effects
+const STARS = [[4.95, 1], [5.45, -1], [8.05, 1], [11.3, -1]];       // swing hits (time, side)
+function cloud(x, y, r, o) { let g = ''; for (let i = 0; i < 6; i++) { const a = i * 60 * Math.PI / 180;
+  g += `<circle cx="${x + Math.cos(a) * r * .7}" cy="${y + Math.sin(a) * r * .4}" r="${r * .55}" fill="#fff" stroke="${INK}" stroke-width="${Math.max(2, r * .09)}"/>`; }
+  return `<g opacity="${o.toFixed(2)}">${g}</g>`; }
+function drawFX(cam, t) {
+  let under = '', over = '';
+  for (const rt of [3.0, 3.35, 3.7, 7.3]) {                          // roar / slam shockwave rings on the floor
+    const dt = t - rt; if (dt < 0 || dt > 1) continue;
+    const q = cam(GX, 0, GZ), k = dt, r = (200 + k * (rt === 7.3 ? 1800 : 1100)) * q.s;
+    under += `<ellipse cx="${q.x}" cy="${q.y}" rx="${r}" ry="${r * .32}" fill="none" stroke="${INK}" stroke-width="${(14 * (1 - k)) * q.s + 2}" opacity="${1 - k}"/>`;
+  }
+  for (const [st, side] of STARS) { const dt = t - st; if (dt < 0 || dt > .3) continue;
+    const q = cam(GX + side * 430, 320, GZ), k = dt / .3, sz = 110 * q.s * (0.6 + k * .6);
+    over += `<g opacity="${(1 - k * .6).toFixed(2)}">${star(q.x, q.y, sz)}${marks(q.x, q.y, sz * 1.3, -140)}${marks(q.x, q.y, sz * 1.3, 40)}</g>`; }
+  if (t >= 7.3 && t < 7.6) { const q = cam(GX, 60, GZ - 60), k = (t - 7.3) / .3; over += `<g opacity="${1 - k}">${star(q.x - 190 * q.s, q.y, 90 * q.s)}${star(q.x + 190 * q.s, q.y, 90 * q.s)}</g>`; }
+  for (const m of MEN) { if (m.hitT === null) continue; const dt = t - m.hitT - 1.0; if (dt < 0 || dt > .45) continue;
+    const s = manAt(m, t), q = cam(s.x, 80, s.z); over += cloud(q.x, q.y, (70 + dt * 120) * q.s, 1 - dt / .45); }
+  if (t >= FALL_T + .3 && t < FALL_T + 1.2) { const k = (t - FALL_T - .3) / .9;
+    for (let i = 0; i < 7; i++) { const q = cam(GX - 500 + i * 160, 30 + k * 60, GZ + 120); over += cloud(q.x, q.y, (70 + k * 60) * q.s, 1 - k); } }
+  return { under, over };
+}
+
+// ---------------------------------------------------------------- camera, words, counter, flash
+const CAM = [ // t, x, h, z, pitch
+  [0, 0, 2700, -2500, 40], [0.6, 0, 2700, -2500, 40], [2.5, 0, 620, -650, 12], [3.9, 0, 560, -520, 10],
+  [4.4, 0, 1400, -1500, 28], [5.8, 0, 1300, -1350, 27], [6.4, 0, 1700, -1800, 32], [7.6, 0, 1500, -1500, 30],
+  [8.6, 0, 700, -650, 14], [10.0, 0, 650, -560, 12], [10.6, 0, 2300, -2100, 38], [11.8, 0, 1500, -1400, 30],
+  [12.6, -150, 1100, -900, 26], [15, -120, 900, -620, 22],
+];
+const SHAKE = [[3.0, 14], [3.35, 10], [3.7, 10], [4.95, 16], [5.45, 16], [7.3, 40], [8.05, 16], [11.3, 14], [FALL_T + .4, 34]];
+const FLASH = [4.95, 5.45, 7.3, 8.05, FALL_T + .4];
+const WORDS = [[0.2, '100 MEN'], [1.0, 'VS'], [1.45, '1 GORILLA'], [2.75, 'ROAR!'], [4.1, 'WAVE 1'], [5.6, 'GONE!'],
+  [6.2, 'WAVE 2'], [7.3, 'SLAM!'], [8.9, 'TIRED...'], [10.0, 'NOW'], [10.4, 'EVERYONE!'], [FALL_T + .4, 'DOWN!'], [13.6, 'WHO'], [14.05, 'WINS?']];
+function camAt(t) {
+  let i = 0; while (i < CAM.length - 2 && CAM[i + 1][0] <= t) i++;
+  const a = CAM[i], b = CAM[i + 1], k = smooth(clamp((t - a[0]) / (b[0] - a[0]), 0, 1)), c = a.map((v, n) => lerp(v, b[n], k));
+  return camera({ x: c[1], h: c[2], z: c[3], pitch: c[4], f: 1350 });
+}
+window.setT = t => {
+  const cam = camAt(t);
+  let sx = 0, sy = 0;
+  for (const [th, st] of SHAKE) if (t >= th && t < th + .5) { const d = Math.exp(-(t - th) * 9) * st;
+    sx += Math.sin(t * 97 + th) * d; sy += Math.cos(t * 83 + th) * d; }
+  const gs = gorillaAt(t);
+  const placed = [{ x: GX, z: GZ, shadow: 270, rot: gs.rot, lift: gs.rot ? -gs.rot * 1.2 : 0, draw: () => drawGorilla(gs) }];
+  for (const m of MEN) {
+    const s = manAt(m, t); if (s.o <= .01) continue;
+    const onTop = m.wave === 3 && t >= FALL_T && m.hitT === null;
+    placed.push({ x: s.x, z: s.z, lift: s.lift, rot: s.rot, face: s.f, o: s.o, zBias: onTop || (m.stack && t > m.runT + .9) ? 2000 : 0,
+                  f: { pose: s.pose === 'RUN' ? (Math.floor(t * 10 + m.ph) % 2 ? 'RUN' : 'RUNB') : s.pose, kit: m.kit,
+                       mood: KO_POSES.has(s.pose) && !(t >= 2.85 && t < 3.9 && s.lift === 0) ? 'ko' : s.pose === 'WIN' ? 'happy' : s.pose === 'GUARD' && t < 2.6 ? 'normal' : 'angry' } });
+  }
+  const fx = drawFX(cam, t);
+  document.getElementById('out').innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080">${vignette}<rect width="1920" height="1080" fill="${BG}"/>`
+    + `<g transform="translate(${sx.toFixed(1)},${sy.toFixed(1)})">${floorDetails(cam, 7)}${fx.under}${scene(cam, placed)}${fx.over}</g>`
+    + `<rect width="1920" height="1080" fill="url(#vg)"/></svg>`;
+  let w = ''; for (const [wt, txt] of WORDS) if (t >= wt) w = t - wt < 0.6 || wt === WORDS[WORDS.length - 1][0] ? txt : w;
+  const wd = document.getElementById('word'), last = WORDS.filter(x => t >= x[0]).pop();
+  wd.textContent = w; wd.style.transform = `scale(${1.25 - .25 * (last ? clamp((t - last[0]) / .08, 0, 1) : 1)})`;
+  document.getElementById('counter').textContent = `${100 - KO_TIMES.filter(k => t >= k).length} MEN LEFT`;
+  let fl = 0; for (const ft of FLASH) if (t >= ft && t < ft + .1) fl = t < ft + .067 ? 1 : .4;
+  document.getElementById('flash').style.opacity = fl;
+};
+setT(0);
+</script></body></html>

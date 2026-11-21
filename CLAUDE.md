@@ -48,6 +48,10 @@ anime format: don't use it for brawls.
   outfits/kits, poses, 3D arena camera, floor, stars, sparkles). `fight3d.html` = the 15 s 3D fight (keyframed
   fighters with depth lanes, hits, KOs, smoke-puff knockouts, camera moves, words, counter); `render_fight3d.cjs`
   renders frames and mixes SFX. `sample3d.html` + `render_samples.cjs` = the still picture samples.
+- **Gorilla (owner's design, Nov 21, 2026): `reference/gorilla-master.png`.** Drawn in code in
+  `samples/style3d/gorilla.js` (big domed head with crest, peanut face, furry bulky arms with fluffy edges + mitt
+  fists, short legs; poses STAND/ROAR/SWINGR/SWINGL/RAISE/SLAM/TIRED). Pose sheet: `gorilla-sheet.html/png`.
+  Sample: `gorilla-sample.html` + `render_gorilla.cjs` -> `gorilla-sample.mp4` (100 men vs 1 gorilla, 15 s).
 - Old looks, don't use: `samples/make_samples.py`, `samples/canvas3d.*`, `samples/fight15/`.
 
 ## Followers (fighters)
