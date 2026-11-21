@@ -170,7 +170,7 @@ function camera(c) {        // c: {x, h:height, z:pos, pitch deg, f:focal}
   return (X, Y, Z) => {
     const dx = X - c.x, dy = Y - c.h, dz = Z - c.z;
     const zc = dz * Math.cos(p) - dy * Math.sin(p), yc = dy * Math.cos(p) + dz * Math.sin(p);
-    return { x: 960 + F * dx / zc, y: 540 - F * yc / zc, s: F / zc, z: zc };
+    return { x: (c.cx ?? 960) + F * dx / zc, y: (c.cy ?? 540) - F * yc / zc, s: F / zc, z: zc };
   };
 }
 function floorDetails(cam, seed) {          // faint scratch lines on the floor give the 3D depth (arena reference)

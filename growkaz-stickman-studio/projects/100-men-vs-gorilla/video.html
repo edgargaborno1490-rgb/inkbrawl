@@ -1,0 +1,282 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ink Brawl video #1: 100 Men vs 1 Gorilla (TikTok 9:16, 1080x1920), timed to the owner's voiceover.
+     Characters = the owner's traced sprite sheets (samples/sprites/sprites.js). window.setT(seconds) draws a frame. -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#ece9e3}
+  #word{position:absolute;left:30px;right:30px;top:210px;text-align:center;font-family:'Permanent Marker',cursive;color:#fff;
+        -webkit-text-stroke:18px #1a1a1a;paint-order:stroke fill;letter-spacing:2px;line-height:1;white-space:nowrap}
+  #counter{position:absolute;left:50%;transform:translateX(-50%);top:440px;font:46px 'Permanent Marker',cursive;color:#1a1a1a;background:#fff;
+           padding:4px 22px;border-radius:14px;box-shadow:0 6px 0 #1a1a1a;border:6px solid #1a1a1a}
+  #flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs id="spritedefs"></defs></svg>
+<div id="out"></div><div id="word"></div><div id="counter"></div><div id="flash"></div>
+<script src="../../../samples/style3d/ink.js"></script>
+<script src="../../../samples/sprites/sprites.js"></script>
+<script src="timeline/words.js"></script>
+<script>
+const VW = 1080, VH = 1920, END = 64.0;
+const smooth = k => k * k * (3 - 2 * k), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = (t, a, b) => smooth(clamp((t - a) / (b - a), 0, 1));
+// ---------------------------------------------------------------- voiceover word times
+const norm = w => w.toLowerCase().replace(/[^a-z0-9]/g, '');
+function T(word, n = 1) { let c = 0; for (const [w, s] of VO_WORDS) if (norm(w) === norm(word) && ++c === n) return s; throw new Error('word ' + word + ' ' + n); }
+
+// ---------------------------------------------------------------- sprites as reusable <use> symbols
+(() => { let d = '';
+  for (const who in SPRITES) for (const pose in SPRITES[who]) { const sp = SPRITES[who][pose];
+    d += `<g id="S-${who}-${pose}" transform="translate(${-sp.ax},${-sp.ay})"><g fill="#fff">${sp.fill}</g><g fill="#b9b9b9">${sp.grey}</g><g fill="${INK}">${sp.ink}</g></g>`; }
+  const g = SPRITES.capguy.idle;      // grey "ghost" fighter for the choose-your-fighter slots
+  d += `<g id="GHOST" transform="translate(${-g.ax},${-g.ay})"><g fill="#e2ddd4">${g.fill}</g><g fill="#bdb5aa">${g.ink}</g></g>`;
+  document.getElementById('spritedefs').innerHTML = d; })();
+function spr(who, pose, k, o = {}) {
+  const sp = SPRITES[who][pose], sx = o.sx || 1, sy = o.sy || 1;
+  let svg = `<g transform="scale(${(k * sx).toFixed(3)},${(k * sy).toFixed(3)})"><use href="#S-${who}-${pose}"/></g>`;
+  let top = (sp.top - sp.ay) * k * sy;
+  if (o.crown) { const y = top - 6, s = k * 1.1;
+    svg += `<g transform="translate(0,${y}) scale(${s})">${poly([[-34,0],[-40,-44],[-17,-20],[0,-54],[17,-20],[40,-44],[34,0]], '#ffd23f', `stroke="${INK}" stroke-width="7" stroke-linejoin="round"`)}</g>`;
+    top -= 60 * s; }
+  return { svg, top };
+}
+function cloud(x, y, r, o) { let g = ''; for (let i = 0; i < 6; i++) { const a = i * 60 * Math.PI / 180;
+  g += `<circle cx="${x + Math.cos(a) * r * .7}" cy="${y + Math.sin(a) * r * .4}" r="${r * .55}" fill="#fff" stroke="${INK}" stroke-width="${Math.max(2, r * .09)}"/>`; }
+  return `<g opacity="${clamp(o, 0, 1).toFixed(2)}">${g}</g>`; }
+
+// ---------------------------------------------------------------- key times from the voiceover
+const K = {
+  meet: T('Meet'), stronger1: T('stronger'), fangs: T('fangs'), wave1: T('Wave'), swing: T('swing'), flying: T('flying'),
+  wave2: T('Wave', 2), slams: T('slams'), ground: T('ground'), gone: T('Gone'), pile: T('fifty'), over: T('over'),
+  stands: T('Then', 2), explodes: T('explodes'), run: T('run'), wins: T('wins'), next: T('next'),
+  works: T('Here\'s'), follow: T('Follow'), name: T('name'), comment1: T('comment'), levels: T('levels'), stronger2: T('stronger', 2),
+  goal: T('goal'), ten: T('Ten'), goose: T('goose'), fifty: T('Fifty', 2), bear: T('bear'), hundred: T('hundred', 4), rematch: T('rematch'),
+  choose: T('Comment', 2), ninja: T('Ninja'), samurai: T('Samurai'), caveman: T('Caveman'), anything: T('Anything'), most: T('most'), drawn: T('drawn'),
+};
+const S_HOW = K.works - .05, S_BOSS = K.goal - .3, S_REMATCH = K.hundred - .1, S_CHOOSE = K.choose - .1;
+
+// ---------------------------------------------------------------- the 100 men
+const GZ = 900, GK = 2.3;               // gorilla position (depth) and size vs the men
+const R = rng(2026);
+const MEN = [];
+for (let i = 0; i < 100; i++) {
+  const group = i < 12 ? 'w1' : i < 36 ? 'w2' : i < 86 ? 'pile' : 'run';
+  const ang = (-25 + R() * 230) * Math.PI / 180, rad = 950 + R() * 600;
+  const sx = Math.cos(ang) * rad * 1.05, sz = GZ + Math.sin(ang) * rad * .8;
+  const m = { i, group, who: i % 2 ? 'tee' : 'capguy', sx, sz, ph: R() * 6, spin: R() < .5 ? -1 : 1 };
+  const side = Math.sign(sx) || 1; m.side = side;
+  if (group === 'w1') { m.runT = K.wave1 + R() * .25; m.tx = side * (470 + R() * 140); m.tz = GZ + (R() - .5) * 420;
+    m.hitT = side > 0 ? K.swing + .05 : K.flying + .05; m.fly = 800 + R() * 500; m.flyH = 380 + R() * 300; }
+  if (group === 'w2') { const a = R() * Math.PI * 2, r = 400 + R() * 140; m.runT = K.wave2 + R() * .35;
+    m.tx = Math.cos(a) * r; m.tz = GZ + Math.sin(a) * r * .8; m.hitT = K.ground + .02; m.fly = 1000 + R() * 600; m.flyH = 500 + R() * 400; }
+  if (group === 'pile') { const a = R() * Math.PI * 2, r = R() * 330; m.runT = K.pile - .25 + R() * 1.1;
+    m.tx = Math.cos(a) * r; m.tz = GZ - 60 + Math.sin(a) * r * .5; m.layer = Math.floor(R() * 4);
+    m.hitT = K.explodes + R() * .08; m.fly = 1300 + R() * 900; m.flyH = 700 + R() * 600; }
+  if (group === 'run') { m.runT = K.run - .15 + R() * .3; }
+  MEN.push(m);
+}
+function manAt(m, t) {
+  const faceIn = m.sx > 0 ? -1 : 1;   // facing the gorilla
+  let x = m.sx, z = m.sz, lift = 0, rot = 0, pose = 'idle', f = faceIn, o = 1, top = false;
+  const arrive = m.runT + .7;
+  if (t < K.meet + 1.2 && t > K.meet + .05) pose = 'hit';              // the roar blows them back
+  if (m.group !== 'run' && t >= m.runT) {
+    const k = ease(t, m.runT, arrive); x = lerp(m.sx, m.tx, k); z = lerp(m.sz, m.tz, k);
+    f = (m.tx - m.sx) > 0 ? 1 : -1;
+    pose = k < 1 ? 'run' : (Math.floor(t * 5 + m.ph) % 3 === 0 ? 'kick' : Math.floor(t * 5 + m.ph) % 3 === 1 ? 'punch' : 'idle');
+    if (m.group === 'pile' && t >= arrive - .2) { lift = m.layer * 175 * ease(t, arrive - .2, arrive + .2); top = true;
+      if (t > K.stands - .2) { x += Math.sin(t * 70 + m.ph) * 14 * ease(t, K.stands - .2, K.explodes); } }
+  }
+  if (m.hitT !== undefined && t >= m.hitT) {                            // launched, lands, smoke puff
+    const k = clamp((t - m.hitT) / .9, 0, 1), dx = m.tx || 1, dz = (m.tz - GZ) || .1, L = Math.hypot(dx, dz), ux = dx / L, uz = dz / L;
+    const base = m.group === 'pile' ? m.layer * 175 : 0;
+    x = m.tx + ux * m.fly * k; z = m.tz + uz * m.fly * .6 * k;
+    lift = base * (1 - k) + 4 * m.flyH * k * (1 - k); rot = -620 * k * m.spin; pose = k < 1 ? 'fly' : 'ko'; if (k >= 1) rot = 0;
+    f = ux > 0 ? -1 : 1; top = false; o = 1 - clamp((t - m.hitT - 1.55) / .25, 0, 1);
+  }
+  if (m.group === 'run') {
+    if (t > K.over && t < m.runT) x += Math.sin(t * 60 + m.ph) * 5;          // trembling
+    if (t >= m.runT) { const k = clamp((t - m.runT) / 1.8, 0, 1), dx = m.sx, dz = m.sz - GZ, L = Math.hypot(dx, dz);
+      x = m.sx + dx / L * 2600 * k; z = m.sz + dz / L * 2600 * k; pose = 'run'; f = dx > 0 ? 1 : -1; o = 1 - clamp((k - .55) / .4, 0, 1); }
+  }
+  return { x, z, lift, rot, pose, f, o, top };
+}
+const OUT_TIMES = MEN.map(m => m.group === 'run' ? m.runT + 1.4 : m.hitT).sort((a, b) => a - b);
+
+// ---------------------------------------------------------------- gorilla
+const GKEYS = [ // t, pose, facing, extra
+  [0, 'idle', 1], [K.meet, 'win', 1], [K.meet + 1.5, 'idle', 1], [K.stronger1 - .05, 'punch', 1], [K.stronger1 + .7, 'idle', 1],
+  [K.fangs - .15, 'win', 1], [K.wave1 - .1, 'idle', 1], [K.swing - .05, 'punch', 1], [K.swing + .45, 'idle', 1],
+  [K.flying - .12, 'kick', -1], [K.flying + .5, 'idle', 1], [K.slams - .05, 'win', 1], [K.ground - .04, 'idle', 1, 'squash'],
+  [K.ground + .3, 'idle', 1], [K.pile + 1.0, 'hit', 1], [K.explodes - .02, 'win', 1], [K.explodes + 1.4, 'idle', 1],
+  [K.wins - .35, 'win', 1, 'crown'],
+];
+function gorillaAt(t) { let i = 0; while (i < GKEYS.length - 1 && GKEYS[i + 1][0] <= t) i++; const k = GKEYS[i];
+  let sx = 1, sy = 1;
+  if (k[3] === 'squash') { const q = 1 - clamp((t - k[0]) / .3, 0, 1); sx = 1 + .14 * q; sy = 1 - .16 * q; }
+  if (k[1] === 'win' && t - k[0] < .25) { const q = 1 - (t - k[0]) / .25; sx = 1 + .08 * q; sy = 1 + .08 * q; }   // pop
+  return { pose: k[1], f: k[2], sx, sy, crown: k[3] === 'crown' }; }
+
+// ---------------------------------------------------------------- camera (9:16)
+const CAMS = [ // t, x, h, z, pitch ; a pair of keys at nearly the same time = hard cut
+  [0, 0, 3300, -2700, 48], [2.6, 0, 2500, -2000, 42], [K.works && 3.6, 250, 2100, -1700, 39], [K.meet - .01, -200, 1800, -1450, 36],
+  [K.meet, 0, 520, -560, 8], [K.wave1 - .01, 0, 540, -600, 9],
+  [K.wave1, 0, 1500, -1350, 30], [K.wave2 - .01, 80, 1500, -1350, 30],
+  [K.wave2, 0, 1750, -1500, 33], [K.pile - .01, 0, 1750, -1500, 33],
+  [K.pile, 0, 1550, -1250, 30], [K.stands, 0, 1050, -650, 23], [K.explodes, 0, 1000, -600, 22], [K.explodes + 1.2, 0, 2600, -2200, 42],
+  [K.run + 1.6, 0, 2800, -2400, 44], [K.wins - .36, 0, 2800, -2400, 44],
+  [K.wins - .35, 0, 560, -760, 9], [S_HOW - .01, 100, 520, -560, 8],
+];
+function camFrom(list, t) { let i = 0; while (i < list.length - 2 && list[i + 1][0] <= t) i++;
+  const a = list[i], b = list[i + 1], k = smooth(clamp((t - a[0]) / Math.max(1e-3, b[0] - a[0]), 0, 1)), c = a.map((v, n) => lerp(v, b[n], k));
+  return camera({ x: c[1], h: c[2], z: c[3], pitch: c[4], f: 1850, cx: VW / 2, cy: VH * .56 }); }
+
+// ---------------------------------------------------------------- shakes, flashes, big words
+const SHAKE = [[K.meet, 14], [K.stronger1, 10], [K.swing, 22], [K.flying, 22], [K.ground, 46], [K.explodes, 52], [K.wins - .3, 12]];
+const FLASH = [K.swing, K.flying, K.ground, K.explodes];
+const WORDS = [[0, '100 MEN'], [T('One', 2), '1 GORILLA'], [T('Who'), 'WHO WINS?'], [T('Ink'), 'INK BRAWL'], [T('first'), 'VIDEO #1'],
+  [K.meet, 'MEET HIM'], [T('Four'), '400 LBS'], [K.stronger1, 'STRONGER'], [K.fangs, 'FANGS'], [K.wave1, 'WAVE 1'], [K.flying, 'FLYING!'],
+  [K.wave2, 'WAVE 2'], [K.ground, 'SLAM!'], [K.gone, 'GONE.'], [K.pile, '50 MEN'], [K.over, 'OVER?'], [K.stands, 'THEN...'],
+  [K.explodes, 'BOOM!'], [K.run, 'RUN!'], [K.wins - .3, 'GORILLA WINS'], [K.next, 'NEXT?'],
+  [K.works, 'HOW IT WORKS'], [K.follow, 'FOLLOW'], [K.comment1, 'COMMENT'], [K.levels, 'LEVEL UP!'], [K.stronger2, 'STRONGER'],
+  [K.goal, 'BOSS GOALS'], [K.rematch, 'REMATCH'], [K.choose, 'YOU CHOOSE'], [K.most, 'MOST WANTED'], [K.drawn, 'GETS DRAWN']];
+
+// ---------------------------------------------------------------- scene 1: the brawl (0 .. S_HOW)
+function brawl(t) {
+  const cam = camFrom(CAMS, t);
+  const placed = [];
+  const g = gorillaAt(t);
+  placed.push({ x: 0, z: GZ, face: g.f, shadow: 95 * GK, draw: () => spr('gorilla', g.pose, GK, g) });
+  for (const m of MEN) { const s = manAt(m, t); if (s.o <= .01) continue;
+    placed.push({ x: s.x, z: s.z, lift: s.lift, rot: s.rot, face: s.f, o: s.o, zBias: s.top ? 3000 + s.lift : 0, draw: () => spr(m.who, s.pose, 1) }); }
+  let under = '', over = '';
+  for (const rt of [K.meet, K.meet + .35, K.ground, K.explodes, K.explodes + .2]) { const dt = t - rt; if (dt < 0 || dt > 1) continue;
+    const q = cam(0, 0, GZ), r = (300 + dt * (rt >= K.ground ? 2600 : 1500)) * q.s;
+    under += `<ellipse cx="${q.x}" cy="${q.y}" rx="${r}" ry="${r * .32}" fill="none" stroke="${INK}" stroke-width="${16 * (1 - dt) * q.s + 3}" opacity="${1 - dt}"/>`; }
+  if (t >= K.ground) {                                                     // floor cracks after the slam
+    const q = cam(0, 0, GZ), k = ease(t, K.ground, K.ground + .15), Rr = rng(5); let c = '';
+    for (let i = 0; i < 9; i++) { let a = i * 40 + Rr() * 20, px = 0, pz = 0, pts = [cam(0, 0, GZ)];
+      for (let s = 0; s < 4; s++) { a += (Rr() - .5) * 40; px += Math.cos(a * Math.PI / 180) * 180 * k; pz += Math.sin(a * Math.PI / 180) * 120 * k; pts.push(cam(px, 0, GZ + pz)); }
+      c += pen(pts.map(p => [p.x, p.y]), '#8f877c', Math.max(3, 9 * q.s)); }
+    under += `<g opacity="${(1 - clamp((t - K.explodes - 2) / 1, 0, 1)) * .9}">${c}</g>`; }
+  const hitFX = [[K.swing, 450, 300], [K.flying, -470, 280]];
+  for (const [ht, x, Y] of hitFX) { const dt = t - ht; if (dt < 0 || dt > .3) continue;
+    const q = cam(x, Y, GZ), k = dt / .3, sz = 150 * q.s * (.6 + k * .6);
+    over += `<g opacity="${(1 - k * .6).toFixed(2)}">${star(q.x, q.y, sz)}${marks(q.x, q.y, sz * 1.3, -140)}${marks(q.x, q.y, sz * 1.3, 40)}</g>`; }
+  for (const m of MEN) { if (m.hitT === undefined) continue; const dt = t - m.hitT - 1.45; if (dt < 0 || dt > .45) continue;
+    const s = manAt(m, m.hitT + 1.0), q = cam(s.x, 90, s.z); over += cloud(q.x, q.y, (80 + dt * 140) * q.s, 1 - dt / .45); }
+  if (t >= K.explodes - .05 && t < K.explodes + .3) { const q = cam(0, 420, GZ), k = (t - K.explodes + .05) / .35;
+    over += star(q.x, q.y, (150 + k * 170) * q.s); }
+  if (t >= K.wins - .3) { const q = cam(0, 0, GZ), pop = ease(t, K.wins - .3, K.wins);
+    for (const [ox, oy, r] of [[-330, 820, 46], [360, 700, 36], [260, 980, 26], [-420, 560, 24], [120, 1100, 20]])
+      over += sparkle(q.x + ox * q.s, q.y - oy * q.s, r * q.s * pop * (1 + .12 * Math.sin(t * 8 + ox))); }
+  return floorDetails(cam, 7) + under + scene(cam, placed) + over;
+}
+
+// ---------------------------------------------------------------- scene 2: how it works + level up (S_HOW .. S_BOSS)
+function howItWorks(t) {
+  const cam = camera({ x: 0, h: 420, z: -420, pitch: 8, f: 1850, cx: VW / 2, cy: VH * .58 });
+  const lv = t < K.levels ? 1 : t < K.levels + .55 ? 2 : t < K.stronger2 ? 3 : t < K.stronger2 + .5 ? 4 : 5;
+  const grow = 1 + (lv - 1) * .07, pose = t >= K.stronger2 ? 'win' : t >= K.comment1 ? 'idle' : 'idle';
+  const q = cam(0, 0, 700);
+  let g = floorDetails(cam, 3);
+  // power aura behind him (colour only on powers)
+  if (lv >= 3) { const a = (lv - 2) * .18, r = 260 * q.s * grow * (1 + .04 * Math.sin(t * 12));
+    g += `<ellipse cx="${q.x}" cy="${q.y - 190 * q.s * grow}" rx="${r}" ry="${r * 1.35}" fill="#ffd23f" opacity="${a}"/>`
+       + `<ellipse cx="${q.x}" cy="${q.y - 190 * q.s * grow}" rx="${r * .75}" ry="${r * 1.05}" fill="#fff3b0" opacity="${a * .9}"/>`; }
+  g += scene(cam, [{ x: 0, z: 700, shadow: 110, draw: () => spr('tee', pose, grow) }]);
+  // name tag written by a pen
+  const top = q.y + spr('tee', pose, grow).top * q.s, wk = ease(t, K.name - .55, K.name + .25);
+  const tag = `@YOUR NAME${lv > 1 ? `  Lv ${lv}` : ''}`;
+  g += `<defs><clipPath id="wr"><rect x="${q.x - 400}" y="${top - 140}" width="${800 * wk}" height="160"/></clipPath></defs>`
+     + `<text clip-path="url(#wr)" x="${q.x}" y="${top - 40}" text-anchor="middle" font-family="Permanent Marker" font-size="${lv > 1 ? 64 : 72}" fill="${INK}">${tag}</text>`;
+  if (wk > 0 && wk < 1) { const px = q.x - 400 + 800 * wk; g += pen([[px, top - 60], [px + 40, top - 150]], INK, 16) + pen([[px + 4, top - 66], [px + 36, top - 144]], '#fff', 6); }
+  // comment bubbles fly into him; each one = XP
+  for (let i = 0; i < 9; i++) { const st = K.comment1 + i * .33, dt = t - st; if (dt < 0 || dt > .55) continue;
+    const k = smooth(dt / .55), side = i % 2 ? 1 : -1, sx0 = q.x + side * 620, sy0 = q.y - 900 + (i % 3) * 160;
+    const x = lerp(sx0, q.x, k), y = lerp(sy0, q.y - 250 * q.s, k), s = 1 - k * .6;
+    g += `<g transform="translate(${x},${y}) scale(${s})" opacity="${1 - k * .3}"><path d="M-70,-45 h140 a20,20 0 0 1 20,20 v50 a20,20 0 0 1 -20,20 h-80 l-30,28 l4,-28 h-34 a20,20 0 0 1 -20,-20 v-50 a20,20 0 0 1 20,-20 z" fill="#fff" stroke="${INK}" stroke-width="8"/>`
+       + `<circle cx="-34" cy="0" r="9" fill="${INK}"/><circle cx="0" cy="0" r="9" fill="${INK}"/><circle cx="34" cy="0" r="9" fill="${INK}"/></g>`;
+    if (dt > .5) g += sparkle(q.x + side * 120, q.y - 330 * q.s, 40); }
+  if (t >= K.stronger2) for (const [ox, oy, r] of [[-300, 700, 44], [300, 620, 34], [220, 900, 24], [-260, 980, 22]])
+    g += sparkle(q.x + ox * q.s, q.y - oy * q.s, r * q.s * ease(t, K.stronger2, K.stronger2 + .25));
+  return g;
+}
+
+// ---------------------------------------------------------------- scene 3: boss goals (S_BOSS .. S_REMATCH)
+function bosses(t) {
+  const cam = camera({ x: 0, h: 1600, z: -1300, pitch: 32, f: 1850, cx: VW / 2, cy: VH * .56 });
+  let g = floorDetails(cam, 9) + `<rect width="${VW}" height="${VH}" fill="${BG}" opacity=".55"/>`;
+  const cards = [[K.ten, '10', 'ANGRY GOOSE', null], [K.fifty, '50', 'GRIZZLY BEAR', null], [K.hundred - .2, '100', 'GORILLA REMATCH', 'gorilla']];
+  const x0 = 150, ys = [700, 1040, 1380];
+  g += pen([[x0, ys[0]], [x0, ys[2]]], '#c9c1b6', 22);                            // progress line
+  cards.forEach(([ct, num, label, who], i) => { const k = ease(t, ct - .1, ct + .2); if (k <= 0) return;
+    const y = ys[i], s = .7 + .3 * k;
+    g += `<g transform="translate(${x0},${y}) scale(${s})" opacity="${k}"><circle r="62" fill="#fff" stroke="${INK}" stroke-width="10"/>`
+       + `<text y="22" text-anchor="middle" font-family="Permanent Marker" font-size="${num.length > 2 ? 52 : 62}" fill="${INK}">${num}</text></g>`;
+    g += `<g transform="translate(${x0 + 120},${y - 120}) scale(${s})" opacity="${k}"><rect width="700" height="240" rx="28" fill="#fff" stroke="${INK}" stroke-width="10"/>`;
+    if (who) g += `<g transform="translate(130,228)">${spr('gorilla', t > K.rematch - .3 ? 'win' : 'idle', .62).svg}</g>`;
+    else g += `<rect x="40" y="30" width="180" height="180" rx="20" fill="#e2ddd4" stroke="#bdb5aa" stroke-width="8" stroke-dasharray="18 12"/><text x="130" y="160" text-anchor="middle" font-family="Permanent Marker" font-size="120" fill="#bdb5aa">?</text>`;
+    g += `<text x="250" y="108" font-family="Permanent Marker" font-size="46" fill="${INK}">${label}</text>`
+       + `<text x="250" y="170" font-family="Permanent Marker" font-size="34" fill="#8f877c">${num} FOLLOWERS</text></g>`; });
+  return g;
+}
+
+// ---------------------------------------------------------------- scene 4: rematch tease (S_REMATCH .. S_CHOOSE)
+const LINE = []; { const r = rng(77); for (let i = 0; i < 60; i++) { const row = Math.floor(i / 12), col = i % 12;
+  LINE.push({ x: (col - 5.5) * 190 + (r() - .5) * 40, z: 700 + row * 170 + (r() - .5) * 40, who: i % 2 ? 'tee' : 'capguy', ph: r() * 6 }); } }
+function rematch(t) {
+  const k = ease(t, S_REMATCH, S_CHOOSE);
+  const cam = camera({ x: 0, h: lerp(1500, 1100, k), z: lerp(-1100, -700, k), pitch: lerp(28, 22, k), f: 1850, cx: VW / 2, cy: VH * .6 });
+  const placed = [{ x: 0, z: 1700, shadow: 95 * GK, draw: () => spr('gorilla', Math.floor(t * 1.5) % 2 ? 'win' : 'idle', GK) }];
+  for (const m of LINE) { const pop = ease(t, S_REMATCH + m.ph * .12, S_REMATCH + m.ph * .12 + .25); if (pop <= 0) continue;
+    placed.push({ x: m.x, z: m.z, lift: (1 - pop) * 400 + Math.abs(Math.sin(t * 6 + m.ph)) * 8, draw: () => spr(m.who, 'idle', 1) }); }
+  let g = floorDetails(cam, 4) + scene(cam, placed);
+  // progress bar: REMATCH 0/100 followers
+  const bx = 120, by = 1480, bw = 840;
+  g += `<rect x="${bx - 30}" y="${by - 110}" width="${bw + 60}" height="210" rx="30" fill="#fff" opacity=".93"/>`
+     + `<rect x="${bx}" y="${by}" width="${bw}" height="70" rx="35" fill="#fff" stroke="${INK}" stroke-width="9"/>`
+     + `<rect x="${bx + 10}" y="${by + 10}" width="${(bw - 20) * .03}" height="50" rx="25" fill="#ffd23f"/>`
+     + `<text x="${VW / 2}" y="${by - 26}" text-anchor="middle" font-family="Permanent Marker" font-size="50" fill="${INK}">REMATCH: 0 / 100 FOLLOWERS</text>`;
+  return g;
+}
+
+// ---------------------------------------------------------------- scene 5: choose your fighter (S_CHOOSE .. END)
+function choose(t) {
+  const cam = camera({ x: 0, h: 900, z: -800, pitch: 20, f: 1850, cx: VW / 2, cy: VH * .56 });
+  let g = floorDetails(cam, 12);
+  const slots = [[K.ninja, 'NINJA?', 290, 1040], [K.samurai, 'SAMURAI?', 790, 1040], [K.caveman, 'CAVEMAN?', 290, 1600], [K.anything, '???', 790, 1600]];
+  for (const [st, label, x, y] of slots) { const k = ease(t, st - .12, st + .15); if (k <= 0) continue; const s = 1.15 * (.7 + .3 * k);
+    g += `<ellipse cx="${x}" cy="${y}" rx="${110 * s}" ry="${22 * s}" fill="${SHADOW}"/>`
+       + `<g transform="translate(${x},${y - (1 - k) * 60}) scale(${s})" opacity="${k}"><use href="#GHOST"/></g>`
+       + `<text x="${x}" y="${y - 200 * s - 20}" text-anchor="middle" font-family="Permanent Marker" font-size="120" fill="#bdb5aa" opacity="${k}">?</text>`
+       + `<text x="${x}" y="${y + 80}" text-anchor="middle" font-family="Permanent Marker" font-size="58" fill="${INK}" opacity="${k}">${label}</text>`; }
+  if (t >= K.most - .1) { const k = ease(t, K.most - .1, K.most + .2);       // the "most requested" slot gets a crown + pen
+    g += `<g opacity="${k}">${sparkle(120, 620, 44)}${sparkle(470, 580, 30)}${sparkle(960, 640, 36)}</g>`; }
+  return g;
+}
+
+// ---------------------------------------------------------------- frame
+window.setT = t => {
+  let body = t < S_HOW ? brawl(t) : t < S_BOSS ? howItWorks(t) : t < S_REMATCH ? bosses(t) : t < S_CHOOSE ? rematch(t) : choose(t);
+  let sx = 0, sy = 0;
+  for (const [th, st] of SHAKE) if (t >= th && t < th + .5) { const d = Math.exp(-(t - th) * 9) * st;
+    sx += Math.sin(t * 97 + th) * d; sy += Math.cos(t * 83 + th) * d; }
+  document.getElementById('out').innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${VW}" height="${VH}"><defs><radialGradient id="vg" cx="50%" cy="50%" r="75%"><stop offset="62%" stop-color="${BG}" stop-opacity="0"/><stop offset="100%" stop-color="#cfc9bf" stop-opacity=".95"/></radialGradient></defs>`
+    + `<rect width="${VW}" height="${VH}" fill="${BG}"/><g transform="translate(${sx.toFixed(1)},${sy.toFixed(1)})">${body}</g>`
+    + `<rect width="${VW}" height="${VH}" fill="url(#vg)"/></svg>`;
+  // one big word at a time
+  let w = '', wt0 = 0; for (const [wt, txt] of WORDS) if (t >= wt) { w = txt; wt0 = wt; }
+  const nextW = WORDS.find(x => x[0] > wt0); if (nextW && t > wt0 + 1.3 && t < nextW[0] && wt0 < K.choose) w = '';
+  const wd = document.getElementById('word');
+  wd.textContent = w; wd.style.fontSize = Math.min(165, 1000 / (.78 * Math.max(4, w.length))) + 'px';
+  wd.style.transform = `scale(${1.25 - .25 * clamp((t - wt0) / .08, 0, 1)})`;
+  const left = 100 - OUT_TIMES.filter(k => t >= k).length;
+  const ctr = document.getElementById('counter');
+  ctr.style.display = t > .3 && t < S_HOW ? 'block' : 'none'; ctr.textContent = `${left} MEN LEFT`;
+  let fl = 0; for (const ft of FLASH) if (t >= ft && t < ft + .1) fl = t < ft + .067 ? 1 : .4;
+  document.getElementById('flash').style.opacity = fl;
+};
+window.VIDEO_END = END;
+setT(0);
+</script></body></html>

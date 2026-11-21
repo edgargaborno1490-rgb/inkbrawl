@@ -1,0 +1,890 @@
+{
+ "source": "pocketsphinx-align",
+ "words": [
+  {
+   "word": "One",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "hundred",
+   "start": 0.3,
+   "end": 0.6
+  },
+  {
+   "word": "men.",
+   "start": 0.6,
+   "end": 1.02
+  },
+  {
+   "word": "One",
+   "start": 1.41,
+   "end": 1.7
+  },
+  {
+   "word": "gorilla.",
+   "start": 1.7,
+   "end": 2.33
+  },
+  {
+   "word": "Who",
+   "start": 2.63,
+   "end": 2.75
+  },
+  {
+   "word": "would",
+   "start": 2.75,
+   "end": 2.9
+  },
+  {
+   "word": "win?",
+   "start": 2.9,
+   "end": 3.33
+  },
+  {
+   "word": "This",
+   "start": 3.71,
+   "end": 3.94
+  },
+  {
+   "word": "is",
+   "start": 3.94,
+   "end": 4.09
+  },
+  {
+   "word": "Ink",
+   "start": 4.09,
+   "end": 4.32
+  },
+  {
+   "word": "Brawl,",
+   "start": 4.32,
+   "end": 4.78
+  },
+  {
+   "word": "and",
+   "start": 4.83,
+   "end": 5.05
+  },
+  {
+   "word": "this",
+   "start": 5.05,
+   "end": 5.42
+  },
+  {
+   "word": "is",
+   "start": 5.42,
+   "end": 5.65
+  },
+  {
+   "word": "our",
+   "start": 5.65,
+   "end": 5.77
+  },
+  {
+   "word": "very",
+   "start": 5.77,
+   "end": 6.14
+  },
+  {
+   "word": "first",
+   "start": 6.14,
+   "end": 6.46
+  },
+  {
+   "word": "video.",
+   "start": 6.46,
+   "end": 6.93
+  },
+  {
+   "word": "Meet",
+   "start": 7.45,
+   "end": 7.63
+  },
+  {
+   "word": "the",
+   "start": 7.63,
+   "end": 7.72
+  },
+  {
+   "word": "gorilla.",
+   "start": 7.72,
+   "end": 8.3
+  },
+  {
+   "word": "Four",
+   "start": 8.52,
+   "end": 8.9
+  },
+  {
+   "word": "hundred",
+   "start": 8.9,
+   "end": 9.18
+  },
+  {
+   "word": "pounds",
+   "start": 9.18,
+   "end": 9.52
+  },
+  {
+   "word": "of",
+   "start": 9.52,
+   "end": 9.59
+  },
+  {
+   "word": "muscle,",
+   "start": 9.59,
+   "end": 10.16
+  },
+  {
+   "word": "several",
+   "start": 10.26,
+   "end": 10.79
+  },
+  {
+   "word": "times",
+   "start": 10.79,
+   "end": 11.07
+  },
+  {
+   "word": "stronger",
+   "start": 11.07,
+   "end": 11.46
+  },
+  {
+   "word": "than",
+   "start": 11.46,
+   "end": 11.66
+  },
+  {
+   "word": "any",
+   "start": 11.66,
+   "end": 11.95
+  },
+  {
+   "word": "man",
+   "start": 11.95,
+   "end": 12.21
+  },
+  {
+   "word": "here,",
+   "start": 12.21,
+   "end": 12.64
+  },
+  {
+   "word": "with",
+   "start": 12.78,
+   "end": 13.03
+  },
+  {
+   "word": "two-inch",
+   "start": 13.03,
+   "end": 13.51
+  },
+  {
+   "word": "fangs.",
+   "start": 13.51,
+   "end": 14.14
+  },
+  {
+   "word": "Wave",
+   "start": 14.42,
+   "end": 14.72
+  },
+  {
+   "word": "one",
+   "start": 14.72,
+   "end": 14.93
+  },
+  {
+   "word": "charges.",
+   "start": 14.93,
+   "end": 15.59
+  },
+  {
+   "word": "One",
+   "start": 15.78,
+   "end": 16.06
+  },
+  {
+   "word": "swing,",
+   "start": 16.06,
+   "end": 16.53
+  },
+  {
+   "word": "and",
+   "start": 16.53,
+   "end": 16.76
+  },
+  {
+   "word": "they",
+   "start": 16.76,
+   "end": 16.91
+  },
+  {
+   "word": "go",
+   "start": 16.91,
+   "end": 17.05
+  },
+  {
+   "word": "flying.",
+   "start": 17.05,
+   "end": 17.83
+  },
+  {
+   "word": "Wave",
+   "start": 18.06,
+   "end": 18.27
+  },
+  {
+   "word": "two",
+   "start": 18.27,
+   "end": 18.61
+  },
+  {
+   "word": "grabs",
+   "start": 18.61,
+   "end": 18.92
+  },
+  {
+   "word": "his",
+   "start": 18.92,
+   "end": 19.09
+  },
+  {
+   "word": "arms.",
+   "start": 19.09,
+   "end": 19.58
+  },
+  {
+   "word": "He",
+   "start": 19.78,
+   "end": 19.88
+  },
+  {
+   "word": "slams",
+   "start": 19.88,
+   "end": 20.4
+  },
+  {
+   "word": "the",
+   "start": 20.4,
+   "end": 20.47
+  },
+  {
+   "word": "ground.",
+   "start": 20.47,
+   "end": 20.98
+  },
+  {
+   "word": "Gone.",
+   "start": 21.29,
+   "end": 21.79
+  },
+  {
+   "word": "Then",
+   "start": 21.99,
+   "end": 22.2
+  },
+  {
+   "word": "fifty",
+   "start": 22.2,
+   "end": 22.7
+  },
+  {
+   "word": "men",
+   "start": 22.7,
+   "end": 22.98
+  },
+  {
+   "word": "pile",
+   "start": 22.98,
+   "end": 23.24
+  },
+  {
+   "word": "on",
+   "start": 23.24,
+   "end": 23.4
+  },
+  {
+   "word": "top",
+   "start": 23.4,
+   "end": 23.65
+  },
+  {
+   "word": "of",
+   "start": 23.65,
+   "end": 23.79
+  },
+  {
+   "word": "him.",
+   "start": 23.79,
+   "end": 24.05
+  },
+  {
+   "word": "It",
+   "start": 24.3,
+   "end": 24.37
+  },
+  {
+   "word": "looks",
+   "start": 24.37,
+   "end": 24.61
+  },
+  {
+   "word": "like",
+   "start": 24.61,
+   "end": 24.75
+  },
+  {
+   "word": "it's",
+   "start": 24.75,
+   "end": 24.9
+  },
+  {
+   "word": "over.",
+   "start": 24.9,
+   "end": 25.35
+  },
+  {
+   "word": "Then",
+   "start": 25.65,
+   "end": 26.06
+  },
+  {
+   "word": "he",
+   "start": 26.21,
+   "end": 26.34
+  },
+  {
+   "word": "stands",
+   "start": 26.34,
+   "end": 26.84
+  },
+  {
+   "word": "up.",
+   "start": 26.84,
+   "end": 27.1
+  },
+  {
+   "word": "The",
+   "start": 27.1,
+   "end": 27.44
+  },
+  {
+   "word": "pile",
+   "start": 27.44,
+   "end": 27.92
+  },
+  {
+   "word": "explodes.",
+   "start": 27.92,
+   "end": 28.9
+  },
+  {
+   "word": "And",
+   "start": 29.18,
+   "end": 29.28
+  },
+  {
+   "word": "the",
+   "start": 29.28,
+   "end": 29.34
+  },
+  {
+   "word": "men",
+   "start": 29.34,
+   "end": 29.51
+  },
+  {
+   "word": "who",
+   "start": 29.51,
+   "end": 29.61
+  },
+  {
+   "word": "are",
+   "start": 29.61,
+   "end": 29.69
+  },
+  {
+   "word": "left?",
+   "start": 29.69,
+   "end": 30.2
+  },
+  {
+   "word": "They",
+   "start": 30.44,
+   "end": 30.68
+  },
+  {
+   "word": "run.",
+   "start": 30.68,
+   "end": 31.15
+  },
+  {
+   "word": "Our",
+   "start": 31.45,
+   "end": 31.64
+  },
+  {
+   "word": "verdict:",
+   "start": 31.64,
+   "end": 32.17
+  },
+  {
+   "word": "the",
+   "start": 32.41,
+   "end": 32.53
+  },
+  {
+   "word": "gorilla",
+   "start": 32.53,
+   "end": 32.99
+  },
+  {
+   "word": "wins.",
+   "start": 32.99,
+   "end": 33.51
+  },
+  {
+   "word": "A",
+   "start": 33.8,
+   "end": 33.88
+  },
+  {
+   "word": "hundred",
+   "start": 33.88,
+   "end": 34.28
+  },
+  {
+   "word": "men",
+   "start": 34.28,
+   "end": 34.48
+  },
+  {
+   "word": "only",
+   "start": 34.48,
+   "end": 34.9
+  },
+  {
+   "word": "win",
+   "start": 34.9,
+   "end": 35.26
+  },
+  {
+   "word": "if",
+   "start": 35.26,
+   "end": 35.46
+  },
+  {
+   "word": "nobody",
+   "start": 35.46,
+   "end": 35.98
+  },
+  {
+   "word": "runs,",
+   "start": 35.98,
+   "end": 36.61
+  },
+  {
+   "word": "and",
+   "start": 36.68,
+   "end": 36.99
+  },
+  {
+   "word": "nobody",
+   "start": 36.99,
+   "end": 37.35
+  },
+  {
+   "word": "wants",
+   "start": 37.35,
+   "end": 37.61
+  },
+  {
+   "word": "to",
+   "start": 37.61,
+   "end": 37.69
+  },
+  {
+   "word": "be",
+   "start": 37.69,
+   "end": 37.8
+  },
+  {
+   "word": "next.",
+   "start": 37.8,
+   "end": 38.31
+  },
+  {
+   "word": "Here's",
+   "start": 38.68,
+   "end": 38.9
+  },
+  {
+   "word": "how",
+   "start": 38.9,
+   "end": 39.07
+  },
+  {
+   "word": "Ink",
+   "start": 39.07,
+   "end": 39.27
+  },
+  {
+   "word": "Brawl",
+   "start": 39.27,
+   "end": 39.57
+  },
+  {
+   "word": "works.",
+   "start": 39.57,
+   "end": 39.99
+  },
+  {
+   "word": "Follow,",
+   "start": 40.19,
+   "end": 40.77
+  },
+  {
+   "word": "and",
+   "start": 40.77,
+   "end": 40.9
+  },
+  {
+   "word": "you",
+   "start": 40.9,
+   "end": 41.02
+  },
+  {
+   "word": "become",
+   "start": 41.02,
+   "end": 41.28
+  },
+  {
+   "word": "a",
+   "start": 41.28,
+   "end": 41.31
+  },
+  {
+   "word": "stick",
+   "start": 41.31,
+   "end": 41.64
+  },
+  {
+   "word": "man",
+   "start": 41.64,
+   "end": 41.9
+  },
+  {
+   "word": "with",
+   "start": 41.9,
+   "end": 42.03
+  },
+  {
+   "word": "your",
+   "start": 42.03,
+   "end": 42.14
+  },
+  {
+   "word": "name",
+   "start": 42.14,
+   "end": 42.42
+  },
+  {
+   "word": "on",
+   "start": 42.42,
+   "end": 42.56
+  },
+  {
+   "word": "it.",
+   "start": 42.56,
+   "end": 42.69
+  },
+  {
+   "word": "Every",
+   "start": 42.92,
+   "end": 43.12
+  },
+  {
+   "word": "time",
+   "start": 43.12,
+   "end": 43.35
+  },
+  {
+   "word": "you",
+   "start": 43.35,
+   "end": 43.44
+  },
+  {
+   "word": "comment,",
+   "start": 43.44,
+   "end": 43.96
+  },
+  {
+   "word": "your",
+   "start": 43.96,
+   "end": 44.11
+  },
+  {
+   "word": "fighter",
+   "start": 44.11,
+   "end": 44.46
+  },
+  {
+   "word": "levels",
+   "start": 44.46,
+   "end": 44.86
+  },
+  {
+   "word": "up",
+   "start": 44.86,
+   "end": 45.04
+  },
+  {
+   "word": "and",
+   "start": 45.04,
+   "end": 45.2
+  },
+  {
+   "word": "gets",
+   "start": 45.2,
+   "end": 45.39
+  },
+  {
+   "word": "stronger.",
+   "start": 45.39,
+   "end": 45.98
+  },
+  {
+   "word": "And",
+   "start": 46.18,
+   "end": 46.34
+  },
+  {
+   "word": "every",
+   "start": 46.34,
+   "end": 46.56
+  },
+  {
+   "word": "follower",
+   "start": 46.56,
+   "end": 47.04
+  },
+  {
+   "word": "goal",
+   "start": 47.04,
+   "end": 47.45
+  },
+  {
+   "word": "unlocks",
+   "start": 47.45,
+   "end": 47.8
+  },
+  {
+   "word": "a",
+   "start": 47.8,
+   "end": 47.84
+  },
+  {
+   "word": "boss.",
+   "start": 47.84,
+   "end": 48.41
+  },
+  {
+   "word": "Ten",
+   "start": 48.61,
+   "end": 48.84
+  },
+  {
+   "word": "followers:",
+   "start": 48.84,
+   "end": 49.5
+  },
+  {
+   "word": "an",
+   "start": 49.6,
+   "end": 49.73
+  },
+  {
+   "word": "angry",
+   "start": 49.73,
+   "end": 50.13
+  },
+  {
+   "word": "goose.",
+   "start": 50.13,
+   "end": 50.69
+  },
+  {
+   "word": "Fifty:",
+   "start": 50.9,
+   "end": 51.49
+  },
+  {
+   "word": "a",
+   "start": 51.63,
+   "end": 51.71
+  },
+  {
+   "word": "grizzly",
+   "start": 51.71,
+   "end": 52.16
+  },
+  {
+   "word": "bear.",
+   "start": 52.16,
+   "end": 52.53
+  },
+  {
+   "word": "And",
+   "start": 52.69,
+   "end": 52.87
+  },
+  {
+   "word": "at",
+   "start": 52.87,
+   "end": 52.94
+  },
+  {
+   "word": "one",
+   "start": 52.94,
+   "end": 53.19
+  },
+  {
+   "word": "hundred,",
+   "start": 53.19,
+   "end": 53.66
+  },
+  {
+   "word": "all",
+   "start": 53.88,
+   "end": 54.16
+  },
+  {
+   "word": "of",
+   "start": 54.16,
+   "end": 54.25
+  },
+  {
+   "word": "you",
+   "start": 54.25,
+   "end": 54.42
+  },
+  {
+   "word": "get",
+   "start": 54.42,
+   "end": 54.57
+  },
+  {
+   "word": "a",
+   "start": 54.57,
+   "end": 54.6
+  },
+  {
+   "word": "rematch",
+   "start": 54.6,
+   "end": 55.14
+  },
+  {
+   "word": "with",
+   "start": 55.14,
+   "end": 55.41
+  },
+  {
+   "word": "this",
+   "start": 55.41,
+   "end": 55.63
+  },
+  {
+   "word": "gorilla.",
+   "start": 55.63,
+   "end": 56.16
+  },
+  {
+   "word": "Comment",
+   "start": 56.39,
+   "end": 56.73
+  },
+  {
+   "word": "the",
+   "start": 56.73,
+   "end": 56.8
+  },
+  {
+   "word": "fighter",
+   "start": 56.8,
+   "end": 57.16
+  },
+  {
+   "word": "you",
+   "start": 57.16,
+   "end": 57.36
+  },
+  {
+   "word": "want",
+   "start": 57.36,
+   "end": 57.57
+  },
+  {
+   "word": "to",
+   "start": 57.57,
+   "end": 57.67
+  },
+  {
+   "word": "be.",
+   "start": 57.67,
+   "end": 58.01
+  },
+  {
+   "word": "Ninja?",
+   "start": 58.22,
+   "end": 58.71
+  },
+  {
+   "word": "Samurai?",
+   "start": 58.91,
+   "end": 59.58
+  },
+  {
+   "word": "Caveman?",
+   "start": 59.71,
+   "end": 60.42
+  },
+  {
+   "word": "Anything.",
+   "start": 60.61,
+   "end": 61.16
+  },
+  {
+   "word": "The",
+   "start": 61.39,
+   "end": 61.45
+  },
+  {
+   "word": "most",
+   "start": 61.45,
+   "end": 61.72
+  },
+  {
+   "word": "requested",
+   "start": 61.72,
+   "end": 62.3
+  },
+  {
+   "word": "gets",
+   "start": 62.3,
+   "end": 62.54
+  },
+  {
+   "word": "drawn",
+   "start": 62.54,
+   "end": 62.82
+  },
+  {
+   "word": "first.",
+   "start": 62.82,
+   "end": 63.33
+  }
+ ]
+}
