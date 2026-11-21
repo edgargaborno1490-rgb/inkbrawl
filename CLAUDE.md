@@ -44,6 +44,14 @@ anime format: don't use it for brawls.
   only after that (and after the owner's voiceover MP3, if the video has narration).
 - Video list and status: `IDEAS.md`. First video: **100 Men vs 1 Gorilla** (no followers yet, so it opens with the
   internet's most argued fight debate and asks people to comment "ME" to be in the next brawl).
+- **CHARACTER ART = THE OWNER'S OWN DRAWINGS, TRACED (owner, Nov 21, 2026).** Don't redraw characters in code: code
+  only approximates. The owner makes sprite sheets in ChatGPT (one character, 8 poses in a 2x4 grid on white: idle,
+  punch, kick, hit, fly, ko, run, win) saved in `reference/sprites/<name>-sheet.png`.
+  `samples/sprites/trace_sprites.py` cuts every pose out and traces it to vectors with potrace (white body fill, grey
+  details, black ink, effect marks kept) -> `sprites.js`. `sprite-check.html/png` = check sheet (red dot = foot anchor).
+  `sprite-test.html` + `render_sprite_test.cjs` -> `sprite-test.mp4` = 6 cap guys vs gorilla, pose-to-pose in the 3D
+  arena. New characters: ask the owner for a sprite sheet, add its name in `trace_sprites.py`, re-run.
+  Setup: `apt-get install -y potrace` and `pip install scipy` (numpy + Pillow already there).
 - **Fight engine (current): `samples/style3d/`.** `ink.js` = the shared drawing library (style-master stick men,
   outfits/kits, poses, 3D arena camera, floor, stars, sparkles). `fight3d.html` = the 15 s 3D fight (keyframed
   fighters with depth lanes, hits, KOs, smoke-puff knockouts, camera moves, words, counter); `render_fight3d.cjs`

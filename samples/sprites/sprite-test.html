@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ink Brawl sprite test: the owner's own drawings (reference/sprites/*-sheet.png, traced by trace_sprites.py)
+     animated pose-to-pose in the 3D arena. 6 cap guys vs 1 gorilla, 15 s. window.setT(seconds) draws one frame. -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#ece9e3}
+  #word{position:absolute;left:0;right:0;top:60px;text-align:center;font:150px 'Permanent Marker',cursive;color:#fff;
+        -webkit-text-stroke:16px #1a1a1a;paint-order:stroke fill;letter-spacing:2px}
+  #counter{position:absolute;left:60px;top:950px;font:54px 'Permanent Marker',cursive;color:#1a1a1a;background:#fff;
+           padding:4px 26px;border-radius:14px;box-shadow:0 6px 0 #1a1a1a;border:6px solid #1a1a1a}
+  #flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div id="out"></div><div id="word"></div><div id="counter"></div><div id="flash"></div>
+<script src="../style3d/ink.js"></script><script src="sprites.js"></script>
+<script>
+const smooth = k => k * k * (3 - 2 * k), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+// one traced pose, feet at (0,0); k = size
+function spriteSVG(who, pose, k) {
+  const sp = SPRITES[who][pose];
+  return { svg: `<g transform="scale(${k}) translate(${-sp.ax},${-sp.ay})"><g fill="#fff">${sp.fill}</g><g fill="#b9b9b9">${sp.grey}</g><g fill="${INK}">${sp.ink}</g></g>`,
+           top: (sp.top - sp.ay) * k };
+}
+// keys: t, p (pose, held until the next key: pose-to-pose like a flipbook), x, z, lift, rot, f (facing), o
+function track(first, ...rest) { const out = [Object.assign({ lift:0, rot:0, f:1, o:1 }, first)];
+  for (const k of rest) out.push(Object.assign({}, out[out.length - 1], k)); return out; }
+const G = 1.9;    // gorilla size vs the cap guys
+const ACT = {
+  gorilla: { who:'gorilla', k:G, shadow:230, keys: track({t:0, p:'idle', x:0, z:700},
+    {t:2.65, p:'hit', x:40}, {t:3.0, p:'idle', x:0}, {t:3.05, f:-1}, {t:3.12, p:'punch', x:-40}, {t:3.55, p:'idle', x:0},
+    {t:4.3, f:1}, {t:4.6, p:'kick'}, {t:4.95, p:'hit', x:-30}, {t:5.3, p:'idle', x:0}, {t:5.42, p:'punch', x:40}, {t:5.9, p:'idle', x:0},
+    {t:6.3, p:'win'}, {t:7.1, p:'idle'}, {t:7.22, p:'hit', x:30}, {t:7.55, p:'idle', x:0}, {t:7.82, p:'hit', x:-30}, {t:8.15, p:'idle', x:0},
+    {t:8.42, p:'fly', x:60, lift:60, rot:8}, {t:8.8, x:330, lift:260, rot:18}, {t:9.2, p:'ko', x:520, lift:0, rot:0}) },
+  A: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:-950, z:640},
+    {t:2.0, p:'run'}, {t:2.5, x:-400}, {t:2.55, p:'punch', x:-380}, {t:3.05, p:'idle'}, {t:3.15, p:'hit', x:-400},
+    {t:3.3, p:'fly', x:-480, lift:80, rot:-10}, {t:3.6, x:-760, lift:240, rot:-25}, {t:3.95, p:'ko', x:-1000, lift:0, rot:0}, {t:4.6}, {t:4.9, o:0}) },
+  B: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:980, z:600, f:-1},
+    {t:4.0, p:'run'}, {t:4.5, x:440}, {t:4.55, p:'idle'}, {t:4.62, p:'hit', x:460},
+    {t:4.75, p:'fly', x:560, lift:100, rot:-10}, {t:5.1, x:900, lift:280, rot:-30}, {t:5.5, p:'ko', x:1150, lift:0, rot:0}, {t:6.1}, {t:6.4, o:0}) },
+  C: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:1050, z:860, f:-1},
+    {t:4.2, p:'run'}, {t:4.8, x:400}, {t:4.85, p:'punch', x:380}, {t:5.3, p:'idle'}, {t:5.45, p:'hit', x:410},
+    {t:5.55, p:'fly', x:520, lift:100, rot:-10}, {t:5.9, x:900, lift:260, rot:-30}, {t:6.3, p:'ko', x:1150, lift:0, rot:0}, {t:6.9}, {t:7.2, o:0}) },
+  D: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:-1050, z:520},
+    {t:6.1, p:'run'}, {t:6.8, x:-420}, {t:6.85, p:'idle'}, {t:7.2, p:'kick', x:-400}, {t:7.5, p:'idle'}, {t:7.8, p:'punch', x:-380},
+    {t:8.1, p:'idle'}, {t:8.4, p:'kick', x:-360}, {t:8.8, p:'idle'}, {t:9.7, p:'win'}) },
+  E: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:1050, z:640, f:-1},
+    {t:6.2, p:'run'}, {t:6.9, x:400}, {t:6.95, p:'idle'}, {t:7.25, p:'punch', x:380}, {t:7.55, p:'idle'}, {t:8.0, p:'punch'},
+    {t:8.3, p:'idle'}, {t:8.45, x:950}, {t:9.8, p:'win'}) },
+  F: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:-850, z:1000},
+    {t:6.3, p:'run'}, {t:7.0, x:-330, z:860}, {t:7.05, p:'idle'}, {t:7.8, p:'kick', x:-310}, {t:8.1, p:'idle'}, {t:9.9, p:'win'}) },
+};
+function stateAt(a, t) {
+  const ks = a.keys; let i = 0; while (i < ks.length - 1 && ks[i + 1].t <= t) i++;
+  const A = ks[i], B = ks[Math.min(i + 1, ks.length - 1)], k = B.t > A.t ? smooth(clamp((t - A.t) / (B.t - A.t), 0, 1)) : 0;
+  const L = n => lerp(A[n], B[n], k);
+  let pose = A.p, lift = L('lift'), x = L('x');
+  if (pose === 'run') lift += Math.abs(Math.sin(t * 16)) * 26;                  // run bounce (one run drawing)
+  if (pose === 'idle') lift += Math.abs(Math.sin(t * 5 + x)) * 4;               // breathing
+  if (pose === 'win') lift += Math.abs(Math.sin(t * 7 + x * .01)) * 60;         // happy jumping
+  if (pose === 'hit') x += Math.sin(t * 90) * 6;                                // hit shudder
+  return { pose, x, z: L('z'), lift, rot: L('rot'), f: L('f'), o: L('o') };
+}
+
+// ---------------------------------------------------------------- effects
+const HITS = [ // t, x, z, size  (contact points)
+  [2.55, -230, 660, 70], [3.12, -330, 660, 85], [4.62, 300, 620, 85], [4.85, 230, 760, 70], [5.42, 330, 820, 85],
+  [7.2, -230, 600, 70], [7.25, 230, 660, 70], [7.8, -230, 760, 70], [8.0, 230, 660, 70], [8.4, -220, 600, 95],
+];
+function cloud(x, y, r, o) { let g = ''; for (let i = 0; i < 6; i++) { const a = i * 60 * Math.PI / 180;
+  g += `<circle cx="${x + Math.cos(a) * r * .7}" cy="${y + Math.sin(a) * r * .4}" r="${r * .55}" fill="#fff" stroke="${INK}" stroke-width="${Math.max(2, r * .09)}"/>`; }
+  return `<g opacity="${o.toFixed(2)}">${g}</g>`; }
+function drawFX(cam, t) {
+  let under = '', over = '';
+  for (const [ht, x, z, size] of HITS) { const dt = t - ht; if (dt < 0 || dt > .28) continue;
+    const q = cam(x, 230, z), k = dt / .28, sz = size * q.s * (0.6 + k * .6);
+    over += `<g opacity="${(1 - k * .6).toFixed(2)}">${star(q.x, q.y, sz)}${marks(q.x, q.y, sz * 1.3, -140)}${marks(q.x, q.y, sz * 1.3, 40)}</g>`; }
+  for (const rt of [6.4, 6.7]) { const dt = t - rt; if (dt < 0 || dt > 1) continue;           // roar shockwave
+    const q = cam(0, 0, 700), r = (250 + dt * 1300) * q.s;
+    under += `<ellipse cx="${q.x}" cy="${q.y}" rx="${r}" ry="${r * .32}" fill="none" stroke="${INK}" stroke-width="${12 * (1 - dt) * q.s + 2}" opacity="${1 - dt}"/>`; }
+  for (const [pt, x, z] of [[4.6, -1000, 640], [6.1, 1150, 600], [6.9, 1150, 860]]) { const dt = t - pt; if (dt < 0 || dt > .45) continue;
+    const q = cam(x, 80, z); over += cloud(q.x, q.y, (90 + dt * 140) * q.s, 1 - dt / .45); }
+  if (t >= 9.2 && t < 10) { const k = (t - 9.2) / .8; for (let i = 0; i < 6; i++) { const q = cam(300 + i * 90, 30 + k * 50, 700);
+    over += cloud(q.x, q.y, (70 + k * 60) * q.s, 1 - k); } }
+  if (t >= 10) { const q = cam(-300, 0, 700); for (const [ox, oy, r] of [[-250, 520, 40], [420, 470, 30], [80, 640, 22], [-520, 380, 20]])
+    over += sparkle(q.x + ox * q.s, q.y - oy * q.s, r * q.s * clamp((t - 10) / .25, 0, 1)); }
+  return { under, over };
+}
+
+// ---------------------------------------------------------------- camera, words, counter, flash
+const CAM = [ // t, x, h, z, pitch
+  [0, 0, 2100, -2200, 34], [0.4, 0, 2100, -2200, 34], [1.9, -200, 1000, -750, 22], [3.5, -350, 950, -700, 21],
+  [4.3, 300, 950, -700, 21], [5.9, 380, 1000, -800, 22], [6.3, 0, 1300, -1300, 27], [7.15, 0, 950, -650, 18],
+  [8.6, 150, 950, -650, 18], [9.4, 300, 1000, -700, 21], [10.6, 0, 1200, -950, 24], [15, 120, 950, -520, 19],
+];
+const SHAKE = HITS.map(h => [h[0], h[3] / 4]).concat([[6.4, 16], [9.2, 30]]);
+const FLASH = [3.12, 4.62, 5.42, 8.4, 9.2];
+const WORDS = [[0.2, '1 GORILLA'], [0.9, 'VS'], [1.3, '6 MEN'], [2.55, 'POW!'], [3.12, 'BAM!'], [4.62, 'KICK!'], [5.42, 'BAM!'],
+  [6.3, 'ROAR!'], [7.2, 'GANG UP!'], [8.4, 'KICK!'], [9.2, 'DOWN!'], [10.4, 'MEN WIN?'], [13.6, 'WHO'], [14.05, 'WINS?']];
+const OUT_T = [3.95, 5.5, 6.3];
+function camAt(t) {
+  let i = 0; while (i < CAM.length - 2 && CAM[i + 1][0] <= t) i++;
+  const a = CAM[i], b = CAM[i + 1], k = smooth(clamp((t - a[0]) / (b[0] - a[0]), 0, 1)), c = a.map((v, n) => lerp(v, b[n], k));
+  return camera({ x: c[1], h: c[2], z: c[3], pitch: c[4], f: 1350 });
+}
+window.setT = t => {
+  const cam = camAt(t);
+  let sx = 0, sy = 0;
+  for (const [th, st] of SHAKE) if (t >= th && t < th + .5) { const d = Math.exp(-(t - th) * 9) * st;
+    sx += Math.sin(t * 97 + th) * d; sy += Math.cos(t * 83 + th) * d; }
+  const placed = [];
+  for (const id in ACT) { const a = ACT[id], s = stateAt(a, t); if (s.o <= .01) continue;
+    placed.push({ x: s.x, z: s.z, lift: s.lift, rot: s.rot, face: s.f, o: s.o, shadow: a.shadow || 95, draw: () => spriteSVG(a.who, s.pose, a.k) }); }
+  const fx = drawFX(cam, t);
+  document.getElementById('out').innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080">${vignette}<rect width="1920" height="1080" fill="${BG}"/>`
+    + `<g transform="translate(${sx.toFixed(1)},${sy.toFixed(1)})">${floorDetails(cam, 7)}${fx.under}${scene(cam, placed)}${fx.over}</g>`
+    + `<rect width="1920" height="1080" fill="url(#vg)"/></svg>`;
+  let w = ''; for (const [wt, txt] of WORDS) if (t >= wt) w = t - wt < 0.6 || wt === WORDS[WORDS.length - 1][0] ? txt : w;
+  const wd = document.getElementById('word'), last = WORDS.filter(x => t >= x[0]).pop();
+  wd.textContent = w; wd.style.transform = `scale(${1.25 - .25 * (last ? clamp((t - last[0]) / .08, 0, 1) : 1)})`;
+  document.getElementById('counter').textContent = t < 9.2 ? `${6 - OUT_T.filter(k => t >= k).length} MEN LEFT` : 'GORILLA DOWN';
+  let fl = 0; for (const ft of FLASH) if (t >= ft && t < ft + .1) fl = t < ft + .067 ? 1 : .4;
+  document.getElementById('flash').style.opacity = fl;
+};
+setT(0);
+</script></body></html>
