@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ink Brawl 15 s fight test in the style-master look, 3D arena camera.
+     window.setT(seconds) draws one frame; render_fight3d.cjs steps it and adds sound. -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#ece9e3}
+  #word{position:absolute;left:0;right:0;top:60px;text-align:center;font:150px 'Permanent Marker',cursive;color:#fff;
+        -webkit-text-stroke:16px #1a1a1a;paint-order:stroke fill;letter-spacing:2px}
+  #counter{position:absolute;left:60px;top:950px;font:54px 'Permanent Marker',cursive;color:#1a1a1a;background:#fff;
+           padding:4px 26px;border-radius:14px;box-shadow:0 6px 0 #1a1a1a;border:6px solid #1a1a1a}
+  #flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div id="out"></div><div id="word"></div><div id="counter"></div><div id="flash"></div>
+<script src="ink.js"></script>
+<script>
+const smooth = k => k * k * (3 - 2 * k), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const WX = x => (x - 960) / 0.6;              // fight timing came from the 2D test: layer x -> world x
+const Z = { left: 520, back: 900, right: 300 };  // depth lanes on the arena floor
+
+// ---------------------------------------------------------------- fighters (keys: t, p pose, x layer-x, z depth, y lift(-up), r rot, f facing, o opacity)
+const CASTF = {
+  1: { name:'@Fighter_01', kit:'ninja' }, 2: { name:'@Fighter_02', kit:'cap' }, 3: { name:'@Fighter_03', kit:'shades' },
+  4: { name:'@Fighter_04', kit:'bucket' }, 5: { name:'@Fighter_05', kit:'hiker' },
+};
+function track(first, ...rest) { const out = [Object.assign({ y:0, r:0, f:1, o:1 }, first)];
+  for (const k of rest) out.push(Object.assign({}, out[out.length - 1], k)); return out; }
+const T = {
+  1: track({t:0, p:'GUARD', x:330, z:Z.left},
+     {t:2.8}, {t:3.15, p:'RUN', x:540}, {t:3.3, p:'WIND', x:560}, {t:3.45, p:'PUNCH', x:575}, {t:3.9, p:'GUARD'},
+     {t:4.15, p:'HIT', x:560}, {t:4.25, p:'FLY', x:500, y:-80, r:-25}, {t:4.6, x:380, y:-150, r:-60},
+     {t:4.9, p:'DOWN', x:280, y:0, r:0}, {t:5.3}, {t:5.9, o:0}),
+  2: track({t:0, p:'GUARD', x:690, z:Z.left, f:-1},
+     {t:3.45}, {t:3.55, p:'HIT', x:730}, {t:3.75, x:760}, {t:3.95, p:'GUARD'}, {t:4.05, p:'KWIND', x:740},
+     {t:4.2, p:'KICK', x:700}, {t:4.6}, {t:4.85, p:'GUARD'},
+     {t:7.1}, {t:7.2, f:1}, {t:7.3, p:'RUN', x:720}, {t:7.7, x:805, z:Z.back}, {t:7.8, p:'WIND', x:815}, {t:7.95, p:'PUNCH', x:828},
+     {t:8.15, p:'GUARD', x:820}, {t:8.3, p:'HIT', x:812}, {t:8.4, p:'FLY', x:810, y:-140, r:-30}, {t:8.75, x:690, y:-230, r:-80},
+     {t:9.1, p:'DOWN', x:600, y:0, r:0}, {t:9.4}, {t:10.0, o:0}),
+  3: track({t:0, p:'GUARD', x:960, z:Z.back},
+     {t:2.9}, {t:3.1, p:'CHARGE'}, {t:5.9}, {t:6.1, p:'BLAST', x:975}, {t:6.7}, {t:6.9, p:'GUARD', x:960},
+     {t:7.5}, {t:7.6, f:-1}, {t:7.95, p:'GUARD'}, {t:8.05, p:'HIT', x:985}, {t:8.15, p:'WIND', x:975},
+     {t:8.3, p:'UPPER', x:940}, {t:8.7}, {t:8.9, p:'GUARD'},
+     {t:9.5}, {t:9.6, f:1}, {t:10.3}, {t:10.9, p:'RUN', x:1010}, {t:11.0, p:'WIND', x:1025}, {t:11.4, p:'PUNCH', x:1045},
+     {t:11.95}, {t:12.05, p:'HIT', x:1035}, {t:12.15, p:'FLY', x:1000, y:-160, r:-35}, {t:12.5, x:900, y:-180, r:-85},
+     {t:12.85, p:'DOWN', x:800, y:0, r:0}, {t:13.2}, {t:13.8, o:0}),
+  4: track({t:0, p:'GUARD', x:1230, z:Z.right},
+     {t:3.55}, {t:3.65, p:'HIT', x:1200}, {t:3.9, p:'GUARD', x:1210}, {t:4.25, p:'WIND'}, {t:4.4, p:'PUNCH', x:1250},
+     {t:4.8, p:'GUARD', x:1230}, {t:6.25}, {t:6.32, p:'HIT', x:1250}, {t:6.45, p:'FLY', x:1320, y:-120, r:-30},
+     {t:6.8, x:1500, y:-170, r:-70}, {t:7.1, p:'DOWN', x:1640, y:0, r:0, f:-1}, {t:7.4}, {t:8.0, o:0}),
+  5: track({t:0, p:'GUARD', x:1590, z:Z.right, f:-1},
+     {t:3.3}, {t:3.45, p:'WIND', x:1560}, {t:3.6, p:'PUNCH', x:1450}, {t:3.9, p:'GUARD', x:1480},
+     {t:4.4}, {t:4.5, p:'HIT', x:1500}, {t:4.8, p:'GUARD', x:1520},
+     {t:6.4}, {t:6.5, p:'GUARD', x:1470}, {t:9.4}, {t:10.3, p:'RUN', x:1350}, {t:10.9, x:1280, z:Z.back},
+     {t:11.0, p:'WIND', x:1265}, {t:11.4, p:'PUNCH', x:1240}, {t:11.75, p:'WIND', x:1225}, {t:11.95, p:'UPPER', x:1150},
+     {t:12.6}, {t:13.0, p:'GUARD', x:1170}, {t:13.3, p:'WIN'}),
+};
+function poseJ(name, t, id) {
+  if (name === 'RUN') name = Math.floor(t * 10) % 2 ? 'RUN' : 'RUNB';
+  const bob = name === 'GUARD' || name === 'CHARGE' ? Math.sin(t * 9 + id * 1.7) * 5 : 0, j = {};
+  for (const k in P[name]) j[k] = [P[name][k][0], P[name][k][1] + (k === 'lf' || k === 'rf' ? 0 : bob)];
+  return j;
+}
+function stateAt(id, t) {
+  const ks = T[id]; let i = 0; while (i < ks.length - 1 && ks[i + 1].t <= t) i++;
+  const a = ks[i], b = ks[Math.min(i + 1, ks.length - 1)];
+  const k = b.t > a.t ? smooth(clamp((t - a.t) / (b.t - a.t), 0, 1)) : 0;
+  const ja = poseJ(a.p, t, id), jb = poseJ(b.p, t, id), j = {};
+  for (const n in ja) j[n] = [lerp(ja[n][0], jb[n][0], k), lerp(ja[n][1], jb[n][1], k)];
+  const L = n => lerp(a[n], b[n], k);
+  return { j, x: L('x'), z: L('z'), y: L('y'), r: L('r'), f: L('f'), o: L('o'), p: k < .5 ? a.p : b.p };
+}
+const moodOf = p => KO_POSES.has(p) ? 'ko' : p === 'WIN' ? 'happy' : ATTACK_POSES.has(p) ? 'angry' : 'normal';
+
+// ---------------------------------------------------------------- effects (world coordinates: x via WX, Y height, z depth)
+const FX = [
+  {type:'star', t:3.45, x:625, Y:190, z:Z.left, size:40}, {type:'star', t:3.6, x:1335, Y:190, z:Z.right, size:40},
+  {type:'star', t:4.2, x:595, Y:175, z:Z.left, size:58}, {type:'star', t:4.4, x:1340, Y:190, z:Z.right, size:40},
+  {type:'beam', t:6.1, t1:6.6}, {type:'star', t:6.3, x:1250, Y:180, z:Z.right, size:85},
+  {type:'star', t:7.95, x:915, Y:190, z:Z.back, size:40}, {type:'star', t:8.3, x:880, Y:250, z:Z.back, size:70},
+  {type:'shock', t:11.4, x:1145, z:Z.back}, {type:'star', t:11.4, x:1145, Y:190, z:Z.back, size:62},
+  {type:'star', t:12.0, x:1110, Y:270, z:Z.back, size:60},
+  {type:'dust', t:4.9, x:280, z:Z.left}, {type:'dust', t:7.1, x:1640, z:Z.right}, {type:'dust', t:9.1, x:600, z:Z.back}, {type:'dust', t:12.85, x:800, z:Z.back},
+  {type:'poof', t:5.4, x:250, z:Z.left}, {type:'poof', t:7.5, x:1620, z:Z.right}, {type:'poof', t:9.5, x:570, z:Z.back}, {type:'poof', t:13.3, x:770, z:Z.back},
+  {type:'sparkles', t:13.35, x:1170, z:Z.back},
+];
+function cloud(x, y, r, o) { let g = ''; for (let i = 0; i < 6; i++) { const a = i * 60 * Math.PI / 180;
+  g += `<circle cx="${x + Math.cos(a) * r * .7}" cy="${y + Math.sin(a) * r * .4}" r="${r * .55}" fill="#fff" stroke="${INK}" stroke-width="${Math.max(2, r * .09)}"/>`; }
+  return `<g opacity="${o.toFixed(2)}">${g}</g>`; }
+function drawFX(cam, t) {
+  let under = '', over = '';
+  for (const e of FX) {
+    const dt = t - e.t;
+    if (e.type === 'star' && dt >= 0 && dt < .3) {
+      const q = cam(WX(e.x), e.Y, e.z), k = dt / .3, sz = e.size * 1.6 * q.s * (0.6 + k * .6);
+      over += `<g opacity="${(1 - k * .6).toFixed(2)}">${star(q.x, q.y, sz)}${marks(q.x, q.y, sz * 1.25, -140)}${marks(q.x, q.y, sz * 1.25, 40)}</g>`;
+    }
+    if (e.type === 'beam' && t >= e.t && t <= e.t1) {      // power blast from @Fighter_03 to @Fighter_04 (across the floor, toward camera)
+      const s3 = stateAt(3, t), a = cam(WX(s3.x) + 120, 185, s3.z), b0 = cam(WX(1250), 180, Z.right);
+      const k = clamp((t - e.t) / .15, 0, 1), b = { x: lerp(a.x, b0.x, k), y: lerp(a.y, b0.y, k) }, w = (60 + Math.sin(t * 60) * 10) * (a.s + b0.s) / 2;
+      over += pen([[a.x, a.y], [b.x, b.y]], INK, w + 16) + pen([[a.x, a.y], [b.x, b.y]], '#fff', w) + pen([[a.x, a.y], [b.x, b.y]], '#ffd23f', w * .45);
+    }
+    if (e.type === 'shock' && dt >= 0 && dt < 1.2) for (let i = 0; i < 3; i++) {
+      const k = clamp((dt - i * .15) / .8, 0, 1); if (k <= 0 || k >= 1) continue;
+      const q = cam(WX(e.x), 0, e.z), r = (80 + k * 700) * q.s;
+      under += `<ellipse cx="${q.x}" cy="${q.y}" rx="${r}" ry="${r * .32}" fill="none" stroke="${INK}" stroke-width="${10 * (1 - k) * q.s + 2}" opacity="${1 - k}"/>`;
+    }
+    if (e.type === 'dust' && dt >= 0 && dt < .7) {
+      const k = dt / .7; for (let i = 0; i < 5; i++) { const q = cam(WX(e.x) + (i - 2) * 90 * (0.5 + k), 20 + k * 40, e.z);
+        over += cloud(q.x, q.y, (30 + k * 30) * q.s, 1 - k); }
+    }
+    if (e.type === 'poof' && dt >= 0 && dt < .6) {         // knocked-out fighter disappears in a cartoon smoke puff
+      const k = dt / .6, q = cam(WX(e.x), 90, e.z);
+      over += cloud(q.x, q.y, (90 + k * 80) * q.s, 1 - k * k) + cloud(q.x - 60 * q.s, q.y - 70 * q.s, (60 + k * 50) * q.s, 1 - k);
+    }
+    if (e.type === 'sparkles' && dt >= 0) {
+      const q = cam(WX(e.x), 0, e.z), pop = clamp(dt / .25, 0, 1);
+      for (const [ox, oy, r] of [[-150, 390, 34], [160, 320, 26], [120, 470, 18], [-120, 250, 16]])
+        over += sparkle(q.x + ox * q.s, q.y - oy * q.s, r * q.s * pop * (1 + .12 * Math.sin(t * 8 + ox)));
+    }
+  }
+  return { under, over };
+}
+
+// ---------------------------------------------------------------- camera, words, counter, flash
+const CAM = [ // t, x, h, z, pitch
+  [0, 0, 2300, -2700, 38], [0.4, 0, 2300, -2700, 38], [2.4, 0, 1050, -1300, 26],
+  [3.0, -500, 900, -850, 24], [5.0, -620, 900, -850, 24], [5.8, 250, 1050, -1150, 27], [7.2, 350, 1000, -1050, 26],
+  [8.0, -220, 760, -120, 21], [9.4, 0, 950, -800, 24], [10.4, 320, 800, -420, 20],
+  [11.4, 300, 560, -20, 14], [12.2, 200, 640, -120, 17], [13.2, 350, 680, 40, 19], [15, 370, 680, 140, 21],
+];
+const SHAKE = [[3.45, 6], [4.2, 14], [6.3, 26], [8.3, 14], [11.4, 34], [12.0, 20]];
+const FLASH = [4.2, 6.3, 8.3, 11.4, 12.0];
+const WORDS = [[0.2, 'FIVE'], [0.75, 'FIGHTERS'], [1.35, 'ONLY'], [1.75, 'ONE'], [2.15, 'WINS'], [2.6, 'FIGHT!'],
+  [4.9, 'OUT!'], [6.3, 'BOOM!'], [8.3, 'UPPERCUT!'], [9.6, 'FINAL'], [10.0, 'TWO'], [12.0, 'DOWN!'], [13.3, 'WINNER'], [14.0, '@Fighter_05']];
+const KO = [4.9, 7.1, 9.1, 12.85];
+function camAt(t) {
+  let i = 0; while (i < CAM.length - 2 && CAM[i + 1][0] <= t) i++;
+  const a = CAM[i], b = CAM[i + 1], k = smooth(clamp((t - a[0]) / (b[0] - a[0]), 0, 1)), c = a.map((v, n) => lerp(v, b[n], k));
+  return camera({ x: c[1], h: c[2], z: c[3], pitch: c[4], f: 1350 });
+}
+window.setT = t => {
+  const cam = camAt(t);
+  let sx = 0, sy = 0;
+  for (const [th, st] of SHAKE) if (t >= th && t < th + .5) { const d = Math.exp(-(t - th) * 9) * st;
+    sx += Math.sin(t * 97 + th) * d; sy += Math.cos(t * 83 + th) * d; }
+  const placed = [];
+  for (const id in CASTF) {
+    const s = stateAt(+id, t); if (s.o <= .01) continue;
+    placed.push({ x: WX(s.x), z: s.z, lift: -s.y / .6, rot: s.r, face: s.f, o: s.o, name: CASTF[id].name,
+                  f: { j: s.j, pose: s.p, kit: CASTF[id].kit, mood: moodOf(s.p), crown: id === '5' && t > 13.35 } });
+  }
+  const fx = drawFX(cam, t);
+  // speed lines behind fast movers
+  let speed = '';
+  for (const id in CASTF) { const s = stateAt(+id, t), s0 = stateAt(+id, t - .05), q = cam(WX(s.x), 0, s.z), q0 = cam(WX(s0.x), 0, s0.z);
+    const v = (q.x - q0.x) / .05; if (Math.abs(v) < 500 || s.o < .5) continue;
+    for (let i = 0; i < 3; i++) { const d = -Math.sign(v), yy = q.y - (s.y < 0 ? -s.y / .6 * q.s : 0) - (70 + i * 55) * q.s;
+      speed += pen([[q.x + d * 90 * q.s, yy], [q.x + d * (190 + i * 30) * q.s, yy]], INK, Math.max(3, 7 * q.s)); } }
+  document.getElementById('out').innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080">${vignette}<rect width="1920" height="1080" fill="${BG}"/>`
+    + `<g transform="translate(${sx.toFixed(1)},${sy.toFixed(1)})">${floorDetails(cam, 7)}${fx.under}${speed}${scene(cam, placed)}${fx.over}</g>`
+    + `<rect width="1920" height="1080" fill="url(#vg)"/></svg>`;
+  let w = ''; for (const [wt, txt] of WORDS) if (t >= wt) w = t - wt < 0.55 || wt === WORDS[WORDS.length - 1][0] ? txt : w;
+  const wd = document.getElementById('word'), last = WORDS.filter(x => t >= x[0]).pop();
+  wd.textContent = w; wd.style.transform = `scale(${1.25 - .25 * (last ? clamp((t - last[0]) / .08, 0, 1) : 1)})`;
+  wd.style.fontSize = w.startsWith('@') ? '110px' : '150px';
+  document.getElementById('counter').textContent = t < 2.6 ? '5 FIGHTERS' : `${5 - KO.filter(k => t >= k).length} LEFT`;
+  let fl = 0; for (const ft of FLASH) if (t >= ft && t < ft + .1) fl = t < ft + .067 ? 1 : .4;
+  document.getElementById('flash').style.opacity = fl;
+};
+setT(0);
+</script></body></html>

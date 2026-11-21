@@ -1,0 +1,207 @@
+// Ink Brawl drawing library (style master look + 3D arena camera). Shared by sample3d.html and fight3d.html.
+
+// ------------------------------------------------------------ look
+const BG = '#ece9e3', INK = '#1a1a1a', SHADOW = 'rgba(60,50,40,.16)';
+const HR = 75, LW = 11;                     // head radius and line width in fighter units (style master: head ~half the height)
+const lerp = (a, b, k) => a + (b - a) * k;
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s;
+  t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function pen(pts, color = INK, w = LW) {
+  let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+  if (pts.length === 2) d += ` L${pts[1][0].toFixed(1)},${pts[1][1].toFixed(1)}`;
+  else { for (let i = 1; i < pts.length - 1; i++) { const m = [(pts[i][0] + pts[i+1][0]) / 2, (pts[i][1] + pts[i+1][1]) / 2];
+           d += ` Q${pts[i][0].toFixed(1)},${pts[i][1].toFixed(1)} ${m[0].toFixed(1)},${m[1].toFixed(1)}`; }
+         const l = pts[pts.length - 1]; d += ` L${l[0].toFixed(1)},${l[1].toFixed(1)}`; }
+  return `<path d="${d}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+const poly = (pts, fill, extra = '') => `<path d="M${pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L')} Z" fill="${fill}" ${extra}/>`;
+const cloth = (pts, w) => pen(pts, INK, w + 7) + pen(pts, '#fff', w);
+
+// ------------------------------------------------------------ poses (feet at y=0, facing right; shorter body, big head)
+const P = {
+  STAND: {neck:[0,-205],hip:[0,-95],le:[-28,-160],lh:[-38,-112],re:[28,-160],rh:[38,-112],lk:[-20,-48],lf:[-28,0],rk:[20,-48],rf:[28,0]},
+  GUARD: {neck:[0,-200],hip:[0,-92],le:[30,-150],lh:[58,-188],re:[-18,-148],rh:[22,-192],lk:[-34,-44],lf:[-48,0],rk:[34,-44],rf:[52,0]},
+  PUNCH: {neck:[18,-196],hip:[-12,-92],le:[-25,-160],lh:[-2,-172],re:[75,-192],rh:[140,-196],lk:[38,-45],lf:[66,0],rk:[-50,-46],rf:[-92,0]},
+  KICK:  {neck:[-26,-208],hip:[6,-112],le:[-70,-210],lh:[-108,-186],re:[18,-232],rh:[44,-262],lk:[-8,-52],lf:[-24,0],rk:[72,-138],rf:[146,-168]},
+  HIT:   {neck:[-36,-186],hip:[0,-92],le:[8,-190],lh:[42,-222],re:[2,-166],rh:[46,-156],lk:[-22,-44],lf:[-44,0],rk:[18,-42],rf:[32,0]},
+  FLY:   {neck:[-44,-170],hip:[0,-100],le:[-4,-204],lh:[34,-236],re:[-14,-212],rh:[16,-250],lk:[38,-66],lf:[86,-48],rk:[28,-46],rf:[76,-14]},
+  CHARGE:{neck:[0,-205],hip:[0,-95],le:[-56,-176],lh:[-74,-122],re:[56,-176],rh:[74,-122],lk:[-46,-44],lf:[-68,0],rk:[46,-44],rf:[68,0]},
+  WIN:   {neck:[0,-205],hip:[0,-95],le:[-62,-222],lh:[-112,-282],re:[62,-222],rh:[112,-282],lk:[-26,-46],lf:[-34,0],rk:[26,-46],rf:[34,0]},
+  RUN:   {neck:[22,-198],hip:[0,-96],le:[-22,-158],lh:[-56,-176],re:[42,-158],rh:[72,-190],lk:[34,-50],lf:[14,-4],rk:[-36,-46],rf:[-80,-14]},
+  RUNB:  {neck:[22,-200],hip:[0,-98],le:[42,-158],lh:[72,-190],re:[-22,-158],rh:[-56,-176],lk:[-36,-46],lf:[-80,-14],rk:[34,-50],rf:[14,-4]},
+  WIND:  {neck:[-8,-198],hip:[0,-94],le:[28,-155],lh:[52,-188],re:[-44,-165],rh:[-70,-190],lk:[-38,-44],lf:[-56,0],rk:[34,-44],rf:[56,0]},
+  KWIND: {neck:[-8,-204],hip:[0,-102],le:[-50,-176],lh:[-80,-150],re:[26,-176],rh:[50,-202],lk:[-12,-50],lf:[-16,0],rk:[44,-140],rf:[18,-92]},
+  BLAST: {neck:[18,-198],hip:[-8,-94],le:[56,-190],lh:[118,-196],re:[56,-178],rh:[118,-182],lk:[32,-46],lf:[68,0],rk:[-48,-46],rf:[-90,0]},
+  UPPER: {neck:[10,-206],hip:[-4,-98],le:[-36,-170],lh:[-56,-200],re:[60,-236],rh:[70,-300],lk:[32,-48],lf:[56,0],rk:[-40,-46],rf:[-70,0]},
+  DOWN:  {neck:[-150,-78],hip:[-40,-74],le:[-128,-112],lh:[-98,-130],re:[-118,-48],rh:[-86,-40],lk:[16,-92],lf:[62,-58],rk:[14,-60],rf:[66,-30]},
+};
+const ATTACK_POSES = new Set(['WIND','PUNCH','KWIND','KICK','BLAST','UPPER','RUN','RUNB','CHARGE']), KO_POSES = new Set(['HIT','FLY','DOWN']);
+function joints(name) { const j = {}; for (const k in P[name]) j[k] = P[name][k].slice(); return addHead(j); }
+function addHead(j) {
+  const [nx, ny] = j.neck, [hx, hy] = j.hip, dx = nx - hx, dy = ny - hy, L = Math.hypot(dx, dy);
+  j.head = [nx + dx / L * (HR + 1), ny + dy / L * (HR + 1)];
+  return j;
+}
+// ------------------------------------------------------------ faces, hands, shoes, outfits (matched to reference/style-master.png)
+const W = '#ffffff', BLUSH = '#cdc6bd';
+const deg = a => a * Math.PI / 180;
+function ellPts(cx, cy, rx, ry, a0, a1, step = 10) { const p = []; for (let a = a0; a0 < a1 ? a <= a1 : a >= a1; a += a0 < a1 ? step : -step) p.push([cx + rx * Math.cos(deg(a)), cy + ry * Math.sin(deg(a))]); return p; }
+const outline = (d, fill = W, w = LW * .85) => `<path d="${d}" fill="${fill}" stroke="${INK}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round"/>`;
+const P2 = pts => 'M' + pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L') + ' Z';
+
+function face(j, mood, kit) {
+  const [x, y] = j.head;
+  const blush = [-1, 1].map(sd => `<circle cx="${x + sd*40 - 5}" cy="${y + 30}" r="4.5" fill="${BLUSH}"/><circle cx="${x + sd*40 + 6}" cy="${y + 30}" r="4.5" fill="${BLUSH}"/>`).join('');
+  if (mood === 'ko') return [-1, 1].map(sd => pen([[x+sd*24-10,y-6],[x+sd*24+10,y+14]], INK, LW*.8) + pen([[x+sd*24+10,y-6],[x+sd*24-10,y+14]], INK, LW*.8)).join('') + blush;
+  if (mood === 'happy') return pen([[x-40,y+12],[x-26,y-4],[x-12,y+12]], INK, LW*.85) + pen([[x+12,y+12],[x+26,y-4],[x+40,y+12]], INK, LW*.85) + blush;
+  if (kit === 'shades') return blush + (mood === 'angry' ? pen([[x-46,y-24],[x-14,y-14]], INK, LW*.8) + pen([[x+46,y-24],[x+14,y-14]], INK, LW*.8) : '');
+  if (mood === 'angry') {           // eyes cut flat under thick slanted brows (like the lifter / ninja)
+    let g = '';
+    for (const sd of [-1, 1]) {
+      const ex = x + sd * 24, ey = y + 8, b0 = [x + sd * 44, y - 14], b1 = [x + sd * 10, y - 2];
+      const browY = px => b0[1] + (b1[1] - b0[1]) * (px - b0[0]) / (b1[0] - b0[0]);
+      const pts = ellPts(ex, ey, 8, 14, 0, 360, 10).map(([px, py]) => [px, Math.max(py, browY(px) + 9)]);
+      g += `<path d="${P2(pts)}" fill="${INK}"/>` + pen([b0, b1], INK, LW*.85);
+    }
+    return g + blush;
+  }
+  return `<ellipse cx="${x-24}" cy="${y+6}" rx="7.5" ry="15" fill="${INK}"/><ellipse cx="${x+24}" cy="${y+6}" rx="7.5" ry="15" fill="${INK}"/>` + blush;
+}
+const shoe = ([fx, fy]) => `<path d="M${fx-12},${fy} Q${fx-12},${fy-16} ${fx+5},${fy-16} Q${fx+27},${fy-15} ${fx+29},${fy} Z" fill="${INK}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+const fist = ([hx, hy]) => `<circle cx="${hx}" cy="${hy}" r="13" fill="${W}" stroke="${INK}" stroke-width="${LW*.75}"/>`;
+
+// --- headwear (head centre x,y; R = head radius; +x = forward)
+function ninjaBand([x, y]) {
+  const R = HR, t = -38, b = -10, xt = Math.sqrt(R*R - t*t), xb = Math.sqrt(R*R - b*b);
+  let g = outline(`M${x-xt},${y+t} Q${x},${y+t+12} ${x+xt},${y+t} L${x+xb},${y+b} Q${x},${y+b+12} ${x-xb},${y+b} Z`);
+  g += pen([[x-20,y-18],[x+18,y-17]], INK, 3);                                   // cloth fold
+  g += outline(`M${x-R+4},${y-32} Q${x-R-30},${y-66} ${x-R-86},${y-52} Q${x-R-70},${y-38} ${x-R-80},${y-22} Q${x-R-36},${y-34} ${x-R-2},${y-14} Z`);      // upper tail
+  g += outline(`M${x-R+2},${y-18} Q${x-R-30},${y+2} ${x-R-62},${y+38} Q${x-R-44},${y+34} ${x-R-36},${y+50} Q${x-R-14},${y+16} ${x-R+8},${y-4} Z`);        // lower tail
+  g += pen([[x-R-30,y-46],[x-R-58,y-44]], INK, 3) + pen([[x-R-20,y+12],[x-R-38,y+36]], INK, 3);
+  g += `<ellipse cx="${x-R+6}" cy="${y-22}" rx="13" ry="15" fill="${W}" stroke="${INK}" stroke-width="${LW*.8}"/>`; // knot
+  return g;
+}
+function backCap([x, y]) {             // cap worn backwards: strap opening at the front, brim sticking out the back
+  const R = HR, e = -12, xe = Math.sqrt(R*R - e*e);
+  let g = outline(`M${x-R+2},${y-34} Q${x-R-56},${y-30} ${x-R-50},${y+6} Q${x-R-30},${y+22} ${x-R+10},${y-2} Z`);   // brim
+  g += outline(`M${x-xe-2},${y+e} A${R+5},${R+5} 0 0 1 ${x+xe+2},${y+e} Q${x},${y+e+10} ${x-xe-2},${y+e} Z`, W, LW);  // dome
+  g += `<path d="M${x-24},${y-8} A24,30 0 0 1 ${x+24},${y-8} Z" fill="${INK}"/>` + pen([[x-18,y-16],[x,y-20],[x+18,y-16]], W, 6); // opening + strap
+  g += pen([[x+26,y-R+8],[x+44,y-R+22]], INK, 4) + `<ellipse cx="${x}" cy="${y-R-5}" rx="9" ry="5" fill="${INK}"/>`;
+  return g;
+}
+function bucketHat([x, y]) {
+  let g = outline(`M${x-46},${y-42} Q${x-48},${y-104} ${x},${y-106} Q${x+48},${y-104} ${x+46},${y-42} Z`, W, LW);   // crown
+  g += outline(`M${x-92},${y-2} Q${x-66},${y-54} ${x-46},${y-46} L${x+46},${y-46} Q${x+66},${y-54} ${x+92},${y-2} Q${x+80},${y+10} ${x+60},${y-4} Q${x},${y-36} ${x-60},${y-4} Q${x-80},${y+10} ${x-92},${y-2} Z`, W, LW);
+  g += `<path d="M${x-84},${y-4} Q${x-70},${y+6} ${x-58},${y-6} Q${x},${y-38} ${x+58},${y-6} Q${x+70},${y+6} ${x+84},${y-4} Q${x+70},${y+0} ${x+58},${y-10} Q${x},${y-41} ${x-58},${y-10} Q${x-70},${y+0} ${x-84},${y-4} Z" fill="${INK}"/>`; // dark underside
+  g += `<rect x="${x-34}" y="${y-84}" width="12" height="17" rx="5" fill="${W}" stroke="${INK}" stroke-width="5"/>`;   // little side hole
+  return g;
+}
+function shades([x, y]) {
+  const lens = sd => { const a = x + sd * 4, b = x + sd * 56, c = (a + b) / 2, top = y - 10;
+    const pts = [[a, top], [b, top - 2], ...ellPts(c, top, 26, 32, sd > 0 ? 0 : 180, sd > 0 ? 180 : 0, 10)];
+    return `<path d="${P2(pts)}" fill="${INK}"/>` + pen([[c + sd*10, top + 8], [c + sd*2, top + 14]], W, 4.5); };
+  return lens(-1) + lens(1) + pen([[x-62,y-12],[x+62,y-12]], INK, 11);
+}
+function sword([hx, hy], angle) {      // katana held in the front fist
+  const d = [Math.cos(deg(angle)), Math.sin(deg(angle))], n = [-d[1], d[0]], L = angle > 0 ? 150 : 220;
+  const g0 = [hx + d[0]*20, hy + d[1]*20], tip = [hx + d[0]*L, hy + d[1]*L], mid = [hx + d[0]*L*.55 + n[0]*10, hy + d[1]*L*.55 + n[1]*10];
+  const butt = [hx - d[0]*46, hy - d[1]*46];
+  let g = pen([butt, [hx + d[0]*14, hy + d[1]*14]], INK, 15);
+  for (let i = 1; i < 4; i++) { const p = [hx - d[0]*(i*11), hy - d[1]*(i*11)]; g += pen([[p[0]-n[0]*4, p[1]-n[1]*4], [p[0]+n[0]*4, p[1]+n[1]*4]], W, 3); }
+  g += pen([g0, mid, tip], INK, 17) + pen([g0, mid, [tip[0]-d[0]*6, tip[1]-d[1]*6]], W, 6);
+  g += `<ellipse cx="${g0[0]}" cy="${g0[1]}" rx="17" ry="7" transform="rotate(${angle + 90} ${g0[0]} ${g0[1]})" fill="#9a9a9a" stroke="${INK}" stroke-width="5"/>`;
+  return g;
+}
+// --- torso wear, drawn in the torso's own frame (neck at 0,0; hip at 0,L)
+function torsoFrame(j, inner) {
+  const dx = j.hip[0] - j.neck[0], dy = j.hip[1] - j.neck[1], L = Math.hypot(dx, dy), th = Math.atan2(-dx, dy) * 180 / Math.PI;
+  return `<g transform="translate(${j.neck[0]},${j.neck[1]}) rotate(${th.toFixed(1)})">${inner(L)}</g>`;
+}
+const hoodie = j => torsoFrame(j, L =>
+  outline(`M-24,6 Q-54,12 -50,46 L-46,${L-8} Q0,${L+6} 46,${L-8} L50,46 Q54,12 24,6 Z`, W, LW*.85)
+  + pen([[-45,L-18],[0,L-8],[45,L-18]], INK, 5)                                                   // hem band
+  + outline(`M-30,10 Q-38,-8 -14,-10 L14,-10 Q38,-8 30,10 Q0,32 -30,10 Z`, W, LW*.8)             // hood around the neck
+  + pen([[-9,22],[-11,50]], INK, 4) + pen([[9,22],[11,50]], INK, 4) + `<circle cx="-11" cy="52" r="4" fill="${INK}"/><circle cx="11" cy="52" r="4" fill="${INK}"/>`
+  + outline(`M-24,${L-46} L24,${L-46} Q32,${L-26} 26,${L-18} L-26,${L-18} Q-32,${L-26} -24,${L-46} Z`, W, 6)); // front pocket
+const backpack = j => torsoFrame(j, L =>      // bag on the back (-x), rolled sleeping mat on top
+  outline(`M-14,6 Q-74,2 -74,40 L-72,${L-10} Q-44,${L+6} -14,${L-8} Z`, W, LW*.85)
+  + outline(`M-70,40 Q-44,28 -18,40`, 'none', 6) + outline(`M-62,${L-40} L-30,${L-40} L-30,${L-16} L-62,${L-16} Z`, W, 6)
+  + `<ellipse cx="-44" cy="-4" rx="32" ry="14" fill="${W}" stroke="${INK}" stroke-width="${LW*.8}"/>` + pen([[-46,-6],[-40,-2],[-36,-8]], INK, 4));
+const strap = j => torsoFrame(j, L => pen([[-12,4],[4,34],[6,L-20]], INK, 8));
+
+const KITS = {      // which outfit each fighter wears
+  ninja:  { head: ninjaBand, sword: true },
+  cap:    { head: backCap, body: 'hoodie' },
+  shades: { face: shades },
+  bucket: { head: bucketHat },
+  hiker:  { body: 'backpack' },
+};
+const SWORD_ANGLE = { STAND: 58, WIN: -100 };
+function fighter(f) {                         // f: {pose, kit, mood, crown}; returns local SVG (feet at y=0)
+  const j = f.j ? addHead(f.j) : joints(f.pose), k = KITS[f.kit] || {}; let g = '';
+  if (k.body === 'backpack') g += backpack(j);
+  for (const leg of [['hip','lk','lf'],['hip','rk','rf']]) g += pen(leg.map(n => j[n]));
+  g += shoe(j.lf) + shoe(j.rf);
+  if (k.body === 'hoodie') {                  // sleeves cover the upper arms
+    for (const [e, h] of [['le','lh'],['re','rh']]) { const sh = [j.neck[0], j.neck[1] + 14]; g += pen([sh, j[e]], INK, 34) + pen([sh, j[e]], W, 34 - LW * 1.5) + pen([j[e], j[h]]); }
+    g += hoodie(j);
+  } else {
+    g += pen([j.neck, j.hip]);
+    for (const arm of [['neck','le','lh'],['neck','re','rh']]) g += pen(arm.map(n => j[n]));
+  }
+  if (f.pose === 'CHARGE') for (let i = 0; i < 10; i++) { const a = deg(i * 36 - 90), r1 = 185, r2 = 230;
+    g += pen([[r1*Math.cos(a), -175 + r1*Math.sin(a)], [r2*Math.cos(a), -175 + r2*Math.sin(a)]], INK, 8); }
+  if (k.sword) g += sword(j.rh, SWORD_ANGLE[f.pose] ?? -62);
+  if (f.pose !== 'STAND') g += fist(j.lh) + fist(j.rh); else if (k.sword) g += fist(j.rh);
+  if (k.body === 'backpack') g += strap(j);
+  g += `<circle cx="${j.head[0]}" cy="${j.head[1]}" r="${HR}" fill="${W}" stroke="${INK}" stroke-width="${LW}"/>`;
+  g += face(j, f.mood, f.kit);
+  if (k.face) g += k.face(j.head);
+  if (k.head) g += k.head(j.head);
+  let top = j.head[1] - HR - (f.kit === 'bucket' ? 34 : 6);
+  if (f.crown) { const [hx, hy] = [j.head[0], top + 4];
+    g += poly([[hx-34,hy],[hx-40,hy-44],[hx-17,hy-20],[hx,hy-54],[hx+17,hy-20],[hx+40,hy-44],[hx+34,hy]], '#ffd23f', `stroke="${INK}" stroke-width="7" stroke-linejoin="round"`); top -= 54; }
+  return { svg: g, top };
+}
+
+// ------------------------------------------------------------ 3D camera (floor = plane y=0, x right, z away)
+function camera(c) {        // c: {x, h:height, z:pos, pitch deg, f:focal}
+  const p = c.pitch * Math.PI / 180, F = c.f;
+  return (X, Y, Z) => {
+    const dx = X - c.x, dy = Y - c.h, dz = Z - c.z;
+    const zc = dz * Math.cos(p) - dy * Math.sin(p), yc = dy * Math.cos(p) + dz * Math.sin(p);
+    return { x: 960 + F * dx / zc, y: 540 - F * yc / zc, s: F / zc, z: zc };
+  };
+}
+function floorDetails(cam, seed) {          // faint scratch lines on the floor give the 3D depth (arena reference)
+  const r = rng(seed); let g = '';
+  for (let i = 0; i < 46; i++) {
+    const x = (r() - .5) * 6000, z = r() * 5000 - 300, a = r() * Math.PI, L = 300 + r() * 900;
+    const A = cam(x, 0, z), B = cam(x + Math.cos(a) * L, 0, z + Math.sin(a) * L);
+    if (A.z < 50 || B.z < 50) continue;
+    g += `<line x1="${A.x.toFixed(0)}" y1="${A.y.toFixed(0)}" x2="${B.x.toFixed(0)}" y2="${B.y.toFixed(0)}" stroke="#d6d1c8" stroke-width="${Math.max(1, 3 * A.s)}" stroke-linecap="round"/>`;
+  }
+  return g;
+}
+// place: {x, z, lift, rot, face(1/-1), name, f:{...}}
+function scene(cam, placed, fx = '') {
+  let shadows = '', bodies = '';
+  const order = placed.map(p => ({ p, q: cam(p.x, 0, p.z) })).sort((a, b) => b.q.z - a.q.z);
+  for (const { p, q } of order) {
+    const s = q.s * 1.0, lift = (p.lift || 0) * s;
+    const fr = fighter(p.f), sh = 95 * s * (1 - Math.min(.5, (p.lift || 0) / 600));
+    shadows += `<ellipse opacity="${p.o ?? 1}" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" rx="${sh.toFixed(1)}" ry="${(sh * .32).toFixed(1)}" fill="${SHADOW}"/>`;
+    bodies += `<g opacity="${p.o ?? 1}" transform="translate(${q.x.toFixed(1)},${(q.y - lift).toFixed(1)}) rotate(${(p.rot || 0) * (p.face || 1)}) scale(${(s * (p.face || 1)).toFixed(3)},${s.toFixed(3)})">${fr.svg}</g>`;
+    if (p.name && (p.o ?? 1) > .05) bodies += `<text opacity="${p.o ?? 1}" x="${q.x.toFixed(1)}" y="${(q.y - lift + (fr.top - 30) * s).toFixed(1)}" text-anchor="middle" font-family="Permanent Marker"
+      font-size="${(34 * s).toFixed(1)}" fill="${INK}">${p.name}</text>`;
+  }
+  return shadows + bodies + fx;
+}
+function star(x, y, size, color = '#ffd23f') { const pts = [];
+  for (let i = 0; i < 16; i++) { const r = i % 2 ? size * .42 : size, a = i * Math.PI / 8 + .2; pts.push([x + r*Math.cos(a), y + r*Math.sin(a)]); }
+  return poly(pts, color, `stroke="${INK}" stroke-width="5" stroke-linejoin="round"`); }
+function sparkle(x, y, r) { return `<path d="M${x},${y-r} Q${x+r*.18},${y-r*.18} ${x+r},${y} Q${x+r*.18},${y+r*.18} ${x},${y+r} Q${x-r*.18},${y+r*.18} ${x-r},${y} Q${x-r*.18},${y-r*.18} ${x},${y-r} Z" fill="none" stroke="${INK}" stroke-width="${Math.max(3, r*.16)}" stroke-linejoin="round"/>`; }
+function marks(x, y, r, a0 = -150) { let g = ''; for (let i = 0; i < 3; i++) { const a = deg(a0 + i * 35);
+  g += pen([[x + Math.cos(a)*r, y + Math.sin(a)*r], [x + Math.cos(a)*r*1.45, y + Math.sin(a)*r*1.45]], INK, Math.max(3, r*.12)); } return g; }
+const vignette = `<defs><radialGradient id="vg" cx="50%" cy="45%" r="75%"><stop offset="60%" stop-color="${BG}" stop-opacity="0"/><stop offset="100%" stop-color="#cfc9bf" stop-opacity=".9"/></radialGradient></defs>`;
+

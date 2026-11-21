@@ -44,10 +44,11 @@ anime format: don't use it for brawls.
   only after that (and after the owner's voiceover MP3, if the video has narration).
 - Video list and status: `IDEAS.md`. First video: **100 Men vs 1 Gorilla** (no followers yet, so it opens with the
   internet's most argued fight debate and asks people to comment "ME" to be in the next brawl).
-- Fight engine: `samples/fight15/` (`fight15.html` = poses, keyframed fighters, hits, KOs, camera, in the style
-  master look; `render_fight15.cjs` renders frames and mixes SFX). Build real videos from this engine.
-- `samples/make_samples.py`, `samples/canvas3d.*` are old looks (paper, 3D canvas): don't use them. `samples/fight15/`
-  still has the right fight timing but the older look; port its motion into the `samples/style3d/` renderer.
+- **Fight engine (current): `samples/style3d/`.** `ink.js` = the shared drawing library (style-master stick men,
+  outfits/kits, poses, 3D arena camera, floor, stars, sparkles). `fight3d.html` = the 15 s 3D fight (keyframed
+  fighters with depth lanes, hits, KOs, smoke-puff knockouts, camera moves, words, counter); `render_fight3d.cjs`
+  renders frames and mixes SFX. `sample3d.html` + `render_samples.cjs` = the still picture samples.
+- Old looks, don't use: `samples/make_samples.py`, `samples/canvas3d.*`, `samples/fight15/`.
 
 ## Followers (fighters)
 - Names come from people who **commented to join** (opt-in) on the owner's posts. Use only public usernames from
