@@ -4,7 +4,7 @@ Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
 
 | # | Video | Why it works | Status |
 |---|---|---|---|
-| 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate; gorilla wins (to spark arguments); ends with power levels, boss milestones and "comment the fighter you want to be" | APPROVED · waiting for owner's MP3 · `scripts/100-men-vs-gorilla.md` |
+| 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate; gorilla wins (to spark arguments); ends with power levels, boss milestones and "comment the fighter you want to be" | MADE Nov 21, 2026 · 9:16, 64 s · `growkaz-stickman-studio/projects/100-men-vs-gorilla/out/100-men-vs-gorilla.mp4` + `cover.png` + `post.md` · posting on TikTok |
 | 2 | First follower free-for-all | every follower joins automatically | idea |
 
 ## Boss ladder (follower milestones) - full plan in `PROGRESSION.md`

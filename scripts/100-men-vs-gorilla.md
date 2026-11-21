@@ -1,6 +1,6 @@
 # 100 Men vs 1 Gorilla: who would win?
 
-**Status: APPROVED** (owner, Nov 21, 2026: "go ahead with the script"; gorilla wins; end with the "which fighter
+**Status: MADE (Nov 21, 2026)** · was APPROVED (owner, Nov 21, 2026: "go ahead with the script"; gorilla wins; end with the "which fighter
 joins next" vote (Nov 21: replaced by "comment the fighter you want to be"); no "comment ME"; Nov 21 revision: no comment request, the ending explains
 Ink Brawl and invites people to follow to join the fight; 1:10 or less; ending teases the 100-follower gorilla REMATCH; Nov 21: shorter fight, ending explains power levels
 (comment = your fighter gets stronger) and the boss milestones). Waiting for the owner's voiceover MP3 (made by the owner in ElevenLabs).
