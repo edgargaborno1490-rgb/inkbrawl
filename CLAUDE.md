@@ -13,14 +13,18 @@ Videos are built in the free 2D studio (`growkaz-stickman-studio/`, skills `/new
 anime format: don't use it for brawls.
 
 ## Look
-- **Paper:** lined notebook paper (pale blue lines, red margin line, light paper grain). Everything looks drawn
-  with a pen on that page: wobbly hand-drawn black ink lines, never clean vector lines.
+- **Blank canvas in 3D (owner, Nov 21, 2026; replaces notebook paper):** a plain white blank drawing canvas (thin
+  edge, small blue corner handles like a design app) floating in a soft gray 3D space with a shadow under it. The
+  camera moves in 3D: it starts zoomed out showing the whole canvas, then pushes in low to the front where the stick
+  men fight standing up on the canvas (each with a soft shadow at their feet). No paper lines, no app logos.
+  Test scene: `samples/canvas3d.html` (render with `samples/render_canvas3d.cjs`, `--clip` for the 5 s zoom test).
+- Stick men look drawn with a pen: wobbly hand-drawn black ink lines, never clean vector lines.
 - **Stick men:** round head, line body, line arms and legs, simple faces allowed (dot eyes, angry brows, grin).
   Each one gets **one accent color item** so viewers can follow them (headband, scarf, cap, bandana, cape, etc.)
   and their **@name written above the head** in marker.
 - Ink effects: scribble dust clouds, ink splats on hits, speed lines, pen-stroke "drawing in" when a fighter enters,
   eraser smudge or crumple when one is knocked out.
-- Sample sheet of the look: `samples/sample-stickmen.png` (made by `samples/make_samples.py`).
+- Fighter designs: `samples/make_samples.py` (writes the old paper sheet `sample-stickmen.png` and the transparent `fighters-layer.svg` used in 3D).
 - Original drawings only: no real anime/cartoon characters, logos or official art.
 
 ## Format

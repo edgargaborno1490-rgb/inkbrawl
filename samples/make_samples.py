@@ -171,40 +171,52 @@ fighters = [  # (x, pose, color, placeholder name, item, face, extra)
     (1690, P_WIN, "#8e44ad", "@Fighter_05", cape, wink, "win"),
 ]
 
-base_y = 900
-svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
-       """<defs>
-  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
-    <feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.40  0 0 0 0 0.30  0 0 0 0.10 0"/></filter>
-  <style>
-    .name{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:34px}
-    .title{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:76px;fill:#151515}
-    .sub{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:30px;fill:#555}
-  </style></defs>""",
-       f'<rect width="{W}" height="{H}" fill="#fbf8ef"/>']
-for y in range(150, H, 46):
-    svg.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="#a9c6e8" stroke-width="2"/>')
-svg.append(f'<line x1="120" y1="0" x2="120" y2="{H}" stroke="#e88b8b" stroke-width="3"/>')
-for y in (260, 540, 820):  # binder holes
-    svg.append(f'<circle cx="55" cy="{y}" r="18" fill="#e6e1d3"/>')
-svg.append(f'<rect width="{W}" height="{H}" filter="url(#grain)"/>')
-svg.append('<text x="960" y="95" text-anchor="middle" class="title">INK BRAWL</text>')
-svg.append(path([(780, 112), (1140, 108)], "#e63946", 6, 2))
-svg.append('<text x="960" y="1050" text-anchor="middle" class="sub">5 sample fighters · one accent color + @name each</text>')
+def build(FIGHTERS_ONLY):
+    global rnd
+    rnd.seed(7)
+    base_y = 900
+    svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
+           """<defs>
+      <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
+        <feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.40  0 0 0 0 0.30  0 0 0 0.10 0"/></filter>
+      <style>
+        .name{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:34px}
+        .title{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:76px;fill:#151515}
+        .sub{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:30px;fill:#555}
+      </style></defs>""",
+           f'<rect width="{W}" height="{H}" fill="#fbf8ef"/>']
+    for y in range(150, H, 46):
+        svg.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="#a9c6e8" stroke-width="2"/>')
+    svg.append(f'<line x1="120" y1="0" x2="120" y2="{H}" stroke="#e88b8b" stroke-width="3"/>')
+    for y in (260, 540, 820):  # binder holes
+        svg.append(f'<circle cx="55" cy="{y}" r="18" fill="#e6e1d3"/>')
+    svg.append(f'<rect width="{W}" height="{H}" filter="url(#grain)"/>')
+    svg.append('<text x="960" y="95" text-anchor="middle" class="title">INK BRAWL</text>')
+    svg.append(path([(780, 112), (1140, 108)], "#e63946", 6, 2))
+    svg.append('<text x="960" y="1050" text-anchor="middle" class="sub">5 sample fighters · one accent color + @name each</text>')
 
-for x, pose, c, name, item, face, extra in fighters:
-    svg.append(ground_scribble(x, base_y))
-    if extra == "charge":
-        svg.append(extras_charge(x, base_y, c))
-    if extra == "kick":
-        svg.append(extras_kick(x, base_y))
-    svg.append(stickman(x, base_y, pose, c, name, item, face, {"charge": -55, "win": -45}.get(extra, 0)))
-    if extra == "punch":
-        svg.append(extras_punch(x, base_y))
-    if extra == "win":
-        svg.append(extras_win(x, base_y, c))
-svg.append("</svg>")
+    fg_start = len(svg)
+    for x, pose, c, name, item, face, extra in fighters:
+        svg.append(f'<ellipse cx="{x}" cy="{base_y + 42}" rx="120" ry="16" fill="#000" opacity="0.18" filter="url(#soft)"/>' if FIGHTERS_ONLY else ground_scribble(x, base_y))
+        if extra == "charge":
+            svg.append(extras_charge(x, base_y, c))
+        if extra == "kick":
+            svg.append(extras_kick(x, base_y))
+        svg.append(stickman(x, base_y, pose, c, name, item, face, {"charge": -55, "win": -45}.get(extra, 0)))
+        if extra == "punch":
+            svg.append(extras_punch(x, base_y))
+        if extra == "win":
+            svg.append(extras_win(x, base_y, c))
+    svg.append("</svg>")
 
-out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample-stickmen.svg")
-open(out, "w").write("\n".join(svg))
-print("wrote", out)
+    fg = svg[fg_start:]
+    return_svg = svg
+
+    if FIGHTERS_ONLY:
+        return "\n".join([svg[0], svg[1].replace('<style>', '<filter id="soft"><feGaussianBlur stdDeviation="6"/></filter><style>')] + fg)
+    return "\n".join(svg)
+
+d = os.path.dirname(os.path.abspath(__file__))
+for only, name in ((False, "sample-stickmen.svg"), (True, "fighters-layer.svg")):
+    open(os.path.join(d, name), "w").write(build(only))
+    print("wrote", name)

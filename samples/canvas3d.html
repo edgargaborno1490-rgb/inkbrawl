@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+  body{background:radial-gradient(ellipse at 50% 35%,#eef0f4 0%,#c9cdd5 60%,#a9aeb8 100%)}
+  #view{position:absolute;inset:0;perspective:1300px;perspective-origin:50% 40%}
+  .world{position:absolute;left:960px;top:640px;transform-style:preserve-3d}
+  .world>div{position:absolute;transform-style:preserve-3d}
+  #shadow{left:-1000px;top:-1500px;width:2000px;height:1600px;transform-origin:bottom center;
+          transform:translateY(160px) rotateX(90deg);background:rgba(20,25,35,.35);filter:blur(60px);border-radius:80px}
+  #floor{left:-900px;top:-1400px;width:1800px;height:1400px;transform-origin:bottom center;transform:rotateX(90deg);
+         background:#fff;box-shadow:inset 0 0 0 2px #e3e6ea}
+  .h{position:absolute;width:22px;height:22px;background:#fff;border:3px solid #4a8cff;box-sizing:border-box}
+  #edge{left:-900px;top:0;width:1800px;height:26px;background:linear-gradient(#e7e9ed,#cfd3d9)}
+  #fighters{left:-960px;top:-942px;width:1920px;height:1080px;transform:translateZ(-330px)}
+</style></head><body>
+<div id="view"><div class="world" id="w1">
+  <div id="shadow"></div>
+  <div id="floor">
+    <div class="h" style="left:-11px;top:-11px"></div><div class="h" style="right:-11px;top:-11px"></div>
+    <div class="h" style="left:-11px;bottom:-11px"></div><div class="h" style="right:-11px;bottom:-11px"></div>
+  </div>
+  <div id="edge"></div>
+</div></div>
+<!-- fighters in their own layer with the same camera, so the canvas never covers them -->
+<div id="view2" style="position:absolute;inset:0;perspective:1300px;perspective-origin:50% 40%"><div class="world" id="w2">
+  <div id="fighters">__SVG__</div>
+</div></div>
+<script>
+  const ease = t => t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;
+  const lerp = (a,b,t) => a+(b-a)*t;
+  // wide (zoomed out, whole canvas floating) -> close (front row of fighters)
+  const WIDE = {z:-1300, tilt:-30, yaw:-18, y:60}, CLOSE = {z:330, tilt:-8, yaw:5, y:40};
+  window.setT = t => {               // t: 0..1 over the clip
+    const k = ease(Math.min(1, Math.max(0, (t-0.2)/0.6)));
+    const c = {}; for (const key in WIDE) c[key] = lerp(WIDE[key], CLOSE[key], k);
+    const tf = `translateY(${c.y}px) translateZ(${c.z}px) rotateX(${c.tilt}deg) rotateY(${c.yaw}deg)`;
+    for (const id of ['w1','w2']) document.getElementById(id).style.transform = tf;
+  };
+  setT(0);
+</script></body></html>

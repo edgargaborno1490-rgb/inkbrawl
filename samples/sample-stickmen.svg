@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
 <defs>
-  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
-    <feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.40  0 0 0 0 0.30  0 0 0 0.10 0"/></filter>
-  <style>
-    .name{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:34px}
-    .title{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:76px;fill:#151515}
-    .sub{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:30px;fill:#555}
-  </style></defs>
+      <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
+        <feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.40  0 0 0 0 0.30  0 0 0 0.10 0"/></filter>
+      <style>
+        .name{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:34px}
+        .title{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:76px;fill:#151515}
+        .sub{font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:30px;fill:#555}
+      </style></defs>
 <rect width="1920" height="1080" fill="#fbf8ef"/>
 <line x1="0" y1="150" x2="1920" y2="150" stroke="#a9c6e8" stroke-width="2"/>
 <line x1="0" y1="196" x2="1920" y2="196" stroke="#a9c6e8" stroke-width="2"/>
