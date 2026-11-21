@@ -28,13 +28,13 @@ anime format: don't use it for brawls.
 - Original drawings only: no real anime/cartoon characters, logos or official art. Don't copy stock images.
 
 ## Format
-- **9:16 Shorts first, 30–45 s.** 16:9 longer cuts (60–90 s) later if the owner asks.
+- **9:16 TikTok videos, about 1:00–1:10** (owner, Nov 21, 2026).
 - Story of every video:
   1. Hook (first 2 s): the page + "N of YOU. Only 1 wins." 
   2. Drop-in: stick men are drawn onto the page with their names.
   3. Free-for-all: fast fights, eliminations, live "X left" counter on screen.
   4. Final 2: slow-motion showdown.
-  5. Winner: crown + name card, then "Comment to join the next brawl."
+  5. Winner: crown + name card, Top 3 leaderboard, progress bar to the next boss, then the next-fighter vote.
 - Fast cuts, 1–2-frame impact flashes on big hits, one big bold word on screen at a time.
 - Sound: SFX from `sfx-library/` (punches, whooshes, booms), plus pen-scribble and paper sounds; light music.
   No voiceover unless the owner sends one.
@@ -61,6 +61,15 @@ anime format: don't use it for brawls.
   fists, short legs; poses STAND/ROAR/SWINGR/SWINGL/RAISE/SLAM/TIRED). Pose sheet: `gorilla-sheet.html/png`.
   Sample: `gorilla-sample.html` + `render_gorilla.cjs` -> `gorilla-sample.mp4` (100 men vs 1 gorilla, 15 s).
 - Old looks, don't use: `samples/make_samples.py`, `samples/canvas3d.*`, `samples/fight15/`.
+
+## Platform + progression (owner, Nov 21, 2026)
+- **TikTok only.** Every video is 9:16 (no 16:9 cut). Aim for just over 1 minute and at most 1:10 (TikTok's creator
+  rewards later need videos over 1 minute).
+- **Boss ladder + power levels: see `PROGRESSION.md`** (the full plan). Follower milestones (10, 25, 50, 100, 500,
+  1k, 2.5k, 5k, 10k) each unlock an all-followers boss fight; 100 = the gorilla REMATCH. After 10k: original
+  anime-style bosses only (never real anime characters or look-alikes). Fans level up from TikTok comments (XP),
+  tracked in `data/leaderboard.csv` + `data/comments/`, read from the owner's comment screenshots.
+- TubeAlfred is YouTube-only: not used for TikTok.
 
 ## Characters (roster)
 - **Now (owner, Nov 21, 2026): only 2 stick man designs** + the gorilla, all from the owner's sprite sheets:

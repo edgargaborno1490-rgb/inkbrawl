@@ -2,9 +2,9 @@
 
 **Status: APPROVED** (owner, Nov 21, 2026: "go ahead with the script"; gorilla wins; end with the "which fighter
 joins next" vote; no "comment ME"; Nov 21 revision: no comment request, the ending explains
-Ink Brawl and invites people to follow to join the fight; 1:10 or less). Waiting for the owner's voiceover MP3 (made by the owner in ElevenLabs).
+Ink Brawl and invites people to follow to join the fight; 1:10 or less; ending teases the 100-follower gorilla REMATCH). Waiting for the owner's voiceover MP3 (made by the owner in ElevenLabs).
 
-- Video #1 of the Ink Brawl stick man format. 9:16 Short (also a 16:9 cut), about 65–70 s (owner: 1:10 max), ~180 spoken words.
+- Video #1 of the Ink Brawl stick man format. 9:16 TikTok video, about 65–70 s (owner: 1:10 max), ~183 spoken words.
 - Why this one first: no followers yet, so we open with the internet's most argued fight debate. From the next video
   on, every follower joins the brawl automatically.
 - The gorilla wins on purpose: it's the answer that makes the most people argue in the comments.
@@ -13,7 +13,7 @@ Ink Brawl and invites people to follow to join the fight; 1:10 or less). Waiting
 
 One hundred men. One gorilla. Who would win?
 
-This is Ink Brawl, and this is our very first video. We don't have followers yet, so we're starting with the most controversial fight on the internet.
+This is Ink Brawl, and this is our very first video. No followers yet, so we're starting with the internet's most controversial fight.
 
 Meet the gorilla. Up to four hundred pounds of muscle, several times stronger than any man here, with two-inch fangs.
 
@@ -27,9 +27,9 @@ Then he stands up.
 
 The pile explodes. And the men who are left? They run.
 
-Our verdict: the gorilla wins. A hundred men only win if they all keep fighting, and nobody wants to be next.
+Our verdict: the gorilla wins. A hundred men only win if they keep fighting, and nobody wants to be next.
 
-Here's how Ink Brawl works. Every follower becomes a stick man, with your name above your head. Then everyone drops into one giant free-for-all. Only one walks out. Follow now, and next video, you're in the fight.
+Here's how Ink Brawl works. Every follower becomes a stick man, with your name on it. Then everyone drops into one giant free-for-all. Only one walks out. Follow now. When we hit one hundred followers, all one hundred of you fight this gorilla. For real.
 
 And vote: which fighter joins next? Caveman, gym rat, samurai, or fisherman?
 
@@ -50,7 +50,7 @@ per swing, floor cracks, heavy camera shake.
 | They run | Remaining men run away (run sprite, facing away), dust puffs. | RUN! |
 | Verdict | Gorilla win pose, crown, counter "0 MEN LEFT". | GORILLA WINS |
 | How Ink Brawl works | A pen writes "@YOU" over a fresh stick man; then a big crowd drops in, each with a sample @name, and starts a free-for-all; one left standing with a crown. | YOU / ONE WINS |
-| Follow now | Close-up of an empty stick man with a blinking "@YOUR NAME" tag. | FOLLOW |
+| Follow now / rematch tease | Empty stick man with a blinking "@YOUR NAME" tag; then 100 stick men line up facing the gorilla, progress bar "REMATCH: 0/100 FOLLOWERS". | FOLLOW / REMATCH |
 | Vote | Four empty sprite outlines with labels: caveman / gym rat / samurai / fisherman. | VOTE! |
 
 ## Notes and fairness

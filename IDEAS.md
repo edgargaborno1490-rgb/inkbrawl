@@ -7,6 +7,21 @@ Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
 | 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate; gorilla wins (to spark arguments); ends with the next-fighter vote | APPROVED · waiting for owner's MP3 · `scripts/100-men-vs-gorilla.md` |
 | 2 | First follower free-for-all | every follower joins automatically | idea |
 
+## Boss ladder (follower milestones) - full plan in `PROGRESSION.md`
+
+| Followers | Boss | Status |
+|---|---|---|
+| 10 | Angry goose | needs sprite sheet |
+| 25 | Boxing kangaroo | needs sprite sheet |
+| 50 | Grizzly bear | needs sprite sheet |
+| 100 | Silverback gorilla REMATCH | sprite sheet done (`reference/sprites/gorilla-sheet.png`) |
+| 500 | T-rex | idea |
+| 1,000 | Giant robot | idea |
+| 2,500 | Dragon | idea |
+| 5,000 | City-sized monster | idea |
+| 10,000 | The giant hand with the pen | idea |
+| 10,000+ | Original anime-style bosses (never real anime characters) | idea |
+
 ## Character unlocks (viewers vote, the winner gets drawn)
 
 Roster now: cap + hoodie, cap + T-shirt, gorilla. New fighters join only when viewers ask/vote.
