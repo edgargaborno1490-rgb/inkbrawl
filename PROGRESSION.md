@@ -68,6 +68,8 @@ This replaces the fixed caveman / gym rat / samurai / fisherman vote.
 - **Fair play:** a higher level raises a fighter's chance to last longer/win, never guarantees it. Each fighter's
   weight in the random draw = `1 + 0.25 x (level - 1)`, so a Legend is about 2x as likely as a new follower to win,
   and new people can still win. The seed is shown on screen so nobody can say it was rigged.
+- **No plot armor (owner, Nov 21, 2026):** when the owner picks a winner, it's the one that makes sense (e.g. ninja
+  beats trainer), never a favourite. Video #2: @bombardinocrocodilee (ninja) beats @kyleeee_017 (trainer).
 - **Seasons:** every 3 months XP is cut in half (not wiped), so newer fans can catch up. Announce it in a video.
 - **Leaderboard on screen:** end each free-for-all with "Top 3 strongest followers" (name + level).
 - Never reward spam, bots, buying comments or anything that breaks TikTok's rules on fake engagement.
