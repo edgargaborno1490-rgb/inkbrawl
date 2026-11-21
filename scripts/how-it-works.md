@@ -6,17 +6,17 @@
   followers. Most people leave in the first seconds -> this script opens mid-punch on a real follower, no slow intro.
 - Video #2. 9:16 TikTok, aim 1:02-1:08, ~180 spoken words. Owner's idea: the rules of the channel, told while a real
   fight plays (not a talking slide show), so it can be pinned on the profile.
-- First video with real followers: @kyleeee_017 (trainer + husky, first follower) and kugisaki Jr (ninja).
+- First video with real followers: @kyleeee_017 (trainer + husky, first follower) and @bombardinocrocodilee (ninja).
 - New rule from the owner: **no copies of existing characters** (Naruto, Goku, Ash...). Fans can still ask; the owner
   makes a similar-vibe but different, original design (like the trainer: kyleeee asked for a "pokemon trainer").
-- Owner, Nov 21: 2 followers (@kyleeee_017, kugisaki Jr = ninja; @handle still needed, display name used until then).
+- Owner, Nov 21: 2 followers (@kyleeee_017 = trainer, @bombardinocrocodilee (display name kugisaki Jr) = ninja).
   **kyleeee_017 wins** the final clash (owner's pick). Boss bar: 2/10. The full handle is spoken.
 
 ## Script (spoken: paste this into ElevenLabs)
 
 This is kyleeee underscore zero one seven. He followed this channel, and now he's a fighter. Here's how you get in.
 
-Rule one: follow, and you're in. Your name goes on a stick man in every brawl. Like kugisaki junior, our ninja.
+Rule one: follow, and you're in. Your name goes on a stick man in every brawl. Like bombardino crocodilee, our ninja.
 
 Rule two: comment, and you get stronger. Only one comment per video counts, so spamming does nothing. Comment on every video and you level up: extra health, a power aura, even special moves.
 
@@ -37,7 +37,7 @@ Follow to take your spot, and comment the fighter you want to be.
 | This is kyleeee_017 (0-2 s) | opens MID-ACTION: trainer's punch lands on a "?" ghost, white flash, stars, husky barks; name tag @kyleeee_017 | @kyleeee_017 |
 | He followed, now he's a fighter | close-up of the trainer + husky, camera pulls back to the arena with many grey "?" spots | 1 FOLLOW = 1 FIGHTER |
 | Here's how you get in | the "?" spots pulse | YOUR SPOT IS EMPTY |
-| Rule one: follow | a "?" ghost turns into kugisaki Jr's ninja, name tag pops on | 1. FOLLOW = YOU'RE IN |
+| Rule one: follow | a "?" ghost turns into @bombardinocrocodilee's ninja, name tag pops on | 1. FOLLOW = YOU'RE IN |
 | Rule two: comment | comment bubbles fly into a fighter: Lv 1 -> 2 -> 3, spark, then aura | 2. COMMENT = STRONGER |
 | Spamming does nothing | many bubbles hit a fighter and bounce off, "+0" | 1 COMMENT PER VIDEO |
 | Level up | Lv 4 aura (color = power), Lv 5 dash punch | LEVEL UP |
@@ -45,7 +45,7 @@ Follow to take your spot, and comment the fighter you want to be.
 | Trainer unlocked | trainer + husky win pose, sparkles | TRAINER UNLOCKED! / Requested by @kyleeee_017 |
 | Can't copy real characters | text only (never drawn): Naruto / Goku / Ash crossed out, then a locked "?" card turning into "OUR OWN VERSION" | NO COPIES |
 | Rule four: bosses | progress bar "NEXT BOSS: 2/10 FOLLOWERS", goose as a grey locked silhouette card | 4. BOSSES |
-| First real brawl | kyleeee_017 (trainer + husky) vs kugisaki Jr (ninja): fast exchange, slow-mo final hit, ninja KO + smoke puff; kyleeee_017 crown + sparkles | WINNER / @kyleeee_017 |
+| First real brawl | kyleeee_017 (trainer + husky) vs @bombardinocrocodilee (ninja): fast exchange, slow-mo final hit, ninja KO + smoke puff; kyleeee_017 crown + sparkles | WINNER / @kyleeee_017 |
 | Follow + comment | both fighters + empty "?" spots | FOLLOW + COMMENT YOUR FIGHTER |
 
 ## Notes
