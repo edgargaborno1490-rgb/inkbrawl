@@ -1,35 +1,17 @@
 <!doctype html><html><head><meta charset="utf-8">
-<!-- Ink Brawl 15 s fight test: 5 stick men free-for-all on a blank 3D canvas.
+<!-- Ink Brawl 15 s fight test: 5 cute stick men free-for-all on a plain white background (style master: reference/style-master.png).
      window.setT(seconds) draws one frame; render_fight15.cjs steps it and adds sound. -->
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
 <style>
-  html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
-  body{background:radial-gradient(ellipse at 50% 35%,#eef0f4 0%,#c9cdd5 60%,#a9aeb8 100%)}
-  .view{position:absolute;inset:0;perspective:1300px;perspective-origin:50% 40%}
-  .world{position:absolute;left:960px;top:640px;transform-style:preserve-3d}
-  .world>div{position:absolute;transform-style:preserve-3d}
-  #shadow{left:-1000px;top:-1500px;width:2000px;height:1600px;transform-origin:bottom center;
-          transform:translateY(160px) rotateX(90deg);background:rgba(20,25,35,.35);filter:blur(60px);border-radius:80px}
-  #floor{left:-900px;top:-1400px;width:1800px;height:1400px;transform-origin:bottom center;transform:rotateX(90deg);
-         background:#fff;box-shadow:inset 0 0 0 2px #e3e6ea}
-  .h{position:absolute;width:22px;height:22px;background:#fff;border:3px solid #4a8cff;box-sizing:border-box}
-  #edge{left:-900px;top:0;width:1800px;height:26px;background:linear-gradient(#e7e9ed,#cfd3d9)}
-  #layer{left:-960px;top:-942px;width:1920px;height:1080px;transform:translateZ(-330px)}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#fff}
+  #stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
   #word{position:absolute;left:0;right:0;top:70px;text-align:center;font:150px 'Permanent Marker',cursive;color:#fff;
         -webkit-text-stroke:14px #111;paint-order:stroke fill;letter-spacing:2px}
   #counter{position:absolute;left:60px;top:950px;font:54px 'Permanent Marker',cursive;color:#111;background:#fff;
            padding:4px 26px;border-radius:14px;box-shadow:0 6px 0 #111;border:5px solid #111}
   #flash{position:absolute;inset:0;background:#fff;opacity:0}
 </style></head><body>
-<div class="view"><div class="world" id="w1">
-  <div id="shadow"></div>
-  <div id="floor">
-    <div class="h" style="left:-11px;top:-11px"></div><div class="h" style="right:-11px;top:-11px"></div>
-    <div class="h" style="left:-11px;bottom:-11px"></div><div class="h" style="right:-11px;bottom:-11px"></div>
-  </div>
-  <div id="edge"></div>
-</div></div>
-<div class="view"><div class="world" id="w2"><div id="layer"></div></div></div>
+<div id="stage"></div>
 <div id="word"></div><div id="counter"></div><div id="flash"></div>
 <script>
 // ---------------------------------------------------------------- helpers
@@ -40,28 +22,18 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s;
   t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 let R = rng(1);
-// wobbly pen stroke through points (two passes); line "boils" 10x per second like hand-drawn animation
-function pen(pts, color = '#151515', w = 8, amp = 2.2) {
-  let out = '';
-  for (let p = 0; p < 2; p++) {
-    const q = [];
-    for (let i = 0; i < pts.length - 1; i++) {
-      const [x0, y0] = pts[i], [x1, y1] = pts[i + 1];
-      const n = Math.max(2, Math.round(Math.hypot(x1 - x0, y1 - y0) / 18));
-      for (let j = 0; j < n; j++) { const k = j / n;
-        q.push([x0 + (x1 - x0) * k + (R() - .5) * 2 * amp, y0 + (y1 - y0) * k + (R() - .5) * 2 * amp]); }
-    }
-    const l = pts[pts.length - 1]; q.push([l[0] + (R() - .5) * 2 * amp, l[1] + (R() - .5) * 2 * amp]);
-    out += `<path d="M${q.map(v => v[0].toFixed(1) + ',' + v[1].toFixed(1)).join(' L')}" fill="none" stroke="${color}"
-      stroke-width="${p ? w * .45 : w}" stroke-linecap="round" stroke-linejoin="round" opacity="${p ? .6 : 1}"/>`;
-  }
-  return out;
+// clean, smooth, round-capped line (style master: thick tidy doodle lines, no wobble)
+function pen(pts, color = '#151515', w = 8) {
+  let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+  if (pts.length === 2) d += ` L${pts[1][0].toFixed(1)},${pts[1][1].toFixed(1)}`;
+  else { for (let i = 1; i < pts.length - 1; i++) { const m = [(pts[i][0] + pts[i+1][0]) / 2, (pts[i][1] + pts[i+1][1]) / 2];
+           d += ` Q${pts[i][0].toFixed(1)},${pts[i][1].toFixed(1)} ${m[0].toFixed(1)},${m[1].toFixed(1)}`; }
+         const l = pts[pts.length - 1]; d += ` L${l[0].toFixed(1)},${l[1].toFixed(1)}`; }
+  return `<path d="${d}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
 }
+const ribbon = (pts, w) => pen(pts, '#151515', w + 7) + pen(pts, '#fff', w);   // outlined white cloth
 function ring(cx, cy, r, color = '#151515', w = 8, fill = 'none') {
-  const pts = [], a0 = R() * 6.28;
-  for (let i = 0; i <= 372; i += 12) { const a = a0 + i * Math.PI / 180, rr = r + (R() - .5) * 4;
-    pts.push([cx + rr * Math.cos(a), cy + rr * Math.sin(a)]); }
-  return (fill !== 'none' ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}"/>` : '') + pen(pts, color, w, 1);
+  return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r}" fill="${fill}" stroke="${color}" stroke-width="${w}"/>`;
 }
 const poly = (pts, fill, extra = '') => `<path d="M${pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L')} Z" fill="${fill}" ${extra}/>`;
 
@@ -88,6 +60,8 @@ function pose(name, t, id) {
   const src = P[name], out = {};
   const bob = name === 'GUARD' || name === 'CHARGE' ? Math.sin(t * 9 + id * 1.7) * 5 : 0;
   for (const k in src) out[k] = [src[k][0], src[k][1] + (k === 'lf' || k === 'rf' ? 0 : bob)];
+  const dx = out.head[0] - out.neck[0], dy = out.head[1] - out.neck[1], L = Math.hypot(dx, dy) || 1;
+  out.head = [out.neck[0] + dx / L * (HR + 4), out.neck[1] + dy / L * (HR + 4)];
   return out;
 }
 
@@ -96,7 +70,7 @@ const F = [
   {id:1, name:'@Fighter_01', c:'#e63946', item:'headband', face:'angry'},
   {id:2, name:'@Fighter_02', c:'#1d7fe0', item:'scarf',    face:'focused'},
   {id:3, name:'@Fighter_03', c:'#2a9d4b', item:'cap',      face:'shout'},
-  {id:4, name:'@Fighter_04', c:'#f28c28', item:'bandana',  face:'grin'},
+  {id:4, name:'@Fighter_04', c:'#f28c28', item:'headphones', face:'grin'},
   {id:5, name:'@Fighter_05', c:'#8e44ad', item:'cape',     face:'wink'},
 ];
 // keys: {t, p:pose, x, y:lift, r:rotation deg, f:facing(1 right/-1 left), o:opacity}; unspecified fields carry over
@@ -142,31 +116,34 @@ function stateAt(id, t) {
 }
 
 // accent items + faces, drawn in the fighter's local space
+const HR = 62;                                    // big round head (cute proportions)
 function item(f, j, t) {
-  const [hx, hy] = j.head, [nx, ny] = j.neck, c = f.c, fl = Math.sin(t * 14 + f.id) * 6;
+  const [hx, hy] = j.head, [nx, ny] = j.neck, fl = Math.sin(t * 14 + f.id) * 6;
   switch (f.item) {
-    case 'headband': return pen([[hx-38,hy-12],[hx+38,hy-16]], c, 12, 1.2)
-      + pen([[hx-36,hy-12],[hx-70,hy+4+fl],[hx-92,hy-6+fl]], c, 8) + pen([[hx-36,hy-10],[hx-74,hy+18-fl],[hx-96,hy+16-fl]], c, 8);
-    case 'scarf': return pen([[nx-22,ny-4],[nx+22,ny+2]], c, 14, 1.2) + pen([[nx-10,ny],[nx-60,ny-30+fl],[nx-110,ny-22-fl],[nx-150,ny-50+fl]], c, 11);
-    case 'cap': { const pts = [[hx-38,hy-6]]; for (let a = 180; a >= 0; a -= 15) pts.push([hx+38*Math.cos(a*Math.PI/180), hy-6-40*Math.sin(a*Math.PI/180)]);
-      return poly(pts, c, 'opacity=".9"') + pen([[hx-10,hy-8],[hx+62,hy-4]], c, 12); }
-    case 'bandana': return poly([[hx-30,hy+10],[hx+30,hy+10],[hx,hy+40]], c) + pen([[hx-34,hy+8],[hx+34,hy+8]], c, 8);
-    case 'cape': { const [px, py] = j.hip; const pts = [[nx-20,ny],[nx+20,ny],[px-60+fl,py+40],[px-90,py+60+fl],[px-130+fl,py+40]];
-      return poly(pts, c, 'opacity=".75"') + pen([...pts, pts[0]], c, 4); }
+    case 'headband': return pen([[hx-HR+3,hy-22],[hx+HR-3,hy-22]], '#151515', 20) + pen([[hx-HR+5,hy-22],[hx+HR-5,hy-22]], '#fff', 9)
+      + ribbon([[hx-HR,hy-22],[hx-HR-30,hy-8+fl],[hx-HR-58,hy-20+fl]], 9) + ribbon([[hx-HR,hy-18],[hx-HR-34,hy+10-fl],[hx-HR-56,hy+12-fl]], 9);
+    case 'scarf': return ribbon([[nx-10,ny-2],[nx-60,ny-28+fl],[nx-110,ny-20-fl],[nx-140,ny-44+fl]], 12) + ribbon([[nx-26,ny-6],[nx+26,ny-2]], 14);
+    case 'cap': { const pts = []; for (let a = 190; a >= -10; a -= 10) pts.push([hx+(HR+3)*Math.cos(a*Math.PI/180), hy-20-(HR-6)*Math.sin(a*Math.PI/180)]);
+      return poly(pts, '#fff', 'stroke="#151515" stroke-width="7" stroke-linejoin="round"') + pen([[hx-4,hy-64],[hx+10,hy-24]], '#151515', 4)
+        + ribbon([[hx+16,hy-22],[hx+HR+30,hy-18]], 8); }
+    case 'headphones': { const arc = []; for (let a = 200; a <= 340; a += 10) arc.push([hx+(HR+9)*Math.cos(a*Math.PI/180), hy+(HR+9)*Math.sin(a*Math.PI/180)]);
+      return pen(arc, '#151515', 8) + `<rect x="${hx-HR-13}" y="${hy-18}" width="24" height="40" rx="11" fill="#fff" stroke="#151515" stroke-width="6"/>`
+        + `<rect x="${hx+HR-11}" y="${hy-18}" width="24" height="40" rx="11" fill="#fff" stroke="#151515" stroke-width="6"/>`; }
+    case 'cape': { const [px, py] = j.hip; const pts = [[nx-14,ny],[nx+14,ny],[px-60+fl,py+40],[px-90,py+60+fl],[px-130+fl,py+40]];
+      return poly(pts, '#fff', 'stroke="#151515" stroke-width="6" stroke-linejoin="round"'); }
   }
   return '';
 }
-function face(f, j, ko) {
-  const [x, y] = j.head, dot = (a, b, r = 4.5) => `<circle cx="${x+a}" cy="${y+b}" r="${r}" fill="#151515"/>`;
-  if (ko) return pen([[x-20,y-12],[x-6,y+2]],undefined,4) + pen([[x-6,y-12],[x-20,y+2]],undefined,4)
-               + pen([[x+6,y-12],[x+20,y+2]],undefined,4) + pen([[x+20,y-12],[x+6,y+2]],undefined,4) + `<ellipse cx="${x+2}" cy="${y+20}" rx="7" ry="6" fill="#151515"/>`;
-  switch (f.face) {
-    case 'angry': return pen([[x-22,y-16],[x-6,y-8]],undefined,5) + pen([[x+22,y-16],[x+6,y-8]],undefined,5) + dot(-12,-2) + dot(12,-2) + pen([[x-12,y+18],[x+12,y+16]],undefined,5);
-    case 'focused': return pen([[x-20,y-4],[x-6,y-2]],undefined,5) + pen([[x+6,y-2],[x+20,y-4]],undefined,5) + pen([[x-8,y+16],[x+8,y+16]],undefined,4);
-    case 'shout': return pen([[x-20,y-14],[x-6,y-6]],undefined,5) + pen([[x+20,y-14],[x+6,y-6]],undefined,5) + dot(-12,0,4) + dot(12,0,4) + `<ellipse cx="${x}" cy="${y+20}" rx="9" ry="7" fill="#151515"/>`;
-    case 'grin': return dot(-12,-6) + dot(12,-6) + pen([[x-18,y+8],[x-6,y+20],[x+8,y+20],[x+18,y+8]],undefined,5);
-    case 'wink': return dot(-12,-6) + pen([[x+6,y-6],[x+20,y-6]],undefined,5) + pen([[x-16,y+10],[x,y+20],[x+16,y+10]],undefined,5);
-  }
+const ATTACK = new Set(['WIND','PUNCH','KWIND','KICK','BLAST','UPPER','RUN','RUNA','RUNB','CHARGE']);
+function face(f, j, ko, p) {
+  const [x, y] = j.head;
+  const blush = `<ellipse cx="${x-36}" cy="${y+20}" rx="10" ry="5" fill="#d6d6d6"/><ellipse cx="${x+36}" cy="${y+20}" rx="10" ry="5" fill="#d6d6d6"/>`;
+  if (ko) return pen([[x-24,y-8],[x-10,y+6]],undefined,5) + pen([[x-10,y-8],[x-24,y+6]],undefined,5)
+               + pen([[x+10,y-8],[x+24,y+6]],undefined,5) + pen([[x+24,y-8],[x+10,y+6]],undefined,5);
+  if (p === 'WIN') return pen([[x-26,y+4],[x-17,y-6],[x-8,y+4]],undefined,5) + pen([[x+8,y+4],[x+17,y-6],[x+26,y+4]],undefined,5) + blush;
+  let g = `<ellipse cx="${x-18}" cy="${y+2}" rx="6.5" ry="12" fill="#151515"/><ellipse cx="${x+18}" cy="${y+2}" rx="6.5" ry="12" fill="#151515"/>` + blush;
+  if (ATTACK.has(p)) g += pen([[x-28,y-20],[x-7,y-11]],undefined,5) + pen([[x+28,y-20],[x+7,y-11]],undefined,5);
+  return g;
 }
 function drawFighter(f, t) {
   const s = stateAt(f.id, t); if (s.o <= 0.01) return { svg: '', s };
@@ -175,21 +152,22 @@ function drawFighter(f, t) {
   if (s.p === 'CHARGE' || s.p === 'BLAST') {       // power aura scribbles
     const grow = clamp((t - 3.1) / 2.5, .2, 1);
     for (let i = 0; i < 12; i++) { const a = (i * 30 + Math.sin(t * 20 + i) * 8) * Math.PI / 180, r1 = 140 * grow + 20, r2 = r1 + 30 + 20 * grow;
-      g += pen([[r1*Math.cos(a), -130 + r1*Math.sin(a)], [r2*Math.cos(a), -130 + r2*Math.sin(a)]], f.c, 6); }
+      g += pen([[r1*Math.cos(a), -150 + r1*Math.sin(a)], [r2*Math.cos(a), -150 + r2*Math.sin(a)]], '#151515', 6); }
   }
   if (f.item === 'cape') g += item(f, j, t);
   for (const seg of [['neck','hip'],['neck','le','lh'],['neck','re','rh'],['hip','lk','lf'],['hip','rk','rf']])
-    g += pen(seg.map(n => j[n]));
-  g += ring(j.head[0], j.head[1], 38, '#151515', 8, '#fbfbfb');
+    g += pen(seg.map(n => j[n]), '#151515', 8);
+  if (s.p !== 'DOWN') for (const ft of ['lf', 'rf']) g += pen([[j[ft][0] - 2, j[ft][1]], [j[ft][0] + 14, j[ft][1]]], '#151515', 11);
+  g += ring(j.head[0], j.head[1], HR, '#151515', 7, '#ffffff');
   if (f.item !== 'cape') g += item(f, j, t);
-  g += face(f, j, ko);
+  g += face(f, j, ko, s.p);
   if (f.id === 5 && t > 13.2) {                    // winner's crown drops onto the head
-    const d = clamp((t - 13.2) / .35, 0, 1), cy = j.head[1] - 42 - (1 - d * d) * 260, hx = j.head[0];
+    const d = clamp((t - 13.2) / .35, 0, 1), cy = j.head[1] - HR + 6 - (1 - d * d) * 260, hx = j.head[0];
     g += poly([[hx-30,cy],[hx-34,cy-38],[hx-15,cy-16],[hx,cy-46],[hx+15,cy-16],[hx+34,cy-38],[hx+30,cy]], '#ffd23f', 'stroke="#151515" stroke-width="4"');
   }
   const ax = s.x, ay = GY - 40 * S + s.y;
   let out = `<g opacity="${s.o.toFixed(2)}">`;
-  if (s.y > -400) out += `<ellipse cx="${ax}" cy="${GY + 2}" rx="${(s.p === 'DOWN' ? 150 : 75) * (1 + s.y / 600)}" ry="10" fill="#000" opacity=".16" filter="url(#soft)"/>`;
+  if (s.y > -400) out += `<ellipse cx="${ax}" cy="${GY + 2}" rx="${(s.p === 'DOWN' ? 150 : 75) * (1 + s.y / 600)}" ry="10" fill="#000" opacity=".10"/>`;
   out += `<g transform="translate(${ax.toFixed(1)},${ay.toFixed(1)}) rotate(${(s.r * Math.sign(s.f || 1)).toFixed(1)}) scale(${(S * s.f).toFixed(3)},${S})">${g}</g>`;
   // speed lines when moving fast sideways
   const prev = stateAt(f.id, t - 0.05), vx = (s.x - prev.x) / 0.05;
@@ -199,7 +177,9 @@ function drawFighter(f, t) {
   }
   if (s.p !== 'DOWN' || t < 9e9) {                // name tag (never mirrored)
     const hp = [ax + (j.head[0] * S * s.f), ay + j.head[1] * S];
-    out += `<text x="${hp[0].toFixed(1)}" y="${(hp[1] - 48 - (f.id === 5 && t > 13.2 ? 34 : 0)).toFixed(1)}" text-anchor="middle" font-family="Permanent Marker" font-size="22" fill="${f.c}">${f.name}</text>`;
+    const ty = hp[1] - HR * S - 34 - (f.id === 5 && t > 13.2 ? 30 : 0), rx = f.name.length * 7.4 + 18;
+    out += `<ellipse cx="${hp[0].toFixed(1)}" cy="${ty.toFixed(1)}" rx="${rx}" ry="21" fill="#dfe1e5" stroke="#c4c7cd" stroke-width="2"/>`
+         + `<text x="${hp[0].toFixed(1)}" y="${(ty + 8).toFixed(1)}" text-anchor="middle" font-family="Permanent Marker" font-size="22" fill="#151515">${f.name}</text>`;
   }
   return { svg: out + '</g>', s };
 }
@@ -253,11 +233,11 @@ function drawFX(t) {
 }
 
 // ---------------------------------------------------------------- camera, words, counter, flash
-const CAM = [ // t, fx (layer x to centre), z, tilt, yaw, y
-  [0, 960, -1300, -30, -18, 60], [0.5, 960, -1300, -30, -18, 60], [2.4, 960, 420, -10, 4, 30],
-  [3.0, 900, 440, -10, 3, 30], [5.0, 760, 470, -9, 6, 30], [6.0, 1050, 430, -10, 0, 30], [7.3, 1150, 420, -10, -3, 30],
-  [8.0, 860, 470, -9, 5, 30], [9.4, 900, 420, -10, 2, 30], [10.3, 1150, 560, -7, -4, 20],
-  [11.4, 1150, 760, -5, -2, 10], [12.2, 1100, 700, -6, 3, 15], [13.2, 1180, 620, -8, -4, 25], [15, 1180, 800, -6, -8, 20],
+const CAM = [ // t, focus x, focus y, zoom  (layer coordinates)
+  [0, 960, 760, .8], [0.5, 960, 760, .8], [2.4, 960, 770, 1.2],
+  [3.0, 900, 770, 1.22], [5.0, 760, 770, 1.25], [6.0, 1050, 770, 1.2], [7.3, 1150, 770, 1.2],
+  [8.0, 860, 770, 1.25], [9.4, 900, 770, 1.2], [10.3, 1150, 770, 1.35],
+  [11.4, 1140, 770, 1.65], [12.2, 1080, 760, 1.5], [13.2, 1170, 760, 1.45], [15, 1170, 750, 1.7],
 ];
 const SHAKE = [[3.45, 6], [4.2, 14], [6.3, 26], [8.3, 14], [11.4, 34], [12.0, 20]];
 const FLASH = [4.2, 6.3, 8.3, 11.4, 12.0];
@@ -267,22 +247,21 @@ const KO = [4.9, 7.1, 9.1, 12.85];
 function camAt(t) {
   let i = 0; while (i < CAM.length - 2 && CAM[i + 1][0] <= t) i++;
   const a = CAM[i], b = CAM[i + 1], k = smooth(clamp((t - a[0]) / (b[0] - a[0]), 0, 1));
-  const c = a.map((v, n) => lerp(v, b[n], k));
+  const [, fx, fy, z] = a.map((v, n) => lerp(v, b[n], k));
   let sx = 0, sy = 0;
   for (const [th, st] of SHAKE) if (t >= th && t < th + .5) { const d = Math.exp(-(t - th) * 9) * st;
     sx += Math.sin(t * 97 + th) * d; sy += Math.cos(t * 83 + th) * d; }
-  return `translateY(${c[5] + sy}px) translateZ(${c[2]}px) rotateX(${c[3]}deg) rotateY(${c[4]}deg) translateX(${-(c[1] - 960) + sx}px)`;
+  return `translate(${960 - fx * z + sx}px, ${580 - fy * z + sy}px) scale(${z})`;
 }
 window.setT = t => {
   const tf = camAt(t);
-  document.getElementById('w1').style.transform = tf;
-  document.getElementById('w2').style.transform = tf;
+  document.getElementById('stage').style.transform = tf;
   R = rng(Math.floor(t * 10) * 7919 + 13);         // line boil: same jitter within each 1/10 s
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><defs><filter id="soft"><feGaussianBlur stdDeviation="5"/></filter></defs>`;
   svg += drawFX(t).replace(/^/, '');
   const order = [...F].sort((a, b) => (KO_POSES.has(stateAt(b.id, t).p) ? 1 : 0) - (KO_POSES.has(stateAt(a.id, t).p) ? 1 : 0));
   for (const f of order) svg += drawFighter(f, t).svg;
-  document.getElementById('layer').innerHTML = svg + '</svg>';
+  document.getElementById('stage').innerHTML = svg + '</svg>';
   let w = ''; for (const [wt, txt] of WORDS) if (t >= wt) w = t - wt < 0.55 || wt === WORDS[WORDS.length - 1][0] ? txt : w;
   const wd = document.getElementById('word'), last = WORDS.filter(x => t >= x[0]).pop();
   wd.textContent = w; const pop = last ? clamp((t - last[0]) / .08, 0, 1) : 1;
