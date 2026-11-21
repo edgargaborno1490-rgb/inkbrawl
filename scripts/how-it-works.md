@@ -2,6 +2,8 @@
 
 **Status: DRAFT** (Nov 21, 2026). Only the owner marks APPROVED.
 
+- Video #1 stats (Nov 21, 2 h in): 96 views, 12.3 s average watch (of 64 s), 4.65% watched to the end, 2 new
+  followers. Most people leave in the first seconds -> this script opens mid-punch on a real follower, no slow intro.
 - Video #2. 9:16 TikTok, aim 1:02-1:08, ~180 spoken words. Owner's idea: the rules of the channel, told while a real
   fight plays (not a talking slide show), so it can be pinned on the profile.
 - First video with real followers: @kyleeee_017 (trainer + husky, first follower) and kugisaki Jr (ninja).
@@ -12,39 +14,39 @@
 
 ## Script (spoken: paste this into ElevenLabs)
 
-Your spot in this arena is empty. Here's how to fill it.
+This is kyleeee underscore zero one seven. He followed this channel, and now he's a fighter. Here's how you get in.
 
-This is Ink Brawl, and every fighter here is a real follower.
-
-Rule one: follow, and you're in. Your name goes on a stick man in every brawl.
-
-Say hi to our very first fighter: kyleeee underscore zero one seven! He asked to be a monster trainer, so we drew him one. Trainer unlocked!
+Rule one: follow, and you're in. Your name goes on a stick man in every brawl. Like kugisaki junior, our ninja.
 
 Rule two: comment, and you get stronger. Only one comment per video counts, so spamming does nothing. Comment on every video and you level up: extra health, a power aura, even special moves.
 
-Rule three: choose your fighter. Comment what you want to be. The most requested one gets drawn next, and everyone who asked fights as it.
+Rule three: choose your fighter. Comment what you want to be. The most requested one gets drawn next. Kyleeee asked for a monster trainer, so we drew him one. Trainer unlocked!
 
-One thing, though. We can't copy real characters like Naruto, Goku or Ash. But ask anyway, and we'll make our own version: same vibe, brand new design.
+But we can't copy real characters like Naruto, Goku or Ash. Ask anyway, and we'll make our own version: same vibe, brand new design.
 
-Rule four: bosses. Every follower goal unlocks a boss fight, all of you against one monster. At ten followers: an angry goose.
+Rule four: bosses. Every follower goal unlocks a boss fight, all of you against one monster. At ten followers: an angry goose. We're at two.
 
-So follow to take your spot, and comment the fighter you want to be.
+Now, the first real brawl. Trainer versus ninja. And the winner is... kyleeee!
+
+Follow to take your spot, and comment the fighter you want to be.
 
 ## Visual plan
 
 | Line | Picture | On-screen word |
 |---|---|---|
-| Your spot is empty | arena from above: a few fighters, many grey "?" ghost spots; camera pushes in on one empty spot | YOUR SPOT IS EMPTY |
-| This is Ink Brawl | quick brawl flashes between the fighters, impact stars | INK BRAWL |
-| Rule one: follow | a "?" ghost turns into kugisaki Jr's ninja, name tag pops on above the head | 1. FOLLOW = YOU'RE IN |
-| First fighter: Kyle | trainer + husky drop in with "@kyleeee_017"; gold "#1 FOLLOWER" | TRAINER UNLOCKED! / Requested by @kyleeee_017 |
+| This is kyleeee_017 (0-2 s) | opens MID-ACTION: trainer's punch lands on a "?" ghost, white flash, stars, husky barks; name tag @kyleeee_017 | @kyleeee_017 |
+| He followed, now he's a fighter | close-up of the trainer + husky, camera pulls back to the arena with many grey "?" spots | 1 FOLLOW = 1 FIGHTER |
+| Here's how you get in | the "?" spots pulse | YOUR SPOT IS EMPTY |
+| Rule one: follow | a "?" ghost turns into kugisaki Jr's ninja, name tag pops on | 1. FOLLOW = YOU'RE IN |
 | Rule two: comment | comment bubbles fly into a fighter: Lv 1 -> 2 -> 3, spark, then aura | 2. COMMENT = STRONGER |
 | Spamming does nothing | many bubbles hit a fighter and bounce off, "+0" | 1 COMMENT PER VIDEO |
 | Level up | Lv 4 aura (color = power), Lv 5 dash punch | LEVEL UP |
-| Rule three: choose | roster cut, one per beat: hoodie, tee, caveman, samurai, ninja, trainer, then a locked "?" card | 3. CHOOSE YOUR FIGHTER |
-| Can't copy real characters | text only (no drawings of those characters): the names crossed out, then the trainer sheet as the example of "own version" | NO COPIES / OUR OWN VERSION |
-| Rule four: bosses | progress bar "NEXT BOSS: 2/10 FOLLOWERS", goose silhouette as a locked "?" (no sheet yet) | 4. BOSSES |
-| Follow + comment | short final clash, kyleeee_017 (trainer + husky) vs kugisaki Jr (ninja), kyleeee_017 wins: crown + sparkles, then roster line-up | FOLLOW + COMMENT YOUR FIGHTER |
+| Rule three: choose | roster cut, one per beat: hoodie, tee, caveman, samurai, ninja, then the trainer lands | 3. CHOOSE YOUR FIGHTER |
+| Trainer unlocked | trainer + husky win pose, sparkles | TRAINER UNLOCKED! / Requested by @kyleeee_017 |
+| Can't copy real characters | text only (never drawn): Naruto / Goku / Ash crossed out, then a locked "?" card turning into "OUR OWN VERSION" | NO COPIES |
+| Rule four: bosses | progress bar "NEXT BOSS: 2/10 FOLLOWERS", goose as a grey locked silhouette card | 4. BOSSES |
+| First real brawl | kyleeee_017 (trainer + husky) vs kugisaki Jr (ninja): fast exchange, slow-mo final hit, ninja KO + smoke puff; kyleeee_017 crown + sparkles | WINNER / @kyleeee_017 |
+| Follow + comment | both fighters + empty "?" spots | FOLLOW + COMMENT YOUR FIGHTER |
 
 ## Notes
 - The names Naruto, Goku and Ash are only said and shown as plain crossed-out text, never drawn.
