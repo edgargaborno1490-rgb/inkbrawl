@@ -1,4 +1,16 @@
-# Matchups
+# Ink Brawl: stick man brawls (current format, Nov 21, 2026)
+
+Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
+
+| # | Video | Why it works | Status |
+|---|---|---|---|
+| 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate | DRAFT · `scripts/100-men-vs-gorilla.md` |
+| 2 | First follower free-for-all | names from "comment ME" on video #1 | idea |
+
+---
+
+# Retired: anime "Who Would Win" matchups
+
 
 Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
 Fairness first: pick pairs where both sides have real wins to show.

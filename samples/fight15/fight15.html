@@ -1,0 +1,297 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ink Brawl 15 s fight test: 5 stick men free-for-all on a blank 3D canvas.
+     window.setT(seconds) draws one frame; render_fight15.cjs steps it and adds sound. -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+  body{background:radial-gradient(ellipse at 50% 35%,#eef0f4 0%,#c9cdd5 60%,#a9aeb8 100%)}
+  .view{position:absolute;inset:0;perspective:1300px;perspective-origin:50% 40%}
+  .world{position:absolute;left:960px;top:640px;transform-style:preserve-3d}
+  .world>div{position:absolute;transform-style:preserve-3d}
+  #shadow{left:-1000px;top:-1500px;width:2000px;height:1600px;transform-origin:bottom center;
+          transform:translateY(160px) rotateX(90deg);background:rgba(20,25,35,.35);filter:blur(60px);border-radius:80px}
+  #floor{left:-900px;top:-1400px;width:1800px;height:1400px;transform-origin:bottom center;transform:rotateX(90deg);
+         background:#fff;box-shadow:inset 0 0 0 2px #e3e6ea}
+  .h{position:absolute;width:22px;height:22px;background:#fff;border:3px solid #4a8cff;box-sizing:border-box}
+  #edge{left:-900px;top:0;width:1800px;height:26px;background:linear-gradient(#e7e9ed,#cfd3d9)}
+  #layer{left:-960px;top:-942px;width:1920px;height:1080px;transform:translateZ(-330px)}
+  #word{position:absolute;left:0;right:0;top:70px;text-align:center;font:150px 'Permanent Marker',cursive;color:#fff;
+        -webkit-text-stroke:14px #111;paint-order:stroke fill;letter-spacing:2px}
+  #counter{position:absolute;left:60px;top:950px;font:54px 'Permanent Marker',cursive;color:#111;background:#fff;
+           padding:4px 26px;border-radius:14px;box-shadow:0 6px 0 #111;border:5px solid #111}
+  #flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div class="view"><div class="world" id="w1">
+  <div id="shadow"></div>
+  <div id="floor">
+    <div class="h" style="left:-11px;top:-11px"></div><div class="h" style="right:-11px;top:-11px"></div>
+    <div class="h" style="left:-11px;bottom:-11px"></div><div class="h" style="right:-11px;bottom:-11px"></div>
+  </div>
+  <div id="edge"></div>
+</div></div>
+<div class="view"><div class="world" id="w2"><div id="layer"></div></div></div>
+<div id="word"></div><div id="counter"></div><div id="flash"></div>
+<script>
+// ---------------------------------------------------------------- helpers
+const GY = 900, S = 0.6;                       // ground line in the fighter layer, fighter scale
+const lerp = (a, b, k) => a + (b - a) * k;
+const smooth = k => k * k * (3 - 2 * k);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s;
+  t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+let R = rng(1);
+// wobbly pen stroke through points (two passes); line "boils" 10x per second like hand-drawn animation
+function pen(pts, color = '#151515', w = 8, amp = 2.2) {
+  let out = '';
+  for (let p = 0; p < 2; p++) {
+    const q = [];
+    for (let i = 0; i < pts.length - 1; i++) {
+      const [x0, y0] = pts[i], [x1, y1] = pts[i + 1];
+      const n = Math.max(2, Math.round(Math.hypot(x1 - x0, y1 - y0) / 18));
+      for (let j = 0; j < n; j++) { const k = j / n;
+        q.push([x0 + (x1 - x0) * k + (R() - .5) * 2 * amp, y0 + (y1 - y0) * k + (R() - .5) * 2 * amp]); }
+    }
+    const l = pts[pts.length - 1]; q.push([l[0] + (R() - .5) * 2 * amp, l[1] + (R() - .5) * 2 * amp]);
+    out += `<path d="M${q.map(v => v[0].toFixed(1) + ',' + v[1].toFixed(1)).join(' L')}" fill="none" stroke="${color}"
+      stroke-width="${p ? w * .45 : w}" stroke-linecap="round" stroke-linejoin="round" opacity="${p ? .6 : 1}"/>`;
+  }
+  return out;
+}
+function ring(cx, cy, r, color = '#151515', w = 8, fill = 'none') {
+  const pts = [], a0 = R() * 6.28;
+  for (let i = 0; i <= 372; i += 12) { const a = a0 + i * Math.PI / 180, rr = r + (R() - .5) * 4;
+    pts.push([cx + rr * Math.cos(a), cy + rr * Math.sin(a)]); }
+  return (fill !== 'none' ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}"/>` : '') + pen(pts, color, w, 1);
+}
+const poly = (pts, fill, extra = '') => `<path d="M${pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L')} Z" fill="${fill}" ${extra}/>`;
+
+// ---------------------------------------------------------------- poses (feet on y=40, facing right)
+const P = {
+  GUARD: {head:[0,-230],neck:[0,-190],hip:[0,-80],le:[35,-150],lh:[60,-200],re:[-20,-145],rh:[20,-205],lk:[-40,-30],lf:[-55,40],rk:[40,-30],rf:[60,40]},
+  WIND:  {head:[-15,-226],neck:[-10,-188],hip:[0,-82],le:[30,-150],lh:[55,-195],re:[-50,-160],rh:[-75,-190],lk:[-45,-30],lf:[-65,40],rk:[40,-30],rf:[65,40]},
+  PUNCH: {head:[25,-225],neck:[15,-185],hip:[-15,-85],le:[-30,-150],lh:[-5,-165],re:[80,-185],rh:[150,-190],lk:[40,-35],lf:[70,40],rk:[-60,-40],rf:[-110,30]},
+  KWIND: {head:[-15,-232],neck:[-10,-192],hip:[0,-90],le:[-55,-170],lh:[-85,-140],re:[30,-170],rh:[55,-200],lk:[-15,-30],lf:[-20,40],rk:[50,-150],rf:[20,-90]},
+  KICK:  {head:[-30,-250],neck:[-20,-210],hip:[10,-110],le:[-70,-220],lh:[-110,-190],re:[25,-240],rh:[50,-270],lk:[-10,-40],lf:[-30,40],rk:[80,-140],rf:[160,-175]},
+  HIT:   {head:[-45,-212],neck:[-32,-178],hip:[0,-85],le:[10,-185],lh:[45,-220],re:[5,-160],rh:[50,-150],lk:[-25,-35],lf:[-50,40],rk:[20,-30],rf:[35,40]},
+  FLY:   {head:[-60,-190],neck:[-40,-165],hip:[0,-95],le:[0,-200],lh:[40,-235],re:[-10,-210],rh:[20,-250],lk:[40,-60],lf:[90,-40],rk:[30,-40],rf:[80,-5]},
+  DOWN:  {head:[-215,20],neck:[-175,22],hip:[-70,24],le:[-150,-5],lh:[-120,-25],re:[-150,30],rh:[-115,36],lk:[-10,10],lf:[45,30],rk:[-20,30],rf:[40,36]},
+  CHARGE:{head:[0,-235],neck:[0,-195],hip:[0,-85],le:[-60,-170],lh:[-80,-110],re:[60,-170],rh:[80,-110],lk:[-55,-30],lf:[-80,40],rk:[55,-30],rf:[80,40]},
+  BLAST: {head:[25,-228],neck:[15,-190],hip:[-10,-85],le:[60,-185],lh:[125,-192],re:[60,-172],rh:[125,-178],lk:[35,-35],lf:[75,40],rk:[-55,-35],rf:[-100,40]},
+  UPPER: {head:[15,-240],neck:[10,-200],hip:[-5,-90],le:[-40,-165],lh:[-60,-200],re:[65,-235],rh:[75,-305],lk:[35,-40],lf:[60,40],rk:[-45,-35],rf:[-75,40]},
+  WIN:   {head:[0,-235],neck:[0,-195],hip:[0,-85],le:[-45,-240],lh:[-60,-295],re:[45,-240],rh:[60,-295],lk:[-30,-30],lf:[-40,40],rk:[30,-30],rf:[40,40]},
+  RUNA:  {head:[25,-225],neck:[18,-188],hip:[0,-88],le:[-25,-150],lh:[-60,-170],re:[45,-150],rh:[75,-185],lk:[35,-40],lf:[15,35],rk:[-40,-35],rf:[-85,5]},
+  RUNB:  {head:[25,-228],neck:[18,-190],hip:[0,-90],le:[45,-150],lh:[75,-185],re:[-25,-150],rh:[-60,-170],lk:[-40,-35],lf:[-85,5],rk:[35,-40],rf:[15,35]},
+};
+const KO_POSES = new Set(['HIT', 'FLY', 'DOWN']);
+function pose(name, t, id) {
+  if (name === 'RUN') name = Math.floor(t * 10) % 2 ? 'RUNA' : 'RUNB';
+  const src = P[name], out = {};
+  const bob = name === 'GUARD' || name === 'CHARGE' ? Math.sin(t * 9 + id * 1.7) * 5 : 0;
+  for (const k in src) out[k] = [src[k][0], src[k][1] + (k === 'lf' || k === 'rf' ? 0 : bob)];
+  return out;
+}
+
+// ---------------------------------------------------------------- fighters
+const F = [
+  {id:1, name:'@Fighter_01', c:'#e63946', item:'headband', face:'angry'},
+  {id:2, name:'@Fighter_02', c:'#1d7fe0', item:'scarf',    face:'focused'},
+  {id:3, name:'@Fighter_03', c:'#2a9d4b', item:'cap',      face:'shout'},
+  {id:4, name:'@Fighter_04', c:'#f28c28', item:'bandana',  face:'grin'},
+  {id:5, name:'@Fighter_05', c:'#8e44ad', item:'cape',     face:'wink'},
+];
+// keys: {t, p:pose, x, y:lift, r:rotation deg, f:facing(1 right/-1 left), o:opacity}; unspecified fields carry over
+function track(first, ...rest) { const out = [Object.assign({y:0, r:0, f:1, o:1}, first)];
+  for (const k of rest) out.push(Object.assign({}, out[out.length - 1], k)); return out; }
+const T = {
+  1: track({t:0, p:'GUARD', x:330},
+     {t:2.8}, {t:3.15, p:'RUN', x:540}, {t:3.3, p:'WIND', x:560}, {t:3.45, p:'PUNCH', x:575}, {t:3.9, p:'GUARD'},
+     {t:4.15, p:'HIT', x:560}, {t:4.25, p:'FLY', x:500, y:-80, r:-25}, {t:4.6, x:380, y:-150, r:-60},
+     {t:4.9, p:'DOWN', x:280, y:0, r:0}, {t:5.3}, {t:5.9, o:0}),
+  2: track({t:0, p:'GUARD', x:690, f:-1},
+     {t:3.45}, {t:3.55, p:'HIT', x:730}, {t:3.75, x:760}, {t:3.95, p:'GUARD'}, {t:4.05, p:'KWIND', x:740},
+     {t:4.2, p:'KICK', x:700}, {t:4.6}, {t:4.85, p:'GUARD'},
+     {t:7.1}, {t:7.2, f:1}, {t:7.3, p:'RUN', x:720}, {t:7.7, x:830}, {t:7.8, p:'WIND', x:845}, {t:7.95, p:'PUNCH', x:860},
+     {t:8.15, p:'GUARD', x:850}, {t:8.3, p:'HIT', x:840}, {t:8.4, p:'FLY', x:810, y:-140, r:-30}, {t:8.75, x:690, y:-230, r:-80},
+     {t:9.1, p:'DOWN', x:600, y:0, r:0}, {t:9.4}, {t:10.0, o:0}),
+  3: track({t:0, p:'GUARD', x:960},
+     {t:2.9}, {t:3.1, p:'CHARGE'}, {t:5.9}, {t:6.1, p:'BLAST', x:975}, {t:6.7}, {t:6.9, p:'GUARD', x:960},
+     {t:7.5}, {t:7.6, f:-1}, {t:7.95, p:'GUARD'}, {t:8.05, p:'HIT', x:985}, {t:8.15, p:'WIND', x:975},
+     {t:8.3, p:'UPPER', x:940}, {t:8.7}, {t:8.9, p:'GUARD'},
+     {t:9.5}, {t:9.6, f:1}, {t:10.3}, {t:10.9, p:'RUN', x:1010}, {t:11.0, p:'WIND', x:1025}, {t:11.4, p:'PUNCH', x:1045},
+     {t:11.95}, {t:12.05, p:'HIT', x:1035}, {t:12.15, p:'FLY', x:1000, y:-160, r:-35}, {t:12.5, x:900, y:-180, r:-85},
+     {t:12.85, p:'DOWN', x:800, y:0, r:0}, {t:13.2}, {t:13.8, o:0}),
+  4: track({t:0, p:'GUARD', x:1230},
+     {t:3.55}, {t:3.65, p:'HIT', x:1200}, {t:3.9, p:'GUARD', x:1210}, {t:4.25, p:'WIND'}, {t:4.4, p:'PUNCH', x:1250},
+     {t:4.8, p:'GUARD', x:1230}, {t:6.25}, {t:6.32, p:'HIT', x:1250}, {t:6.45, p:'FLY', x:1320, y:-120, r:-30},
+     {t:6.8, x:1500, y:-170, r:-70}, {t:7.1, p:'DOWN', x:1640, y:0, r:0, f:-1}, {t:7.4}, {t:8.0, o:0}),
+  5: track({t:0, p:'GUARD', x:1590, f:-1},
+     {t:3.3}, {t:3.45, p:'WIND', x:1560}, {t:3.6, p:'PUNCH', x:1450}, {t:3.9, p:'GUARD', x:1480},
+     {t:4.4}, {t:4.5, p:'HIT', x:1500}, {t:4.8, p:'GUARD', x:1520},
+     {t:6.4}, {t:6.5, p:'GUARD', x:1470}, {t:9.4}, {t:10.3, p:'RUN', x:1350}, {t:10.9, x:1280},
+     {t:11.0, p:'WIND', x:1265}, {t:11.4, p:'PUNCH', x:1240}, {t:11.75, p:'WIND', x:1225}, {t:11.95, p:'UPPER', x:1150},
+     {t:12.6}, {t:13.0, p:'GUARD', x:1170}, {t:13.3, p:'WIN'}),
+};
+function stateAt(id, t) {
+  const ks = T[id]; let i = 0; while (i < ks.length - 1 && ks[i + 1].t <= t) i++;
+  const a = ks[i], b = ks[Math.min(i + 1, ks.length - 1)];
+  const k = b.t > a.t ? smooth(clamp((t - a.t) / (b.t - a.t), 0, 1)) : 0;
+  const ja = pose(a.p, t, id), jb = pose(b.p, t, id), j = {};
+  for (const n in ja) j[n] = [lerp(ja[n][0], jb[n][0], k), lerp(ja[n][1], jb[n][1], k)];
+  return { j, x: lerp(a.x, b.x, k), y: lerp(a.y, b.y, k), r: lerp(a.r, b.r, k), f: lerp(a.f, b.f, k),
+           o: lerp(a.o, b.o, k), p: k < .5 ? a.p : b.p };
+}
+
+// accent items + faces, drawn in the fighter's local space
+function item(f, j, t) {
+  const [hx, hy] = j.head, [nx, ny] = j.neck, c = f.c, fl = Math.sin(t * 14 + f.id) * 6;
+  switch (f.item) {
+    case 'headband': return pen([[hx-38,hy-12],[hx+38,hy-16]], c, 12, 1.2)
+      + pen([[hx-36,hy-12],[hx-70,hy+4+fl],[hx-92,hy-6+fl]], c, 8) + pen([[hx-36,hy-10],[hx-74,hy+18-fl],[hx-96,hy+16-fl]], c, 8);
+    case 'scarf': return pen([[nx-22,ny-4],[nx+22,ny+2]], c, 14, 1.2) + pen([[nx-10,ny],[nx-60,ny-30+fl],[nx-110,ny-22-fl],[nx-150,ny-50+fl]], c, 11);
+    case 'cap': { const pts = [[hx-38,hy-6]]; for (let a = 180; a >= 0; a -= 15) pts.push([hx+38*Math.cos(a*Math.PI/180), hy-6-40*Math.sin(a*Math.PI/180)]);
+      return poly(pts, c, 'opacity=".9"') + pen([[hx-10,hy-8],[hx+62,hy-4]], c, 12); }
+    case 'bandana': return poly([[hx-30,hy+10],[hx+30,hy+10],[hx,hy+40]], c) + pen([[hx-34,hy+8],[hx+34,hy+8]], c, 8);
+    case 'cape': { const [px, py] = j.hip; const pts = [[nx-20,ny],[nx+20,ny],[px-60+fl,py+40],[px-90,py+60+fl],[px-130+fl,py+40]];
+      return poly(pts, c, 'opacity=".75"') + pen([...pts, pts[0]], c, 4); }
+  }
+  return '';
+}
+function face(f, j, ko) {
+  const [x, y] = j.head, dot = (a, b, r = 4.5) => `<circle cx="${x+a}" cy="${y+b}" r="${r}" fill="#151515"/>`;
+  if (ko) return pen([[x-20,y-12],[x-6,y+2]],undefined,4) + pen([[x-6,y-12],[x-20,y+2]],undefined,4)
+               + pen([[x+6,y-12],[x+20,y+2]],undefined,4) + pen([[x+20,y-12],[x+6,y+2]],undefined,4) + `<ellipse cx="${x+2}" cy="${y+20}" rx="7" ry="6" fill="#151515"/>`;
+  switch (f.face) {
+    case 'angry': return pen([[x-22,y-16],[x-6,y-8]],undefined,5) + pen([[x+22,y-16],[x+6,y-8]],undefined,5) + dot(-12,-2) + dot(12,-2) + pen([[x-12,y+18],[x+12,y+16]],undefined,5);
+    case 'focused': return pen([[x-20,y-4],[x-6,y-2]],undefined,5) + pen([[x+6,y-2],[x+20,y-4]],undefined,5) + pen([[x-8,y+16],[x+8,y+16]],undefined,4);
+    case 'shout': return pen([[x-20,y-14],[x-6,y-6]],undefined,5) + pen([[x+20,y-14],[x+6,y-6]],undefined,5) + dot(-12,0,4) + dot(12,0,4) + `<ellipse cx="${x}" cy="${y+20}" rx="9" ry="7" fill="#151515"/>`;
+    case 'grin': return dot(-12,-6) + dot(12,-6) + pen([[x-18,y+8],[x-6,y+20],[x+8,y+20],[x+18,y+8]],undefined,5);
+    case 'wink': return dot(-12,-6) + pen([[x+6,y-6],[x+20,y-6]],undefined,5) + pen([[x-16,y+10],[x,y+20],[x+16,y+10]],undefined,5);
+  }
+}
+function drawFighter(f, t) {
+  const s = stateAt(f.id, t); if (s.o <= 0.01) return { svg: '', s };
+  const j = s.j, ko = KO_POSES.has(s.p);
+  let g = '';
+  if (s.p === 'CHARGE' || s.p === 'BLAST') {       // power aura scribbles
+    const grow = clamp((t - 3.1) / 2.5, .2, 1);
+    for (let i = 0; i < 12; i++) { const a = (i * 30 + Math.sin(t * 20 + i) * 8) * Math.PI / 180, r1 = 140 * grow + 20, r2 = r1 + 30 + 20 * grow;
+      g += pen([[r1*Math.cos(a), -130 + r1*Math.sin(a)], [r2*Math.cos(a), -130 + r2*Math.sin(a)]], f.c, 6); }
+  }
+  if (f.item === 'cape') g += item(f, j, t);
+  for (const seg of [['neck','hip'],['neck','le','lh'],['neck','re','rh'],['hip','lk','lf'],['hip','rk','rf']])
+    g += pen(seg.map(n => j[n]));
+  g += ring(j.head[0], j.head[1], 38, '#151515', 8, '#fbfbfb');
+  if (f.item !== 'cape') g += item(f, j, t);
+  g += face(f, j, ko);
+  if (f.id === 5 && t > 13.2) {                    // winner's crown drops onto the head
+    const d = clamp((t - 13.2) / .35, 0, 1), cy = j.head[1] - 42 - (1 - d * d) * 260, hx = j.head[0];
+    g += poly([[hx-30,cy],[hx-34,cy-38],[hx-15,cy-16],[hx,cy-46],[hx+15,cy-16],[hx+34,cy-38],[hx+30,cy]], '#ffd23f', 'stroke="#151515" stroke-width="4"');
+  }
+  const ax = s.x, ay = GY - 40 * S + s.y;
+  let out = `<g opacity="${s.o.toFixed(2)}">`;
+  if (s.y > -400) out += `<ellipse cx="${ax}" cy="${GY + 2}" rx="${(s.p === 'DOWN' ? 150 : 75) * (1 + s.y / 600)}" ry="10" fill="#000" opacity=".16" filter="url(#soft)"/>`;
+  out += `<g transform="translate(${ax.toFixed(1)},${ay.toFixed(1)}) rotate(${(s.r * Math.sign(s.f || 1)).toFixed(1)}) scale(${(S * s.f).toFixed(3)},${S})">${g}</g>`;
+  // speed lines when moving fast sideways
+  const prev = stateAt(f.id, t - 0.05), vx = (s.x - prev.x) / 0.05;
+  if (Math.abs(vx) > 350 && s.o > .5) for (let i = 0; i < 3; i++) {
+    const dir = -Math.sign(vx), yy = ay - (60 + i * 45) * S;
+    out += pen([[ax + dir * 70, yy], [ax + dir * (150 + i * 20), yy]], '#151515', 3);
+  }
+  if (s.p !== 'DOWN' || t < 9e9) {                // name tag (never mirrored)
+    const hp = [ax + (j.head[0] * S * s.f), ay + j.head[1] * S];
+    out += `<text x="${hp[0].toFixed(1)}" y="${(hp[1] - 48 - (f.id === 5 && t > 13.2 ? 34 : 0)).toFixed(1)}" text-anchor="middle" font-family="Permanent Marker" font-size="22" fill="${f.c}">${f.name}</text>`;
+  }
+  return { svg: out + '</g>', s };
+}
+
+// ---------------------------------------------------------------- effects
+const HY = GY - 150 * S;                           // hit height
+const FX = [
+  {type:'star', t:3.45, x:625, y:HY-10, size:40}, {type:'star', t:3.6, x:1335, y:HY-10, size:40},
+  {type:'star', t:4.2, x:595, y:HY+10, size:60}, {type:'star', t:4.4, x:1340, y:HY, size:40},
+  {type:'beam', t:6.1, t1:6.6, x0:1050, x1:1260, y:HY, c:'#2a9d4b'}, {type:'star', t:6.3, x:1250, y:HY, size:85, c:'#7ee08f'},
+  {type:'star', t:7.95, x:945, y:HY, size:40}, {type:'star', t:8.3, x:880, y:HY-60, size:70},
+  {type:'shock', t:11.4, x:1160, y:HY-10}, {type:'star', t:11.4, x:1160, y:HY-10, size:110},
+  {type:'star', t:12.0, x:1120, y:HY-80, size:90},
+  {type:'dust', t:4.9, x:280}, {type:'dust', t:7.1, x:1640}, {type:'dust', t:9.1, x:600}, {type:'dust', t:12.85, x:800},
+  {type:'splat', t:4.9, x:250}, {type:'splat', t:7.1, x:1660}, {type:'splat', t:9.1, x:575}, {type:'splat', t:12.85, x:775},
+  {type:'erase', t:5.3, t1:5.9, x:220}, {type:'erase', t:7.4, t1:8.0, x:1600}, {type:'erase', t:9.4, t1:10.0, x:540}, {type:'erase', t:13.2, t1:13.8, x:740},
+];
+function drawFX(t) {
+  let g = '';
+  for (const e of FX) {
+    const dt = t - e.t;
+    if (e.type === 'splat' && dt >= 0) {          // ink splat left on the canvas
+      const r2 = rng(e.x | 0), a = Math.min(1, dt * 6);
+      g += `<ellipse cx="${e.x}" cy="${GY+6}" rx="${55*a}" ry="${9*a}" fill="#151515" opacity=".55"/>`;
+      for (let i = 0; i < 7; i++) g += `<ellipse cx="${e.x + (r2()-.5)*160*a}" cy="${GY + 4 + (r2()-.5)*12}" rx="${3+r2()*6}" ry="${2+r2()*2}" fill="#151515" opacity=".6"/>`;
+    }
+    if (e.type === 'star' && dt >= 0 && dt < .28) {
+      const k = dt / .28, sz = e.size * (0.6 + k * .7), pts = [];
+      for (let i = 0; i < 16; i++) { const r = i % 2 ? sz * .42 : sz, a = i * Math.PI / 8 + e.t; pts.push([e.x + r*Math.cos(a), e.y + r*Math.sin(a)]); }
+      g += poly(pts, e.c || '#ffd23f', `stroke="#151515" stroke-width="5" opacity="${(1 - k * .7).toFixed(2)}"`);
+    }
+    if (e.type === 'beam' && t >= e.t && t <= e.t1) {
+      const k = clamp((t - e.t) / .15, 0, 1), x1 = lerp(e.x0, e.x1, k), w = 40 + Math.sin(t * 60) * 8;
+      g += pen([[e.x0, e.y], [x1, e.y]], '#151515', w + 14, 3) + pen([[e.x0, e.y], [x1, e.y]], e.c, w, 3) + pen([[e.x0, e.y], [x1, e.y]], '#c9f7cf', w * .35, 3);
+    }
+    if (e.type === 'shock' && dt >= 0 && dt < 1.2) {
+      for (let i = 0; i < 3; i++) { const k = clamp((dt - i * .15) / .8, 0, 1); if (k <= 0 || k >= 1) continue;
+        g += `<ellipse cx="${e.x}" cy="${e.y}" rx="${60 + k * 420}" ry="${30 + k * 160}" fill="none" stroke="#151515" stroke-width="${8 * (1 - k)}" opacity="${1 - k}"/>`; }
+    }
+    if (e.type === 'dust' && dt >= 0 && dt < .7) {
+      const k = dt / .7; for (let i = 0; i < 5; i++) { const ox = (i - 2) * 50 * (0.5 + k), r = 18 + k * 26;
+        g += `<g opacity="${(1-k).toFixed(2)}">${ring(e.x + ox, GY - 10 - k * 30, r, '#8a8a8a', 4)}</g>`; }
+    }
+    if (e.type === 'erase' && t >= e.t && t <= e.t1 + .2) {  // eraser scribble wipes the knocked-out fighter
+      const k = clamp((t - e.t) / (e.t1 - e.t), 0, 1), pts = [];
+      for (let i = 0; i <= 14 * k; i++) pts.push([e.x + (i % 2 ? 130 : -40), GY - 10 - i * 7]);
+      if (pts.length > 1) g += `<g opacity="${t > e.t1 ? 0.4 : 0.9}">${pen(pts, '#d7d9de', 26, 3)}</g>`;
+    }
+  }
+  return g;
+}
+
+// ---------------------------------------------------------------- camera, words, counter, flash
+const CAM = [ // t, fx (layer x to centre), z, tilt, yaw, y
+  [0, 960, -1300, -30, -18, 60], [0.5, 960, -1300, -30, -18, 60], [2.4, 960, 420, -10, 4, 30],
+  [3.0, 900, 440, -10, 3, 30], [5.0, 760, 470, -9, 6, 30], [6.0, 1050, 430, -10, 0, 30], [7.3, 1150, 420, -10, -3, 30],
+  [8.0, 860, 470, -9, 5, 30], [9.4, 900, 420, -10, 2, 30], [10.3, 1150, 560, -7, -4, 20],
+  [11.4, 1150, 760, -5, -2, 10], [12.2, 1100, 700, -6, 3, 15], [13.2, 1180, 620, -8, -4, 25], [15, 1180, 800, -6, -8, 20],
+];
+const SHAKE = [[3.45, 6], [4.2, 14], [6.3, 26], [8.3, 14], [11.4, 34], [12.0, 20]];
+const FLASH = [4.2, 6.3, 8.3, 11.4, 12.0];
+const WORDS = [[0.2, 'FIVE'], [0.75, 'FIGHTERS'], [1.35, 'ONLY'], [1.75, 'ONE'], [2.15, 'WINS'], [2.6, 'FIGHT!'],
+  [4.9, 'OUT!'], [6.3, 'BOOM!'], [8.3, 'UPPERCUT!'], [9.6, 'FINAL'], [10.0, 'TWO'], [12.0, 'DOWN!'], [13.3, 'WINNER'], [14.0, '@Fighter_05']];
+const KO = [4.9, 7.1, 9.1, 12.85];
+function camAt(t) {
+  let i = 0; while (i < CAM.length - 2 && CAM[i + 1][0] <= t) i++;
+  const a = CAM[i], b = CAM[i + 1], k = smooth(clamp((t - a[0]) / (b[0] - a[0]), 0, 1));
+  const c = a.map((v, n) => lerp(v, b[n], k));
+  let sx = 0, sy = 0;
+  for (const [th, st] of SHAKE) if (t >= th && t < th + .5) { const d = Math.exp(-(t - th) * 9) * st;
+    sx += Math.sin(t * 97 + th) * d; sy += Math.cos(t * 83 + th) * d; }
+  return `translateY(${c[5] + sy}px) translateZ(${c[2]}px) rotateX(${c[3]}deg) rotateY(${c[4]}deg) translateX(${-(c[1] - 960) + sx}px)`;
+}
+window.setT = t => {
+  const tf = camAt(t);
+  document.getElementById('w1').style.transform = tf;
+  document.getElementById('w2').style.transform = tf;
+  R = rng(Math.floor(t * 10) * 7919 + 13);         // line boil: same jitter within each 1/10 s
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><defs><filter id="soft"><feGaussianBlur stdDeviation="5"/></filter></defs>`;
+  svg += drawFX(t).replace(/^/, '');
+  const order = [...F].sort((a, b) => (KO_POSES.has(stateAt(b.id, t).p) ? 1 : 0) - (KO_POSES.has(stateAt(a.id, t).p) ? 1 : 0));
+  for (const f of order) svg += drawFighter(f, t).svg;
+  document.getElementById('layer').innerHTML = svg + '</svg>';
+  let w = ''; for (const [wt, txt] of WORDS) if (t >= wt) w = t - wt < 0.55 || wt === WORDS[WORDS.length - 1][0] ? txt : w;
+  const wd = document.getElementById('word'), last = WORDS.filter(x => t >= x[0]).pop();
+  wd.textContent = w; const pop = last ? clamp((t - last[0]) / .08, 0, 1) : 1;
+  wd.style.transform = `scale(${1.25 - .25 * pop})`;
+  wd.style.fontSize = w.startsWith('@') ? '110px' : '150px';
+  const left = 5 - KO.filter(k => t >= k).length;
+  document.getElementById('counter').textContent = t < 2.6 ? '5 FIGHTERS' : `${left} LEFT`;
+  let fl = 0; for (const ft of FLASH) if (t >= ft && t < ft + .1) fl = t < ft + .067 ? 1 : .4;
+  document.getElementById('flash').style.opacity = fl;
+};
+setT(0);
+</script></body></html>

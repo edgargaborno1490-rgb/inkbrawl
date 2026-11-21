@@ -39,6 +39,14 @@ anime format: don't use it for brawls.
 - Sound: SFX from `sfx-library/` (punches, whooshes, booms), plus pen-scribble and paper sounds; light music.
   No voiceover unless the owner sends one.
 
+## Workflow
+- Scripts: `scripts/<name>.md`, written **Status: DRAFT**. Only the owner marks **APPROVED**; build the full video
+  only after that (and after the owner's voiceover MP3, if the video has narration).
+- Video list and status: `IDEAS.md`. First video: **100 Men vs 1 Gorilla** (no followers yet, so it opens with the
+  internet's most argued fight debate and asks people to comment "ME" to be in the next brawl).
+- Fight engine test: `samples/fight15/` (`fight15.html` = poses, keyframed fighters, hits, KOs, camera; 
+  `render_fight15.cjs` renders frames and mixes SFX). Build real videos from this engine.
+
 ## Followers (fighters)
 - Names come from people who **commented to join** (opt-in) on the owner's posts. Use only public usernames from
   people who opted in; never real faces, photos or private info.
