@@ -1,0 +1,182 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ink Brawl look samples (pictures only): style-master stick men in a 3D arena seen from above at an angle.
+     window.draw(sceneName) draws one sample; render_samples.cjs screenshots each. -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
+<style>html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#ece9e3}</style>
+</head><body><div id="out"></div>
+<script>
+// ------------------------------------------------------------ look
+const BG = '#ece9e3', INK = '#1a1a1a', SHADOW = 'rgba(60,50,40,.16)';
+const HR = 75, LW = 7.5;                     // head radius and line width in fighter units (style master: head ~half the height)
+const lerp = (a, b, k) => a + (b - a) * k;
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s;
+  t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function pen(pts, color = INK, w = LW) {
+  let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+  if (pts.length === 2) d += ` L${pts[1][0].toFixed(1)},${pts[1][1].toFixed(1)}`;
+  else { for (let i = 1; i < pts.length - 1; i++) { const m = [(pts[i][0] + pts[i+1][0]) / 2, (pts[i][1] + pts[i+1][1]) / 2];
+           d += ` Q${pts[i][0].toFixed(1)},${pts[i][1].toFixed(1)} ${m[0].toFixed(1)},${m[1].toFixed(1)}`; }
+         const l = pts[pts.length - 1]; d += ` L${l[0].toFixed(1)},${l[1].toFixed(1)}`; }
+  return `<path d="${d}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+const poly = (pts, fill, extra = '') => `<path d="M${pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L')} Z" fill="${fill}" ${extra}/>`;
+const cloth = (pts, w) => pen(pts, INK, w + 7) + pen(pts, '#fff', w);
+
+// ------------------------------------------------------------ poses (feet at y=0, facing right; shorter body, big head)
+const P = {
+  STAND: {neck:[0,-205],hip:[0,-95],le:[-28,-160],lh:[-38,-112],re:[28,-160],rh:[38,-112],lk:[-20,-48],lf:[-28,0],rk:[20,-48],rf:[28,0]},
+  GUARD: {neck:[0,-200],hip:[0,-92],le:[30,-150],lh:[58,-188],re:[-18,-148],rh:[22,-192],lk:[-34,-44],lf:[-48,0],rk:[34,-44],rf:[52,0]},
+  PUNCH: {neck:[18,-196],hip:[-12,-92],le:[-25,-160],lh:[-2,-172],re:[75,-192],rh:[140,-196],lk:[38,-45],lf:[66,0],rk:[-50,-46],rf:[-92,0]},
+  KICK:  {neck:[-26,-208],hip:[6,-112],le:[-70,-210],lh:[-108,-186],re:[18,-232],rh:[44,-262],lk:[-8,-52],lf:[-24,0],rk:[72,-138],rf:[146,-168]},
+  HIT:   {neck:[-36,-186],hip:[0,-92],le:[8,-190],lh:[42,-222],re:[2,-166],rh:[46,-156],lk:[-22,-44],lf:[-44,0],rk:[18,-42],rf:[32,0]},
+  FLY:   {neck:[-44,-170],hip:[0,-100],le:[-4,-204],lh:[34,-236],re:[-14,-212],rh:[16,-250],lk:[38,-66],lf:[86,-48],rk:[28,-46],rf:[76,-14]},
+  CHARGE:{neck:[0,-205],hip:[0,-95],le:[-56,-176],lh:[-74,-122],re:[56,-176],rh:[74,-122],lk:[-46,-44],lf:[-68,0],rk:[46,-44],rf:[68,0]},
+  WIN:   {neck:[0,-205],hip:[0,-95],le:[-62,-222],lh:[-112,-282],re:[62,-222],rh:[112,-282],lk:[-26,-46],lf:[-34,0],rk:[26,-46],rf:[34,0]},
+  RUN:   {neck:[22,-198],hip:[0,-96],le:[-22,-158],lh:[-56,-176],re:[42,-158],rh:[72,-190],lk:[34,-50],lf:[14,-4],rk:[-36,-46],rf:[-80,-14]},
+};
+function joints(name, lean = 0) {
+  const j = {}; for (const k in P[name]) j[k] = P[name][k].slice();
+  const [nx, ny] = j.neck, [hx, hy] = j.hip, dx = nx - hx, dy = ny - hy, L = Math.hypot(dx, dy);
+  j.head = [nx + dx / L * (HR + 1), ny + dy / L * (HR + 1)];
+  return j;
+}
+// ------------------------------------------------------------ faces & accessories (style master)
+function face(j, mood) {
+  const [x, y] = j.head;
+  const blush = pen([[x-44,y+26],[x-36,y+26]], '#c9c4bd', 6) + pen([[x-34,y+26],[x-28,y+26]], '#c9c4bd', 6)
+              + pen([[x+28,y+26],[x+34,y+26]], '#c9c4bd', 6) + pen([[x+36,y+26],[x+44,y+26]], '#c9c4bd', 6);
+  if (mood === 'ko') return pen([[x-30,y-10],[x-14,y+6]]) + pen([[x-14,y-10],[x-30,y+6]]) + pen([[x+14,y-10],[x+30,y+6]]) + pen([[x+30,y-10],[x+14,y+6]])
+                          + pen([[x-8,y+30],[x+8,y+28]], INK, 5);
+  if (mood === 'happy') return pen([[x-34,y+6],[x-23,y-7],[x-12,y+6]]) + pen([[x+12,y+6],[x+23,y-7],[x+34,y+6]]) + blush;
+  let g = `<ellipse cx="${x-22}" cy="${y+2}" rx="7" ry="13" fill="${INK}"/><ellipse cx="${x+22}" cy="${y+2}" rx="7" ry="13" fill="${INK}"/>` + blush;
+  if (mood === 'angry') g += pen([[x-38,y-24],[x-12,y-13]], INK, 6.5) + pen([[x+38,y-24],[x+12,y-13]], INK, 6.5);
+  return g;
+}
+function item(kind, j) {
+  const [hx, hy] = j.head, [nx, ny] = j.neck;
+  switch (kind) {
+    case 'headband': return pen([[hx-HR+4,hy-28],[hx+HR-4,hy-28]], INK, 24) + pen([[hx-HR+6,hy-28],[hx+HR-6,hy-28]], '#fff', 12)
+      + cloth([[hx-HR+2,hy-30],[hx-HR-30,hy-22],[hx-HR-62,hy-36]], 9) + cloth([[hx-HR+2,hy-26],[hx-HR-34,hy-4],[hx-HR-60,hy-8]], 9);
+    case 'cap': { const pts = []; for (let a = 195; a >= -15; a -= 10) pts.push([hx+(HR+3)*Math.cos(a*Math.PI/180), hy-30-(HR-12)*Math.sin(a*Math.PI/180)]);
+      return poly(pts, '#fff', `stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"`) + cloth([[hx-HR-30,hy-30],[hx-HR+12,hy-32]], 12); } // backwards cap
+    case 'shades': return `<path d="M${hx-52},${hy-10} L${hx-6},${hy-10} Q${hx-10},${hy+18} ${hx-30},${hy+16} Q${hx-50},${hy+14} ${hx-52},${hy-10} Z" fill="${INK}"/>`
+      + `<path d="M${hx+6},${hy-10} L${hx+52},${hy-10} Q${hx+50},${hy+14} ${hx+30},${hy+16} Q${hx+10},${hy+18} ${hx+6},${hy-10} Z" fill="${INK}"/>`
+      + pen([[hx-56,hy-12],[hx+56,hy-12]], INK, 6);
+    case 'buckethat': return poly([[hx-52,hy-30],[hx-40,hy-88],[hx+40,hy-88],[hx+52,hy-30]], '#fff', `stroke="${INK}" stroke-width="${LW}" stroke-linejoin="round"`)
+      + `<ellipse cx="${hx}" cy="${hy-28}" rx="${HR+16}" ry="15" fill="#fff" stroke="${INK}" stroke-width="${LW}"/>`;
+    case 'cape': { const [px, py] = j.hip; const pts = [[nx-26,ny+6],[nx+26,ny+6],[px+42,py+40],[px+8,py+56],[px-30,py+48],[px-74,py+30]];
+      return poly(pts, '#fff', `stroke="${INK}" stroke-width="6" stroke-linejoin="round"`); }
+  }
+  return '';
+}
+function fighter(f) {                         // f: {pose, item, mood}; returns local SVG (feet at y=0)
+  const j = joints(f.pose); let g = '';
+  if (f.item === 'cape') g += item('cape', j);
+  for (const seg of [['neck','hip'],['neck','le','lh'],['neck','re','rh'],['hip','lk','lf'],['hip','rk','rf']]) g += pen(seg.map(n => j[n]));
+  for (const ft of ['lf', 'rf']) g += `<ellipse cx="${j[ft][0] + 8}" cy="${j[ft][1] - 3}" rx="15" ry="7" fill="${INK}"/>`;
+  if (f.pose === 'CHARGE') for (let i = 0; i < 10; i++) { const a = (i * 36 - 90) * Math.PI / 180, r1 = 175, r2 = 215;
+    g += pen([[r1*Math.cos(a), -165 + r1*Math.sin(a)], [r2*Math.cos(a), -165 + r2*Math.sin(a)]], INK, 6); }
+  if (f.item === 'buckethat' || f.item === 'cap') g += ''; // drawn after head
+  g += `<circle cx="${j.head[0]}" cy="${j.head[1]}" r="${HR}" fill="#fff" stroke="${INK}" stroke-width="${LW}"/>`;
+  g += face(j, f.item === 'shades' && f.mood === 'angry' ? 'normal' : f.mood);
+  if (f.item && f.item !== 'cape') g += item(f.item, j);
+  if (f.crown) { const [hx, hy] = [j.head[0], j.head[1] - HR + 6];
+    g += poly([[hx-34,hy],[hx-40,hy-44],[hx-17,hy-20],[hx,hy-54],[hx+17,hy-20],[hx+40,hy-44],[hx+34,hy]], '#ffd23f', `stroke="${INK}" stroke-width="6" stroke-linejoin="round"`); }
+  return { svg: g, top: j.head[1] - HR - (f.crown ? 54 : 0) - (f.item === 'buckethat' ? 20 : 0) };
+}
+
+// ------------------------------------------------------------ 3D camera (floor = plane y=0, x right, z away)
+function camera(c) {        // c: {x, h:height, z:pos, pitch deg, f:focal}
+  const p = c.pitch * Math.PI / 180, F = c.f;
+  return (X, Y, Z) => {
+    const dx = X - c.x, dy = Y - c.h, dz = Z - c.z;
+    const zc = dz * Math.cos(p) - dy * Math.sin(p), yc = dy * Math.cos(p) + dz * Math.sin(p);
+    return { x: 960 + F * dx / zc, y: 540 - F * yc / zc, s: F / zc, z: zc };
+  };
+}
+function floorDetails(cam, seed) {          // faint scratch lines on the floor give the 3D depth (arena reference)
+  const r = rng(seed); let g = '';
+  for (let i = 0; i < 46; i++) {
+    const x = (r() - .5) * 6000, z = r() * 5000 - 300, a = r() * Math.PI, L = 300 + r() * 900;
+    const A = cam(x, 0, z), B = cam(x + Math.cos(a) * L, 0, z + Math.sin(a) * L);
+    if (A.z < 50 || B.z < 50) continue;
+    g += `<line x1="${A.x.toFixed(0)}" y1="${A.y.toFixed(0)}" x2="${B.x.toFixed(0)}" y2="${B.y.toFixed(0)}" stroke="#d6d1c8" stroke-width="${Math.max(1, 3 * A.s)}" stroke-linecap="round"/>`;
+  }
+  return g;
+}
+// place: {x, z, lift, rot, face(1/-1), name, f:{...}}
+function scene(cam, placed, fx = '') {
+  let shadows = '', bodies = '';
+  const order = placed.map(p => ({ p, q: cam(p.x, 0, p.z) })).sort((a, b) => b.q.z - a.q.z);
+  for (const { p, q } of order) {
+    const s = q.s * 1.0, lift = (p.lift || 0) * s;
+    const fr = fighter(p.f), sh = 95 * s * (1 - Math.min(.5, (p.lift || 0) / 600));
+    shadows += `<ellipse cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" rx="${sh.toFixed(1)}" ry="${(sh * .32).toFixed(1)}" fill="${SHADOW}"/>`;
+    bodies += `<g transform="translate(${q.x.toFixed(1)},${(q.y - lift).toFixed(1)}) rotate(${(p.rot || 0) * (p.face || 1)}) scale(${(s * (p.face || 1)).toFixed(3)},${s.toFixed(3)})">${fr.svg}</g>`;
+    if (p.name) bodies += `<text x="${q.x.toFixed(1)}" y="${(q.y - lift + (fr.top - 30) * s).toFixed(1)}" text-anchor="middle" font-family="Permanent Marker"
+      font-size="${(34 * s).toFixed(1)}" fill="${INK}">${p.name}</text>`;
+  }
+  return shadows + bodies + fx;
+}
+function star(x, y, size, color = '#ffd23f') { const pts = [];
+  for (let i = 0; i < 16; i++) { const r = i % 2 ? size * .42 : size, a = i * Math.PI / 8 + .2; pts.push([x + r*Math.cos(a), y + r*Math.sin(a)]); }
+  return poly(pts, color, `stroke="${INK}" stroke-width="5" stroke-linejoin="round"`); }
+const vignette = `<defs><radialGradient id="vg" cx="50%" cy="45%" r="75%"><stop offset="60%" stop-color="${BG}" stop-opacity="0"/><stop offset="100%" stop-color="#cfc9bf" stop-opacity=".9"/></radialGradient></defs>`;
+
+const CAST = [
+  { name:'@Fighter_01', item:'headband' }, { name:'@Fighter_02', item:'cap' }, { name:'@Fighter_03', item:'shades' },
+  { name:'@Fighter_04', item:'buckethat' }, { name:'@Fighter_05', item:'cape' },
+];
+const SCENES = {
+  // 1. character line-up: the 5 fighters, front view
+  lineup() {
+    let g = '';
+    CAST.forEach((c, i) => {
+      const x = 260 + i * 350, y = 860, s = 1.25, fr = fighter({ pose: 'STAND', item: c.item, mood: 'normal' });
+      g += `<ellipse cx="${x}" cy="${y}" rx="${100*s}" ry="${20*s}" fill="${SHADOW}"/>`;
+      g += `<g transform="translate(${x},${y}) scale(${s})">${fr.svg}</g>`;
+      g += `<text x="${x}" y="${y + (fr.top - 26) * s}" text-anchor="middle" font-family="Permanent Marker" font-size="40" fill="${INK}">${c.name}</text>`;
+    });
+    return g;
+  },
+  // 2. 3D arena, wide: free-for-all spread out in depth
+  arena() {
+    const cam = camera({ x: 110, h: 820, z: -950, pitch: 24, f: 1350 });
+    const fx = (() => { const a = cam(-330, 190, 420), b = cam(470, 175, 60); return star(a.x, a.y, 45 * a.s) + star(b.x, b.y, 45 * b.s); })();
+    return floorDetails(cam, 7) + scene(cam, [
+      { x:-520, z:420, face:1,  name:'@Fighter_01', f:{ pose:'PUNCH', item:'headband', mood:'angry' } },
+      { x:-250, z:420, face:-1, name:'@Fighter_02', f:{ pose:'HIT', item:'cap', mood:'ko' } },
+      { x:30,   z:780, face:1,  name:'@Fighter_03', f:{ pose:'CHARGE', item:'shades', mood:'angry' } },
+      { x:320,  z:60,  face:1,  name:'@Fighter_04', f:{ pose:'KICK', item:'buckethat', mood:'angry' } },
+      { x:600,  z:80,  face:-1, lift:120, rot:-35, name:'@Fighter_05', f:{ pose:'FLY', item:'cape', mood:'ko' } },
+    ], fx);
+  },
+  // 3. 3D close action: low angle on two fighters clashing, others behind
+  clash() {
+    const cam = camera({ x: 40, h: 520, z: -900, pitch: 16, f: 1500 });
+    const hit = cam(10, 196, 220);
+    return floorDetails(cam, 11) + scene(cam, [
+      { x:-760, z:1300, face:1,  name:'@Fighter_04', f:{ pose:'GUARD', item:'buckethat', mood:'normal' } },
+      { x:820,  z:1500, face:-1, name:'@Fighter_02', f:{ pose:'RUN', item:'cap', mood:'angry' } },
+      { x:-150, z:220,  face:1,  name:'@Fighter_03', f:{ pose:'PUNCH', item:'shades', mood:'angry' } },
+      { x:170,  z:220,  face:-1, name:'@Fighter_05', f:{ pose:'PUNCH', item:'cape', mood:'angry' } },
+    ], star(hit.x, hit.y, 55 * hit.s));
+  },
+  // 4. winner: high angle, crowned winner, knocked-out fighters around
+  winner() {
+    const cam = camera({ x: 0, h: 1050, z: -1250, pitch: 30, f: 1500 });
+    return floorDetails(cam, 3) + scene(cam, [
+      { x:0,    z:300, face:1,  name:'@Fighter_05', f:{ pose:'WIN', item:'cape', mood:'happy', crown:true } },
+      { x:-520, z:620, face:1,  rot:-90, lift:70, f:{ pose:'STAND', item:'headband', mood:'ko' } },
+      { x:560,  z:520, face:-1, rot:-90, lift:70, f:{ pose:'STAND', item:'cap', mood:'ko' } },
+    ]);
+  },
+};
+window.draw = name => {
+  document.getElementById('out').innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080">${vignette}<rect width="1920" height="1080" fill="${BG}"/>`
+    + SCENES[name]() + `<rect width="1920" height="1080" fill="url(#vg)"/></svg>`;
+};
+window.SCENE_NAMES = Object.keys(SCENES);
+draw('lineup');
+</script></body></html>

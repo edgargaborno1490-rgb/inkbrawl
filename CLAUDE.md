@@ -17,8 +17,12 @@ anime format: don't use it for brawls.
   that style: cute big round heads, black oval eyes, little grey blush marks, "^ ^" happy eyes, angry slanted brows
   when attacking, clean smooth thick black lines (no wobble), small feet, black and white with white-filled
   accessories (headband, scarf, cap, headphones, cape...), soft flat grey shadow under each fighter.
-- **Plain white background.** No canvas, no paper, no 3D (owner, Nov 21, 2026). The camera only zooms and pans flat.
-- **Name tags:** black lettering inside a light grey oval above each head.
+- **Background (owner, Nov 21, 2026):** warm off-white floor `#ece9e3` (light grey-beige), faint scratch lines on the
+  floor, soft darker vignette at the edges. Not pure white.
+- **3D arena (owner, Nov 21, 2026; like a top-down arena game):** camera above at an angle looking down at the floor;
+  fighters stand upright on the floor spread out in depth (closer = bigger), each with a flat soft shadow ellipse.
+  Samples: `samples/style3d/` (`sample3d.html`, `render_samples.cjs`, `sample-*.png`). Build videos from that look.
+- **Name tags:** plain black lettering above each head. No oval, no box.
 - Color only on powers and hits (yellow impact stars, a colored energy beam); fighters stay black and white.
 - Ink splats where fighters fall, an eraser wipe when one is knocked out, speed lines, dust puffs.
 - Original drawings only: no real anime/cartoon characters, logos or official art. Don't copy stock images.
@@ -42,7 +46,8 @@ anime format: don't use it for brawls.
   internet's most argued fight debate and asks people to comment "ME" to be in the next brawl).
 - Fight engine: `samples/fight15/` (`fight15.html` = poses, keyframed fighters, hits, KOs, camera, in the style
   master look; `render_fight15.cjs` renders frames and mixes SFX). Build real videos from this engine.
-- `samples/make_samples.py`, `samples/canvas3d.*` are old looks (paper, 3D canvas): don't use them.
+- `samples/make_samples.py`, `samples/canvas3d.*` are old looks (paper, 3D canvas): don't use them. `samples/fight15/`
+  still has the right fight timing but the older look; port its motion into the `samples/style3d/` renderer.
 
 ## Followers (fighters)
 - Names come from people who **commented to join** (opt-in) on the owner's posts. Use only public usernames from
