@@ -1,11 +1,11 @@
 # 100 Men vs 1 Gorilla: who would win?
 
 **Status: APPROVED** (owner, Nov 21, 2026: "go ahead with the script"; gorilla wins; end with the "which fighter
-joins next" vote; no "comment ME"; Nov 21 revision: no comment request, the ending explains
+joins next" vote (Nov 21: replaced by "comment the fighter you want to be"); no "comment ME"; Nov 21 revision: no comment request, the ending explains
 Ink Brawl and invites people to follow to join the fight; 1:10 or less; ending teases the 100-follower gorilla REMATCH; Nov 21: shorter fight, ending explains power levels
 (comment = your fighter gets stronger) and the boss milestones). Waiting for the owner's voiceover MP3 (made by the owner in ElevenLabs).
 
-- Video #1 of the Ink Brawl stick man format. 9:16 TikTok video, about 65–70 s (owner: 1:10 max), ~173 spoken words.
+- Video #1 of the Ink Brawl stick man format. 9:16 TikTok video, about 65–70 s (owner: 1:10 max), ~177 spoken words.
 - Why this one first: no followers yet, so we open with the internet's most argued fight debate. From the next video
   on, every follower joins the brawl automatically.
 - The gorilla wins on purpose: it's the answer that makes the most people argue in the comments.
@@ -34,7 +34,7 @@ Here's how Ink Brawl works. Follow, and you become a stick man with your name on
 
 And every follower goal unlocks a boss. Ten followers: an angry goose. Fifty: a grizzly bear. And at one hundred, all of you get a rematch with this gorilla.
 
-Comment your vote: which fighter joins next? Caveman, gym rat, samurai, or fisherman?
+Comment the fighter you want to be. Ninja? Samurai? Caveman? Anything. The most requested gets drawn first.
 
 ## Visual plan (3D arena, the owner's traced sprites: hoodie + T-shirt men, gorilla)
 
@@ -55,7 +55,7 @@ per swing, floor cracks, heavy camera shake.
 | How Ink Brawl works | A pen writes "@YOU" over a fresh stick man. | FOLLOW |
 | Comment = stronger | Each comment bubble flies into the stick man: "Lv 1 -> Lv 2 -> Lv 3", spark, power aura, bigger. | LEVEL UP! |
 | Boss milestones | Progress bar with icons: goose at 10, bear at 50, gorilla at 100 ("REMATCH"); camera lands on the gorilla roaring. | 10 / 50 / 100 |
-| Vote (comment) | Four empty sprite outlines with labels: caveman / gym rat / samurai / fisherman. | VOTE! |
+| Choose your fighter | Empty dotted outlines labelled NINJA? / SAMURAI? / CAVEMAN? / ???, then a big "?" outline. | YOU CHOOSE |
 
 ## Notes and fairness
 

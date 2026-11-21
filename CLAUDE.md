@@ -34,7 +34,7 @@ anime format: don't use it for brawls.
   2. Drop-in: stick men are drawn onto the page with their names.
   3. Free-for-all: fast fights, eliminations, live "X left" counter on screen.
   4. Final 2: slow-motion showdown.
-  5. Winner: crown + name card, Top 3 leaderboard, progress bar to the next boss, then the next-fighter vote.
+  5. Winner: crown + name card, Top 3 leaderboard, progress bar to the next boss, then "comment the fighter you want to be".
 - Fast cuts, 1–2-frame impact flashes on big hits, one big bold word on screen at a time.
 - Sound: SFX from `sfx-library/` (punches, whooshes, booms), plus pen-scribble and paper sounds; light music.
   No voiceover unless the owner sends one.
@@ -43,7 +43,7 @@ anime format: don't use it for brawls.
 - Scripts: `scripts/<name>.md`, written **Status: DRAFT**. Only the owner marks **APPROVED**; build the full video
   only after that (and after the owner's voiceover MP3, if the video has narration).
 - Video list and status: `IDEAS.md`. First video: **100 Men vs 1 Gorilla** (no followers yet, so it opens with the
-  internet's most argued fight debate; the gorilla wins; ends with the next-fighter vote).
+  internet's most argued fight debate; the gorilla wins; ends with power levels, boss milestones and "comment the fighter you want to be").
 - **CHARACTER ART = THE OWNER'S OWN DRAWINGS, TRACED (owner, Nov 21, 2026).** Don't redraw characters in code: code
   only approximates. The owner makes sprite sheets in ChatGPT (one character, 8 poses in a 2x4 grid on white: idle,
   punch, kick, hit, fly, ko, run, win) saved in `reference/sprites/<name>-sheet.png`.
@@ -75,15 +75,15 @@ anime format: don't use it for brawls.
 - **Now (owner, Nov 21, 2026): only 2 stick man designs** + the gorilla, all from the owner's sprite sheets:
   `capguy` = backwards cap + hoodie (`reference/sprites/capguy-sheet.png`), `tee` = backwards cap + T-shirt
   (`tee-sheet.png`), `gorilla` (`gorilla-sheet.png`). Mix hoodie and T-shirt guys in every crowd.
-- **New designs are unlocked by viewers (owner's idea):** viewers ask for new fighters in the comments, or vote in a
-  poll (YouTube community post / end-of-video question), e.g. caveman, gym rat, samurai, fisherman. The winner gets
-  drawn (owner makes its sprite sheet) and joins the roster, and the video says who requested it. Track requests and
-  votes in `IDEAS.md` ("Character unlocks"). Don't invent new designs or redraw them in code.
+- **Choose your fighter (owner, Nov 21, 2026):** viewers comment the character they want to be (anything). The most
+  requested gets drawn next (owner's sprite sheet), everyone who asked fights as it, and the video shouts out who
+  requested it ("NINJA UNLOCKED! Requested by @name and N others"). Counts in `data/requests.csv`; rules in
+  `PROGRESSION.md` section 2. Don't invent new designs or redraw them in code.
 
 ## Followers (fighters)
 - **Every follower joins the fight (owner, Nov 21, 2026).** No "comment to join" needed. Use only followers' public
   usernames (the owner provides the list); never real faces, photos or private info.
-- Videos end with the **"which fighter joins next?" vote** (see Character unlocks), not "comment ME".
+- Videos end with **"Comment the fighter you want to be"** (see Characters), not "comment ME".
 - Ask the owner how the winner is picked (random with a shown seed, or the owner picks) before each video.
 - Voiceovers: the owner may make the MP3 themselves (e.g. in ElevenLabs) and send it. Claude still never calls
   ElevenLabs or any paid AI service itself.

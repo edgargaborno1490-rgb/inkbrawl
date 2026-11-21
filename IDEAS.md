@@ -22,20 +22,13 @@ Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
 | 10,000 | The giant hand with the pen | idea |
 | 10,000+ | Original anime-style bosses (never real anime characters) | idea |
 
-## Character unlocks (viewers vote, the winner gets drawn)
+## Character unlocks (viewers choose)
 
-Roster now: cap + hoodie, cap + T-shirt, gorilla. New fighters join only when viewers ask/vote.
+Viewers comment the fighter they want to be; the most requested gets drawn next (owner's sprite sheet), and everyone
+who asked for it fights as it. Counts live in `data/requests.csv`. Shout-out: "NINJA UNLOCKED! Requested by @name and
+N others". Full rules: `PROGRESSION.md` section 2.
 
-| Candidate | Requested by | Votes | Status |
-|---|---|---|---|
-| Caveman | owner's example | - | idea |
-| Gym rat | owner's example | - | idea |
-| Samurai | owner's example | - | idea |
-| Fisherman | owner's example | - | idea |
-
-How to run it: end a video with "Which fighter should join next?" + pin a comment with the options, or post a
-YouTube community poll. Winner: the owner makes its sprite sheet (8 poses, same grid), Claude traces it in, and the
-next video shouts out the viewer who suggested it.
+Roster now: cap + hoodie, cap + T-shirt, gorilla (boss).
 
 ---
 
