@@ -10,7 +10,7 @@
 - New rule from the owner: **no copies of existing characters** (Naruto, Goku, Ash...). Fans can still ask; the owner
   makes a similar-vibe but different, original design (like the trainer: kyleeee asked for a "pokemon trainer").
 - Owner, Nov 21: 2 followers (@kyleeee_017 = trainer, @bombardinocrocodilee (display name kugisaki Jr) = ninja).
-  **kyleeee_017 wins** the final clash (owner's pick). Boss bar: 2/10. The full handle is spoken.
+  **@bombardinocrocodilee (ninja) wins** the final clash (owner, Nov 21: ninjas beat trainers; no plot armor). Boss bar: 2/10. The full handle is spoken.
 
 ## Script (spoken: paste this into ElevenLabs)
 
@@ -26,7 +26,7 @@ But we can't copy real characters like Naruto, Goku or Ash. Ask anyway, and we'l
 
 Rule four: bosses. Every follower goal unlocks a boss fight, all of you against one monster. At ten followers: an angry goose. We're at two.
 
-Now, the first real brawl. Trainer versus ninja. And the winner is... kyleeee!
+Now, the first real brawl. Trainer versus ninja. No plot armor here. And the winner is... bombardino crocodilee!
 
 Follow to take your spot, and comment the fighter you want to be.
 
@@ -45,7 +45,7 @@ Follow to take your spot, and comment the fighter you want to be.
 | Trainer unlocked | trainer + husky win pose, sparkles | TRAINER UNLOCKED! / Requested by @kyleeee_017 |
 | Can't copy real characters | text only (never drawn): Naruto / Goku / Ash crossed out, then a locked "?" card turning into "OUR OWN VERSION" | NO COPIES |
 | Rule four: bosses | progress bar "NEXT BOSS: 2/10 FOLLOWERS", goose as a grey locked silhouette card | 4. BOSSES |
-| First real brawl | kyleeee_017 (trainer + husky) vs @bombardinocrocodilee (ninja): fast exchange, slow-mo final hit, ninja KO + smoke puff; kyleeee_017 crown + sparkles | WINNER / @kyleeee_017 |
+| First real brawl | kyleeee_017 (trainer + husky) vs @bombardinocrocodilee (ninja): husky lunges, ninja dodges, fast exchange, slow-mo final hit: trainer KO + smoke puff (husky sits by him); @bombardinocrocodilee crown + sparkles | NO PLOT ARMOR / WINNER / @bombardinocrocodilee |
 | Follow + comment | both fighters + empty "?" spots | FOLLOW + COMMENT YOUR FIGHTER |
 
 ## Notes

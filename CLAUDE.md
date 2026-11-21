@@ -86,6 +86,8 @@ Videos live in `growkaz-stickman-studio/projects/<slug>/` (reference build: `100
   usernames (the owner provides the list); never real faces, photos or private info.
 - Videos end with **"Comment the fighter you want to be"** (see Characters), not "comment ME".
 - Ask the owner how the winner is picked (random with a shown seed, or the owner picks) before each video.
+- **No plot armor (owner, Nov 21, 2026):** fights end the way that makes sense (the stronger fighter/matchup wins), never
+  because someone is the first follower or a favourite. Say it on screen when it matters ("No plot armor here").
 - Voiceovers: the owner may make the MP3 themselves (e.g. in ElevenLabs) and send it. Claude still never calls
   ElevenLabs or any paid AI service itself.
 
