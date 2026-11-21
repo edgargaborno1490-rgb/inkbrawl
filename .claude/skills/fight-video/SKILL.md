@@ -1,6 +1,6 @@
 ---
 name: fight-video
-description: Make one Ink Brawl anime "Who Would Win" fight video, start to finish - research + DRAFT script, then (after the owner marks it APPROVED and sends the voiceover MP3) timestamps, shot list, the locked anime style, contact sheet, render in 16:9 and 9:16, punches/whooshes/light music, cover, title and hashtags. Use for "make <A> vs <B>", "new matchup", "write the <A> vs <B> script", "here's the MP3", or "APPROVED".
+description: RETIRED (Nov 21, 2026) - the old anime format; for Ink Brawl stick man videos use brawl-video instead. Made one Ink Brawl anime "Who Would Win" fight video, start to finish - research + DRAFT script, then (after the owner marks it APPROVED and sends the voiceover MP3) timestamps, shot list, the locked anime style, contact sheet, render in 16:9 and 9:16, punches/whooshes/light music, cover, title and hashtags. Use for "make <A> vs <B>", "new matchup", "write the <A> vs <B> script", "here's the MP3", or "APPROVED".
 ---
 
 # Ink Brawl fight video
