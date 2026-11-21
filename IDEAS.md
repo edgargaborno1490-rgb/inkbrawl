@@ -7,6 +7,21 @@ Status: idea → DRAFT (script written) → APPROVED (owner) → made (posted).
 | 1 | 100 Men vs 1 Gorilla | first video: no followers yet, so we open with the internet's most argued fight debate | DRAFT · `scripts/100-men-vs-gorilla.md` |
 | 2 | First follower free-for-all | names from "comment ME" on video #1 | idea |
 
+## Character unlocks (viewers vote, the winner gets drawn)
+
+Roster now: cap + hoodie, cap + T-shirt, gorilla. New fighters join only when viewers ask/vote.
+
+| Candidate | Requested by | Votes | Status |
+|---|---|---|---|
+| Caveman | owner's example | - | idea |
+| Gym rat | owner's example | - | idea |
+| Samurai | owner's example | - | idea |
+| Fisherman | owner's example | - | idea |
+
+How to run it: end a video with "Which fighter should join next?" + pin a comment with the options, or post a
+YouTube community poll. Winner: the owner makes its sprite sheet (8 poses, same grid), Claude traces it in, and the
+next video shouts out the viewer who suggested it.
+
 ---
 
 # Retired: anime "Who Would Win" matchups

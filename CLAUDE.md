@@ -62,6 +62,15 @@ anime format: don't use it for brawls.
   Sample: `gorilla-sample.html` + `render_gorilla.cjs` -> `gorilla-sample.mp4` (100 men vs 1 gorilla, 15 s).
 - Old looks, don't use: `samples/make_samples.py`, `samples/canvas3d.*`, `samples/fight15/`.
 
+## Characters (roster)
+- **Now (owner, Nov 21, 2026): only 2 stick man designs** + the gorilla, all from the owner's sprite sheets:
+  `capguy` = backwards cap + hoodie (`reference/sprites/capguy-sheet.png`), `tee` = backwards cap + T-shirt
+  (`tee-sheet.png`), `gorilla` (`gorilla-sheet.png`). Mix hoodie and T-shirt guys in every crowd.
+- **New designs are unlocked by viewers (owner's idea):** viewers ask for new fighters in the comments, or vote in a
+  poll (YouTube community post / end-of-video question), e.g. caveman, gym rat, samurai, fisherman. The winner gets
+  drawn (owner makes its sprite sheet) and joins the roster, and the video says who requested it. Track requests and
+  votes in `IDEAS.md` ("Character unlocks"). Don't invent new designs or redraw them in code.
+
 ## Followers (fighters)
 - Names come from people who **commented to join** (opt-in) on the owner's posts. Use only public usernames from
   people who opted in; never real faces, photos or private info.

@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset="utf-8">
 <!-- Ink Brawl sprite test: the owner's own drawings (reference/sprites/*-sheet.png, traced by trace_sprites.py)
-     animated pose-to-pose in the 3D arena. 6 cap guys vs 1 gorilla, 15 s. window.setT(seconds) draws one frame. -->
+     animated pose-to-pose in the 3D arena. 6 cap guys (hoodie + T-shirt) vs 1 gorilla, 15 s. window.setT(seconds) draws one frame. -->
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block" rel="stylesheet">
 <style>
   html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#ece9e3}
@@ -33,19 +33,19 @@ const ACT = {
   A: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:-950, z:640},
     {t:2.0, p:'run'}, {t:2.5, x:-400}, {t:2.55, p:'punch', x:-380}, {t:3.05, p:'idle'}, {t:3.15, p:'hit', x:-400},
     {t:3.3, p:'fly', x:-480, lift:80, rot:-10}, {t:3.6, x:-760, lift:240, rot:-25}, {t:3.95, p:'ko', x:-1000, lift:0, rot:0}, {t:4.6}, {t:4.9, o:0}) },
-  B: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:980, z:600, f:-1},
+  B: { who:'tee', k:1, keys: track({t:0, p:'idle', x:980, z:600, f:-1},
     {t:4.0, p:'run'}, {t:4.5, x:440}, {t:4.55, p:'idle'}, {t:4.62, p:'hit', x:460},
     {t:4.75, p:'fly', x:560, lift:100, rot:-10}, {t:5.1, x:900, lift:280, rot:-30}, {t:5.5, p:'ko', x:1150, lift:0, rot:0}, {t:6.1}, {t:6.4, o:0}) },
   C: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:1050, z:860, f:-1},
     {t:4.2, p:'run'}, {t:4.8, x:400}, {t:4.85, p:'punch', x:380}, {t:5.3, p:'idle'}, {t:5.45, p:'hit', x:410},
     {t:5.55, p:'fly', x:520, lift:100, rot:-10}, {t:5.9, x:900, lift:260, rot:-30}, {t:6.3, p:'ko', x:1150, lift:0, rot:0}, {t:6.9}, {t:7.2, o:0}) },
-  D: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:-1050, z:520},
+  D: { who:'tee', k:1, keys: track({t:0, p:'idle', x:-1050, z:520},
     {t:6.1, p:'run'}, {t:6.8, x:-420}, {t:6.85, p:'idle'}, {t:7.2, p:'kick', x:-400}, {t:7.5, p:'idle'}, {t:7.8, p:'punch', x:-380},
     {t:8.1, p:'idle'}, {t:8.4, p:'kick', x:-360}, {t:8.8, p:'idle'}, {t:9.7, p:'win'}) },
   E: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:1050, z:640, f:-1},
     {t:6.2, p:'run'}, {t:6.9, x:400}, {t:6.95, p:'idle'}, {t:7.25, p:'punch', x:380}, {t:7.55, p:'idle'}, {t:8.0, p:'punch'},
     {t:8.3, p:'idle'}, {t:8.45, x:950}, {t:9.8, p:'win'}) },
-  F: { who:'capguy', k:1, keys: track({t:0, p:'idle', x:-850, z:1000},
+  F: { who:'tee', k:1, keys: track({t:0, p:'idle', x:-850, z:1000},
     {t:6.3, p:'run'}, {t:7.0, x:-330, z:860}, {t:7.05, p:'idle'}, {t:7.8, p:'kick', x:-310}, {t:8.1, p:'idle'}, {t:9.9, p:'win'}) },
 };
 function stateAt(a, t) {
