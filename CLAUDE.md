@@ -72,9 +72,9 @@ anime format: don't use it for brawls.
 - TubeAlfred is YouTube-only: not used for TikTok.
 
 ## Characters (roster)
-- **Now (owner, Nov 21, 2026): only 2 stick man designs** + the gorilla, all from the owner's sprite sheets:
-  `capguy` = backwards cap + hoodie (`reference/sprites/capguy-sheet.png`), `tee` = backwards cap + T-shirt
-  (`tee-sheet.png`), `gorilla` (`gorilla-sheet.png`). Mix hoodie and T-shirt guys in every crowd.
+- **Roster (owner's sprite sheets in `reference/sprites/`):** `capguy` (backwards cap + hoodie), `tee` (backwards cap +
+  T-shirt), `caveman`, `samurai`, `ninja` (added Nov 21, 2026), and the boss `gorilla`. Crowds mix hoodie and T-shirt
+  guys; caveman / samurai / ninja go to the fans who asked for them.
 - **Choose your fighter (owner, Nov 21, 2026):** viewers comment the character they want to be (anything). The most
   requested gets drawn next (owner's sprite sheet), everyone who asked fights as it, and the video shouts out who
   requested it ("NINJA UNLOCKED! Requested by @name and N others"). Counts in `data/requests.csv`; rules in

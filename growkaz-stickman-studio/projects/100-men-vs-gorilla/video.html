@@ -244,12 +244,19 @@ function rematch(t) {
 function choose(t) {
   const cam = camera({ x: 0, h: 900, z: -800, pitch: 20, f: 1850, cx: VW / 2, cy: VH * .56 });
   let g = floorDetails(cam, 12);
-  const slots = [[K.ninja, 'NINJA?', 290, 1040], [K.samurai, 'SAMURAI?', 790, 1040], [K.caveman, 'CAVEMAN?', 290, 1600], [K.anything, '???', 790, 1600]];
-  for (const [st, label, x, y] of slots) { const k = ease(t, st - .12, st + .15); if (k <= 0) continue; const s = 1.15 * (.7 + .3 * k);
-    g += `<ellipse cx="${x}" cy="${y}" rx="${110 * s}" ry="${22 * s}" fill="${SHADOW}"/>`
-       + `<g transform="translate(${x},${y - (1 - k) * 60}) scale(${s})" opacity="${k}"><use href="#GHOST"/></g>`
-       + `<text x="${x}" y="${y - 200 * s - 20}" text-anchor="middle" font-family="Permanent Marker" font-size="120" fill="#bdb5aa" opacity="${k}">?</text>`
-       + `<text x="${x}" y="${y + 80}" text-anchor="middle" font-family="Permanent Marker" font-size="58" fill="${INK}" opacity="${k}">${label}</text>`; }
+  const slots = [[K.ninja, 'NINJA', 290, 1040, 'ninja'], [K.samurai, 'SAMURAI', 790, 1040, 'samurai'],
+                 [K.caveman, 'CAVEMAN', 290, 1600, 'caveman'], [K.anything, '???', 790, 1600, null]];
+  for (const [st, label, x, y, who] of slots) { const k = ease(t, st - .12, st + .15); if (k <= 0) continue; const s = 1.15 * (.7 + .3 * k);
+    // the drawn fighters (owner's sprite sheets) pop in with their win pose, then bounce in a ready stance
+    const pose = who ? (t < st + .7 || t >= K.drawn ? 'win' : (Math.floor(t * 2.5 + x) % 2 ? 'idle' : 'punch')) : null;
+    const hop = who && pose === 'win' ? Math.abs(Math.sin(t * 7 + x)) * 30 : 0;
+    g += `<ellipse cx="${x}" cy="${y}" rx="${110 * s}" ry="${22 * s}" fill="${SHADOW}"/>`;
+    if (who) g += `<g transform="translate(${x},${y - (1 - k) * 60 - hop}) scale(${s})" opacity="${k}">${spr(who, pose, 1).svg}</g>`;
+    else g += `<g transform="translate(${x},${y - (1 - k) * 60}) scale(${s})" opacity="${k}"><use href="#GHOST"/></g>`
+            + `<text x="${x}" y="${y - 200 * s - 20}" text-anchor="middle" font-family="Permanent Marker" font-size="120" fill="#bdb5aa" opacity="${k}">?</text>`;
+    g += `<text x="${x}" y="${y + 80}" text-anchor="middle" font-family="Permanent Marker" font-size="58" fill="${INK}" opacity="${k}">${label}</text>`;
+    if (who && t - st > 0 && t - st < .45) g += cloud(x, y - 120, (90 + (t - st) * 200) * s, 1 - (t - st) / .45);   // poof as they appear
+  }
   if (t >= K.most - .1) { const k = ease(t, K.most - .1, K.most + .2);       // the "most requested" slot gets a crown + pen
     g += `<g opacity="${k}">${sparkle(120, 620, 44)}${sparkle(470, 580, 30)}${sparkle(960, 640, 36)}</g>`; }
   return g;

@@ -28,7 +28,7 @@ Viewers comment the fighter they want to be; the most requested gets drawn next 
 who asked for it fights as it. Counts live in `data/requests.csv`. Shout-out: "NINJA UNLOCKED! Requested by @name and
 N others". Full rules: `PROGRESSION.md` section 2.
 
-Roster now: cap + hoodie, cap + T-shirt, gorilla (boss).
+Roster now: cap + hoodie, cap + T-shirt, caveman, samurai, ninja (all unlocked at launch), gorilla (boss).
 
 ---
 
