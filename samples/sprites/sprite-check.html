@@ -5,7 +5,7 @@ const POSES = ['idle','punch','kick','hit','fly','ko','run','win'];
 const sprite = (sp, x, y, k) => `<g transform="translate(${x},${y}) scale(${k}) translate(${-sp.ax},${-sp.ay})">`
   + `<g fill="#fff">${sp.fill}</g><g fill="#b9b9b9">${sp.grey}</g><g fill="#1a1a1a">${sp.ink}</g></g>`;
 let g = '';
-['capguy','tee','gorilla','caveman','samurai','ninja'].forEach((c, r) => POSES.forEach((p, i) => { const x = 130 + i * 235, y = 190 + r * 178, sp = SPRITES[c][p];
+['capguy','tee','gorilla','caveman','samurai','ninja','trainer'].forEach((c, r) => POSES.forEach((p, i) => { const x = 130 + i * 235, y = 190 + r * 178, sp = SPRITES[c][p];
   g += `<ellipse cx="${x}" cy="${y}" rx="80" ry="16" fill="rgba(60,50,40,.16)"/>` + sprite(sp, x, y, .38) + `<circle cx="${x}" cy="${y}" r="5" fill="red"/>`; }));
-document.getElementById('out').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1120"><rect width="1920" height="1120" fill="#ece9e3"/>${g}</svg>`;
+document.getElementById('out').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1300"><rect width="1920" height="1300" fill="#ece9e3"/>${g}</svg>`;
 </script></body></html>

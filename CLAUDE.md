@@ -73,8 +73,9 @@ Videos live in `growkaz-stickman-studio/projects/<slug>/` (reference build: `100
 
 ## Characters (roster)
 - **Roster (owner's sprite sheets in `reference/sprites/`):** `capguy` (backwards cap + hoodie), `tee` (backwards cap +
-  T-shirt), `caveman`, `samurai`, `ninja` (added Nov 21, 2026), and the boss `gorilla`. Crowds mix hoodie and T-shirt
-  guys; caveman / samurai / ninja go to the fans who asked for them.
+  T-shirt), `caveman`, `samurai`, `ninja` (added Nov 21, 2026), `trainer` (beast tamer + husky partner drawn in every pose;
+  unlocked Nov 21, 2026 for the first follower, kyleeee_017, with 1 request as the owner's exception), and the boss `gorilla`. Crowds mix hoodie and T-shirt
+  guys; caveman / samurai / ninja / trainer go to the fans who asked for them.
 - **Choose your fighter (owner, Nov 21, 2026):** viewers comment the character they want to be (anything). The most
   requested gets drawn next (owner's sprite sheet), everyone who asked fights as it, and the video shouts out who
   requested it ("NINJA UNLOCKED! Requested by @name and N others"). Counts in `data/requests.csv`; rules in
