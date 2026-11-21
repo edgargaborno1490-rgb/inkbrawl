@@ -1,0 +1,171 @@
+<title>Ink Brawl World</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!-- Ink Brawl World: one big map (arena, ninja forest, husky field, empty plots for new followers).
+     Followers train here between videos. Characters + scenery = the owner's traced sheets (sprites.js). -->
+<style>
+  /* Layout: a phone-shaped 9:16 stage, zone buttons under it. Single look: the arena floor. */
+  :root { --floor: #ece9e3; --ink: #1a1a1a; --paper: #ffffff; --muted: #6d655b; --pop: #ffd23f;
+          --display: 'Permanent Marker', 'Comic Sans MS', cursive; --body: 'Inter', system-ui, sans-serif; color-scheme: light }
+  html, body { background: var(--floor); color: var(--ink) }
+  body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+         padding-block: 16px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px }
+  h1 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; margin: 0; text-align: center }
+  .stage { width: min(100%, calc(74vh * 9 / 16)); aspect-ratio: 9 / 16; max-width: 100%; border: 5px solid var(--ink); border-radius: 22px;
+           overflow: hidden; background: var(--floor); box-shadow: 0 8px 0 var(--ink) }
+  .stage svg { display: block; width: 100%; height: 100% }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 34rem }
+  button { font-family: var(--display); font-size: 1rem; color: var(--ink); background: var(--paper); border: 3px solid var(--ink);
+           border-radius: 999px; padding: 6px 14px; cursor: pointer; box-shadow: 0 3px 0 var(--ink) }
+  button[aria-pressed="true"] { background: var(--pop) }
+  button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px }
+  p.note { margin: 0; color: var(--muted); font-size: .85rem; text-align: center; max-width: 34rem; line-height: 1.45 }
+</style>
+<h1>Ink Brawl World</h1>
+<div class="stage"><svg id="stage" viewBox="0 0 1080 1920" role="img" aria-label="Live map: the ninja trains in the forest, the husky trains on the field, the arena waits, empty plots wait for new followers">
+  <defs id="spritedefs"></defs><g id="out"></g></svg></div>
+<div class="chips">
+  <button id="v-map" data-view="map">Whole map</button>
+  <button id="v-forest" data-view="forest">Ninja forest</button>
+  <button id="v-field" data-view="field">Husky field</button>
+  <button id="v-arena" data-view="arena">Arena</button>
+  <button id="v-plots" data-view="plots">Empty plots</button>
+  <button id="tour" aria-pressed="true">Tour: on</button>
+</div>
+<p class="note">Between videos, every follower trains here. New followers move into an empty plot. Followers: @bombardinocrocodilee (ninja), @kyleeee_017 (trainer + husky).</p>
+<script src="../style3d/ink.js"></script>
+<script src="../sprites/sprites.js"></script>
+<script>
+const VW = 1080, VH = 1920;
+const smooth = k => k * k * (3 - 2 * k), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = (t, a, b) => smooth(clamp((t - a) / (b - a), 0, 1));
+const USE = { ninja: null, husky: null, forest: null, capguy: ['idle'] };   // null = every pose
+
+(() => { let d = vignette.replace(/<\/?defs>/g, '');
+  for (const who in USE) for (const pose of USE[who] || Object.keys(SPRITES[who])) { const sp = SPRITES[who][pose];
+    d += `<g id="S-${who}-${pose}" transform="translate(${-sp.ax},${-sp.ay})"><g fill="#fff">${sp.fill}</g><g fill="#b9b9b9">${sp.grey}</g><g fill="${INK}">${sp.ink}</g></g>`; }
+  const g = SPRITES.capguy.idle;
+  d += `<g id="GHOST" transform="translate(${-g.ax},${-g.ay})"><g fill="#e2ddd4">${g.fill}</g><g fill="#bdb5aa">${g.ink}</g></g>`;
+  document.getElementById('spritedefs').innerHTML = d; })();
+const spr = (who, pose, k = 1, extra = '') => ({ svg: `<g transform="scale(${k})">${extra}<use href="#S-${who}-${pose}"/></g>`, top: (SPRITES[who][pose].top - SPRITES[who][pose].ay) * k });
+const ghost = () => ({ svg: '<use href="#GHOST"/>', top: SPRITES.capguy.idle.top - SPRITES.capguy.idle.ay });
+
+// ---------------------------------------------------------------- the world layout
+const ARENA = { x: 0, z: 2300, r: 620 }, FOREST = { x: -1250, z: 3950 }, FIELD = { x: 1250, z: 3950 };
+const PLOTS = [-990, -330, 330, 990].map(x => ({ x, z: 820 }));
+const PROPS = (() => { const r = rng(21), a = [];
+  const add = (kind, x, z, k) => a.push({ kind, x, z, k });
+  for (let i = 0; i < 26; i++) { const x = -3000 + i * 240 + (r() - .5) * 120; add(r() < .55 ? 'pine' : 'tree', x, 5000 + r() * 700, 2 + r() * .6); }   // back tree line
+  for (let i = 0; i < 9; i++) add(r() < .6 ? 'pine' : 'pine_small', FOREST.x - 700 + r() * 1300, FOREST.z + 520 + r() * 400, 1.8 + r() * .6);
+  for (let i = 0; i < 4; i++) add('pine', FOREST.x - 820 - r() * 300, FOREST.z - 500 + i * 300, 2 + r() * .4);
+  add('rock', FOREST.x + 420, FOREST.z - 250, .8); add('stump', FOREST.x - 500, FOREST.z - 180, .8); add('bush', FOREST.x + 540, FOREST.z + 260, .9);
+  for (let i = 0; i < 4; i++) add('tree', FIELD.x - 450 + i * 340 + r() * 80, FIELD.z + 900 + r() * 250, 1.6 + r() * .3);
+  add('bush', FIELD.x + 760, FIELD.z - 150, .9); add('rock', FIELD.x - 560, FIELD.z + 260, .6);
+  for (let i = 0; i < 30; i++) add('grass', (r() - .5) * 4200, 300 + r() * 4600, .4 + r() * .25);
+  for (const s of [-1, 1]) { add('bush', s * 820, ARENA.z - 260, .8); add('rock', s * 760, ARENA.z + 380, .7); }
+  return a; })();
+
+// ---------------------------------------------------------------- floor drawings (arena ring, plots, paths)
+function ringPts(cam, cx, cz, r, n = 64) { const p = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2, q = cam(cx + Math.cos(a) * r, 0, cz + Math.sin(a) * r); p.push(q); } return p; }
+const pathD = pts => 'M' + pts.map(q => q.x.toFixed(1) + ',' + q.y.toFixed(1)).join(' L') + ' Z';
+function floorArt(cam) {
+  let g = '';
+  for (const [a, b] of [[ARENA, FOREST], [ARENA, FIELD], ...PLOTS.map(p => [ARENA, p])]) {        // dotted paths
+    const A = cam(a.x, 0, a.z), B = cam(b.x, 0, b.z);
+    g += `<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#d6d1c8" stroke-width="${Math.max(4, 40 * A.s)}" stroke-linecap="round"/>`; }
+  const o = ringPts(cam, ARENA.x, ARENA.z, ARENA.r), i2 = ringPts(cam, ARENA.x, ARENA.z, ARENA.r * .55), s = cam(ARENA.x, 0, ARENA.z).s;
+  g += `<path d="${pathD(o)}" fill="#e3dfd7" stroke="${INK}" stroke-width="${Math.max(3, 14 * s)}"/>`
+     + `<path d="${pathD(i2)}" fill="none" stroke="#cfc9bf" stroke-width="${Math.max(2, 10 * s)}" stroke-dasharray="${30 * s} ${24 * s}"/>`;
+  for (const p of PLOTS) { const c = [[-210, -170], [210, -170], [210, 170], [-210, 170]].map(([dx, dz]) => cam(p.x + dx, 0, p.z + dz)), q = cam(p.x, 0, p.z);
+    g += `<path d="${pathD(c)}" fill="#e6e2da" stroke="#b9b2a7" stroke-width="${Math.max(2, 9 * q.s)}" stroke-dasharray="${26 * q.s} ${18 * q.s}"/>`; }
+  return g; }
+function label(cam, x, y, z, txt, size, sub) {
+  const q = cam(x, y, z); if (q.z < 80) return ''; const fs = Math.max(30, size * q.s);
+  let g = `<text x="${q.x}" y="${q.y}" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="${fs.toFixed(0)}" fill="#fff" stroke="${INK}" stroke-width="${(fs * .17).toFixed(1)}" paint-order="stroke" stroke-linejoin="round">${txt}</text>`;
+  if (sub) g += `<text x="${q.x}" y="${q.y + fs * .75}" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="${(fs * .45).toFixed(0)}" fill="${INK}">${sub}</text>`;
+  return g; }
+
+// ---------------------------------------------------------------- who is training (loops)
+function ninjaNow(t) {
+  const cyc = 1.2, n = Math.floor(t / cyc), u = t - n * cyc, kick = n % 2 === 1;
+  const pose = u < .3 ? 'idle' : u < .62 ? (kick ? 'kick' : 'punch') : 'idle', hitAge = u - .32;
+  return { pose, kick, hitAge, wob: hitAge > 0 && hitAge < 1 ? 8 * Math.exp(-hitAge * 9) * Math.sin(hitAge * 30) : 0, step: pose === 'idle' ? 0 : 22 }; }
+const BOY = FIELD.x - 330, DUMMY = FIELD.x + 260;
+function huskyNow(t) {
+  const L = 7, u = t % L, o = { boy: u > 4.1 && u < 6.3 ? 'cheer' : 'cmd', dummy: true, dog: null, hitAge: u - 1.95 };
+  if (u < 1.5) o.dog = { pose: 'run', x: lerp(BOY + 90, DUMMY - 340, ease(u, .2, 1.5)), face: 1, lift: Math.abs(Math.sin(u * 10)) * 10 };
+  else if (u < 1.95) { const k = (u - 1.5) / .45; o.dog = { pose: 'leap', x: lerp(DUMMY - 340, DUMMY - 160, k), face: 1, lift: Math.sin(k * Math.PI) * 110 }; }
+  else if (u < 3.0) { o.dummy = false; o.dog = { pose: 'bite', x: DUMMY, face: 1, lift: 0 }; }
+  else if (u < 4.1) { o.dummy = false; o.dog = { pose: 'tug', x: DUMMY - 30 + Math.sin(u * 30) * 6, face: 1, lift: 0 }; }
+  else if (u < 6.2) { o.dummy = false; o.dog = { pose: 'down', x: DUMMY, face: 1, lift: 0 }; }
+  else o.dog = { pose: 'run', x: lerp(DUMMY - 120, BOY + 90, ease(u, 6.2, 7)), face: -1, lift: Math.abs(Math.sin(u * 10)) * 10 };
+  o.pop = u >= 6.2 ? ease(u, 6.2, 6.5) : 1;
+  return o; }
+
+// ---------------------------------------------------------------- views (camera keys)
+const VIEWS = {
+  map:    { x: 0, h: 5600, z: -1500, p: 50, f: 1650, word: 'INK BRAWL WORLD' },
+  forest: { x: FOREST.x + 60, h: 560, z: FOREST.z - 1000, p: 14, f: 1850, word: 'NINJA FOREST' },
+  field:  { x: FIELD.x - 30, h: 620, z: FIELD.z - 1450, p: 15, f: 1850, word: 'HUSKY FIELD' },
+  arena:  { x: 0, h: 1500, z: ARENA.z - 1350, p: 40, f: 1500, word: 'THE ARENA' },
+  plots:  { x: 0, h: 1100, z: PLOTS[0].z - 1650, p: 28, f: 760, word: 'YOUR SPOT' },
+};
+let from = { ...VIEWS.map }, to = VIEWS.map, moveT = -9, viewName = 'map';
+function camAt(now) { const k = ease(now, moveT, moveT + 1.4), c = {};
+  for (const key of ['x', 'h', 'z', 'p', 'f']) c[key] = lerp(from[key], to[key], k);
+  return c; }
+
+function draw(t) {
+  const c = camAt(t), cam = camera({ x: c.x, h: c.h, z: c.z, pitch: c.p, f: c.f, cx: VW / 2, cy: VH * .56 }), lab = c.h > 2600;
+  const placed = PROPS.map(p => ({ x: p.x, z: p.z, shadow: SPRITES.forest[p.kind].w * .32 * p.k, draw: () => spr('forest', p.kind, p.k) }));
+  const n = ninjaNow(t), hk = huskyNow(t);
+  placed.push({ x: FOREST.x + 230, z: FOREST.z, shadow: 70, draw: () => spr('forest', 'post', 1.05, `<g transform="rotate(${n.wob.toFixed(2)})">`).svg ? { svg: `<g transform="scale(1.05) rotate(${n.wob.toFixed(2)})"><use href="#S-forest-post"/></g>`, top: -340 } : null });
+  placed.push({ x: FOREST.x - 40 + n.step, z: FOREST.z, face: 1, shadow: 95, name: '@bombardinocrocodilee', draw: () => spr('ninja', n.pose) });
+  placed.push({ x: BOY, z: FIELD.z, face: 1, shadow: 95, name: '@kyleeee_017', draw: () => spr('husky', hk.boy, 1.1) });
+  if (hk.dummy) placed.push({ x: DUMMY + 42, z: FIELD.z, shadow: 70, draw: () => ({ svg: `<g transform="scale(1.1,${(1.1 * hk.pop).toFixed(3)})"><use href="#S-husky-dummy"/></g>`, top: -400 }) });
+  if (hk.dog) { const d = hk.dog; placed.push({ x: d.x, z: FIELD.z + 5, face: d.face, lift: d.lift, shadow: 80, draw: () => spr('husky', d.pose, 1.1) }); }
+  PLOTS.forEach((p, i) => placed.push({ x: p.x, z: p.z, shadow: 90, o: .9, draw: ghost }));
+  let fx = '';
+  const pq = cam(FOREST.x + 200, 0, FOREST.z); if (n.hitAge > 0 && n.hitAge < .3) fx += `<g opacity="${(1 - n.hitAge / .3).toFixed(2)}">${star(pq.x, pq.y - (n.kick ? 250 : 215) * pq.s, 55 * pq.s)}</g>`;
+  const dq = cam(DUMMY - 60, 0, FIELD.z); if (hk.hitAge > 0 && hk.hitAge < .35) fx += `<g opacity="${(1 - hk.hitAge / .35).toFixed(2)}">${star(dq.x, dq.y - 230 * dq.s, 50 * dq.s)}${marks(dq.x, dq.y - 230 * dq.s, 60 * dq.s)}</g>`;
+  if (hk.boy === 'cheer') { const b = cam(BOY, 0, FIELD.z); for (let i = 0; i < 3; i++) { const a = t * 2 + i * 2.1; fx += sparkle(b.x + Math.cos(a) * 200 * b.s, b.y - (300 + Math.sin(a) * 90) * b.s, 22 * b.s + 6); } }
+  // labels
+  const show = v => lab || viewName === v;
+  let lbl = (lab ? label(cam, FOREST.x, 900, FOREST.z, 'NINJA FOREST', 240, 'training now') + label(cam, FIELD.x, 900, FIELD.z, 'HUSKY FIELD', 240, 'training now') : '')
+    + (show('arena') ? label(cam, ARENA.x, 60, ARENA.z + ARENA.r * .2, 'ARENA', lab ? 260 : 150, 'next brawl: video #2') : '')
+    + (show('plots') ? PLOTS.map(p => label(cam, p.x, 520, p.z, 'YOUR SPOT', 95, 'follow to move in')).join('') : '');
+  // boss bar
+  const bar = `<g transform="translate(140,1640)"><rect width="800" height="64" rx="32" fill="#fff" stroke="${INK}" stroke-width="7"/>
+    <rect x="8" y="8" width="${(784 * .2).toFixed(0)}" height="48" rx="24" fill="#ffd23f"/>
+    <text x="400" y="45" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="34" fill="${INK}">NEXT BOSS: 2/10 FOLLOWERS</text></g>`;
+  const word = (VIEWS[viewName] || {}).word, fs = Math.min(120, 960 / (word.length * .72));
+  const top = `<text x="540" y="230" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="${fs.toFixed(0)}" fill="#fff" stroke="${INK}" stroke-width="${(fs * .16).toFixed(0)}" paint-order="stroke" stroke-linejoin="round">${word}</text>`;
+  const leaves = viewName === 'forest' ? leafFall(t) : '';
+  return `<rect width="${VW}" height="${VH}" fill="${BG}"/>` + floorDetails(cam, 5) + floorArt(cam) + scene(cam, placed, fx) + lbl + leaves
+    + `<rect width="${VW}" height="${VH}" fill="url(#vg)"/>` + top + bar;
+}
+function leafFall(t) { const r = rng(11); let g = '';
+  for (let i = 0; i < 14; i++) { const x0 = r() * VW, sp = 120 + r() * 120, ph = r() * 30, y = ((t * sp + ph * 60) % (VH + 200)) - 100;
+    const x = x0 + Math.sin(t * 1.6 + ph) * 60, a = Math.sin(t * 2 + ph) * 70;
+    g += `<g transform="translate(${x.toFixed(0)},${y.toFixed(0)}) rotate(${a.toFixed(0)})"><path d="M0,-18 Q14,0 0,18 Q-14,0 0,-18 Z M0,-14 L0,14" fill="#fff" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/></g>`; }
+  return g; }
+
+// ---------------------------------------------------------------- playback + controls
+const out = document.getElementById('out'), tourBtn = document.getElementById('tour');
+let clock = 0, last = performance.now(), touring = true, tourNext = 7;
+const TOUR = ['map', 'forest', 'field', 'arena', 'plots'];
+function go(name, now = clock) { from = camAt(now); to = VIEWS[name]; moveT = now; viewName = name;
+  document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === name))); }
+document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => { go(b.dataset.view); setTour(false); });
+function setTour(on) { touring = on; tourBtn.textContent = on ? 'Tour: on' : 'Tour: off'; tourBtn.setAttribute('aria-pressed', String(on)); tourNext = clock + 6; }
+tourBtn.onclick = () => setTour(!touring);
+window.setT = t => { clock = t; out.innerHTML = draw(t); };
+window.goView = name => { from = { ...VIEWS[name] }; to = VIEWS[name]; viewName = name; };
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+go('map'); from = { ...VIEWS.map };
+(function tick(now) { const dt = Math.min(.1, (now - last) / 1000); last = now;
+  if (!still || clock === 0) { clock += still ? 0 : dt;
+    if (touring && clock > tourNext) { go(TOUR[(TOUR.indexOf(viewName) + 1) % TOUR.length]); tourNext = clock + 6.5; }
+    out.innerHTML = draw(clock); }
+  requestAnimationFrame(tick); })(performance.now());
+</script>

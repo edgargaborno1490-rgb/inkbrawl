@@ -54,6 +54,10 @@ Videos live in `growkaz-stickman-studio/projects/<slug>/` (reference build: `100
   `sprite-test.html` + `render_sprite_test.cjs` -> `sprite-test.mp4` = 6 cap guys vs gorilla, pose-to-pose in the 3D
   arena. New characters: ask the owner for a sprite sheet, add its name in `trace_sprites.py`, re-run.
   Setup: `apt-get install -y potrace` and `pip install scipy` (numpy + Pillow already there).
+- **Ink Brawl World (owner, Nov 21, 2026):** `samples/world/world.html` = one big live map (arena in the middle, Ninja
+  Forest, Husky Field, empty "YOUR SPOT" plots for new followers). Between videos every follower trains there; new
+  followers move into a plot. Scenery = `reference/sprites/forest-sheet.png`, husky training = `husky-sheet.png`
+  (grid sheets in `GRIDS` of `trace_sprites.py`). Published live: https://claude.ai/artifact/XwV6VRcaRWBE9pN4HFRhAg
 - **Engine:** `samples/style3d/ink.js` = shared library (3D arena camera incl. 9:16, floor scratches, scene depth
   sorting, stars, sparkles, impact marks); `samples/sprites/sprites.js` = the traced characters.
 - **Video #1 made (Nov 21, 2026): 100 Men vs 1 Gorilla** -> `growkaz-stickman-studio/projects/100-men-vs-gorilla/final/`
