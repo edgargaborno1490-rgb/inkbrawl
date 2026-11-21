@@ -2,9 +2,10 @@
 
 **Status: APPROVED** (owner, Nov 21, 2026: "go ahead with the script"; gorilla wins; end with the "which fighter
 joins next" vote; no "comment ME"; Nov 21 revision: no comment request, the ending explains
-Ink Brawl and invites people to follow to join the fight; 1:10 or less; ending teases the 100-follower gorilla REMATCH). Waiting for the owner's voiceover MP3 (made by the owner in ElevenLabs).
+Ink Brawl and invites people to follow to join the fight; 1:10 or less; ending teases the 100-follower gorilla REMATCH; Nov 21: shorter fight, ending explains power levels
+(comment = your fighter gets stronger) and the boss milestones). Waiting for the owner's voiceover MP3 (made by the owner in ElevenLabs).
 
-- Video #1 of the Ink Brawl stick man format. 9:16 TikTok video, about 65–70 s (owner: 1:10 max), ~183 spoken words.
+- Video #1 of the Ink Brawl stick man format. 9:16 TikTok video, about 65–70 s (owner: 1:10 max), ~173 spoken words.
 - Why this one first: no followers yet, so we open with the internet's most argued fight debate. From the next video
   on, every follower joins the brawl automatically.
 - The gorilla wins on purpose: it's the answer that makes the most people argue in the comments.
@@ -13,25 +14,27 @@ Ink Brawl and invites people to follow to join the fight; 1:10 or less; ending t
 
 One hundred men. One gorilla. Who would win?
 
-This is Ink Brawl, and this is our very first video. No followers yet, so we're starting with the internet's most controversial fight.
+This is Ink Brawl, and this is our very first video.
 
-Meet the gorilla. Up to four hundred pounds of muscle, several times stronger than any man here, with two-inch fangs.
+Meet the gorilla. Four hundred pounds of muscle, several times stronger than any man here, with two-inch fangs.
 
 Wave one charges. One swing, and they go flying.
 
-Wave two tries to grab his arms. He slams the ground, and they're gone.
+Wave two grabs his arms. He slams the ground. Gone.
 
-Now everyone attacks at once. Fifty men pile on top of him. It looks like it's over.
+Then fifty men pile on top of him. It looks like it's over.
 
 Then he stands up.
 
 The pile explodes. And the men who are left? They run.
 
-Our verdict: the gorilla wins. A hundred men only win if they keep fighting, and nobody wants to be next.
+Our verdict: the gorilla wins. A hundred men only win if nobody runs, and nobody wants to be next.
 
-Here's how Ink Brawl works. Every follower becomes a stick man, with your name on it. Then everyone drops into one giant free-for-all. Only one walks out. Follow now. When we hit one hundred followers, all one hundred of you fight this gorilla. For real.
+Here's how Ink Brawl works. Follow, and you become a stick man with your name on it. Every time you comment, your fighter levels up and gets stronger.
 
-And vote: which fighter joins next? Caveman, gym rat, samurai, or fisherman?
+And every follower goal unlocks a boss. Ten followers: an angry goose. Fifty: a grizzly bear. And at one hundred, all of you get a rematch with this gorilla.
+
+Comment your vote: which fighter joins next? Caveman, gym rat, samurai, or fisherman?
 
 ## Visual plan (3D arena, the owner's traced sprites: hoodie + T-shirt men, gorilla)
 
@@ -49,9 +52,10 @@ per swing, floor cracks, heavy camera shake.
 | He stands up | Pile shakes, then explodes: men fly in every direction. Gorilla roar pose, sparkles. | ROAR! |
 | They run | Remaining men run away (run sprite, facing away), dust puffs. | RUN! |
 | Verdict | Gorilla win pose, crown, counter "0 MEN LEFT". | GORILLA WINS |
-| How Ink Brawl works | A pen writes "@YOU" over a fresh stick man; then a big crowd drops in, each with a sample @name, and starts a free-for-all; one left standing with a crown. | YOU / ONE WINS |
-| Follow now / rematch tease | Empty stick man with a blinking "@YOUR NAME" tag; then 100 stick men line up facing the gorilla, progress bar "REMATCH: 0/100 FOLLOWERS". | FOLLOW / REMATCH |
-| Vote | Four empty sprite outlines with labels: caveman / gym rat / samurai / fisherman. | VOTE! |
+| How Ink Brawl works | A pen writes "@YOU" over a fresh stick man. | FOLLOW |
+| Comment = stronger | Each comment bubble flies into the stick man: "Lv 1 -> Lv 2 -> Lv 3", spark, power aura, bigger. | LEVEL UP! |
+| Boss milestones | Progress bar with icons: goose at 10, bear at 50, gorilla at 100 ("REMATCH"); camera lands on the gorilla roaring. | 10 / 50 / 100 |
+| Vote (comment) | Four empty sprite outlines with labels: caveman / gym rat / samurai / fisherman. | VOTE! |
 
 ## Notes and fairness
 
