@@ -1,0 +1,191 @@
+<title>Ink Brawl Training Ground</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!-- Preview for video #2 (How Ink Brawl works): the training grounds + the first real brawl.
+     Characters = the owner's traced sprite sheets (sprites.js). Not timed to a voiceover yet. -->
+<style>
+  /* Layout: one phone-shaped 9:16 stage in the middle, scene chips under it. Single look: the arena floor. */
+  :root { --floor: #ece9e3; --ink: #1a1a1a; --paper: #ffffff; --muted: #6d655b; --line: #d6d1c8; --pop: #ffd23f;
+          --display: 'Permanent Marker', 'Comic Sans MS', cursive; --body: 'Inter', system-ui, sans-serif; color-scheme: light }
+  html, body { background: var(--floor); color: var(--ink) }
+  body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+         padding-block: 16px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px }
+  h1 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; margin: 0; letter-spacing: .5px; text-align: center }
+  .stage { width: min(100%, calc(74vh * 9 / 16)); aspect-ratio: 9 / 16; max-width: 100%; border: 5px solid var(--ink); border-radius: 22px;
+           overflow: hidden; background: var(--floor); box-shadow: 0 8px 0 var(--ink) }
+  .stage svg { display: block; width: 100%; height: 100% }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 34rem }
+  button { font-family: var(--display); font-size: 1rem; color: var(--ink); background: var(--paper); border: 3px solid var(--ink);
+           border-radius: 999px; padding: 6px 14px; cursor: pointer; box-shadow: 0 3px 0 var(--ink) }
+  button[aria-pressed="true"] { background: var(--pop) }
+  button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px }
+  p.note { margin: 0; color: var(--muted); font-size: .85rem; text-align: center; max-width: 34rem; line-height: 1.45 }
+</style>
+<h1>Training Ground</h1>
+<div class="stage"><svg id="stage" viewBox="0 0 1080 1920" role="img" aria-label="Animated preview: the ninja trains in the forest, the trainer trains his husky, then they fight and the ninja wins">
+  <defs id="spritedefs"></defs><g id="out"></g></svg></div>
+<div class="chips">
+  <button id="b0" data-t="0">Ninja: forest</button>
+  <button id="b1" data-t="6.5">Trainer: husky</button>
+  <button id="b2" data-t="13">First brawl</button>
+  <button id="play" aria-pressed="false">Pause</button>
+</div>
+<p class="note">Preview for video #2, no voiceover yet. Fighters: @bombardinocrocodilee (ninja) and @kyleeee_017 (trainer + husky). Loops every 20 seconds.</p>
+<script src="../../../samples/style3d/ink.js"></script>
+<script src="../../../samples/sprites/sprites.js"></script>
+<script>
+const VW = 1080, VH = 1920, LOOP = 20;
+const smooth = k => k * k * (3 - 2 * k), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = (t, a, b) => smooth(clamp((t - a) / (b - a), 0, 1));
+const FIGHTERS = { ninja: '@bombardinocrocodilee', trainer: '@kyleeee_017' };
+
+// sprites as reusable symbols
+(() => { let d = vignette.replace(/<\/?defs>/g, '');
+  for (const who of ['ninja', 'trainer']) for (const pose in SPRITES[who]) { const sp = SPRITES[who][pose];
+    d += `<g id="S-${who}-${pose}" transform="translate(${-sp.ax},${-sp.ay})"><g fill="#fff">${sp.fill}</g><g fill="#b9b9b9">${sp.grey}</g><g fill="${INK}">${sp.ink}</g></g>`; }
+  document.getElementById('spritedefs').innerHTML = d; })();
+function spr(who, pose, k = 1, o = {}) {
+  const sp = SPRITES[who][pose];
+  let svg = `<g transform="scale(${k})"><use href="#S-${who}-${pose}"/></g>`, top = (sp.top - sp.ay) * k;
+  if (o.crown) { const y = top - 6;
+    svg += `<g transform="translate(0,${y}) scale(1.1)">${poly([[-34,0],[-40,-44],[-17,-20],[0,-54],[17,-20],[40,-44],[34,0]], '#ffd23f', `stroke="${INK}" stroke-width="7" stroke-linejoin="round"`)}</g>`;
+    top -= 66; }
+  return { svg, top };
+}
+const brawler = (who, pose, x, z, face, o = {}) => ({ x, z, face, lift: o.lift || 0, rot: o.rot || 0, shadow: who === 'trainer' ? 120 : 95,
+  name: o.noName ? '' : FIGHTERS[who], draw: () => spr(who, pose, 1, o) });
+
+// ---------------------------------------------------------------- props (scenery only; characters come from the sprite sheets)
+const ink = (w = 12) => `stroke="${INK}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round"`;
+function blobs(circles, w = 12) {           // ink outline around a union of circles
+  return circles.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r + w / 2}" fill="${INK}"/>`).join('')
+       + circles.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r - w / 2}" fill="#fff"/>`).join('');
+}
+function pine(h) { const w = h * .4; let g = `<rect x="-24" y="${-h * .26}" width="48" height="${h * .26}" rx="8" fill="#fff" ${ink()}/>`;
+  for (let i = 0; i < 3; i++) { const y0 = -h * .2 - i * h * .23, tw = w * (1 - i * .24), th = h * .38;
+    g += `<path d="M${-tw},${y0} Q0,${y0 + 22} ${tw},${y0} L0,${y0 - th} Z" fill="#fff" ${ink()}/>`
+       + `<path d="M${tw * .35},${y0 - 8} L${tw * .12},${y0 - th * .45}" ${ink(7)} stroke="#cfc9bf" fill="none"/>`; }
+  return { svg: g, top: -h }; }
+function roundTree(h) { const r = h * .2;
+  const g = `<path d="M-20,0 L-16,${-h * .5} L16,${-h * .5} L20,0 Z" fill="#fff" ${ink()}/>`
+    + blobs([[0, -h * .72, r * 1.1], [-r * .9, -h * .6, r * .85], [r * .9, -h * .6, r * .85], [-r * .5, -h * .86, r * .8], [r * .55, -h * .84, r * .8]]);
+  return { svg: g, top: -h }; }
+function bush(h) { return { svg: blobs([[0, -h * .45, h * .45], [-h * .5, -h * .3, h * .32], [h * .5, -h * .3, h * .32]], 10), top: -h }; }
+function post(wob) { const h = 330;
+  return { svg: `<g transform="rotate(${wob.toFixed(2)})"><rect x="-38" y="${-h}" width="76" height="${h}" rx="14" fill="#fff" ${ink()}/>`
+    + `<rect x="34" y="${-h * .66}" width="62" height="26" rx="10" fill="#fff" ${ink(10)}/><rect x="34" y="${-h * .38}" width="50" height="26" rx="10" fill="#fff" ${ink(10)}/>`
+    + [.18, .5, .82].map(k => `<path d="M-38,${-h * k} Q0,${-h * k + 10} 38,${-h * k}" ${ink(7)} fill="none"/>`).join('')
+    + `<path d="M-12,${-h + 40} L-6,${-h * .3}" ${ink(5)} stroke="#cfc9bf" fill="none"/></g>`, top: -h }; }
+function cone() { return { svg: `<path d="M-46,0 L-14,-120 L14,-120 L46,0 Z" fill="#fff" ${ink(10)}/><path d="M-32,-52 L32,-52 L26,-76 L-26,-76 Z" fill="#b9b9b9"/>`
+  + `<rect x="-58" y="-8" width="116" height="14" rx="6" fill="#fff" ${ink(9)}/>`, top: -120 }; }
+function target(wob) { return { svg: `<path d="M-50,0 L-10,-170 M50,0 L10,-170" ${ink(10)} fill="none"/><g transform="rotate(${wob.toFixed(2)},0,-200)">`
+  + [70, 48, 24].map((r, i) => `<circle cx="0" cy="-200" r="${r}" fill="${i % 2 ? '#b9b9b9' : '#fff'}" ${ink(9)}/>`).join('') + `</g>`, top: -270 }; }
+function fencePost() { return { svg: `<rect x="-16" y="-150" width="32" height="150" rx="6" fill="#fff" ${ink(10)}/>`, top: -150 }; }
+function tufts(cam, seed, n) { const r = rng(seed); let g = '';
+  for (let i = 0; i < n; i++) { const q = cam((r() - .5) * 2600, 0, 250 + r() * 2600); if (q.z < 80) continue; const s = q.s * 26;
+    g += `<path d="M${q.x - s},${q.y} L${q.x - s * .6},${q.y - s} M${q.x},${q.y} L${q.x},${q.y - s * 1.3} M${q.x + s},${q.y} L${q.x + s * .6},${q.y - s}" stroke="#b5ada2" stroke-width="${Math.max(2, q.s * 7)}" stroke-linecap="round" fill="none"/>`; }
+  return g; }
+function leaves(t) { const r = rng(11); let g = '';
+  for (let i = 0; i < 16; i++) { const x0 = r() * VW, sp = 120 + r() * 120, ph = r() * 30, y = ((t * sp + ph * 60) % (VH + 200)) - 100;
+    const x = x0 + Math.sin(t * 1.6 + ph) * 60, a = Math.sin(t * 2 + ph) * 70, s = .8 + r() * .6;
+    g += `<g transform="translate(${x.toFixed(0)},${y.toFixed(0)}) rotate(${a.toFixed(0)}) scale(${s.toFixed(2)})"><path d="M0,-18 Q14,0 0,18 Q-14,0 0,-18 Z M0,-14 L0,14" fill="#fff" ${ink(4)}/></g>`; }
+  return g; }
+function hitFx(x, y, k, size = 70) {    // yellow star + marks, k = 0..1 age
+  if (k < 0 || k > 1) return ''; const s = size * (1 + k * .5);
+  return `<g opacity="${(1 - k).toFixed(2)}">${star(x, y, s)}${marks(x, y, s * 1.1, -170)}${marks(x, y, s * 1.1, 10)}</g>`; }
+function bigWord(txt, t0, t) { if (!txt) return ''; const pop = 1 + .25 * (1 - ease(t, t0, t0 + .18));
+  const fs = Math.min(140, 1500 / (txt.length * .66)), est = fs * pop * .66 * txt.length, fit = est > 940 ? `textLength="940" lengthAdjust="spacingAndGlyphs"` : '';
+  return `<text x="540" y="250" text-anchor="middle" font-family="Permanent Marker, cursive" font-size="${(fs * pop).toFixed(0)}" fill="#fff" stroke="${INK}"
+    stroke-width="${(fs * .16).toFixed(0)}" paint-order="stroke" stroke-linejoin="round" ${fit}>${txt}</text>`; }
+function wordAt(list, t) { let cur = null; for (const w of list) if (t >= w[0]) cur = w; return cur ? bigWord(cur[1], cur[0], t) : ''; }
+const cam9 = (o, shake = 0) => camera({ x: o.x || 0, h: o.h, z: o.z, pitch: o.p, f: 1850, cx: VW / 2 + shake, cy: VH * .58 });
+const frame = (cam, under, placed, over) => `<rect width="${VW}" height="${VH}" fill="${BG}"/>` + floorDetails(cam, 5) + under + scene(cam, placed) + over
+  + `<rect width="${VW}" height="${VH}" fill="url(#vg)"/>`;
+function decay(t, hits, amp, rate = 9, freq = 30) { let w = 0; for (const h of hits) { const d = t - h; if (d >= 0 && d < 1) w += amp * Math.exp(-d * rate) * Math.sin(d * freq); } return w; }
+
+// ---------------------------------------------------------------- scene A: the ninja trains in the forest (0 - 6.5 s)
+const TREES = (() => { const r = rng(4), a = [];
+  for (let i = 0; i < 14; i++) a.push({ x: -1300 + i * 200 + (r() - .5) * 120, z: 2100 + r() * 700, kind: r() < .6 ? pine : roundTree, h: 800 + r() * 400 });
+  for (const s of [-1, 1]) for (let i = 0; i < 3; i++) a.push({ x: s * (560 + i * 200 + r() * 80) + 60, z: 1500 + i * 380, kind: i % 2 ? roundTree : pine, h: 850 + r() * 300 });
+  a.push({ x: -330, z: 1450, kind: bush, h: 170 }, { x: 440, z: 1600, kind: bush, h: 150 });
+  return a; })();
+function sceneA(t) {
+  const cyc = 1.2, n = Math.floor(t / cyc), u = t - n * cyc, kick = n % 2 === 1;
+  const pose = u < .3 ? 'idle' : u < .62 ? (kick ? 'kick' : 'punch') : 'idle';
+  const hits = []; for (let i = 0; i <= n; i++) hits.push(i * cyc + .32);
+  const last = hits.filter(h => h <= t).pop() ?? -9, wob = decay(t, hits, 9);
+  const step = pose === 'idle' ? 0 : 25;
+  const cam = cam9({ x: 60, h: lerp(520, 440, ease(t, 0, 6.5)), z: lerp(-200, 0, ease(t, 0, 6.5)), p: 15 });
+  const placed = TREES.map(o => ({ x: o.x, z: o.z, shadow: o.h * .2, draw: () => o.kind(o.h) }));
+  placed.push({ x: 200, z: 1000, shadow: 60, draw: () => post(wob) });
+  placed.push(brawler('ninja', pose, -70 + step, 1000, 1));
+  const q = cam(155, 0, 1000), fx = hitFx(q.x, q.y - (kick ? 250 : 215) * q.s, (t - last) / .3, 55);
+  return frame(cam, tufts(cam, 3, 70), placed, fx + leaves(t))
+    + wordAt([[0, 'TRAINING GROUND'], [1.9, 'THE NINJA'], [3.9, 'TRAINS IN THE FOREST']], t);
+}
+
+// ---------------------------------------------------------------- scene B: the trainer trains his husky (6.5 - 13 s)
+function sceneB(t) {
+  const runEnd = 2.6, cmd = 3.3, hit = 3.55, winT = 4.5;
+  let pose = 'run', x = lerp(-560, -150, ease(t, 0, runEnd)), lift = 0;
+  if (t < runEnd) lift = Math.abs(Math.sin(t * 9)) * 14; else if (t < cmd) pose = 'idle'; else if (t < winT) pose = 'punch'; else pose = 'win';
+  const wob = decay(t, [hit], 12, 6, 22);
+  const cam = cam9({ x: lerp(-330, 40, ease(t, 0, 3)), h: 460, z: -80, p: 15 });
+  const placed = [{ x: 250, z: 1060, shadow: 70, draw: () => target(wob) }];
+  for (const cx of [-470, -330]) placed.push({ x: cx, z: 1150, shadow: 50, draw: cone });
+  for (let i = -6; i <= 6; i++) placed.push({ x: i * 260, z: 2300, shadow: 30, draw: fencePost });
+  for (const [x, z, h] of [[-900, 2900, 900], [-300, 3100, 1000], [500, 2950, 950], [1100, 3200, 1000]]) placed.push({ x, z, shadow: 150, draw: () => roundTree(h) });
+  placed.push(brawler('trainer', pose, x, 1000, 1, { lift }));
+  let rails = ''; for (const yy of [60, 120]) { const a = cam(-1600, yy, 2300), b = cam(1600, yy, 2300);
+    rails += `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${INK}" stroke-width="${Math.max(3, 10 * a.s)}" stroke-linecap="round"/>`; }
+  const q = cam(250, 0, 1060);
+  let fx = hitFx(q.x, q.y - 200 * q.s, (t - hit) / .35, 60);
+  if (pose === 'win') { const p = cam(x, 0, 1000); for (let i = 0; i < 4; i++) { const a = t * 2 + i * 1.6;
+    fx += sparkle(p.x + Math.cos(a) * 220 * p.s, p.y - (260 + Math.sin(a * 1.3) * 120) * p.s, 22 + 8 * Math.sin(t * 6 + i)); } }
+  return frame(cam, tufts(cam, 8, 60) + rails, placed, fx)
+    + wordAt([[0, 'THE TRAINER'], [2.2, 'TRAINS HIS HUSKY'], [cmd, 'GO!'], [winT, 'GOOD BOY!']], t);
+}
+
+// ---------------------------------------------------------------- scene C: the first real brawl (13 - 20 s), ninja wins
+function storyTime(u) {                         // slow motion around the winning hit
+  const a = 1.85, b = 2.75, k = .3;
+  return u < a ? u : u < b ? a + (u - a) * k : a + (b - a) * k + (u - b);
+}
+function sceneC(real) {
+  const t = storyTime(real), HIT = 1.95;
+  let tp = 'idle', tx = -140, tl = 0, tr = 0, np = 'idle', nx = 200, nl = 0;
+  if (t > 1.1 && t < 1.55) tp = 'punch';
+  if (t > 1.25 && t < HIT) { const k = (t - 1.25) / (HIT - 1.25); nl = Math.sin(k * Math.PI) * 230; nx = lerp(200, 20, k); np = k < .55 ? 'run' : 'kick'; }
+  if (t >= HIT) { nx = 20; np = t < 2.35 ? 'kick' : 'win'; }
+  if (t >= HIT && t < HIT + .2) tp = 'hit';
+  if (t >= HIT + .2) { const k = clamp((t - HIT - .2) / .7, 0, 1); tp = k < 1 ? 'fly' : 'ko';
+    tx = lerp(-140, -250, k); tl = Math.sin(k * Math.PI) * 200; tr = k < 1 ? -k * 40 : 0; }
+  const shake = t >= HIT && t < HIT + .5 ? Math.sin(t * 90) * 22 * (1 - (t - HIT) / .5) : 0;
+  const push = ease(t, 2.6, 3.6);
+  const cam = cam9({ x: lerp(10, -50, push), h: lerp(460, 430, push), z: lerp(-80, 0, push), p: 15 }, shake);
+  const placed = [brawler('trainer', tp, tx, 1000, 1, { lift: tl, rot: tr }), brawler('ninja', np, nx, 1000, -1, { lift: nl, crown: t > 2.6 })];
+  let fx = ''; const q = cam(-90, 0, 1000);
+  fx += hitFx(q.x, q.y - 230 * q.s, (t - HIT) / .5, 95);
+  if (t > HIT && t < HIT + .5) { const r = (t - HIT) * 1400; const c = cam(-110, 0, 1000);
+    fx = `<ellipse cx="${c.x}" cy="${c.y}" rx="${r}" ry="${r * .3}" fill="none" stroke="${INK}" stroke-width="8" opacity="${(1 - (t - HIT) / .5).toFixed(2)}"/>` + fx; }
+  if (t > 2.6) { const p = cam(20, 0, 1000); for (let i = 0; i < 5; i++) { const a = t * 2 + i * 1.25;
+    fx += sparkle(p.x + Math.cos(a) * 230 * p.s, p.y - (240 + Math.sin(a * 1.3) * 140) * p.s, 22 + 8 * Math.sin(t * 6 + i)); } }
+  const flash = real >= HIT && real < HIT + .07 ? `<rect width="${VW}" height="${VH}" fill="#fff"/>` : '';
+  return frame(cam, '', placed, fx) + flash
+    + wordAt([[0, 'TRAINER VS NINJA'], [HIT, 'NO PLOT ARMOR'], [2.6, 'WINNER'], [3.6, '@bombardinocrocodilee']], t);
+}
+
+// ---------------------------------------------------------------- playback
+const out = document.getElementById('out');
+const SCENES = [[0, sceneA], [6.5, sceneB], [13, sceneC]];
+window.setT = t => { t = ((t % LOOP) + LOOP) % LOOP; let i = 0; while (i + 1 < SCENES.length && t >= SCENES[i + 1][0]) i++;
+  out.innerHTML = SCENES[i][1](t - SCENES[i][0]);
+  document.querySelectorAll('[data-t]').forEach((b, j) => b.setAttribute('aria-pressed', String(j === i))); };
+let playing = !matchMedia('(prefers-reduced-motion: reduce)').matches, clock = playing ? 0 : 15.2, last = performance.now();
+const playBtn = document.getElementById('play');
+const setPlay = p => { playing = p; playBtn.textContent = p ? 'Pause' : 'Play'; };
+playBtn.onclick = () => setPlay(!playing);
+document.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { clock = +b.dataset.t; setT(clock); });
+setPlay(playing); setT(clock);
+(function tick(now) { const dt = Math.min(.1, (now - last) / 1000); last = now; if (playing) { clock += dt; setT(clock); } requestAnimationFrame(tick); })(performance.now());
+</script>
