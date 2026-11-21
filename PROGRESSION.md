@@ -42,7 +42,9 @@ This replaces the fixed caveman / gym rat / samurai / fisherman vote.
    (the first fan who asked gets the name on screen).
 5. Each video's ending asks: "Comment the fighter you want to be." A request comment also earns XP (it's a comment).
 6. Never draw or allow real anime/cartoon characters or look-alikes; suggest an original version instead
-   (e.g. "spiky-haired fighter" instead of a named anime hero).
+   (e.g. "spiky-haired fighter" instead of a named anime hero). Owner, Nov 21, 2026: tell fans this in the videos
+   ("we can't copy Naruto, Goku or Ash, but ask anyway and we'll make our own version"); a request for a named
+   character counts toward its original version ("pokemon trainer" -> `trainer`).
 
 ## 3. Power levels (loyal fans get stronger)
 
